@@ -95,8 +95,11 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
 
     /**
      * Contruct Zend_Cache Redis backend
+     *
      * @param array $options
-     * @return \Cm_Cache_Backend_Redis
+     *
+     * @throws CredisException
+     * @throws Zend_Cache_Exception
      */
     public function __construct($options = array())
     {
@@ -384,6 +387,8 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
 
     /**
      * @param array $tags
+     *
+     * @throws Zend_Cache_Exception
      */
     protected function _removeByNotMatchingTags($tags)
     {
@@ -393,7 +398,7 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
             $this->_redis->pipeline()->multi();
 
             // Remove data
-            $this->_redis->del( $this->_preprocessIds($ids));
+            $this->_redis->del($this->_preprocessIds($ids));
 
             // Remove ids from list of all ids
             if($this->_notMatchingTags) {
@@ -734,7 +739,9 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
      * In case of multiple tags, a negated logical AND is made between tags
      *
      * @param array $tags array of tags
+     *
      * @return array array of not matching cache ids (string)
+     * @throws Zend_Cache_Exception
      */
     public function getIdsNotMatchingTags($tags = array())
     {
@@ -766,7 +773,6 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
     /**
      * Return the filling percentage of the backend storage
      *
-     * @throws Zend_Cache_Exception
      * @return int integer between 0 and 100
      */
     public function getFillingPercentage()
@@ -792,7 +798,7 @@ class Cm_Cache_Backend_Redis extends Zend_Cache_Backend implements Zend_Cache_Ba
      * - mtime : timestamp of last modification time
      *
      * @param string $id cache id
-     * @return array array of metadatas (false if the cache id is not found)
+     * @return array|bool array of metadatas (false if the cache id is not found)
      */
     public function getMetadatas($id)
     {

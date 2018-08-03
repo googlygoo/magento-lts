@@ -45,8 +45,8 @@ class CredisException extends Exception
  * Credis_Client, a lightweight Redis PHP standalone client and phpredis wrapper
  *
  * Server/Connection:
- * @method Credis_Client pipeline()
- * @method Credis_Client multi()
+ * @method $this         pipeline()
+ * @method $this         multi()
  * @method array         exec()
  * @method string        flushAll()
  * @method string        flushDb()
@@ -54,7 +54,7 @@ class CredisException extends Exception
  * @method bool|array    config(string $setGet, string $key, string $value = null)
  *
  * Keys:
- * @method int           del(string $key)
+ * @method int           del(string|string[] $key)
  * @method int           exists(string $key)
  * @method int           expire(string $key, int $seconds)
  * @method int           expireAt(string $key, int $timestamp)
@@ -280,12 +280,14 @@ class Credis_Client {
      * Creates a Redisent connection to the Redis server on host {@link $host} and port {@link $port}.
      * $host may also be a path to a unix socket or a string in the form of tcp://[hostname]:[port] or unix://[path]
      *
-     * @param string $host The hostname of the Redis server
-     * @param integer $port The port number of the Redis server
-     * @param float $timeout  Timeout period in seconds
-     * @param string $persistent  Flag to establish persistent connection
-     * @param int $db The selected datbase of the Redis server
-     * @param string $password The authentication password of the Redis server
+     * @param string  $host        The hostname of the Redis server
+     * @param integer $port        The port number of the Redis server
+     * @param float   $timeout     Timeout period in seconds
+     * @param string  $persistent  Flag to establish persistent connection
+     * @param int     $db          The selected datbase of the Redis server
+     * @param string  $password    The authentication password of the Redis server
+     *
+     * @throws CredisException
      */
     public function __construct($host = '127.0.0.1', $port = 6379, $timeout = null, $persistent = '', $db = 0, $password = null)
     {
@@ -316,14 +318,17 @@ class Credis_Client {
     
     /**
      * Return the host of the Redis instance
+     *
      * @return string
      */
     public function getHost()
     {
         return $this->host;
     }
+
     /**
      * Return the port of the Redis instance
+     *
      * @return int
      */
     public function getPort()
@@ -333,12 +338,14 @@ class Credis_Client {
 
     /**
      * Return the selected database
+     *
      * @return int
      */
     public function getSelectedDb()
     {
         return $this->selectedDb;
     }
+
     /**
      * @return string
      */
@@ -346,9 +353,10 @@ class Credis_Client {
     {
         return $this->persistent;
     }
+
     /**
+     * @return $this
      * @throws CredisException
-     * @return Credis_Client
      */
     public function forceStandalone()
     {
@@ -361,7 +369,8 @@ class Credis_Client {
 
     /**
      * @param int $retries
-     * @return Credis_Client
+     *
+     * @return $this
      */
     public function setMaxConnectRetries($retries)
     {
@@ -371,13 +380,18 @@ class Credis_Client {
 
     /**
      * @param bool $flag
-     * @return Credis_Client
+     *
+     * @return $this
      */
     public function setCloseOnDestruct($flag)
     {
         $this->closeOnDestruct = $flag;
         return $this;
     }
+
+    /**
+     * @throws CredisException
+     */
     protected function convertHost()
     {
         if (preg_match('#^(tcp|unix)://(.*)$#', $this->host, $matches)) {
@@ -400,9 +414,10 @@ class Credis_Client {
             $this->port = NULL;
         }
     }
+
     /**
+     * @return $this
      * @throws CredisException
-     * @return Credis_Client
      */
     public function connect()
     {
@@ -459,6 +474,7 @@ class Credis_Client {
         }
         return $this;
     }
+
     /**
      * @return bool
      */
@@ -466,13 +482,15 @@ class Credis_Client {
     {
         return $this->connected;
     }
+
     /**
      * Set the read timeout for the connection. Use 0 to disable timeouts entirely (or use a very long timeout
      * if not supported).
      *
      * @param int $timeout 0 (or -1) for no timeout, otherwise number of seconds
+     *
      * @throws CredisException
-     * @return Credis_Client
+     * @return $this
      */
     public function setReadTimeout($timeout)
     {
@@ -521,8 +539,10 @@ class Credis_Client {
      * 4. renameCommand(['get' => 'foo', 'set' => 'bar']) // Full map of [command -> alias]
      *
      * @param string|callable|array $command
-     * @param string|null $alias
+     * @param string|null           $alias
+     *
      * @return $this
+     * @throws CredisException
      */
     public function renameCommand($command, $alias = NULL)
     {
@@ -542,6 +562,8 @@ class Credis_Client {
 
     /**
      * @param $command
+     *
+     * @return mixed
      */
     public function getRenamedCommand($command)
     {
@@ -581,7 +603,9 @@ class Credis_Client {
 
     /**
      * @param string $password
-     * @return bool
+     *
+     * @return $this|array|bool|mixed|null|string
+     * @throws CredisException
      */
     public function auth($password)
     {
@@ -592,7 +616,9 @@ class Credis_Client {
 
     /**
      * @param int $index
-     * @return bool
+     *
+     * @return $this|array|bool|mixed|null|string
+     * @throws CredisException
      */
     public function select($index)
     {
@@ -602,8 +628,8 @@ class Credis_Client {
     }
     
     /**
-     * @param string|array $pattern
      * @return array
+     * @throws CredisException
      */
     public function pUnsubscribe()
     {
@@ -615,7 +641,8 @@ class Credis_Client {
     /**
      * @param string|array $patterns
      * @param $callback
-     * @return $this|array|bool|Credis_Client|mixed|null|string
+     *
+     * @return $this|array|bool|mixed|null|string
      * @throws CredisException
      */
     public function pSubscribe($patterns, $callback)
@@ -661,8 +688,8 @@ class Credis_Client {
     }
 
     /**
-     * @param string|array $pattern
      * @return array
+     * @throws CredisException
      */
     public function unsubscribe()
     {
@@ -674,8 +701,9 @@ class Credis_Client {
     /**
      * @param string|array $channels
      * @param $callback
+     *
+     * @return $this|array|bool|mixed|null|string
      * @throws CredisException
-     * @return $this|array|bool|Credis_Client|mixed|null|string
      */
     public function subscribe($channels, $callback)
     {
@@ -719,6 +747,13 @@ class Credis_Client {
         }
     }
 
+    /**
+     * @param $name
+     * @param $args
+     *
+     * @return array|bool|$this|mixed|null|string
+     * @throws CredisException
+     */
     public function __call($name, $args)
     {
         // Lazy connection
@@ -1002,6 +1037,11 @@ class Credis_Client {
         return $response;
     }
 
+    /**
+     * @param string $command
+     *
+     * @throws CredisException
+     */
     protected function write_command($command)
     {
         // Reconnect on lost connection (Redis server "timeout" exceeded since last command)
@@ -1033,6 +1073,12 @@ class Credis_Client {
         }
     }
 
+    /**
+     * @param string $name
+     *
+     * @return array|bool|null|string
+     * @throws CredisException
+     */
     protected function read_reply($name = '')
     {
         $reply = fgets($this->redis);
@@ -1142,6 +1188,11 @@ class Credis_Client {
         return sprintf('*%d%s%s%s', count($args), CRLF, implode(array_map(array('self', '_map'), $args), CRLF), CRLF);
     }
 
+    /**
+     * @param string $arg
+     *
+     * @return string
+     */
     private static function _map($arg)
     {
         return sprintf('$%d%s%s', strlen($arg), CRLF, $arg);
