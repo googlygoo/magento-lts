@@ -544,5 +544,3 @@ location.replace("'.str_replace('"', '\\"', $url).'");
         return PEAR::raiseError($error, $code);
     }
 }
-
-?>

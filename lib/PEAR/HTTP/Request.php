@@ -309,7 +309,37 @@ class HTTP_Request
     * </ul>
     * @access public
     */
-    function HTTP_Request($url = '', $params = array())
+    function __construct($url = '', $params = array())
+    {
+        $this->init($url, $params);
+    }
+
+    /**
+     * Initialization
+     *
+     * Sets up the object
+     * @param    string  The url to fetch/access
+     * @param    array   Associative array of parameters which can have the following keys:
+     * <ul>
+     *   <li>method         - Method to use, GET, POST etc (string)</li>
+     *   <li>http           - HTTP Version to use, 1.0 or 1.1 (string)</li>
+     *   <li>user           - Basic Auth username (string)</li>
+     *   <li>pass           - Basic Auth password (string)</li>
+     *   <li>proxy_host     - Proxy server host (string)</li>
+     *   <li>proxy_port     - Proxy server port (integer)</li>
+     *   <li>proxy_user     - Proxy auth username (string)</li>
+     *   <li>proxy_pass     - Proxy auth password (string)</li>
+     *   <li>timeout        - Connection timeout in seconds (float)</li>
+     *   <li>allowRedirects - Whether to follow redirects or not (bool)</li>
+     *   <li>maxRedirects   - Max number of redirects to follow (integer)</li>
+     *   <li>useBrackets    - Whether to append [] to array variable names (bool)</li>
+     *   <li>saveBody       - Whether to save response body in response object property (bool)</li>
+     *   <li>readTimeout    - Timeout for reading / writing data over the socket (array (seconds, microseconds))</li>
+     *   <li>socketOptions  - Options to pass to Net_Socket object (array)</li>
+     * </ul>
+     * @access private
+     */
+    function init($url = '', $params = array())
     {
         $this->_method         =  HTTP_REQUEST_METHOD_GET;
         $this->_http           =  HTTP_REQUEST_HTTP_VER_1_1;
@@ -363,6 +393,17 @@ class HTTP_Request
     }
 
     /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function HTTP_Request($url = '', $params = array())
+    {
+        self::__construct($url, $params);
+    }
+
+    /**
     * Generates a Host header for HTTP/1.1 requests
     *
     * @access private
@@ -398,7 +439,7 @@ class HTTP_Request
     */
     function reset($url, $params = array())
     {
-        $this->HTTP_Request($url, $params);
+        $this->init($url, $params);
     }
 
     /**
@@ -409,7 +450,7 @@ class HTTP_Request
     */
     function setURL($url)
     {
-        $this->_url = new Net_URL($url, $this->_useBrackets);
+        $this->_url = &new Net_URL($url, $this->_useBrackets);
 
         if (!empty($this->_url->user) || !empty($this->_url->pass)) {
             $this->setBasicAuth($this->_url->user, $this->_url->pass);
@@ -540,7 +581,7 @@ class HTTP_Request
     */
     function addRawQueryString($querystring, $preencoded = true)
     {
-        $this->_url->addRawQueryString($querystring, $preencoded);
+        $this->_url->addRawQueryString($querystring);
     }
 
     /**
@@ -689,7 +730,7 @@ class HTTP_Request
     */
     function sendRequest($saveBody = true)
     {
-        if (!$this->_url instanceof Net_Url) {
+        if (!is_a($this->_url, 'Net_URL')) {
             return PEAR::raiseError('No URL given', HTTP_REQUEST_ERROR_URL);
         }
 
@@ -733,7 +774,7 @@ class HTTP_Request
             $err = null;
         } else {
             $this->_notify('connect');
-            $this->_sock = new Net_Socket();
+            $this->_sock =& new Net_Socket();
             $err = $this->_sock->connect($host, $port, null, $this->_timeout, $this->_socketOptions);
         }
         PEAR::isError($err) or $err = $this->_sock->write($this->_buildRequest());
@@ -746,7 +787,7 @@ class HTTP_Request
             $this->_notify('sentRequest');
 
             // Read the response
-            $this->_response = new HTTP_Response($this->_sock, $this->_listeners);
+            $this->_response = &new HTTP_Response($this->_sock, $this->_listeners);
             $err = $this->_response->process(
                 $this->_saveBody && $saveBody,
                 HTTP_REQUEST_METHOD_HEAD != $this->_method
@@ -791,7 +832,7 @@ class HTTP_Request
 
             // Absolute URL
             if (preg_match('/^https?:\/\//i', $redirect)) {
-                $this->_url = new Net_URL($redirect);
+                $this->_url = &new Net_URL($redirect);
                 $this->addHeader('Host', $this->_generateHostHeader());
             // Absolute path
             } elseif ($redirect{0} == '/') {
@@ -961,10 +1002,13 @@ class HTTP_Request
 
             // "normal" POST request
             if (!isset($boundary)) {
-                $postdata = implode('&', array_map(
-                    create_function('$a', 'return $a[0] . \'=\' . $a[1];'),
-                    $this->_flattenArray('', $this->_postData)
-                ));
+                $postdata = implode(
+                    '&',
+                    array_map(
+                        function($a) { return $a[0] . '=' . $a[1]; },
+                        $this->_flattenArray('', $this->_postData)
+                    )
+                );
 
             // multipart request, probably with file uploads
             } else {
@@ -1195,12 +1239,22 @@ class HTTP_Response
     * @param  Net_Socket    socket to read the response from
     * @param  array         listeners attached to request
     */
-    function HTTP_Response(&$sock, &$listeners)
+    function __construct(&$sock, &$listeners)
     {
         $this->_sock      =& $sock;
         $this->_listeners =& $listeners;
     }
 
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function HTTP_Response(&$sock, &$listeners)
+    {
+        self::__construct($sock, $listeners);
+    }
 
    /**
     * Processes a HTTP response
@@ -1518,4 +1572,3 @@ class HTTP_Response
         return $unpacked;
     }
 } // End class HTTP_Response
-?>

@@ -36,8 +36,8 @@ if (!defined('NAN')) {
     define('NAN', 0.0);
 }
 
-define('SOAP_LIBRARY_VERSION', '0.12.0');
-define('SOAP_LIBRARY_NAME',    'PEAR-SOAP 0.12.0-beta');
+define('SOAP_LIBRARY_VERSION', '@version@');
+define('SOAP_LIBRARY_NAME',    'PEAR-SOAP @version@-beta');
 
 // Set schema version.
 define('SOAP_XML_SCHEMA_VERSION',  'http://www.w3.org/2001/XMLSchema');
@@ -67,7 +67,6 @@ define('SOAP_DEFAULT_ENCODING',  'UTF-8');
  */
 class SOAP_Base_Object extends PEAR
 {
-
     /**
      * Supported encodings, limited by XML extension.
      *
@@ -94,10 +93,21 @@ class SOAP_Base_Object extends PEAR
      *
      * @param string $faultcode  Error code.
      */
-    function SOAP_Base_Object($faultcode = 'Client')
+    function __construct($faultcode = 'Client')
     {
         $this->_myfaultcode = $faultcode;
-        parent::PEAR('SOAP_Fault');
+        parent::__construct('SOAP_Fault');
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function SOAP_Base_Object($faultcode = 'Client')
+    {
+        self::__construct($faultcode);
     }
 
     /**
@@ -106,19 +116,21 @@ class SOAP_Base_Object extends PEAR
      * Please refer to the SOAP definition for an impression of what a certain
      * parameter stands for.
      *
-     * @param string|object $str  Error message or object.
-     * @param string $detail      Detailed error message.
-     * @param string $actorURI
-     * @param mixed $code
-     * @param mixed $mode
-     * @param mixed $options
-     * @param boolean $skipmsg
+     * @param string|SOAP_Fault $str      Error message or object.
+     * @param string            $detail   Detailed error message.
+     * @param string            $actorURI
+     * @param mixed             $code
+     * @param mixed             $mode
+     * @param mixed             $options
+     * @param boolean           $skipmsg
+     *
+     * @return SOAP_Fault
      */
     function &_raiseSoapFault($str, $detail = '', $actorURI = '', $code = null,
                               $mode = null, $options = null, $skipmsg = false)
     {
         // Pass through previous faults.
-        $is_instance = isset($this) && $this instanceof SOAP_Base_Object;
+        $is_instance = isset($this) && is_a($this, 'SOAP_Base_Object');
         if (is_object($str)) {
             $fault = $str;
         } else {
@@ -262,6 +274,9 @@ class SOAP_Base extends SOAP_Base_Object
 
     var $_attachments = array();
 
+    /**
+     * @var null|SOAP_WSDL
+     */
     var $_wsdl = null;
 
     /**
@@ -280,10 +295,21 @@ class SOAP_Base extends SOAP_Base_Object
      *
      * @param string $faultcode  Error code.
      */
+    function __construct($faultcode = 'Client')
+    {
+        parent::__construct($faultcode);
+        $this->_resetNamespaces();
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
     function SOAP_Base($faultcode = 'Client')
     {
-        parent::SOAP_Base_Object($faultcode);
-        $this->_resetNamespaces();
+        self::__construct($faultcode);
     }
 
     /**
@@ -295,7 +321,7 @@ class SOAP_Base extends SOAP_Base_Object
      *
      * @return string current SOAP-ENV prefix.
      */
-    function SOAPENVPrefix($prefix = null)
+    static function SOAPENVPrefix($prefix = null)
     {
         static $_soapenv_prefix = 'SOAP-ENV';
         if (!is_null($prefix)) {
@@ -313,7 +339,7 @@ class SOAP_Base extends SOAP_Base_Object
      *
      * @return string current SOAP-ENC prefix.
      */
-    function SOAPENCPrefix($prefix = null)
+    static function SOAPENCPrefix($prefix = null)
     {
         static $_soapenv_prefix = 'SOAP-ENC';
         if (!is_null($prefix)) {
@@ -534,7 +560,7 @@ class SOAP_Base extends SOAP_Base_Object
                 }
             }
             $xmlout_arrayType .= "[$ar_size]\"";
-        } elseif ($value instanceof SOAP_Value) {
+        } elseif (is_a($value, 'SOAP_Value')) {
             $xmlout_value = $value->serialize($this);
         } elseif ($type->name == 'string') {
             $xmlout_value = htmlspecialchars($value);
@@ -685,6 +711,14 @@ class SOAP_Base extends SOAP_Base_Object
         return $type;
     }
 
+    /**
+     * @param array|object $value
+     * @param string       $type
+     * @param string       $size
+     * @param string       $xml
+     *
+     * @return int
+     */
     function _multiArrayType($value, &$type, &$size, &$xml)
     {
         if (is_array($value)) {
@@ -755,7 +789,7 @@ class SOAP_Base extends SOAP_Base_Object
      */
     function _decode($soapval)
     {
-        if (!$soapval instanceof SOAP_Value) {
+        if (!is_a($soapval, 'SOAP_Value')) {
             return $soapval;
         }
 
@@ -790,7 +824,7 @@ class SOAP_Base extends SOAP_Base_Object
                 if ($isstruct) {
                     if ($this->_wsdl) {
                         // Get this child's WSDL information.
-                        // /$soapval->ns/$soapval->type/$item->ns/$item->name
+                        // /$soapval->prefix/$soapval->type/$item->prefix/$item->name
                         $child_type = $this->_wsdl->getComplexTypeChildType(
                             $soapval->namespace,
                             $soapval->name,
@@ -823,7 +857,11 @@ class SOAP_Base extends SOAP_Base_Object
                             $isstruct = false;
                             $return = array($return->{$item->name}, $d);
                         } else {
-                            $return->{$item->name} = array($return->{$item->name}, $d);
+                            if (is_array($return->{$item->name})) {
+                                $return->{$item->name} = array_merge($return->{$item->name}, array($d));
+                            } else {
+                                $return->{$item->name} = array($return->{$item->name}, $d);
+                            }
                         }
                     } else {
                         $return->{$item->name} = $this->_decode($item);
@@ -1006,12 +1044,13 @@ class SOAP_Base extends SOAP_Base_Object
         if (isset($structure->body)) {
             $data = $structure->body;
             $headers = $structure->headers;
-
+            unset($headers['']);
             return;
         } elseif (isset($structure->parts)) {
             $data = $structure->parts[0]->body;
             $headers = array_merge($structure->headers,
                                    $structure->parts[0]->headers);
+            unset($headers['']);
             if (count($structure->parts) <= 1) {
                 return;
             }
@@ -1098,10 +1137,16 @@ class SOAP_Base extends SOAP_Base_Object
 class QName
 {
     var $name = '';
-    var $ns = '';
+    var $prefix = '';
     var $namespace = '';
 
-    function QName($name, $namespace = '')
+    /**
+     * QName constructor.
+     *
+     * @param string $name
+     * @param string $namespace
+     */
+    function __construct($name, $namespace = '')
     {
         if ($name && $name[0] == '{') {
             preg_match('/\{(.*?)\}(.*)/', $name, $m);
@@ -1109,9 +1154,8 @@ class QName
             $this->namespace = $m[1];
         } elseif (substr_count($name, ':') == 1) {
             $s = explode(':', $name);
-            $s = array_reverse($s);
-            $this->name = $s[0];
-            $this->ns = $s[1];
+            $this->prefix = $s[0];
+            $this->name = $s[1];
             $this->namespace = $namespace;
         } else {
             $this->name = $name;
@@ -1129,12 +1173,23 @@ class QName
         }
     }
 
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function QName($name, $namespace = '')
+    {
+        self::__construct($name, $namespace);
+    }
+
     function fqn()
     {
         if ($this->namespace) {
             return '{' . $this->namespace . '}' . $this->name;
-        } elseif ($this->ns) {
-            return $this->ns . ':' . $this->name;
+        } elseif ($this->prefix) {
+            return $this->prefix . ':' . $this->name;
         }
         return $this->name;
     }

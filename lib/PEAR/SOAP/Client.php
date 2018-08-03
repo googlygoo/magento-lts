@@ -39,7 +39,7 @@ require_once 'SOAP/Parser.php';
 /**
  * @package SOAP
  */
-if (!class_exists('SOAP_Client_Overload', false)) {
+if (!class_exists('SOAP_Client_Overload')) {
     if (substr(zend_version(), 0, 1) > 1) {
         class SOAP_Client_Overload extends SOAP_Base {
             function __call($method, $args)
@@ -194,18 +194,18 @@ class SOAP_Client extends SOAP_Client_Overload
      *
      * @access public
      *
-     * @param string $endpoint       An URL.
-     * @param boolean $wsdl          Whether the endpoint is a WSDL file.
-     * @param string $portName       The service's port name to use.
-     * @param array $proxy_params    Options for the HTTP_Request class
-     *                               @see HTTP_Request
-     * @param boolean|string $cache  Use WSDL caching? The cache directory if
-     *                               a string.
+     * @param string    $endpoint     An URL.
+     * @param bool      $wsdl         Whether the endpoint is a WSDL file.
+     * @param bool|bool $portName     The service's port name to use.
+     * @param array     $proxy_params Options for the HTTP_Request class
+     *                                @see HTTP_Request
+     * @param bool $cache             Use WSDL caching? The cache directory if
+     *                                a string.
      */
-    function SOAP_Client($endpoint, $wsdl = false, $portName = false,
+    function __construct($endpoint, $wsdl = false, $portName = false,
                          $proxy_params = array(), $cache = false)
     {
-        parent::SOAP_Base('Client');
+        parent::__construct('Client');
 
         $this->_endpoint = $endpoint;
         $this->_portName = $portName;
@@ -228,6 +228,18 @@ class SOAP_Client extends SOAP_Client_Overload
                 $this->_raiseSoapFault($this->_wsdl->fault);
             }
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function SOAP_Client($endpoint, $wsdl = false, $portName = false,
+                         $proxy_params = array(), $cache = false)
+    {
+        self::__construct($endpoint, $wsdl, $portName, $proxy_params, $cache);
     }
 
     function _reset()
@@ -572,7 +584,7 @@ class SOAP_Client extends SOAP_Client_Overload
             if (PEAR::isError($opData)) {
                 return $this->_raiseSoapFault($opData);
             }
-            $namespace                    = isset($opData['namespace'])?$opData['namespace']:'';
+            $namespace                    = $opData['namespace'];
             $this->_options['style']      = $opData['style'];
             $this->_options['use']        = $opData['input']['use'];
             $this->_options['soapaction'] = $opData['soapAction'];
@@ -601,12 +613,12 @@ class SOAP_Client extends SOAP_Client_Overload
                             return $this->_raiseSoapFault("The named parameter $name is not in the call parameters.");
                         }
                         if (gettype($nparams[$name]) != 'object' ||
-                            !$nparams[$name] instanceof SOAP_Value) {
+                            !is_a($nparams[$name], 'SOAP_Value')) {
                             // Type is likely a qname, split it apart, and get
                             // the type namespace from WSDL.
                             $qname = new QName($part['type']);
-                            if ($qname->ns) {
-                                $type_namespace = $this->_wsdl->namespaces[$qname->ns];
+                            if ($qname->prefix) {
+                                $type_namespace = $this->_wsdl->namespaces[$qname->prefix];
                             } elseif (isset($part['namespace'])) {
                                 $type_namespace = $this->_wsdl->namespaces[$part['namespace']];
                             } else {
@@ -695,7 +707,7 @@ class SOAP_Client extends SOAP_Client_Overload
                 $soap_msg = $this->_makeMimeMessage($soap_msg, $this->_encoding);
             } else {
                 // default is dime
-                $soap_msg = $this->_makeDIMEMessage($soap_msg, $this->_encoding);
+                $soap_msg = $this->_makeDIMEMessage($soap_msg);
                 $this->_options['headers']['Content-Type'] = 'application/dime';
             }
             if (PEAR::isError($soap_msg)) {
@@ -768,7 +780,7 @@ class SOAP_Client extends SOAP_Client_Overload
         if (PEAR::isError($response)) {
             $fault = $this->_raiseSoapFault($response);
             return $fault;
-        } elseif (!$response instanceof SOAP_Value) {
+        } elseif (!is_a($response, 'soap_value')) {
             $fault = $this->_raiseSoapFault("Didn't get SOAP_Value object back from client");
             return $fault;
         }

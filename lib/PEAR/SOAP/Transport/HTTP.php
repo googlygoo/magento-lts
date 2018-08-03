@@ -80,12 +80,23 @@ class SOAP_Transport_HTTP extends SOAP_Transport
      * @param string $url       HTTP url to SOAP endpoint.
      * @param string $encoding  Encoding to use.
      */
-    function SOAP_Transport_HTTP($url, $encoding = SOAP_DEFAULT_ENCODING)
+    function __construct($url, $encoding = SOAP_DEFAULT_ENCODING)
     {
-        parent::SOAP_Base('HTTP');
+        parent::__construct('HTTP');
         $this->urlparts = @parse_url($url);
         $this->url = $url;
         $this->encoding = $encoding;
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function SOAP_Transport_HTTP($url, $encoding = SOAP_DEFAULT_ENCODING)
+    {
+        self::__construct($url, $encoding);
     }
 
     /**
@@ -269,9 +280,9 @@ class SOAP_Transport_HTTP extends SOAP_Transport
     {
         /* Largely borrowed from HTTP_Request. */
         $this->result_headers = array();
-        $headers = preg_split('/\r?\n/', $headers);
+        $headers = preg_split("/\r?\n/", $headers);
         foreach ($headers as $value) {
-            if (strpos($value,':') === false) {
+            if (strpos($value, ':') === false) {
                 $this->result_headers[0] = $value;
                 continue;
             }
@@ -342,13 +353,13 @@ class SOAP_Transport_HTTP extends SOAP_Transport
         unset($this->result_headers[0]);
 
         switch($code) {
-            case 100: // Continue
+            // Continue
+            case 100:
                 $this->incoming_payload = $match[2];
                 return $this->_parseResponse();
             case 200:
             case 202:
-                $this->incoming_payload = trim($match[2]);
-                if (!strlen($this->incoming_payload)) {
+                if (!strlen(trim($match[2]))) {
                     /* Valid one-way message response. */
                     return true;
                 }
@@ -545,7 +556,7 @@ class SOAP_Transport_HTTP extends SOAP_Transport
         }
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
         if (isset($options['proxy_host'])) {
             $port = isset($options['proxy_port']) ? $options['proxy_port'] : 8080;
             curl_setopt($ch, CURLOPT_PROXY,

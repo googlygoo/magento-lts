@@ -115,12 +115,13 @@ class SOAP_Transport extends SOAP_Base
         return $this->_raiseSoapFault('SOAP_Transport::send() not implemented.');
     }
 
-    public static function getTransport($url, $encoding = SOAP_DEFAULT_ENCODING)
+    static function getTransport($url, $encoding = SOAP_DEFAULT_ENCODING)
     {
         $urlparts = @parse_url($url);
 
         if (!$urlparts['scheme']) {
-            return SOAP_Base_Object::_raiseSoapFault("Invalid transport URI: $url");
+            $soapObject = new SOAP_Base_Object();
+            return $soapObject->_raiseSoapFault("Invalid transport URI: $url");
         }
 
         if (strcasecmp($urlparts['scheme'], 'mailto') == 0) {
@@ -134,11 +135,13 @@ class SOAP_Transport extends SOAP_Base
         $transport_class = "SOAP_Transport_$transport_type";
         if (!class_exists($transport_class)) {
             if (!(@include_once('SOAP/Transport/' . basename($transport_type) . '.php'))) {
-                return SOAP_Base_Object::_raiseSoapFault("No Transport for {$urlparts['scheme']}");
+                $soapObject = new SOAP_Base_Object();
+                return $soapObject->_raiseSoapFault("No Transport for {$urlparts['scheme']}");
             }
         }
         if (!class_exists($transport_class)) {
-            return SOAP_Base_Object::_raiseSoapFault("No Transport class $transport_class");
+            $soapObject = new SOAP_Base_Object();
+            return $soapObject->_raiseSoapFault("No Transport class $transport_class");
         }
 
         return new $transport_class($url, $encoding);

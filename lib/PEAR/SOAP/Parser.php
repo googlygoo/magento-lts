@@ -69,10 +69,10 @@ class SOAP_Parser extends SOAP_Base
      * @param string $encoding    Character set encoding, defaults to 'UTF-8'.
      * @param array $attachments  List of attachments.
      */
-    function SOAP_Parser($xml, $encoding = SOAP_DEFAULT_ENCODING,
+    function __construct($xml, $encoding = SOAP_DEFAULT_ENCODING,
                          $attachments = null)
     {
-        parent::SOAP_Base('Parser');
+        parent::__construct('Parser');
         $this->_setSchemaVersion(SOAP_XML_SCHEMA_VERSION);
 
         $this->attachments = $attachments;
@@ -112,11 +112,26 @@ class SOAP_Parser extends SOAP_Base
     }
 
     /**
+     * Only here for backwards compatibility.
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function SOAP_Parser($xml, $encoding = SOAP_DEFAULT_ENCODING,
+                         $attachments = null)
+    {
+        self::__construct($xml, $encoding, $attachments);
+    }
+
+    /**
      * Returns an array of responses.
      *
      * After parsing a SOAP message, use this to get the response.
      *
      * @return array
+     */
+    /**
+     * @return SOAP_Fault|SOAP_Value
      */
     function getResponse()
     {
@@ -132,7 +147,7 @@ class SOAP_Parser extends SOAP_Base
      *
      * After parsing a SOAP message, use this to get the response.
      *
-     * @return array
+     * @return null|SOAP_Value
      */
     function getHeaders()
     {
@@ -342,7 +357,7 @@ class SOAP_Parser extends SOAP_Base
             // If ns declarations, add to class level array of valid
             // namespaces.
             $kqn = new QName($key);
-            if ($kqn->ns == 'xmlns') {
+            if ($kqn->prefix == 'xmlns') {
                 $prefix = $kqn->name;
 
                 if (in_array($value, $this->_XMLSchema)) {
@@ -353,7 +368,7 @@ class SOAP_Parser extends SOAP_Base
 
             // Set method namespace.
             } elseif ($key == 'xmlns') {
-                $qname->ns = $this->_getNamespacePrefix($value);
+                $qname->prefix = $this->_getNamespacePrefix($value);
                 $qname->namespace = $value;
             } elseif ($kqn->name == 'actor') {
                 $this->message[$pos]['actor'] = $value;
@@ -364,7 +379,7 @@ class SOAP_Parser extends SOAP_Base
             } elseif ($kqn->name == 'type') {
                 $vqn = new QName($value);
                 $this->message[$pos]['type'] = $vqn->name;
-                $this->message[$pos]['type_namespace'] = $this->_getNamespaceForPrefix($vqn->ns);
+                $this->message[$pos]['type_namespace'] = $this->_getNamespaceForPrefix($vqn->prefix);
 
                 // Should do something here with the namespace of specified
                 // type?
@@ -409,10 +424,10 @@ class SOAP_Parser extends SOAP_Base
             }
         }
         // See if namespace is defined in tag.
-        if (isset($attrs['xmlns:' . $qname->ns])) {
-            $namespace = $attrs['xmlns:' . $qname->ns];
-        } elseif ($qname->ns && !$qname->namespace) {
-            $namespace = $this->_getNamespaceForPrefix($qname->ns);
+        if (isset($attrs['xmlns:' . $qname->prefix])) {
+            $namespace = $attrs['xmlns:' . $qname->prefix];
+        } elseif ($qname->prefix && !$qname->namespace) {
+            $namespace = $this->_getNamespaceForPrefix($qname->prefix);
         } else {
             // Get namespace.
             $namespace = $qname->namespace ? $qname->namespace : $this->default_namespace;
