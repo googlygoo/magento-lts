@@ -111,6 +111,10 @@ class SOAP_Value
      */
     var $options = array();
 
+    var $actor;
+
+    var $mustunderstand;
+
     /**
      * Constructor.
      *
@@ -138,9 +142,11 @@ class SOAP_Value
         $this->nqn = new QName($name);
         $this->name = $this->nqn->name;
         $this->namespace = $this->nqn->namespace;
-        $this->tqn = new QName($type);
-        $this->type = $this->tqn->name;
-        $this->type_namespace = $this->tqn->namespace;
+        if ($type) {
+            $this->tqn = new QName($type);
+            $this->type = $this->tqn->name;
+            $this->type_namespace = $this->tqn->namespace;
+        }
         $this->value = $value;
         $this->attributes = $attributes;
         $this->options = $options;

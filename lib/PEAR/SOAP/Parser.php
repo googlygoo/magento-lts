@@ -75,7 +75,7 @@ class SOAP_Parser extends SOAP_Base
         parent::__construct('Parser');
         $this->_setSchemaVersion(SOAP_XML_SCHEMA_VERSION);
 
-        $this->attachments = $attachments;
+        $this->_attachments = $attachments;
 
         // Check the XML tag for encoding.
         if (preg_match('/<\?xml[^>]+encoding\s*?=\s*?(\'([^\']*)\'|"([^"]*)")[^>]*?[\?]>/', $xml, $m)) {
@@ -128,9 +128,6 @@ class SOAP_Parser extends SOAP_Base
      *
      * After parsing a SOAP message, use this to get the response.
      *
-     * @return array
-     */
-    /**
      * @return SOAP_Fault|SOAP_Value
      */
     function getResponse()
@@ -357,7 +354,7 @@ class SOAP_Parser extends SOAP_Base
             // If ns declarations, add to class level array of valid
             // namespaces.
             $kqn = new QName($key);
-            if ($kqn->prefix == 'xmlns') {
+            if ($kqn->ns == 'xmlns') {
                 $prefix = $kqn->name;
 
                 if (in_array($value, $this->_XMLSchema)) {
@@ -368,7 +365,7 @@ class SOAP_Parser extends SOAP_Base
 
             // Set method namespace.
             } elseif ($key == 'xmlns') {
-                $qname->prefix = $this->_getNamespacePrefix($value);
+                $qname->ns = $this->_getNamespacePrefix($value);
                 $qname->namespace = $value;
             } elseif ($kqn->name == 'actor') {
                 $this->message[$pos]['actor'] = $value;
@@ -379,7 +376,7 @@ class SOAP_Parser extends SOAP_Base
             } elseif ($kqn->name == 'type') {
                 $vqn = new QName($value);
                 $this->message[$pos]['type'] = $vqn->name;
-                $this->message[$pos]['type_namespace'] = $this->_getNamespaceForPrefix($vqn->prefix);
+                $this->message[$pos]['type_namespace'] = $this->_getNamespaceForPrefix($vqn->ns);
 
                 // Should do something here with the namespace of specified
                 // type?
@@ -419,15 +416,15 @@ class SOAP_Parser extends SOAP_Base
                         $this->need_references[$ref][] = $pos;
                     }
                 } elseif (isset($this->attachments[$value])) {
-                    $this->message[$pos]['cdata'] = $this->attachments[$value];
+                    $this->message[$pos]['cdata'] = $this->_attachments[$value];
                 }
             }
         }
         // See if namespace is defined in tag.
-        if (isset($attrs['xmlns:' . $qname->prefix])) {
-            $namespace = $attrs['xmlns:' . $qname->prefix];
-        } elseif ($qname->prefix && !$qname->namespace) {
-            $namespace = $this->_getNamespaceForPrefix($qname->prefix);
+        if (isset($attrs['xmlns:' . $qname->ns])) {
+            $namespace = $attrs['xmlns:' . $qname->ns];
+        } elseif ($qname->ns && !$qname->namespace) {
+            $namespace = $this->_getNamespaceForPrefix($qname->ns);
         } else {
             // Get namespace.
             $namespace = $qname->namespace ? $qname->namespace : $this->default_namespace;

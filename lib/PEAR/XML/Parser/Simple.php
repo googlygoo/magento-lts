@@ -5,7 +5,7 @@
 /**
  * XML_Parser
  *
- * XML Parser's Simple parser class
+ * XML Parser's Simple parser class 
  *
  * PHP versions 4 and 5
  *
@@ -43,7 +43,7 @@
  * @author    Stephan Schmidt <schst@php.net>
  * @copyright 2004-2008 Stephan Schmidt <schst@php.net>
  * @license   http://opensource.org/licenses/bsd-license New BSD License
- * @version   CVS: $Id$
+ * @version   CVS: $Id: Simple.php,v 1.7 2008/08/24 21:48:21 ashnazg Exp $
  * @link      http://pear.php.net/package/XML_Parser
  */
 
@@ -72,15 +72,15 @@ require_once 'XML/Parser.php';
  *     {
  *        $this->XML_Parser_Simple();
  *      }
- *
+ * 
  *    function handleElement($name, $attribs, $data)
  *     {
  *         printf('handle %s<br>', $name);
  *     }
  * }
- *
- * $p = new myParser();
- *
+ * 
+ * $p = &new myParser();
+ * 
  * $result = $p->setInputFile('myDoc.xml');
  * $result = $p->parse();
  * </code>
@@ -90,7 +90,7 @@ require_once 'XML/Parser.php';
  * @author    Stephan Schmidt <schst@php.net>
  * @copyright 2004-2008 The PHP Group
  * @license   http://opensource.org/licenses/bsd-license New BSD License
- * @version   Release: 1.3.7
+ * @version   Release: @package_version@
  * @link      http://pear.php.net/package/XML_Parser
  */
 class XML_Parser_Simple extends XML_Parser
@@ -131,7 +131,7 @@ class XML_Parser_Simple extends XML_Parser
         'notation_decl_handler'             => 'notationHandler',
         'external_entity_ref_handler'       => 'entityrefHandler'
     );
-
+    
     /**
      * Creates an XML parser.
      *
@@ -151,27 +151,39 @@ class XML_Parser_Simple extends XML_Parser
     }
 
     /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function XML_Parser_Simple($srcenc = null, $mode = 'event', $tgtenc = null)
+    {
+        self::__construct($srcenc, $mode, $tgtenc);
+    }
+
+    /**
      * inits the handlers
      *
-     * @return mixed
+     * @return bool|XML_Parser_Error
      * @access private
      */
     function _initHandlers()
     {
         if (!is_object($this->_handlerObj)) {
-            $this->_handlerObj = $this;
+            $this->_handlerObj = &$this;
         }
 
         if ($this->mode != 'func' && $this->mode != 'event') {
-            return $this->raiseError('Unsupported mode given',
+            return $this->raiseError('Unsupported mode given', 
                 XML_PARSER_ERROR_UNSUPPORTED_MODE);
         }
         xml_set_object($this->parser, $this->_handlerObj);
 
-        xml_set_element_handler($this->parser, array($this, 'startHandler'),
-            array($this, 'endHandler'));
-        xml_set_character_data_handler($this->parser, array($this, 'cdataHandler'));
-
+        xml_set_element_handler($this->parser, array(&$this, 'startHandler'), 
+            array(&$this, 'endHandler'));
+        xml_set_character_data_handler($this->parser, array(&$this, 'cdataHandler'));
+        
         /**
          * set additional handlers for character data, entities, etc.
          */
@@ -181,6 +193,8 @@ class XML_Parser_Simple extends XML_Parser
                 $xml_func($this->parser, $method);
             }
         }
+
+        return true;
     }
 
     /**
@@ -197,7 +211,7 @@ class XML_Parser_Simple extends XML_Parser
         $this->_elStack = array();
         $this->_data    = array();
         $this->_depth   = 0;
-
+        
         $result = $this->_create();
         if ($this->isError($result)) {
             return $result;
@@ -214,7 +228,7 @@ class XML_Parser_Simple extends XML_Parser
      * @param string   $elem     element name
      * @param array    &$attribs attributes
      *
-     * @return mixed
+     * @return void
      * @access private
      * @final
      */
@@ -236,7 +250,7 @@ class XML_Parser_Simple extends XML_Parser
      * @param resource $xp   xml parser resource
      * @param string   $elem element name
      *
-     * @return mixed
+     * @return void
      * @access private
      * @final
      */
@@ -256,7 +270,7 @@ class XML_Parser_Simple extends XML_Parser
                 $func = str_replace('.', '_', $func);
             }
             if (method_exists($this->_handlerObj, $func)) {
-                call_user_func(array($this->_handlerObj, $func),
+                call_user_func(array(&$this->_handlerObj, $func), 
                     $el['name'], $el['attribs'], $data);
             }
             break;
@@ -281,7 +295,7 @@ class XML_Parser_Simple extends XML_Parser
     /**
      * handle a tag
      *
-     * Implement this in your parser
+     * Implement this in your parser 
      *
      * @param string $name    element name
      * @param array  $attribs attributes

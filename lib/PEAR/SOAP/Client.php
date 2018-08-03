@@ -39,7 +39,7 @@ require_once 'SOAP/Parser.php';
 /**
  * @package SOAP
  */
-if (!class_exists('SOAP_Client_Overload')) {
+if (!class_exists('SOAP_Client_Overload', false)) {
     if (substr(zend_version(), 0, 1) > 1) {
         class SOAP_Client_Overload extends SOAP_Base {
             function __call($method, $args)
@@ -190,17 +190,28 @@ class SOAP_Client extends SOAP_Client_Overload
     var $_soap_transport = null;
 
     /**
+     * @var null|string
+     *
+     */
+    var $__result_encoding = null;
+
+    /**
+     * @var null|bool
+     */
+    var $docparams = null;
+
+    /**
      * Constructor.
      *
      * @access public
      *
-     * @param string    $endpoint     An URL.
-     * @param bool      $wsdl         Whether the endpoint is a WSDL file.
-     * @param bool|bool $portName     The service's port name to use.
-     * @param array     $proxy_params Options for the HTTP_Request class
-     *                                @see HTTP_Request
-     * @param bool $cache             Use WSDL caching? The cache directory if
-     *                                a string.
+     * @param string $endpoint       An URL.
+     * @param boolean $wsdl          Whether the endpoint is a WSDL file.
+     * @param string $portName       The service's port name to use.
+     * @param array $proxy_params    Options for the HTTP_Request class
+     *                               @see HTTP_Request
+     * @param boolean|string $cache  Use WSDL caching? The cache directory if
+     *                               a string.
      */
     function __construct($endpoint, $wsdl = false, $portName = false,
                          $proxy_params = array(), $cache = false)
@@ -261,13 +272,13 @@ class SOAP_Client extends SOAP_Client_Overload
      *
      * @param string encoding
      *
-     * @return mixed  SOAP_Fault on error.
+     * @return SOAP_Fault|bool
      */
     function setEncoding($encoding)
     {
         if (in_array($encoding, $this->_encodings)) {
             $this->_encoding = $encoding;
-            return;
+            return true;
         }
         return $this->_raiseSoapFault('Invalid Encoding');
     }
@@ -584,7 +595,7 @@ class SOAP_Client extends SOAP_Client_Overload
             if (PEAR::isError($opData)) {
                 return $this->_raiseSoapFault($opData);
             }
-            $namespace                    = $opData['namespace'];
+            $namespace                    = isset($opData['namespace'])?$opData['namespace']:'';
             $this->_options['style']      = $opData['style'];
             $this->_options['use']        = $opData['input']['use'];
             $this->_options['soapaction'] = $opData['soapAction'];
@@ -613,12 +624,12 @@ class SOAP_Client extends SOAP_Client_Overload
                             return $this->_raiseSoapFault("The named parameter $name is not in the call parameters.");
                         }
                         if (gettype($nparams[$name]) != 'object' ||
-                            !is_a($nparams[$name], 'SOAP_Value')) {
+                            !$nparams[$name] instanceof SOAP_Value) {
                             // Type is likely a qname, split it apart, and get
                             // the type namespace from WSDL.
                             $qname = new QName($part['type']);
-                            if ($qname->prefix) {
-                                $type_namespace = $this->_wsdl->namespaces[$qname->prefix];
+                            if ($qname->ns) {
+                                $type_namespace = $this->_wsdl->namespaces[$qname->ns];
                             } elseif (isset($part['namespace'])) {
                                 $type_namespace = $this->_wsdl->namespaces[$part['namespace']];
                             } else {
@@ -740,6 +751,8 @@ class SOAP_Client extends SOAP_Client_Overload
      * @param string $response    XML content of SOAP response.
      * @param string $encoding    Character set encoding, defaults to 'UTF-8'.
      * @param array $attachments  List of attachments.
+     *
+     * @return array|SOAP_Fault
      */
     function parseResponse($response, $encoding, $attachments)
     {
@@ -767,7 +780,7 @@ class SOAP_Client extends SOAP_Client_Overload
      * @param SOAP_Value $response  Value object.
      * @param boolean $shift
      *
-     * @return array
+     * @return array|SOAP_Fault
      */
     function _decodeResponse($response, $shift = true)
     {
@@ -780,7 +793,7 @@ class SOAP_Client extends SOAP_Client_Overload
         if (PEAR::isError($response)) {
             $fault = $this->_raiseSoapFault($response);
             return $fault;
-        } elseif (!is_a($response, 'soap_value')) {
+        } elseif (!$response instanceof SOAP_Value) {
             $fault = $this->_raiseSoapFault("Didn't get SOAP_Value object back from client");
             return $fault;
         }

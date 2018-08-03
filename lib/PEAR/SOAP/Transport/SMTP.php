@@ -50,6 +50,9 @@ class SOAP_Transport_SMTP extends SOAP_Transport
     var $host = '127.0.0.1';
     var $port = 25;
     var $auth = null;
+    var $username = null;
+    var $password = null;
+    var $headers = array();
 
     /**
      * SOAP_Transport_SMTP Constructor

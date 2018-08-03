@@ -36,8 +36,8 @@ if (!defined('NAN')) {
     define('NAN', 0.0);
 }
 
-define('SOAP_LIBRARY_VERSION', '@version@');
-define('SOAP_LIBRARY_NAME',    'PEAR-SOAP @version@-beta');
+define('SOAP_LIBRARY_VERSION', '0.12.0');
+define('SOAP_LIBRARY_NAME',    'PEAR-SOAP 0.12.0-beta');
 
 // Set schema version.
 define('SOAP_XML_SCHEMA_VERSION',  'http://www.w3.org/2001/XMLSchema');
@@ -67,6 +67,7 @@ define('SOAP_DEFAULT_ENCODING',  'UTF-8');
  */
 class SOAP_Base_Object extends PEAR
 {
+
     /**
      * Supported encodings, limited by XML extension.
      *
@@ -84,7 +85,7 @@ class SOAP_Base_Object extends PEAR
     /**
      * Recent PEAR_Error object.
      *
-     * @var PEAR_Error $fault
+     * @var null|PEAR_Error|SOAP_Fault
      */
     var $fault = null;
 
@@ -116,13 +117,13 @@ class SOAP_Base_Object extends PEAR
      * Please refer to the SOAP definition for an impression of what a certain
      * parameter stands for.
      *
-     * @param string|SOAP_Fault $str      Error message or object.
-     * @param string            $detail   Detailed error message.
-     * @param string            $actorURI
-     * @param mixed             $code
-     * @param mixed             $mode
-     * @param mixed             $options
-     * @param boolean           $skipmsg
+     * @param string|object $str         Error message or object.
+     * @param string        $detail      Detailed error message.
+     * @param string        $actorURI
+     * @param mixed         $code
+     * @param mixed         $mode
+     * @param mixed         $options
+     * @param boolean       $skipmsg
      *
      * @return SOAP_Fault
      */
@@ -130,7 +131,7 @@ class SOAP_Base_Object extends PEAR
                               $mode = null, $options = null, $skipmsg = false)
     {
         // Pass through previous faults.
-        $is_instance = isset($this) && is_a($this, 'SOAP_Base_Object');
+        $is_instance = isset($this) && $this instanceof SOAP_Base_Object;
         if (is_object($str)) {
             $fault = $str;
         } else {
@@ -153,6 +154,9 @@ class SOAP_Base_Object extends PEAR
         return $this->fault != null;
     }
 
+    /**
+     * @return PEAR_Error|SOAP_Fault
+     */
     function &_getfault()
     {
         return $this->fault;
@@ -369,11 +373,12 @@ class SOAP_Base extends SOAP_Base_Object
 
     /**
      * Sets the schema version used in the SOAP message.
-     *
-     * @access private
      * @see $_XMLSchema
      *
      * @param string $schemaVersion  The schema version.
+     *
+     * @access protected
+     * @return SOAP_Fault|bool
      */
     function _setSchemaVersion($schemaVersion)
     {
@@ -385,6 +390,8 @@ class SOAP_Base extends SOAP_Base_Object
         $tmpNS['xsd'] = $this->_XMLSchemaVersion;
         $tmpNS['xsi'] = $this->_XMLSchemaVersion . '-instance';
         $this->_namespaces = array_flip($tmpNS);
+
+        return true;
     }
 
     function _getNamespacePrefix($ns)
@@ -421,6 +428,8 @@ class SOAP_Base extends SOAP_Base_Object
      * @param array $options     A list of encoding and serialization options.
      * @param array $attributes  A hash of additional attributes.
      * @param string $artype     The type of any array elements.
+     *
+     * @return null|string
      */
     function _serializeValue($value, $name = null, $type = null,
                              $options = array(), $attributes = array(),
@@ -468,7 +477,7 @@ class SOAP_Base extends SOAP_Base_Object
                             // XXX get the members and serialize them instead
                             // converting to an array is more overhead than we
                             // should really do.
-                            $xmlout_value .= $this->_serializeValue(get_object_vars($vars[$k]), new QName($k, $this->_section5 ? null : $name->namepace), null, $options);
+                            $xmlout_value .= $this->_serializeValue(get_object_vars($vars[$k]), new QName($k, $this->_section5 ? null : $name->namespace), null, $options);
                         }
                     } else {
                         $xmlout_value .= $this->_serializeValue($vars[$k], new QName($k, $this->_section5 ? null : $name->namespace), false, $options);
@@ -560,7 +569,7 @@ class SOAP_Base extends SOAP_Base_Object
                 }
             }
             $xmlout_arrayType .= "[$ar_size]\"";
-        } elseif (is_a($value, 'SOAP_Value')) {
+        } elseif ($value instanceof SOAP_Value) {
             $xmlout_value = $value->serialize($this);
         } elseif ($type->name == 'string') {
             $xmlout_value = htmlspecialchars($value);
@@ -711,14 +720,6 @@ class SOAP_Base extends SOAP_Base_Object
         return $type;
     }
 
-    /**
-     * @param array|object $value
-     * @param string       $type
-     * @param string       $size
-     * @param string       $xml
-     *
-     * @return int
-     */
     function _multiArrayType($value, &$type, &$size, &$xml)
     {
         if (is_array($value)) {
@@ -736,6 +737,7 @@ class SOAP_Base extends SOAP_Base_Object
             }
             return 1;
         } elseif (is_object($value)) {
+            /** @var object $value */
             $type = $value->type;
             $xml .= $value->serialize($this);
         } else {
@@ -789,7 +791,7 @@ class SOAP_Base extends SOAP_Base_Object
      */
     function _decode($soapval)
     {
-        if (!is_a($soapval, 'SOAP_Value')) {
+        if (!$soapval instanceof SOAP_Value) {
             return $soapval;
         }
 
@@ -824,7 +826,7 @@ class SOAP_Base extends SOAP_Base_Object
                 if ($isstruct) {
                     if ($this->_wsdl) {
                         // Get this child's WSDL information.
-                        // /$soapval->prefix/$soapval->type/$item->prefix/$item->name
+                        // /$soapval->ns/$soapval->type/$item->ns/$item->name
                         $child_type = $this->_wsdl->getComplexTypeChildType(
                             $soapval->namespace,
                             $soapval->name,
@@ -852,16 +854,13 @@ class SOAP_Base extends SOAP_Base_Object
                             $return->{$item->name} = $this->_decode($item);
                         }
                     } elseif (isset($return->{$item->name})) {
+                        /** @var object $return */
                         $d = $this->_decode($item);
                         if (count(get_object_vars($return)) == 1) {
                             $isstruct = false;
                             $return = array($return->{$item->name}, $d);
                         } else {
-                            if (is_array($return->{$item->name})) {
-                                $return->{$item->name} = array_merge($return->{$item->name}, array($d));
-                            } else {
-                                $return->{$item->name} = array($return->{$item->name}, $d);
-                            }
+                            $return->{$item->name} = array($return->{$item->name}, $d);
                         }
                     } else {
                         $return->{$item->name} = $this->_decode($item);
@@ -976,6 +975,12 @@ class SOAP_Base extends SOAP_Base_Object
         return $xml;
     }
 
+    /**
+     * @param string $xml
+     * @param string $encoding
+     *
+     * @return array|SOAP_Fault
+     */
     function _makeMimeMessage($xml, $encoding = SOAP_DEFAULT_ENCODING)
     {
         if (!@include_once 'Mail/mimePart.php') {
@@ -1027,6 +1032,14 @@ class SOAP_Base extends SOAP_Base_Object
         return $msg;
     }
 
+    /**
+     * @param string $data
+     * @param $headers
+     * @param $attachments
+     *
+     * @access protected
+     * @return SOAP_Fault|bool
+     */
     function _decodeMimeMessage(&$data, &$headers, &$attachments)
     {
         if (!@include_once 'Mail/mimeDecode.php') {
@@ -1044,15 +1057,14 @@ class SOAP_Base extends SOAP_Base_Object
         if (isset($structure->body)) {
             $data = $structure->body;
             $headers = $structure->headers;
-            unset($headers['']);
-            return;
+
+            return true;
         } elseif (isset($structure->parts)) {
             $data = $structure->parts[0]->body;
             $headers = array_merge($structure->headers,
                                    $structure->parts[0]->headers);
-            unset($headers['']);
             if (count($structure->parts) <= 1) {
-                return;
+                return true;
             }
 
             $mime_parts = array_splice($structure->parts, 1);
@@ -1069,12 +1081,20 @@ class SOAP_Base extends SOAP_Base_Object
                 }
             }
 
-            return;
+            return true;
         }
 
-        $this->_raiseSoapFault('Mime parsing error', '', '', 'Server');
+        return $this->_raiseSoapFault('Mime parsing error', '', '', 'Server');
     }
 
+    /**
+     * @param string $data
+     * @param $headers
+     * @param $attachments
+     *
+     * @access protected
+     * @return bool|SOAP_Fault
+     */
     function _decodeDIMEMessage(&$data, &$headers, &$attachments)
     {
         if (!@include_once 'Net/DIME.php') {
@@ -1087,11 +1107,11 @@ class SOAP_Base extends SOAP_Base_Object
         $err = $dime->decodeData($data);
         if (PEAR::isError($err)) {
             $this->_raiseSoapFault('Failed to decode the DIME message!', '', '', 'Server');
-            return;
+            return true;
         }
         if (strcasecmp($dime->parts[0]['type'], SOAP_ENVELOP) != 0) {
             $this->_raiseSoapFault('DIME record 1 is not a SOAP envelop!', '', '', 'Server');
-            return;
+            return true;
         }
 
         $data = $dime->parts[0]['data'];
@@ -1106,6 +1126,8 @@ class SOAP_Base extends SOAP_Base_Object
                 : $part['id'];
             $attachments[$id] = $part['data'];
         }
+
+        return true;
     }
 
     /**
@@ -1137,8 +1159,10 @@ class SOAP_Base extends SOAP_Base_Object
 class QName
 {
     var $name = '';
-    var $prefix = '';
+    var $ns = '';
     var $namespace = '';
+    var $arraySize = null;
+    var $arrayInfo = null;
 
     /**
      * QName constructor.
@@ -1154,8 +1178,9 @@ class QName
             $this->namespace = $m[1];
         } elseif (substr_count($name, ':') == 1) {
             $s = explode(':', $name);
-            $this->prefix = $s[0];
-            $this->name = $s[1];
+            $s = array_reverse($s);
+            $this->name = $s[0];
+            $this->ns = $s[1];
             $this->namespace = $namespace;
         } else {
             $this->name = $name;
@@ -1188,8 +1213,8 @@ class QName
     {
         if ($this->namespace) {
             return '{' . $this->namespace . '}' . $this->name;
-        } elseif ($this->prefix) {
-            return $this->prefix . ':' . $this->name;
+        } elseif ($this->ns) {
+            return $this->ns . ':' . $this->name;
         }
         return $this->name;
     }

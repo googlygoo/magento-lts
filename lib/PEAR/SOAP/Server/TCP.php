@@ -96,7 +96,7 @@ class SOAP_Server_TCP extends SOAP_Server {
      * @param bool   $test      Ignored, PHP 7.2 method signature compatibility
      * @param bool   $return    Ignored, PHP 7.2 method signature compatibility
      *
-     * @return An|null|object|SOAP_Fault|string
+     * @return null|string|SOAP_Fault
      */
     function service(&$data, $endpoint = '', $test = false, $return = false)
     {

@@ -42,6 +42,8 @@ class SOAP_Server_Email extends SOAP_Server {
 
     var $headers = array();
 
+    var $send_response = true;
+
     /**
      * SOAP_Server_Email constructor.
      *
@@ -122,22 +124,30 @@ class SOAP_Server_Email extends SOAP_Server {
 
         /* Get the character encoding of the incoming request treat incoming
          * data as UTF-8 if no encoding set. */
-        if (!$this->soapfault &&
+        if (!$this->fault &&
             !$this->_getContentEncoding($this->headers['content-type'])) {
             $this->xml_encoding = SOAP_DEFAULT_ENCODING;
             /* An encoding we don't understand, return a fault. */
             $this->_raiseSoapFault('Unsupported encoding, use one of ISO-8859-1, US-ASCII, UTF-8', '', '', 'Server');
         }
 
-        if ($this->soapfault) {
-            return $this->soapfault->getFault();
+        if ($this->fault) {
+            return $this->fault->getFault();
         }
 
         $client = new SOAP_Client(null);
 
-        return $client->parseResponse($data, $this->xml_encoding, $this->attachments);
+        return $client->parseResponse($data, $this->xml_encoding, $this->_attachments);
     }
 
+    /**
+     * @param string $data
+     * @param string $endpoint
+     * @param bool   $test
+     * @param bool   $return
+     *
+     * @return null|string|SOAP_Fault
+     */
     function service(&$data, $endpoint = '', $test = true, $return = false)
     {
         $this->endpoint = $endpoint;
@@ -163,11 +173,10 @@ class SOAP_Server_Email extends SOAP_Server {
             $this->xml_encoding = SOAP_DEFAULT_ENCODING;
             /* An encoding we don't understand, return a fault. */
             $this->_raiseSoapFault('Unsupported encoding, use one of ISO-8859-1, US-ASCII, UTF-8', '', '', 'Server');
-            $response = $this->getFaultMessage();
         }
 
-        if ($this->soapfault) {
-            $response = $this->soapfault->message();
+        if ($this->fault) {
+            $response = $this->fault->message();
         } else {
             $soap_msg = $this->parseRequest($data,$attachments);
 
@@ -183,7 +192,7 @@ class SOAP_Server_Email extends SOAP_Server {
                     $soap_msg['headers']['Content-Type'] = 'application/dime';
                 }
                 if (PEAR::isError($soap_msg)) {
-                    return $this->raiseSoapFault($soap_msg);
+                    return $this->_raiseSoapFault($soap_msg);
                 }
             }
 
@@ -210,5 +219,7 @@ class SOAP_Server_Email extends SOAP_Server {
                 $soap_transport->send($response, $options);
             }
         }
+
+        return null;
     }
 }

@@ -43,6 +43,9 @@ require_once 'Net/Server/Handler.php';
  */
 class SOAP_Server_TCP_Handler extends Net_Server_Handler {
 
+    /**
+     * @var SOAP_Server_TCP
+     */
     var $_SOAP_Server;
 
     function setSOAPServer(&$server)

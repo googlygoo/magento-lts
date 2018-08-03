@@ -3,7 +3,7 @@
  * Listener for HTTP_Request and HTTP_Response objects
  *
  * PHP versions 4 and 5
- * 
+ *
  * LICENSE:
  *
  * Copyright (c) 2002-2007, Richard Heyes
@@ -40,7 +40,7 @@
  * @copyright   2002-2007 Richard Heyes
  * @license     http://opensource.org/licenses/bsd-license.php New BSD License
  * @version     CVS: $Id: Listener.php,v 1.3 2007/05/18 10:33:31 avb Exp $
- * @link        http://pear.php.net/package/HTTP_Request/ 
+ * @link        http://pear.php.net/package/HTTP_Request/
  */
 
 /**
@@ -54,19 +54,20 @@
  * @author      Alexey Borzov <avb@php.net>
  * @version     Release: 1.4.4
  */
-class HTTP_Request_Listener 
+class HTTP_Request_Listener
 {
-   /**
-    * A listener's identifier
-    * @var string
-    */
+    /**
+     * A listener's identifier
+     *
+     * @var string
+     */
     var $_id;
 
-   /**
-    * Constructor, sets the object's identifier
-    *
-    * @access public
-    */
+    /**
+     * Constructor, sets the object's identifier
+     *
+     * @access public
+     */
     function __construct()
     {
         $this->_id = md5(uniqid('http_request_', 1));
@@ -74,6 +75,7 @@ class HTTP_Request_Listener
 
     /**
      * Only here for backwards compatibility.
+     *
      * @see __construct()
      *
      * @deprecated
@@ -83,27 +85,29 @@ class HTTP_Request_Listener
         self::__construct();
     }
 
-   /**
-    * Returns the listener's identifier
-    *
-    * @access public
-    * @return string
-    */
+    /**
+     * Returns the listener's identifier
+     *
+     * @access public
+     * @return string
+     */
     function getId()
     {
         return $this->_id;
     }
 
 
-   /**
-    * This method is called when Listener is notified of an event
-    *
-    * @access   public
-    * @param    object  an object the listener is attached to
-    * @param    string  Event name
-    * @param    mixed   Additional data
-    * @abstract
-    */
+    /**
+     * This method is called when Listener is notified of an event
+     *
+     * @access   public
+     *
+     * @param    object  an object the listener is attached to
+     * @param    string  Event name
+     * @param    mixed   Additional data
+     *
+     * @abstract
+     */
     function update(&$subject, $event, $data = null)
     {
         echo "Notified of event: '$event'\n";

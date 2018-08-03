@@ -107,7 +107,7 @@ class SOAP_Fault extends PEAR_Error
     /**
      * Returns a simple native PHP array containing the fault data.
      *
-     * @return array
+     * @return stdClass
      */
     function getFault()
     {

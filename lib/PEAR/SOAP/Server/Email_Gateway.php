@@ -71,6 +71,14 @@ class SOAP_Server_Email_Gateway extends SOAP_Server_Email {
         self::__construct($gateway, $send_response, $dump);
     }
 
+    /**
+     * @param string $data
+     * @param string $endpoint
+     * @param bool   $send_response
+     * @param bool   $dump
+     *
+     * @return null|string|SOAP_Fault
+     */
     function service(&$data, $endpoint = '', $send_response = true, $dump = false)
     {
         $this->endpoint = $endpoint;
@@ -151,5 +159,7 @@ class SOAP_Server_Email_Gateway extends SOAP_Server_Email {
                 $soap_transport->send($response, $options);
             }
         }
+
+        return null;
     }
 }

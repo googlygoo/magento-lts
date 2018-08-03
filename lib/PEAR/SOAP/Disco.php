@@ -41,7 +41,10 @@ class SOAP_DISCO_Server extends SOAP_Base_Object {
     var $_service_desc  = '';
     var $_portname      = '';
     var $_bindingname   = '';
+
+    /** @var null|SOAP_Server */
     var $soap_server    = NULL;
+    var $host           = null;
 
 
     function __construct($soap_server, $service_name, $service_desc = '',

@@ -72,6 +72,12 @@ class SOAP_Transport_HTTP extends SOAP_Transport
 
     var $result_cookies = array();
 
+    var $response;
+
+    var $errno;
+
+    var $errmsg;
+
     /**
      * SOAP_Transport_HTTP Constructor
      *
@@ -241,7 +247,7 @@ class SOAP_Transport_HTTP extends SOAP_Transport
      * Sets the object property accordingly.
      *
      * @access private
-     * @param array $headers  Headers.
+     * @param string $headers  Headers.
      */
     function _parseEncoding($headers)
     {
@@ -274,15 +280,15 @@ class SOAP_Transport_HTTP extends SOAP_Transport
     /**
      * Parses the headers.
      *
-     * @param array $headers  The headers.
+     * @param string $headers  The headers.
      */
     function _parseHeaders($headers)
     {
         /* Largely borrowed from HTTP_Request. */
         $this->result_headers = array();
-        $headers = preg_split("/\r?\n/", $headers);
+        $headers = preg_split('/\r?\n/', $headers);
         foreach ($headers as $value) {
-            if (strpos($value, ':') === false) {
+            if (strpos($value,':') === false) {
                 $this->result_headers[0] = $value;
                 continue;
             }
@@ -353,13 +359,13 @@ class SOAP_Transport_HTTP extends SOAP_Transport
         unset($this->result_headers[0]);
 
         switch($code) {
-            // Continue
-            case 100:
+            case 100: // Continue
                 $this->incoming_payload = $match[2];
                 return $this->_parseResponse();
             case 200:
             case 202:
-                if (!strlen(trim($match[2]))) {
+                $this->incoming_payload = trim($match[2]);
+                if (!strlen($this->incoming_payload)) {
                     /* Valid one-way message response. */
                     return true;
                 }
@@ -556,7 +562,7 @@ class SOAP_Transport_HTTP extends SOAP_Transport
         }
 
         $ch = curl_init();
-
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         if (isset($options['proxy_host'])) {
             $port = isset($options['proxy_port']) ? $options['proxy_port'] : 8080;
             curl_setopt($ch, CURLOPT_PROXY,

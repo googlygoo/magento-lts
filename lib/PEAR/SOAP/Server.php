@@ -79,6 +79,16 @@ class SOAP_Server extends SOAP_Base
     var $service = ''; //soapaction header
     var $method_namespace = null;
 
+    var $response;
+
+    var $return_type;
+
+    var $methodname;
+
+    var $_portName;
+
+    var $input_value;
+
     /**
      * Options.
      *
@@ -171,9 +181,11 @@ class SOAP_Server extends SOAP_Base
      * @param string $data      The SOAP request data.
      * @param string $endpoint  The service endpoint. Determined automatically
      *                          if left empty.
-     * @param boolean $test
-     * @param boolean $return   Whether to return the SOAP response data
+     * @param bool   $test
+     * @param bool   $return    Whether to return the SOAP response data
      *                          instead of sending it to the client.
+     *
+     * @return null|string|SOAP_Fault
      */
     function service(&$data, $endpoint = '', $test = false, $return = false)
     {
@@ -219,11 +231,13 @@ class SOAP_Server extends SOAP_Base
 
         /* If this is not a POST with Content-Type text/xml, try to return a
          * WSDL file. */
-        if (!$this->fault && !$test &&
-            ((isset($_SERVER['REQUEST_METHOD']) &&
-              $_SERVER['REQUEST_METHOD'] != 'POST') ||
-             (isset($this->headers['content-type']) &&
-              strncmp($this->headers['content-type'], 'text/xml', 8) != 0))) {
+        if (
+            !$this->fault && !$test &&
+            (
+                (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] != 'POST') ||
+                (isset($this->headers['content-type']) && strncmp($this->headers['content-type'], 'text/xml', 8) != 0)
+            )
+        ) {
             /* This is not possibly a valid SOAP request, try to return a WSDL
              * file. */
             $got = isset($this->headers['content-type']) ? $this->headers['content-type'] : 'Nothing!';
@@ -268,6 +282,8 @@ class SOAP_Server extends SOAP_Base
         }
 
         $this->_sendResponse($response);
+
+        return null;
     }
 
     /**
@@ -391,6 +407,12 @@ class SOAP_Server extends SOAP_Base
         return $return_val;
     }
 
+    /**
+     * @param string     $data
+     * @param null|$data $attachments
+     *
+     * @return null|string
+     */
     function parseRequest($data = '', $attachments = null)
     {
         /* Parse response, get SOAP_Parser object. */
@@ -413,6 +435,7 @@ class SOAP_Server extends SOAP_Base
 
         if ($request_headers) {
             if (!is_a($request_headers, 'SOAP_Value')) {
+                /** @var string $request_headers */
                 $this->_raiseSoapFault('Parser did not return SOAP_Value object: ' . $request_headers, '', '', 'Server');
                 return null;
             }
