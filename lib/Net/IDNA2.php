@@ -2258,8 +2258,8 @@ class Net_IDNA2
      *             on failures; false: loose mode, ideal for "wildlife" applications
      *             by silently ignoring errors and returning the original input instead]
      *
-     * @param mixed  $option Parameter to set (string: single parameter; array of Parameter => Value pairs)
-     * @param string $value  Value to use (if parameter 1 is a string)
+     * @param mixed       $option     Parameter to set (string: single parameter; array of Parameter => Value pairs)
+     * @param string|bool $value|bool Value to use (if parameter 1 is a string)
      *
      * @return boolean       true on success, false otherwise
      * @access public
@@ -2313,8 +2313,8 @@ class Net_IDNA2
     /**
      * Encode a given UTF-8 domain name.
      *
-     * @param string $decoded           Domain name (UTF-8 or UCS-4)
-     * @param string $one_time_encoding Desired input encoding, see {@link set_parameter}
+     * @param string      $decoded           Domain name (UTF-8 or UCS-4)
+     * @param string|bool $one_time_encoding Desired input encoding, see {@link set_parameter}
      *                                  If not given will use default-encoding
      *
      * @return string Encoded Domain name (ACE string)
@@ -2368,7 +2368,6 @@ class Net_IDNA2
                 }
                 // Skip first char
                 if ($k) {
-                    $encoded = '';
                     $encoded = $this->_encode(array_slice($decoded, $last_begin, (($k)-$last_begin)));
                     if ($encoded) {
                         $output .= $encoded;
@@ -2383,7 +2382,6 @@ class Net_IDNA2
         // Catch the rest of the string
         if ($last_begin) {
             $inp_len = sizeof($decoded);
-            $encoded = '';
             $encoded = $this->_encode(array_slice($decoded, $last_begin, (($inp_len)-$last_begin)));
             if ($encoded) {
                 $output .= $encoded;
@@ -2403,10 +2401,10 @@ class Net_IDNA2
     /**
      * Decode a given ACE domain name.
      *
-     * @param string $input             Domain name (ACE string)
-     * @param string $one_time_encoding Desired output encoding, see {@link set_parameter}
+     * @param string      $input             Domain name (ACE string)
+     * @param string|bool $one_time_encoding Desired output encoding, see {@link set_parameter}
      *
-     * @return string                   Decoded Domain name (UTF-8 or UCS-4)
+     * @return string|array                  Decoded Domain name (UTF-8 or UCS-4)
      * @throws Exception
      * @access public
      */
@@ -2500,6 +2498,8 @@ class Net_IDNA2
      */
     private function _unparse_url($parts_arr)
     {
+        $ret_url = '';
+
         if (!empty($parts_arr['scheme'])) {
             $ret_url = $parts_arr['scheme'];
         }
@@ -2527,7 +2527,7 @@ class Net_IDNA2
     /**
      * The actual encoding algorithm.
      *
-     * @param string $decoded Decoded string which should be encoded
+     * @param array $decoded Decoded string which should be encoded
      *
      * @return string         Encoded string
      * @throws Exception
@@ -2572,9 +2572,6 @@ class Net_IDNA2
 
         // How many chars have been consumed
         $codecount = 0;
-
-        // Start with the prefix; copy it to output
-        $encoded = $this->_punycode_prefix;
 
         $encoded = '';
         // Copy all basic code points to output
@@ -2681,12 +2678,12 @@ class Net_IDNA2
         // Find last occurence of the delimiter
         $delim_pos = strrpos($encoded, '-');
 
+        $decoded = array();
+
         if ($delim_pos > self::_byteLength($this->_punycode_prefix)) {
             for ($k = self::_byteLength($this->_punycode_prefix); $k < $delim_pos; ++$k) {
                 $decoded[] = ord($encoded{$k});
             }
-        } else {
-            $decoded = array();
         }
 
         $deco_len = count($decoded);
@@ -2759,7 +2756,7 @@ class Net_IDNA2
      *
      * @param int $d One digit to encode
      *
-     * @return char  Encoded digit
+     * @return string  Encoded digit
      * @access private
      */
     private function _encodeDigit($d)
@@ -2770,7 +2767,7 @@ class Net_IDNA2
     /**
      * Decode a certain digit.
      *
-     * @param char $cp One digit (character) to decode
+     * @param string $cp One digit (character) to decode
      *
      * @return int     Decoded digit
      * @access private
@@ -2786,7 +2783,7 @@ class Net_IDNA2
      *
      * @param array $input Unicode Characters
      *
-     * @return string      Unicode Characters, Nameprep'd
+     * @return string[]    Unicode Characters, Nameprep'd
      * @throws Exception
      * @access private
      */
@@ -3036,7 +3033,7 @@ class Net_IDNA2
      *
      * @param array $input UCS4 Decomposed sequence
      *
-     * @return array       Ordered USC4 sequence
+     * @return array|string|bool   Ordered USC4 sequence
      * @access private
      */
     private function _combine($input)
@@ -3108,9 +3105,12 @@ class Net_IDNA2
     {
         $output = array();
         $out_len = 0;
-        $inp_len = self::_byteLength($input, '8bit');
+        $inp_len = self::_byteLength($input);
         $mode = 'next';
         $test = 'none';
+        $start_byte = '';
+        $next_byte = 0;
+
         for ($k = 0; $k < $inp_len; ++$k) {
             $v = ord($input{$k}); // Extract byte from input string
 
@@ -3398,5 +3398,3 @@ class Net_IDNA2
     }
     // }}}
 }
-
-?>
