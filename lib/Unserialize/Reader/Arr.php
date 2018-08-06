@@ -121,5 +121,7 @@ class Unserialize_Reader_Arr
                 return $this->_result;
             }
         }
+
+        return null;
     }
 }
