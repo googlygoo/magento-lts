@@ -101,7 +101,7 @@ define('MATH_BIGINTEGER_NONE', 4);
 /**#@-*/
 
 /**#@+
- * Array constants
+ * array constants
  *
  * Rather than create a thousands and thousands of new Math_BigInteger objects in repeated function calls to add() and
  * multiply() or whatever, we'll just work directly on arrays, taking them in as parameters and returning them.
@@ -191,7 +191,7 @@ class Math_BigInteger {
     /**
      * Holds the BigInteger's value.
      *
-     * @var Array
+     * @var array
      * @access private
      */
     var $value;
@@ -259,12 +259,10 @@ class Math_BigInteger {
      * ?>
      * </code>
      *
-     * @param optional $x base-10 number or base-$base number if $base set.
-     * @param optional integer $base
-     * @return Math_BigInteger
-     * @access public
+     * @param int $x    optional base-10 number or base-$base number if $base set.
+     * @param int $base optional integer
      */
-    function Math_BigInteger($x = 0, $base = 10)
+    function __construct($x = 0, $base = 10)
     {
         if ( !defined('MATH_BIGINTEGER_MODE') ) {
             switch (true) {
@@ -444,6 +442,18 @@ class Math_BigInteger {
             default:
                 // base not supported, so we'll let $this == 0
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Math_BigInteger($x = 0, $base = 10)
+    {
+        self::__construct($x, $base);
     }
 
     /**
@@ -804,11 +814,11 @@ class Math_BigInteger {
     /**
      * Performs addition.
      *
-     * @param Array $x_value
+     * @param array $x_value
      * @param Boolean $x_negative
-     * @param Array $y_value
+     * @param array $y_value
      * @param Boolean $y_negative
-     * @return Array
+     * @return array
      * @access private
      */
     function _add($x_value, $x_negative, $y_value, $y_negative)
@@ -935,11 +945,11 @@ class Math_BigInteger {
     /**
      * Performs subtraction.
      *
-     * @param Array $x_value
+     * @param array $x_value
      * @param Boolean $x_negative
-     * @param Array $y_value
+     * @param array $y_value
      * @param Boolean $y_negative
-     * @return Array
+     * @return array
      * @access private
      */
     function _subtract($x_value, $x_negative, $y_value, $y_negative)
@@ -1070,11 +1080,11 @@ class Math_BigInteger {
     /**
      * Performs multiplication.
      *
-     * @param Array $x_value
+     * @param array $x_value
      * @param Boolean $x_negative
-     * @param Array $y_value
+     * @param array $y_value
      * @param Boolean $y_negative
-     * @return Array
+     * @return array
      * @access private
      */
     function _multiply($x_value, $x_negative, $y_value, $y_negative)
@@ -1109,9 +1119,9 @@ class Math_BigInteger {
      *
      * Modeled after 'multiply' in MutableBigInteger.java.
      *
-     * @param Array $x_value
-     * @param Array $y_value
-     * @return Array
+     * @param array $x_value
+     * @param array $y_value
+     * @return array
      * @access private
      */
     function _regularMultiply($x_value, $y_value)
@@ -1173,9 +1183,9 @@ class Math_BigInteger {
      * See {@link http://en.wikipedia.org/wiki/Karatsuba_algorithm Karatsuba algorithm} and
      * {@link http://math.libtomcrypt.com/files/tommath.pdf#page=120 MPM 5.2.3}.
      *
-     * @param Array $x_value
-     * @param Array $y_value
-     * @return Array
+     * @param array $x_value
+     * @param array $y_value
+     * @return array
      * @access private
      */
     function _karatsuba($x_value, $y_value)
@@ -1212,8 +1222,8 @@ class Math_BigInteger {
     /**
      * Performs squaring
      *
-     * @param Array $x
-     * @return Array
+     * @param array $x
+     * @return array
      * @access private
      */
     function _square($x = false)
@@ -1230,8 +1240,8 @@ class Math_BigInteger {
      * {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=7 HAC 14.2.4} /
      * {@link http://math.libtomcrypt.com/files/tommath.pdf#page=141 MPM 5.3} for more information.
      *
-     * @param Array $value
-     * @return Array
+     * @param array $value
+     * @return array
      * @access private
      */
     function _baseSquare($value)
@@ -1269,8 +1279,8 @@ class Math_BigInteger {
      * See {@link http://en.wikipedia.org/wiki/Karatsuba_algorithm Karatsuba algorithm} and
      * {@link http://math.libtomcrypt.com/files/tommath.pdf#page=151 MPM 5.3.4}.
      *
-     * @param Array $value
-     * @return Array
+     * @param array $value
+     * @return array
      * @access private
      */
     function _karatsubaSquare($value)
@@ -1326,7 +1336,7 @@ class Math_BigInteger {
      * </code>
      *
      * @param Math_BigInteger $y
-     * @return Array
+     * @return array
      * @access public
      * @internal This function is based off of {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=9 HAC 14.20}.
      */
@@ -1507,9 +1517,9 @@ class Math_BigInteger {
      *
      * abc / x = a00 / x + b0 / x + c / x
      *
-     * @param Array $dividend
-     * @param Array $divisor
-     * @return Array
+     * @param array $dividend
+     * @param array $divisor
+     * @return array
      * @access private
      */
     function _divide_digit($dividend, $divisor)
@@ -1615,46 +1625,6 @@ class Math_BigInteger {
         }
 
         return $this->_normalize($this->_slidingWindow($e, $n, MATH_BIGINTEGER_BARRETT));
-
-        // is the modulo odd?
-        if ( $n->value[0] & 1 ) {
-            return $this->_normalize($this->_slidingWindow($e, $n, MATH_BIGINTEGER_MONTGOMERY));
-        }
-        // if it's not, it's even
-
-        // find the lowest set bit (eg. the max pow of 2 that divides $n)
-        for ($i = 0; $i < count($n->value); ++$i) {
-            if ( $n->value[$i] ) {
-                $temp = decbin($n->value[$i]);
-                $j = strlen($temp) - strrpos($temp, '1') - 1;
-                $j+= 26 * $i;
-                break;
-            }
-        }
-        // at this point, 2^$j * $n/(2^$j) == $n
-
-        $mod1 = $n->copy();
-        $mod1->_rshift($j);
-        $mod2 = new Math_BigInteger();
-        $mod2->value = array(1);
-        $mod2->_lshift($j);
-
-        $part1 = ( $mod1->value != array(1) ) ? $this->_slidingWindow($e, $mod1, MATH_BIGINTEGER_MONTGOMERY) : new Math_BigInteger();
-        $part2 = $this->_slidingWindow($e, $mod2, MATH_BIGINTEGER_POWEROF2);
-
-        $y1 = $mod2->modInverse($mod1);
-        $y2 = $mod1->modInverse($mod2);
-
-        $result = $part1->multiply($mod2);
-        $result = $result->multiply($y1);
-
-        $temp = $part2->multiply($mod1);
-        $temp = $temp->multiply($y2);
-
-        $result = $result->add($temp);
-        list(, $result) = $result->divide($n);
-
-        return $this->_normalize($result);
     }
 
     /**
@@ -1756,10 +1726,11 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
-     * @param Integer $mode
-     * @return Array
+     * @param array $x
+     * @param array $n
+     * @param int   $mode
+     *
+     * @return array
      */
     function _reduce($x, $n, $mode)
     {
@@ -1786,6 +1757,7 @@ class Math_BigInteger {
             default:
                 // an invalid $mode was provided
         }
+        return array();
     }
 
     /**
@@ -1793,10 +1765,10 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
+     * @param array $x
+     * @param array $n
      * @param Integer $mode
-     * @return Array
+     * @return array
      */
     function _prepareReduce($x, $n, $mode)
     {
@@ -1811,11 +1783,11 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $y
-     * @param Array $n
+     * @param array $x
+     * @param array $y
+     * @param array $n
      * @param Integer $mode
-     * @return Array
+     * @return array
      */
     function _multiplyReduce($x, $y, $n, $mode)
     {
@@ -1831,10 +1803,10 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
+     * @param array $x
+     * @param array $n
      * @param Integer $mode
-     * @return Array
+     * @return array
      */
     function _squareReduce($x, $n, $mode)
     {
@@ -1882,9 +1854,9 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $n
-     * @param Array $m
-     * @return Array
+     * @param array $n
+     * @param array $m
+     * @return array
      */
     function _barrett($n, $m)
     {
@@ -1979,9 +1951,9 @@ class Math_BigInteger {
      *
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
-     * @return Array
+     * @param array $x
+     * @param array $n
+     * @return array
      */
     function _regularBarrett($x, $n)
     {
@@ -2049,11 +2021,11 @@ class Math_BigInteger {
      * If you're going to be doing array_slice($product->value, 0, $stop), some cycles can be saved.
      *
      * @see _regularBarrett()
-     * @param Array $x_value
+     * @param array $x_value
      * @param Boolean $x_negative
-     * @param Array $y_value
+     * @param array $y_value
      * @param Boolean $y_negative
-     * @return Array
+     * @return array
      * @access private
      */
     function _multiplyLower($x_value, $x_negative, $y_value, $y_negative, $stop)
@@ -2131,9 +2103,9 @@ class Math_BigInteger {
      * @see _prepMontgomery()
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
-     * @return Array
+     * @param array $x
+     * @param array $n
+     * @return array
      */
     function _montgomery($x, $n)
     {
@@ -2176,47 +2148,17 @@ class Math_BigInteger {
      * {@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=13 HAC 14.36}
      *
      * @see _prepMontgomery()
-     * @see _montgomery()
+     * @param array $x
+     * @param array $y
+     * @param array $m
+     *
+     * @return array
      * @access private
-     * @param Array $x
-     * @param Array $y
-     * @param Array $m
-     * @return Array
      */
     function _montgomeryMultiply($x, $y, $m)
     {
         $temp = $this->_multiply($x, false, $y, false);
         return $this->_montgomery($temp[MATH_BIGINTEGER_VALUE], $m);
-
-        static $cache = array(
-            MATH_BIGINTEGER_VARIABLE => array(),
-            MATH_BIGINTEGER_DATA => array()
-        );
-
-        if ( ($key = array_search($m, $cache[MATH_BIGINTEGER_VARIABLE])) === false ) {
-            $key = count($cache[MATH_BIGINTEGER_VARIABLE]);
-            $cache[MATH_BIGINTEGER_VARIABLE][] = $m;
-            $cache[MATH_BIGINTEGER_DATA][] = $this->_modInverse67108864($m);
-        }
-
-        $n = max(count($x), count($y), count($m));
-        $x = array_pad($x, $n, 0);
-        $y = array_pad($y, $n, 0);
-        $m = array_pad($m, $n, 0);
-        $a = array(MATH_BIGINTEGER_VALUE => $this->_array_repeat(0, $n + 1));
-        for ($i = 0; $i < $n; ++$i) {
-            $temp = $a[MATH_BIGINTEGER_VALUE][0] + $x[$i] * $y[0];
-            $temp = (int) ($temp - 0x4000000 * ((int) ($temp / 0x4000000)));
-            $temp = $temp * $cache[MATH_BIGINTEGER_DATA][$key];
-            $temp = (int) ($temp - 0x4000000 * ((int) ($temp / 0x4000000)));
-            $temp = $this->_add($this->_regularMultiply(array($x[$i]), $y), false, $this->_regularMultiply(array($temp), $m), false);
-            $a = $this->_add($a[MATH_BIGINTEGER_VALUE], false, $temp[MATH_BIGINTEGER_VALUE], false);
-            $a[MATH_BIGINTEGER_VALUE] = array_slice($a[MATH_BIGINTEGER_VALUE], 1);
-        }
-        if ($this->_compare($a[MATH_BIGINTEGER_VALUE], false, $m, false) >= 0) {
-            $a = $this->_subtract($a[MATH_BIGINTEGER_VALUE], false, $m, false);
-        }
-        return $a[MATH_BIGINTEGER_VALUE];
     }
 
     /**
@@ -2225,9 +2167,9 @@ class Math_BigInteger {
      * @see _montgomery()
      * @see _slidingWindow()
      * @access private
-     * @param Array $x
-     * @param Array $n
-     * @return Array
+     * @param array $x
+     * @param array $n
+     * @return array
      */
     function _prepMontgomery($x, $n)
     {
@@ -2263,7 +2205,7 @@ class Math_BigInteger {
      *
      * @see _montgomery()
      * @access private
-     * @param Array $x
+     * @param array $x
      * @return Integer
      */
     function _modInverse67108864($x) // 2**26 == 67108864
@@ -2566,9 +2508,9 @@ class Math_BigInteger {
     /**
      * Compares two numbers.
      *
-     * @param Array $x_value
+     * @param array $x_value
      * @param Boolean $x_negative
-     * @param Array $y_value
+     * @param array $y_value
      * @param Boolean $y_negative
      * @return Integer
      * @see compare()
@@ -2627,7 +2569,6 @@ class Math_BigInteger {
      *
      * @param Math_BigInteger $x
      * @access public
-     * @return Math_BigInteger
      */
     function setPrecision($bits)
     {
@@ -3115,6 +3056,8 @@ class Math_BigInteger {
                 return false;
             }
         }
+
+        return false;
     }
 
     /**
@@ -3433,11 +3376,11 @@ class Math_BigInteger {
     }
 
     /**
-     * Array Repeat
+     * array Repeat
      *
-     * @param $input Array
+     * @param $input array
      * @param $multiplier mixed
-     * @return Array
+     * @return array
      * @access private
      */
     function _array_repeat($input, $multiplier)
@@ -3452,7 +3395,7 @@ class Math_BigInteger {
      *
      * @param $x String
      * @param $shift Integer
-     * @return String
+     * @return void
      * @access private
      */
     function _base256_lshift(&$x, $shift)

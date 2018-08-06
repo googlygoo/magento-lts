@@ -382,14 +382,14 @@ class Net_SSH1 {
      *
      * Connects to an SSHv1 server
      *
-     * @param String $host
-     * @param optional Integer $port
-     * @param optional Integer $timeout
-     * @param optional Integer $cipher
-     * @return Net_SSH1
+     * @param string $host
+     * @param int    $port    optional
+     * @param int    $timeout optional
+     * @param int    $cipher  optional
+
      * @access public
      */
-    function Net_SSH1($host, $port = 22, $timeout = 10, $cipher = NET_SSH1_CIPHER_3DES)
+    function __construct($host, $port = 22, $timeout = 10, $cipher = NET_SSH1_CIPHER_3DES)
     {
         $this->fsock = @fsockopen($host, $port, $errno, $errstr, $timeout);
         if (!$this->fsock) {
@@ -534,6 +534,18 @@ class Net_SSH1 {
         }
 
         $this->bitmap = NET_SSH1_MASK_CONSTRUCTOR;
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Net_SSH1($host, $port = 22, $timeout = 10, $cipher = NET_SSH1_CIPHER_3DES)
+    {
+        self::__construct($host, $port, $timeout, $cipher);
     }
 
     /**

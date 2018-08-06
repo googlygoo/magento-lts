@@ -164,11 +164,9 @@ class Crypt_RC4 {
      *
      * Determines whether or not the mcrypt extension should be used.
      *
-     * @param optional Integer $mode
-     * @return Crypt_RC4
      * @access public
      */
-    function Crypt_RC4()
+    function __construct()
     {
         if ( !defined('CRYPT_RC4_MODE') ) {
             switch (true) {
@@ -193,6 +191,18 @@ class Crypt_RC4 {
                         $this->mode = MCRYPT_RC4;
                 }
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_RC4()
+    {
+        self::__construct();
     }
 
     /**

@@ -379,10 +379,9 @@ class Crypt_RSA {
      * Crypt_RSA doesn't do it is because OpenSSL doesn't fail gracefully.  openssl_pkey_new(), in particular, requires
      * openssl.cnf be present somewhere and, unfortunately, the only real way to find out is too late.
      *
-     * @return Crypt_RSA
      * @access public
      */
-    function Crypt_RSA()
+    function __construct()
     {
         if ( !defined('CRYPT_RSA_MODE') ) {
             switch (true) {
@@ -402,6 +401,18 @@ class Crypt_RSA {
         $this->hashName = 'sha1';
         $this->mgfHash = new Crypt_Hash('sha1');
         $this->mgfHLen = $this->mgfHash->getLength();
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_RSA()
+    {
+        self::__construct();
     }
 
     /**
@@ -663,7 +674,7 @@ class Crypt_RSA {
      * @access private
      * @see setPublicKeyFormat()
      * @param String $RSAPrivateKey
-     * @return String
+     * @return string
      */
     function _convertPublicKey($n, $e)
     {
@@ -714,7 +725,7 @@ class Crypt_RSA {
      * @see _convertPrivateKey()
      * @param String $key
      * @param Integer $type
-     * @return Array
+     * @return array|false
      */
     function _parseKey($key, $type)
     {
@@ -928,6 +939,8 @@ class Crypt_RSA {
                     );
                 }
         }
+
+        return false;
     }
 
     /**
@@ -993,11 +1006,11 @@ class Crypt_RSA {
      *
      * Returns true on success, false on failure
      *
-     * @see getPublicKey()
      * @access public
-     * @param String $key
-     * @param Integer $type optional
-     * @return Boolean
+     * @param string $key
+     * @param int    $type optional
+     *
+     * @return bool
      */
     function setPublicKey($key, $type = CRYPT_RSA_PUBLIC_FORMAT_PKCS1)
     {
@@ -1006,6 +1019,7 @@ class Crypt_RSA {
             return false;
         }
         $this->publicExponent = $components['publicExponent'];
+        return true;
     }
 
     /**

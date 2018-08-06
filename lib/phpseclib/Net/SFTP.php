@@ -217,15 +217,15 @@ class Net_SFTP extends Net_SSH2 {
      *
      * Connects to an SFTP server
      *
-     * @param String $host
-     * @param optional Integer $port
-     * @param optional Integer $timeout
-     * @return Net_SFTP
+     * @param string $host
+     * @param int    $port    optional
+     * @param int    $timeout optional
+     *
      * @access public
      */
-    function Net_SFTP($host, $port = 22, $timeout = 10)
+    function __construct($host, $port = 22, $timeout = 10)
     {
-        parent::Net_SSH2($host, $port, $timeout);
+        parent::__construct($host, $port, $timeout);
         $this->packet_types = array(
             1  => 'NET_SFTP_INIT',
             2  => 'NET_SFTP_VERSION',
@@ -296,6 +296,18 @@ class Net_SFTP extends Net_SSH2 {
             $this->attributes,
             $this->open_flags
         );
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Net_SFTP($host, $port = 22, $timeout = 10)
+    {
+        self::__construct($host, $port, $timeout);
     }
 
     /**
@@ -1449,13 +1461,14 @@ class Net_SFTP extends Net_SSH2 {
     /**
      * Disconnect
      *
-     * @param Integer $reason
-     * @return Boolean
+     * @param int $reason
+     *
+     * @return bool
      * @access private
      */
     function _disconnect($reason)
     {
         $this->pwd = false;
-        parent::_disconnect($reason);
+        return parent::_disconnect($reason);
     }
 }

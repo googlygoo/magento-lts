@@ -138,10 +138,9 @@ class Crypt_Hash {
      * Default Constructor.
      *
      * @param optional String $hash
-     * @return Crypt_Hash
      * @access public
      */
-    function Crypt_Hash($hash = 'sha1')
+    function __construct($hash = 'sha1')
     {
         if ( !defined('CRYPT_HASH_MODE') ) {
             switch (true) {
@@ -157,6 +156,18 @@ class Crypt_Hash {
         }
 
         $this->setHash($hash);
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_Hash($hash = 'sha1')
+    {
+        self::__construct($hash);
     }
 
     /**

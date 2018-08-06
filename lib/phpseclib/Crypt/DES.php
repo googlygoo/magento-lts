@@ -225,11 +225,10 @@ class Crypt_DES {
      * Determines whether or not the mcrypt extension should be used.  $mode should only, at present, be
      * CRYPT_DES_MODE_ECB or CRYPT_DES_MODE_CBC.  If not explictly set, CRYPT_DES_MODE_CBC will be used.
      *
-     * @param optional Integer $mode
-     * @return Crypt_DES
+     * @param int $mode
      * @access public
      */
-    function Crypt_DES($mode = CRYPT_MODE_DES_CBC)
+    function __construct($mode = CRYPT_MODE_DES_CBC)
     {
         if ( !defined('CRYPT_DES_MODE') ) {
             switch (true) {
@@ -271,6 +270,18 @@ class Crypt_DES {
                         $this->mode = CRYPT_DES_MODE_CBC;
                 }
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_DES($mode = CRYPT_MODE_DES_CBC)
+    {
+        self::__construct($mode);
     }
 
     /**

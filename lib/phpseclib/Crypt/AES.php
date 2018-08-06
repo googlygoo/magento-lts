@@ -122,7 +122,7 @@ class Crypt_AES extends Crypt_Rijndael {
      * Since mcrypt operates in continuous mode, by default, it'll need to be recreated when in non-continuous mode.
      *
      * @see Crypt_AES::encrypt()
-     * @var String
+     * @var string
      * @access private
      */
     var $enmcrypt;
@@ -134,7 +134,7 @@ class Crypt_AES extends Crypt_Rijndael {
      * Since mcrypt operates in continuous mode, by default, it'll need to be recreated when in non-continuous mode.
      *
      * @see Crypt_AES::decrypt()
-     * @var String
+     * @var string
      * @access private
      */
     var $demcrypt;
@@ -145,11 +145,10 @@ class Crypt_AES extends Crypt_Rijndael {
      * Determines whether or not the mcrypt extension should be used.  $mode should only, at present, be
      * CRYPT_AES_MODE_ECB or CRYPT_AES_MODE_CBC.  If not explictly set, CRYPT_AES_MODE_CBC will be used.
      *
-     * @param optional Integer $mode
-     * @return Crypt_AES
+     * @param int $mode optional
      * @access public
      */
-    function Crypt_AES($mode = CRYPT_AES_MODE_CBC)
+    function __construct($mode = CRYPT_AES_MODE_CBC)
     {
         if ( !defined('CRYPT_AES_MODE') ) {
             switch (true) {
@@ -198,8 +197,20 @@ class Crypt_AES extends Crypt_Rijndael {
         }
 
         if (CRYPT_AES_MODE == CRYPT_AES_MODE_INTERNAL) {
-            parent::Crypt_Rijndael($this->mode);
+            parent::__construct($this->mode);
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_AES($mode = CRYPT_AES_MODE_CBC)
+    {
+        self::__construct($mode);
     }
 
     /**
@@ -229,8 +240,10 @@ class Crypt_AES extends Crypt_Rijndael {
      * length.
      *
      * @see Crypt_AES::decrypt()
+     * @param string $plaintext
+     *
+     * @return string
      * @access public
-     * @param String $plaintext
      */
     function encrypt($plaintext)
     {
@@ -270,8 +283,10 @@ class Crypt_AES extends Crypt_Rijndael {
      * If strlen($ciphertext) is not a multiple of 16, null bytes will be added to the end of the string until it is.
      *
      * @see Crypt_AES::encrypt()
+     * @param string $ciphertext
+     *
+     * @return bool|string
      * @access public
-     * @param String $ciphertext
      */
     function decrypt($ciphertext)
     {
@@ -369,8 +384,8 @@ class Crypt_AES extends Crypt_Rijndael {
      *
      * @see Crypt_Rijndael::_encryptBlock()
      * @access private
-     * @param String $in
-     * @return String
+     * @param string $in
+     * @return string
      */
     function _encryptBlock($in)
     {
@@ -430,8 +445,8 @@ class Crypt_AES extends Crypt_Rijndael {
      *
      * @see Crypt_Rijndael::_decryptBlock()
      * @access private
-     * @param String $in
-     * @return String
+     * @param string $in
+     * @return string
      */
     function _decryptBlock($in)
     {

@@ -362,11 +362,10 @@ class Crypt_Rijndael {
      * Determines whether or not the mcrypt extension should be used.  $mode should only, at present, be
      * CRYPT_RIJNDAEL_MODE_ECB or CRYPT_RIJNDAEL_MODE_CBC.  If not explictly set, CRYPT_RIJNDAEL_MODE_CBC will be used.
      *
-     * @param optional Integer $mode
-     * @return Crypt_Rijndael
+     * @param int $mode optional Integer $mode
      * @access public
      */
-    function Crypt_Rijndael($mode = CRYPT_RIJNDAEL_MODE_CBC)
+    function __construct($mode = CRYPT_RIJNDAEL_MODE_CBC)
     {
         switch ($mode) {
             case CRYPT_RIJNDAEL_MODE_ECB:
@@ -470,6 +469,18 @@ class Crypt_Rijndael {
             $dt1[$i << 16] = (($this->dt3[$i] << 16) & 0xFFFF0000) | (($dt3[$i] >> 16) & 0x0000FFFF);
             $dt0[$i << 24] = (($this->dt3[$i] << 24) & 0xFF000000) | (($dt3[$i] >>  8) & 0x00FFFFFF);
         }
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Crypt_Rijndael($mode = CRYPT_RIJNDAEL_MODE_CBC)
+    {
+        self::__construct($mode);
     }
 
     /**
@@ -1146,6 +1157,9 @@ class Crypt_Rijndael {
      * and false will be returned.
      *
      * @see Crypt_Rijndael::_pad()
+     * @param string $text
+     *
+     * @return bool|string
      * @access private
      */
     function _unpad($text)

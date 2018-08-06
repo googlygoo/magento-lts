@@ -568,13 +568,13 @@ class Net_SSH2 {
      *
      * Connects to an SSHv2 server
      *
-     * @param String $host
-     * @param optional Integer $port
-     * @param optional Integer $timeout
-     * @return Net_SSH2
+     * @param string $host
+     * @param int    $port
+     * @param int    $timeout
+     *
      * @access public
      */
-    function Net_SSH2($host, $port = 22, $timeout = 10)
+    function __construct($host, $port = 22, $timeout = 10)
     {
         $this->message_numbers = array(
             1 => 'NET_SSH2_MSG_DISCONNECT',
@@ -719,6 +719,18 @@ class Net_SSH2 {
         }
 
         $this->bitmap = NET_SSH2_MASK_CONSTRUCTOR;
+    }
+
+    /**
+     * Only here for backwards compatibility.
+     *
+     * @see __construct()
+     *
+     * @deprecated
+     */
+    function Net_SSH2($host, $port = 22, $timeout = 10)
+    {
+        self::__construct($host, $port, $timeout);
     }
 
     /**
@@ -1427,8 +1439,9 @@ class Net_SSH2 {
     /**
      * Execute Command
      *
-     * @param String $command
-     * @return String
+     * @param string $command
+     *
+     * @return bool|string
      * @access public
      */
     function exec($command)
@@ -1496,6 +1509,8 @@ class Net_SSH2 {
                     $output.= $temp;
             }
         }
+
+        return false;
     }
 
     /**
@@ -1680,7 +1695,8 @@ class Net_SSH2 {
      * Returns the data as a string if it's available and false if not.
      *
      * @param $client_channel
-     * @return Mixed
+     *
+     * @return mixed
      * @access private
      */
     function _get_channel_packet($client_channel)
@@ -1790,6 +1806,9 @@ class Net_SSH2 {
                     return $this->_disconnect(NET_SSH2_DISCONNECT_BY_APPLICATION);
             }
         }
+
+        // This will never get executed, here for code validation
+        return true;
     }
 
     /**
@@ -1910,8 +1929,9 @@ class Net_SSH2 {
     /**
      * Disconnect
      *
-     * @param Integer $reason
-     * @return Boolean
+     * @param int $reason
+     *
+     * @return bool
      * @access private
      */
     function _disconnect($reason)
@@ -1923,6 +1943,8 @@ class Net_SSH2 {
             fclose($this->fsock);
             return false;
         }
+
+        return true;
     }
 
     /**
