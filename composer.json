@@ -4,7 +4,8 @@
   "type": "magento-source",
   "require": {
     "php": ">=5.2.13",
-    "magento-hackathon/magento-composer-installer": "*"
+    "magento-hackathon/magento-composer-installer": "*",
+    "phpseclib/phpseclib": "~2.0"
   },
   "authors": [
     {
