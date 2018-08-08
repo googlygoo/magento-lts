@@ -112,7 +112,7 @@ class Zend_Tool_Project_Context_System_ProjectDirectory
                     if ($registry->getClient()->isInteractive()) {
                         // @todo prompt for override
                     } else {
-                        #require_once 'Zend/Tool/Project/Context/Exception.php';
+                        require_once 'Zend/Tool/Project/Context/Exception.php';
                         throw new Zend_Tool_Project_Context_Exception('This directory is not empty, project creation aborted.');
                     }
                     break;

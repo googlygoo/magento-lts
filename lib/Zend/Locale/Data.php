@@ -1467,9 +1467,6 @@ class Zend_Locale_Data
                 }
                 break;
 
-                $temp = self::_getFile('characters', '/supplementalData/characters/character-fallback/character[@value=\'' . $value . '\']/substitute', '', $value);
-                break;
-
             case 'fallbacktochar':
                 $temp = self::_getFile('characters', '/supplementalData/characters/character-fallback/character[@value=\'' . $value . '\']/substitute', '');
                 break;

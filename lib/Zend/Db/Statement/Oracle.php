@@ -381,9 +381,6 @@ class Zend_Db_Statement_Oracle extends Zend_Db_Statement
                         'message' => "OCI8 driver does not support fetchAll(FETCH_BOTH), use fetch() in a loop instead"
                     )
                 );
-                // notreached
-                $flags |= OCI_NUM;
-                $flags |= OCI_ASSOC;
                 break;
             case Zend_Db::FETCH_NUM:
                 $flags |= OCI_NUM;

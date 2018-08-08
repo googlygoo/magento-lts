@@ -148,7 +148,7 @@ if (!is_array($this->preparedQueue)) {
                 case self::EXTR_BOTH:
                 default:
                     return $return;
-            };
+            }
         }
 
         /**
@@ -189,7 +189,7 @@ if (!is_array($this->preparedQueue)) {
                 case self::EXTR_BOTH:
                 default:
                     return $return;
-            };
+            }
         }
 
         /**

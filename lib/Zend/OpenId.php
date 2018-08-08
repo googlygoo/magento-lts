@@ -25,6 +25,9 @@
  */
 #require_once "Zend/Controller/Response/Abstract.php";
 
+/** @see Zend_Crypt_Math */
+#require_once 'Zend/Crypt/Math.php';
+
 /**
  * Static class that contains common utility functions for
  * {@link Zend_OpenId_Consumer} and {@link Zend_OpenId_Provider}.
@@ -474,11 +477,7 @@ class Zend_OpenId
      */
     static public function randomBytes($len)
     {
-        $key = '';
-        for($i=0; $i < $len; $i++) {
-            $key .= chr(mt_rand(0, 255));
-        }
-        return $key;
+        return (string) Zend_Crypt_Math::randBytes($len);
     }
 
     /**
@@ -526,7 +525,7 @@ class Zend_OpenId
      */
     static public function hashHmac($macFunc, $data, $secret)
     {
-//        #require_once "Zend/Crypt/Hmac.php";
+//        require_once "Zend/Crypt/Hmac.php";
 //        return Zend_Crypt_Hmac::compute($secret, $macFunc, $data, Zend_Crypt_Hmac::BINARY);
         if (function_exists('hash_hmac')) {
             return hash_hmac($macFunc, $data, $secret, true);

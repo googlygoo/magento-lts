@@ -169,7 +169,7 @@ class Zend_Cache_Frontend_Function extends Zend_Cache_Core
             }
             if (!$argsStr) {
                 $lastErr = error_get_last();
-                throw Zend_Cache::throwException("Can't serialize arguments to generate id: {$lastErr['message']}");
+                Zend_Cache::throwException("Can't serialize arguments to generate id: {$lastErr['message']}");
             }
         }
 

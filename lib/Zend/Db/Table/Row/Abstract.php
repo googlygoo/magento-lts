@@ -677,17 +677,18 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
     /**
      * Refreshes properties from the database.
      *
-     * @return void
+     * @throws Zend_Db_Table_Row_Exception
      */
     public function refresh()
     {
-        return $this->_refresh();
+        $this->_refresh();
     }
 
     /**
      * Retrieves an instance of the parent table.
      *
      * @return Zend_Db_Table_Abstract
+     * @throws Zend_Db_Table_Row_Exception
      */
     protected function _getTable()
     {
@@ -702,7 +703,9 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Retrieves an associative array of primary keys.
      *
      * @param bool $useDirty
+     *
      * @return array
+     * @throws Zend_Db_Table_Row_Exception
      */
     protected function _getPrimaryKey($useDirty = true)
     {
@@ -728,7 +731,9 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Retrieves an associative array of primary keys.
      *
      * @param bool $useDirty
+     *
      * @return array
+     * @throws Zend_Db_Table_Row_Exception
      */
     public function getPrimaryKey($useDirty = true)
     {
@@ -763,7 +768,7 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
     /**
      * Refreshes properties from the database.
      *
-     * @return void
+     * @throws Zend_Db_Table_Row_Exception
      */
     protected function _refresh()
     {

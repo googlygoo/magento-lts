@@ -27,8 +27,16 @@
  */
 class Zend_Tool_Framework_Client_Interactive_InputRequest
 {
+    /**
+     * @var null|string
+     */
     protected $_content = null;
 
+    /**
+     * Zend_Tool_Framework_Client_Interactive_InputRequest constructor.
+     *
+     * @param null|string $content
+     */
     public function __construct($content = null)
     {
         if ($content) {
@@ -36,12 +44,20 @@ class Zend_Tool_Framework_Client_Interactive_InputRequest
         }
     }
 
+    /**
+     * @param string $content
+     *
+     * @return $this
+     */
     public function setContent($content)
     {
         $this->_content = $content;
         return $this;
     }
 
+    /**
+     * @return null|string
+     */
     public function getContent()
     {
         return $this->_content;

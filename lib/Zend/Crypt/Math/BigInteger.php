@@ -104,7 +104,7 @@ class Zend_Crypt_Math_BigInteger
             #require_once 'Zend/Crypt/Math/BigInteger/Gmp.php';
             $this->_math = new Zend_Crypt_Math_BigInteger_Gmp();
         //} elseif($extension == 'bigint' && extension_loaded('big_int')) {
-        //    #require_once 'Zend/Crypt_Math/BigInteger/Bigint.php';
+        //    require_once 'Zend/Crypt_Math/BigInteger/Bigint.php';
         //    $this->_math = new Zend_Crypt_Math_BigInteger_Bigint();
         } elseif ($extension == 'bcmath' && extension_loaded('bcmath')) {
             #require_once 'Zend/Crypt/Math/BigInteger/Bcmath.php';

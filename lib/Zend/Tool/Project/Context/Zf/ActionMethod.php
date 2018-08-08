@@ -88,7 +88,7 @@ class Zend_Tool_Project_Context_Zf_ActionMethod implements Zend_Tool_Project_Con
          * This code block is now commented, its doing to much for init()
          *
         if ($this->_controllerPath != '' && self::hasActionMethod($this->_controllerPath, $this->_actionName)) {
-            #require_once 'Zend/Tool/Project/Context/Exception.php';
+            require_once 'Zend/Tool/Project/Context/Exception.php';
             throw new Zend_Tool_Project_Context_Exception('An action named ' . $this->_actionName . 'Action already exists in this controller');
         }
         */
