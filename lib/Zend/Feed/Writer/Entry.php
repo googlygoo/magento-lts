@@ -66,7 +66,6 @@ class Zend_Feed_Writer_Entry
      * Constructor: Primarily triggers the registration of core extensions and
      * loads those appropriate to this data container.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -77,8 +76,11 @@ class Zend_Feed_Writer_Entry
     /**
      * Set a single author
      *
-     * @param  int $index
-     * @return string|null
+     * @param int         $name
+     * @param null|string $email
+     * @param null|string $uri
+     *
+     * @throws Zend_Feed_Exception
      */
     public function addAuthor($name, $email = null, $uri = null)
     {
@@ -140,7 +142,9 @@ class Zend_Feed_Writer_Entry
     /**
      * Set an array with feed authors
      *
-     * @return array
+     * @param array $authors
+     *
+     * @throws Zend_Feed_Exception
      */
     public function addAuthors(array $authors)
     {
@@ -152,7 +156,9 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed character encoding
      *
-     * @return string|null
+     * @param string $encoding
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setEncoding($encoding)
     {
@@ -179,7 +185,9 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the copyright entry
      *
-     * @return string|null
+     * @param string $copyright
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setCopyright($copyright)
     {
@@ -193,7 +201,9 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the entry's content
      *
-     * @return string|null
+     * @param string $content
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setContent($content)
     {
@@ -207,7 +217,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed creation date
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setDateCreated($date = null)
     {
@@ -228,7 +238,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed modification date
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setDateModified($date = null)
     {
@@ -249,7 +259,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed description
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setDescription($description)
     {
@@ -263,7 +273,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed ID
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setId($id)
     {
@@ -277,7 +287,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set a link to the HTML source of this entry
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setLink($link)
     {
@@ -291,7 +301,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the number of comments associated with this entry
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setCommentCount($count)
     {
@@ -305,7 +315,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set a link to a HTML page containing comments associated with this entry
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setCommentLink($link)
     {
@@ -319,7 +329,7 @@ class Zend_Feed_Writer_Entry
     /**
      * Set a link to an XML feed for any comments associated with this entry
      *
-     * @return string|null
+     * @throws Zend_Feed_Exception
      */
     public function setCommentFeedLink(array $link)
     {
@@ -343,7 +353,9 @@ class Zend_Feed_Writer_Entry
      * Each link is an array with keys "uri" and "type", where type is one of:
      * "atom", "rss" or "rdf".
      *
-     * @return string|null
+     * @param array $links
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setCommentFeedLinks(array $links)
     {
@@ -355,7 +367,9 @@ class Zend_Feed_Writer_Entry
     /**
      * Set the feed title
      *
-     * @return string|null
+     * @param string $title
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setTitle($title)
     {
@@ -746,7 +760,6 @@ class Zend_Feed_Writer_Entry
     /**
      * Load extensions from Zend_Feed_Writer
      *
-     * @return void
      */
     protected function _loadExtensions()
     {

@@ -47,7 +47,6 @@ abstract class Zend_Soap_Wsdl_Strategy_Abstract implements Zend_Soap_Wsdl_Strate
      * Set the Zend_Soap_Wsdl Context object this strategy resides in.
      *
      * @param Zend_Soap_Wsdl $context
-     * @return void
      */
     public function setContext(Zend_Soap_Wsdl $context)
     {

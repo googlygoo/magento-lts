@@ -237,7 +237,6 @@ class Zend_Console_Getopt
      * @param  array $rules
      * @param  array $argv
      * @param  array $getoptConfig
-     * @return void
      */
     public function __construct($rules, $argv = null, $getoptConfig = array())
     {
@@ -303,7 +302,6 @@ class Zend_Console_Getopt
      *
      * @param  string $key
      * @param  string $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -328,7 +326,6 @@ class Zend_Console_Getopt
      * Unset an option.
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {
@@ -759,7 +756,6 @@ class Zend_Console_Getopt
      * Long options may not be clustered.
      *
      * @param  mixed &$argv
-     * @return void
      */
     protected function _parseLongOption(&$argv)
     {
@@ -779,7 +775,6 @@ class Zend_Console_Getopt
      * Short options may be clustered.
      *
      * @param  mixed &$argv
-     * @return void
      */
     protected function _parseShortOptionCluster(&$argv)
     {
@@ -795,7 +790,6 @@ class Zend_Console_Getopt
      * @param  string $flag
      * @param  mixed  $argv
      * @throws Zend_Console_Getopt_Exception
-     * @return void
      */
     protected function _parseSingleOption($flag, &$argv)
     {
@@ -879,7 +873,6 @@ class Zend_Console_Getopt
      * Define legal options using the gnu-style format.
      *
      * @param  string $rules
-     * @return void
      */
     protected function _addRulesModeGnu($rules)
     {
@@ -914,7 +907,6 @@ class Zend_Console_Getopt
      *
      * @param  array $rules
      * @throws Zend_Console_Getopt_Exception
-     * @return void
      */
     protected function _addRulesModeZend($rules)
     {

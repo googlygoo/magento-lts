@@ -51,7 +51,6 @@ class Zend_Cache_Backend_Apc extends Zend_Cache_Backend implements Zend_Cache_Ba
      *
      * @param  array $options associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -160,6 +159,7 @@ class Zend_Cache_Backend_Apc extends Zend_Cache_Backend implements Zend_Cache_Ba
                 Zend_Cache::throwException('Invalid mode for clean() method');
                 break;
         }
+        return false;
     }
 
     /**

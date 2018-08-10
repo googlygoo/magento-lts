@@ -203,7 +203,6 @@ class Zend_Barcode_Object_Code128 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial check of code128 barcode
-     * @return void
      */
     protected function _checkParams()
     {

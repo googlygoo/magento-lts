@@ -322,7 +322,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Ensures that teh RDN attributes are correctly set.
      *
      * @param  boolean    $overwrite    True to overwrite the RDN attributes
-     * @return void
      */
     protected function _ensureRdnAttributeValues($overwrite = false)
     {
@@ -781,7 +780,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Removes duplicate values from a LDAP attribute
      *
      * @param  string $attribName
-     * @return void
      */
     public function removeDuplicatesFromAttribute($attribName)
     {
@@ -793,7 +791,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      *
      * @param  string      $attribName
      * @param  mixed|array $value
-     * @return void
      */
     public function removeFromAttribute($attribName, $value)
     {
@@ -1123,7 +1120,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows pre-delete logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _preDelete() { }
 
@@ -1131,7 +1127,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows post-delete logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postDelete() { }
 
@@ -1139,7 +1134,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows pre-add logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _preAdd() { }
 
@@ -1147,7 +1141,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows post-add logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postAdd() { }
 
@@ -1155,7 +1148,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows pre-rename logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _preRename() { }
 
@@ -1163,7 +1155,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows post-rename logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postRename() { }
 
@@ -1171,7 +1162,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows pre-update logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _preUpdate() { }
 
@@ -1179,7 +1169,6 @@ class Zend_Ldap_Node extends Zend_Ldap_Node_Abstract implements Iterator, Recurs
      * Allows post-update logic to be applied to node.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postUpdate() { }
 }

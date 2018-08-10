@@ -40,7 +40,6 @@ interface Zend_Http_UserAgent_Device extends Serializable
      * @param  null|string|array $userAgent
      * @param  array $server
      * @param  array $config
-     * @return void
      */
     public function __construct($userAgent = null, array $server = array(), array $config = array());
 
@@ -65,7 +64,6 @@ interface Zend_Http_UserAgent_Device extends Serializable
     /**
      * Get all of the browser/device's features' groups
      *
-     * @return void
      */
     public function getAllGroups();
 

@@ -41,7 +41,6 @@ class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit_Extensions_Data
      *
      * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
      * @param PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet
-     * @return void
      */
     public function execute(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
     {
@@ -65,7 +64,6 @@ class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit_Extensions_Data
      *
      * @param Zend_Db_Adapter_Abstract $db
      * @param string $tableName
-     * @return void
      */
     protected function _truncate(Zend_Db_Adapter_Abstract $db, $tableName)
     {
@@ -82,7 +80,7 @@ class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit_Extensions_Data
                 $db->query('IMPORT FROM /dev/null OF DEL REPLACE INTO '.$tableName);
             }*/
             #require_once "Zend/Exception.php";
-            throw Zend_Exception("IBM Db2 TRUNCATE not supported.");
+            throw new Zend_Exception("IBM Db2 TRUNCATE not supported.");
         } else if($this->_isMssqlOrOracle($db)) {
             $db->query('TRUNCATE TABLE '.$tableName);
         } else if($db instanceof Zend_Db_Adapter_Pdo_Pgsql) {

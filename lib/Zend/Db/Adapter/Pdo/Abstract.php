@@ -81,7 +81,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
     /**
      * Creates a PDO object and connects to the database.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     protected function _connect()
@@ -159,7 +158,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     public function closeConnection()
     {
@@ -215,6 +213,7 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
      *
      * @param string|Zend_Db_Select $sql The SQL statement with placeholders.
      * @param array $bind An array of data to bind to the placeholders.
+     *
      * @return Zend_Db_Statement_Pdo
      * @throws Zend_Db_Adapter_Exception To re-throw PDOException.
      */
@@ -328,7 +327,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
      * @todo Support FETCH_CLASS and FETCH_INTO.
      *
      * @param int $mode A PDO fetch mode.
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     public function setFetchMode($mode)

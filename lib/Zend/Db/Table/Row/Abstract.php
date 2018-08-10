@@ -108,7 +108,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * - data        = values of columns in this row.
      *
      * @param  array $config OPTIONAL Array of user-specified config options.
-     * @return void
      * @throws Zend_Db_Table_Row_Exception
      */
     public function __construct(array $config = array())
@@ -186,7 +185,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      *
      * @param  string $columnName The column key.
      * @param  mixed  $value      The value for the property.
-     * @return void
      * @throws Zend_Db_Table_Row_Exception
      */
     public function __set($columnName, $value)
@@ -249,7 +247,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * A de-serialized Row should not be assumed to have access to a live
      * database connection, so set _connected = false.
      *
-     * @return void
      */
     public function __wakeup()
     {
@@ -308,7 +305,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      *
      * Called from {@link __construct()} as final step of object instantiation.
      *
-     * @return void
      */
     public function init()
     {
@@ -401,7 +397,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Set the read-only status of the row.
      *
      * @param boolean $flag
-     * @return boolean
      */
     public function setReadOnly($flag)
     {
@@ -748,7 +743,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      */
     protected function _getWhereQuery($useDirty = true)
     {
-        $where = array();
         $db = $this->_getTable()->getAdapter();
         $primaryKey = $this->_getPrimaryKey($useDirty);
         $info = $this->_getTable()->info();
@@ -789,7 +783,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows pre-insert logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _insert()
     {
@@ -799,7 +792,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows post-insert logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postInsert()
     {
@@ -809,7 +801,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows pre-update logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _update()
     {
@@ -819,7 +810,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows post-update logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postUpdate()
     {
@@ -829,7 +819,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows pre-delete logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _delete()
     {
@@ -839,7 +828,6 @@ abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess, IteratorAggreg
      * Allows post-delete logic to be applied to row.
      * Subclasses may override this method.
      *
-     * @return void
      */
     protected function _postDelete()
     {

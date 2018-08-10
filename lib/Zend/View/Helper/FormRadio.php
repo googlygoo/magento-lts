@@ -73,6 +73,12 @@ class Zend_View_Helper_FormRadio extends Zend_View_Helper_FormElement
     {
 
         $info = $this->_getInfo($name, $value, $attribs, $options, $listsep);
+
+        /**
+         * @var string $id
+         * @var bool $disable
+         * @var bool $escape
+         */
         extract($info); // name, value, attribs, options, listsep, disable
 
         // retrieve attributes for labels (prefixed with 'label_' or 'label')

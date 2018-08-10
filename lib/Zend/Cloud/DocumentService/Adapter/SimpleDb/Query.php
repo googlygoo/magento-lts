@@ -45,7 +45,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb_Query
      *
      * @param  Zend_Cloud_DocumentService_Adapter_SimpleDb $adapter
      * @param  null|string $collectionName
-     * @return void
      */
     public function __construct(Zend_Cloud_DocumentService_Adapter_SimpleDb $adapter, $collectionName = null)
     {

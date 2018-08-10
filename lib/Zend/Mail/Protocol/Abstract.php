@@ -130,7 +130,6 @@ abstract class Zend_Mail_Protocol_Abstract
      * @param  string  $host OPTIONAL Hostname of remote connection (default: 127.0.0.1)
      * @param  integer $port OPTIONAL Port number (default: null)
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function __construct($host = '127.0.0.1', $port = null)
     {
@@ -153,7 +152,6 @@ abstract class Zend_Mail_Protocol_Abstract
     /**
      * Class destructor to cleanup open resources
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -164,7 +162,6 @@ abstract class Zend_Mail_Protocol_Abstract
      * Set the maximum log size
      *
      * @param integer $maximumLog Maximum log size
-     * @return void
      */
     public function setMaximumLog($maximumLog)
     {
@@ -227,7 +224,6 @@ abstract class Zend_Mail_Protocol_Abstract
     /**
      * Reset the transaction log
      *
-     * @return void
      */
     public function resetLog()
     {
@@ -238,7 +234,6 @@ abstract class Zend_Mail_Protocol_Abstract
      * Add the transaction log
      *
      * @param  string new transaction
-     * @return void
      */
     protected function _addLog($value)
     {
@@ -292,7 +287,6 @@ abstract class Zend_Mail_Protocol_Abstract
     /**
      * Disconnect from remote host and free resource
      *
-     * @return void
      */
     protected function _disconnect()
     {

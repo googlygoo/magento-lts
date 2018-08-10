@@ -68,7 +68,6 @@ class Zend_Db_Profiler_Firebug extends Zend_Db_Profiler
      * Constructor
      *
      * @param string $label OPTIONAL Label for the profiling info.
-     * @return void
      */
     public function __construct($label = null)
     {
@@ -117,7 +116,6 @@ class Zend_Db_Profiler_Firebug extends Zend_Db_Profiler
      *
      * @param  integer $queryId
      * @throws Zend_Db_Profiler_Exception
-     * @return void
      */
     public function queryEnd($queryId)
     {
@@ -143,7 +141,6 @@ class Zend_Db_Profiler_Firebug extends Zend_Db_Profiler
     /**
      * Update the label of the message holding the profile info.
      *
-     * @return void
      */
     protected function updateMessageLabel()
     {

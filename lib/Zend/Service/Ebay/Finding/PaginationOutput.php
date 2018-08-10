@@ -100,7 +100,6 @@ class Zend_Service_Ebay_Finding_PaginationOutput extends Zend_Service_Ebay_Findi
     public $totalPages;
 
     /**
-     * @return void
      */
     protected function _init()
     {

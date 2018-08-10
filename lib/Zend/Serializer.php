@@ -92,7 +92,6 @@ class Zend_Serializer
      * Change the adapter plugin load.
      *
      * @param  Zend_Loader_PluginLoader $pluginLoader
-     * @return void
      */
     public static function setAdapterLoader(Zend_Loader_PluginLoader $pluginLoader)
     {

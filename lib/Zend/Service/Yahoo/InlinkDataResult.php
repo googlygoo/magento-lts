@@ -48,7 +48,6 @@ class Zend_Service_Yahoo_InlinkDataResult extends Zend_Service_Yahoo_Result
      * Initializes the web result
      *
      * @param  DOMElement $result
-     * @return void
      */
     public function __construct(DOMElement $result)
     {

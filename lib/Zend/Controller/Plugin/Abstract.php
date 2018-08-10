@@ -88,7 +88,6 @@ abstract class Zend_Controller_Plugin_Abstract
      * request against its routes.
      *
      * @param Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function routeStartup(Zend_Controller_Request_Abstract $request)
     {}
@@ -99,7 +98,6 @@ abstract class Zend_Controller_Plugin_Abstract
      * Called after Zend_Controller_Front exits from the router.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function routeShutdown(Zend_Controller_Request_Abstract $request)
     {}
@@ -108,7 +106,6 @@ abstract class Zend_Controller_Plugin_Abstract
      * Called before Zend_Controller_Front enters its dispatch loop.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function dispatchLoopStartup(Zend_Controller_Request_Abstract $request)
     {}
@@ -122,7 +119,6 @@ abstract class Zend_Controller_Plugin_Abstract
      * the current action may be skipped.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function preDispatch(Zend_Controller_Request_Abstract $request)
     {}
@@ -136,7 +132,6 @@ abstract class Zend_Controller_Plugin_Abstract
      * a new action may be specified for dispatching.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function postDispatch(Zend_Controller_Request_Abstract $request)
     {}
@@ -144,7 +139,6 @@ abstract class Zend_Controller_Plugin_Abstract
     /**
      * Called before Zend_Controller_Front exits its dispatch loop.
      *
-     * @return void
      */
     public function dispatchLoopShutdown()
     {}

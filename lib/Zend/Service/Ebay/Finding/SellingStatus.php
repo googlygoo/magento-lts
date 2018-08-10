@@ -106,7 +106,6 @@ class Zend_Service_Ebay_Finding_SellingStatus extends Zend_Service_Ebay_Finding_
     public $timeLeft;
 
     /**
-     * @return void
      */
     protected function _init()
     {

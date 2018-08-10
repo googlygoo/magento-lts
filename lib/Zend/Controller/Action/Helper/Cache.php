@@ -83,7 +83,6 @@ class Zend_Controller_Action_Helper_Cache
      *
      * @param array $actions
      * @param array $tags
-     * @return void
      */
     public function direct(array $actions, array $tags = array(), $extension = null)
     {
@@ -170,7 +169,6 @@ class Zend_Controller_Action_Helper_Cache
     /**
      * Commence page caching for any cacheable actions
      *
-     * @return void
      */
     public function preDispatch()
     {
@@ -217,7 +215,6 @@ class Zend_Controller_Action_Helper_Cache
      * Set an instance of the Cache Manager for this helper
      *
      * @param Zend_Cache_Manager $manager
-     * @return void
      */
     public function setManager(Zend_Cache_Manager $manager)
     {

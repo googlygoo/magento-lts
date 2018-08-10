@@ -274,7 +274,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
     /**
      * Creates a connection to the database.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Mysqli_Exception
      */
     protected function _connect()
@@ -358,7 +357,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     public function closeConnection()
     {
@@ -420,7 +418,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
     /**
      * Begin a transaction.
      *
-     * @return void
      */
     protected function _beginTransaction()
     {
@@ -431,7 +428,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
     /**
      * Commit a transaction.
      *
-     * @return void
      */
     protected function _commit()
     {
@@ -443,7 +439,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
     /**
      * Roll-back a transaction.
      *
-     * @return void
      */
     protected function _rollBack()
     {
@@ -456,7 +451,6 @@ class Zend_Db_Adapter_Mysqli extends Zend_Db_Adapter_Abstract
      * Set the fetch mode.
      *
      * @param int $mode
-     * @return void
      * @throws Zend_Db_Adapter_Mysqli_Exception
      */
     public function setFetchMode($mode)

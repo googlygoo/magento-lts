@@ -58,7 +58,6 @@ class Zend_View_Helper_Action extends Zend_View_Helper_Abstract
      *
      * Grab local copies of various MVC objects
      *
-     * @return void
      */
     public function __construct()
     {
@@ -90,7 +89,6 @@ class Zend_View_Helper_Action extends Zend_View_Helper_Abstract
     /**
      * Reset object states
      *
-     * @return void
      */
     public function resetObjects()
     {

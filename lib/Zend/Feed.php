@@ -67,7 +67,6 @@ class Zend_Feed
      * Sets the HTTP client object to use for retrieving the feeds.
      *
      * @param  Zend_Http_Client $httpClient
-     * @return void
      */
     public static function setHttpClient(Zend_Http_Client $httpClient)
     {
@@ -78,7 +77,8 @@ class Zend_Feed
     /**
      * Gets the HTTP client object. If none is set, a new Zend_Http_Client will be used.
      *
-     * @return Zend_Http_Client_Abstract
+     * @return Zend_Http_Client
+     * @throws Zend_Http_Client_Exception
      */
     public static function getHttpClient()
     {
@@ -105,7 +105,6 @@ class Zend_Feed
      * DELETE as appropriate.
      *
      * @param  boolean $override Whether to override PUT and DELETE.
-     * @return void
      */
     public static function setHttpMethodOverride($override = true)
     {
@@ -151,7 +150,6 @@ class Zend_Feed
      *
      * @param  string $prefix The namespace prefix
      * @param  string $namespaceURI The full namespace URI
-     * @return void
      */
     public static function registerNamespace($prefix, $namespaceURI)
     {

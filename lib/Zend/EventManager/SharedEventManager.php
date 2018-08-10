@@ -68,7 +68,6 @@ class Zend_EventManager_SharedEventManager implements Zend_EventManager_SharedEv
      * @param  string $event 
      * @param  callback $callback PHP Callback
      * @param  int $priority Priority at which listener should execute
-     * @return void
      */
     public function attach($id, $event, $callback, $priority = 1)
     {

@@ -52,7 +52,6 @@ class Zend_Service_Yahoo
      * Sets the application ID and instantiates the REST client
      *
      * @param  string $appId specified the developer's appid
-     * @return void
      */
     public function __construct($appId)
     {
@@ -453,7 +452,6 @@ class Zend_Service_Yahoo
      * Validate Inlink Data Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateInlinkDataSearch(array $options)
@@ -494,7 +492,6 @@ class Zend_Service_Yahoo
      * Validate Image Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateImageSearch(array $options)
@@ -579,7 +576,6 @@ class Zend_Service_Yahoo
      * Validate Local Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateLocalSearch(array $options)
@@ -666,7 +662,6 @@ class Zend_Service_Yahoo
      * Validate News Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateNewsSearch(array $options)
@@ -710,7 +705,6 @@ class Zend_Service_Yahoo
      * Validate Page Data Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validatePageDataSearch(array $options)
@@ -747,7 +741,6 @@ class Zend_Service_Yahoo
      * Validate Video Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateVideoSearch(array $options)
@@ -792,7 +785,6 @@ class Zend_Service_Yahoo
      * Validate Web Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateWebSearch(array $options)
@@ -866,7 +858,6 @@ class Zend_Service_Yahoo
      * Throws an exception if the chosen language is not supported
      *
      * @param  string $lang Language code
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateLanguage($lang)
@@ -890,7 +881,6 @@ class Zend_Service_Yahoo
      *
      * @param  array $options      User specified options
      * @param  array $validOptions Valid options
-     * @return void
      * @throws Zend_Service_Exception if difference is found (e.g., unsupported query option)
      */
     protected function _compareOptions(array $options, array $validOptions)
@@ -912,7 +902,6 @@ class Zend_Service_Yahoo
      * @param  string $name  Name associated with the value
      * @param  mixed  $value Value
      * @param  array  $array Array in which to check for the value
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateInArray($name, $value, array $array)
@@ -931,7 +920,6 @@ class Zend_Service_Yahoo
      * Check if response is an error
      *
      * @param  DOMDocument $dom DOM Object representing the result XML
-     * @return void
      * @throws Zend_Service_Exception Thrown when the result from Yahoo! is an error
      */
     protected static function _checkErrors(DOMDocument $dom)

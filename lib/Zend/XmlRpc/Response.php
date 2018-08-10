@@ -79,7 +79,6 @@ class Zend_XmlRpc_Response
      *
      * @param mixed $return
      * @param string $type
-     * @return void
      */
     public function __construct($return = null, $type = null)
     {
@@ -116,7 +115,6 @@ class Zend_XmlRpc_Response
      *
      * @param mixed $value
      * @param string $type
-     * @return void
      */
     public function setReturnValue($value, $type = null)
     {

@@ -46,7 +46,6 @@ class Zend_Layout_Controller_Plugin_Layout extends Zend_Controller_Plugin_Abstra
      * Constructor
      *
      * @param  Zend_Layout $layout
-     * @return void
      */
     public function __construct(Zend_Layout $layout = null)
     {
@@ -103,7 +102,6 @@ class Zend_Layout_Controller_Plugin_Layout extends Zend_Controller_Plugin_Abstra
      * postDispatch() plugin hook -- render layout
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function postDispatch(Zend_Controller_Request_Abstract $request)
     {

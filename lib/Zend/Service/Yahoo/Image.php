@@ -58,7 +58,6 @@ class Zend_Service_Yahoo_Image
      *
      * @param  DOMNode $dom
      * @param  string  $namespace
-     * @return void
      */
     public function __construct(DOMNode $dom, $namespace)
     {

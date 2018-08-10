@@ -56,7 +56,6 @@ abstract class Zend_Service_Ebay_Finding_Abstract
 
     /**
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {
@@ -93,7 +92,6 @@ abstract class Zend_Service_Ebay_Finding_Abstract
      * Post construct logic, classes must read their members here. Called from
      * {@link __construct()} as final step of object initialization.
      *
-     * @return void
      */
     protected function _init()
     {
@@ -103,7 +101,6 @@ abstract class Zend_Service_Ebay_Finding_Abstract
      * Load DOMXPath for current DOM object.
      *
      * @see    Zend_Service_Ebay_Finding::_parseResponse()
-     * @return void
      */
     protected function _initXPath()
     {

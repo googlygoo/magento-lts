@@ -452,7 +452,9 @@ abstract class Zend_Db_Adapter_Abstract
      * @param  mixed  $sql  The SQL statement with placeholders.
      *                      May be a string or Zend_Db_Select.
      * @param  mixed  $bind An array of data to bind to the placeholders.
+     *
      * @return Zend_Db_Statement_Interface
+     * @throws Zend_Db_Statement_Exception
      */
     public function query($sql, $bind = array())
     {
@@ -1135,7 +1137,6 @@ abstract class Zend_Db_Adapter_Abstract
     /**
      * called when object is getting unserialized
      *
-     * @return void
      */
     public function __wakeup()
     {
@@ -1187,7 +1188,6 @@ abstract class Zend_Db_Adapter_Abstract
     /**
      * Creates a connection to the database.
      *
-     * @return void
      */
     abstract protected function _connect();
 
@@ -1201,7 +1201,6 @@ abstract class Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     abstract public function closeConnection();
 
@@ -1248,7 +1247,6 @@ abstract class Zend_Db_Adapter_Abstract
      * Set the fetch mode.
      *
      * @param integer $mode
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     abstract public function setFetchMode($mode);

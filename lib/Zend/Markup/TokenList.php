@@ -65,7 +65,6 @@ class Zend_Markup_TokenList implements RecursiveIterator
      *
      * @param Zend_Markup_Token $child
      *
-     * @return void
      */
     public function addChild(Zend_Markup_Token $child)
     {
@@ -105,7 +104,6 @@ class Zend_Markup_TokenList implements RecursiveIterator
     /**
      * Rewind the iterator
      *
-     * @return void
      */
     public function rewind()
     {
@@ -115,7 +113,6 @@ class Zend_Markup_TokenList implements RecursiveIterator
     /**
      * Check if the element is valid
      *
-     * @return void
      */
     public function valid()
     {

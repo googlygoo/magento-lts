@@ -99,7 +99,6 @@ class Zend_Test_PHPUnit_Constraint_DomQuery34 extends PHPUnit_Framework_Constrai
      * Constructor; setup constraint state
      *
      * @param  string $path CSS selector path
-     * @return void
      */
     public function __construct($path)
     {
@@ -110,7 +109,6 @@ class Zend_Test_PHPUnit_Constraint_DomQuery34 extends PHPUnit_Framework_Constrai
      * Indicate negative match
      *
      * @param  bool $flag
-     * @return void
      */
     public function setNegate($flag = true)
     {
@@ -207,7 +205,6 @@ class Zend_Test_PHPUnit_Constraint_DomQuery34 extends PHPUnit_Framework_Constrai
      * @param  mixed $other CSS selector path
      * @param  string $description
      * @param  bool $not
-     * @return void
      * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function fail($other, $description, $not = false)

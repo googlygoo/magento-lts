@@ -141,7 +141,6 @@ class Zend_Feed_Reader
      * Set the feed cache
      *
      * @param Zend_Cache_Core $cache
-     * @return void
      */
     public static function setCache(Zend_Cache_Core $cache)
     {
@@ -154,7 +153,6 @@ class Zend_Feed_Reader
      * Sets the HTTP client object to use for retrieving the feeds.
      *
      * @param  Zend_Http_Client $httpClient
-     * @return void
      */
     public static function setHttpClient(Zend_Http_Client $httpClient)
     {
@@ -191,7 +189,6 @@ class Zend_Feed_Reader
      * DELETE as appropriate.
      *
      * @param  boolean $override Whether to override PUT and DELETE.
-     * @return void
      */
     public static function setHttpMethodOverride($override = true)
     {
@@ -212,7 +209,6 @@ class Zend_Feed_Reader
      * Set the flag indicating whether or not to use HTTP conditional GET
      *
      * @param  bool $bool
-     * @return void
      */
     public static function useHttpConditionalGet($bool = true)
     {
@@ -595,7 +591,6 @@ class Zend_Feed_Reader
      *
      * @param  string $prefix
      * @param  string $path
-     * @return void
      */
     public static function addPrefixPath($prefix, $path)
     {
@@ -608,7 +603,6 @@ class Zend_Feed_Reader
      * Add multiple Extension prefix paths at once
      *
      * @param  array $spec
-     * @return void
      */
     public static function addPrefixPaths(array $spec)
     {
@@ -626,7 +620,6 @@ class Zend_Feed_Reader
      * Register an Extension by name
      *
      * @param  string $name
-     * @return void
      * @throws Zend_Feed_Exception if unable to resolve Extension class
      */
     public static function registerExtension($name)
@@ -689,7 +682,6 @@ class Zend_Feed_Reader
     /**
      * Reset class state to defaults
      *
-     * @return void
      */
     public static function reset()
     {
@@ -722,7 +714,6 @@ class Zend_Feed_Reader
     /**
      * Register core (default) extensions
      *
-     * @return void
      */
     protected static function _registerCoreExtensions()
     {

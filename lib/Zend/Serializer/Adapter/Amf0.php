@@ -70,7 +70,6 @@ class Zend_Serializer_Adapter_Amf0 extends Zend_Serializer_Adapter_AdapterAbstra
      *
      * @param  mixed $value
      * @param  array $opts
-     * @return void
      * @throws Zend_Serializer_Exception
      */
     public function unserialize($value, array $opts = array())

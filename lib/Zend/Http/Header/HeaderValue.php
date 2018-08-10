@@ -114,8 +114,8 @@ final class Zend_Http_Header_HeaderValue
      * Assert a header value is valid.
      *
      * @param string $value
-     * @throws Exception\RuntimeException for invalid values
-     * @return void
+     *
+     * @throws Zend_Http_Header_Exception_InvalidArgumentException
      */
     public static function assertValid($value)
     {

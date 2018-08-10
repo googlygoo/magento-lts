@@ -74,7 +74,6 @@ class Zend_Form_Decorator_Image extends Zend_Form_Decorator_Abstract
     /**
      * Get HTML tag, if any, with which to surround label
      *
-     * @return void
      */
     public function getTag()
     {

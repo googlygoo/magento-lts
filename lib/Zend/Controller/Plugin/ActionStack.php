@@ -71,7 +71,6 @@ class Zend_Controller_Plugin_ActionStack extends Zend_Controller_Plugin_Abstract
      *
      * @param  Zend_Registry $registry
      * @param  string $key
-     * @return void
      */
     public function __construct(Zend_Registry $registry = null, $key = null)
     {
@@ -235,7 +234,6 @@ class Zend_Controller_Plugin_ActionStack extends Zend_Controller_Plugin_Abstract
      * postDispatch() plugin hook -- check for actions in stack, and dispatch if any found
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function postDispatch(Zend_Controller_Request_Abstract $request)
     {
@@ -262,7 +260,6 @@ class Zend_Controller_Plugin_ActionStack extends Zend_Controller_Plugin_Abstract
      * Forward request with next action
      *
      * @param  array $next
-     * @return void
      */
     public function forward(Zend_Controller_Request_Abstract $next)
     {

@@ -93,7 +93,6 @@ class Zend_Queue_Stomp_Client_Connection
     /**
      * Close the socket explicitly when destructed
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -103,7 +102,6 @@ class Zend_Queue_Stomp_Client_Connection
      * Close connection
      *
      * @param  boolean $destructor
-     * @return void
      */
     public function close($destructor = false)
     {

@@ -55,7 +55,6 @@ class Zend_Cloud_DocumentService_Document
      *
      * @param  array $fields
      * @param  mixed $id Document identifier
-     * @return void
      */
     public function __construct($fields, $id = null)
     {
@@ -148,7 +147,6 @@ class Zend_Cloud_DocumentService_Document
      *
      * @param  string $name
      * @param  mixed $value
-     * @return void
      */
     public function __set($name, $value)
     {
@@ -182,7 +180,6 @@ class Zend_Cloud_DocumentService_Document
      *
      * @param  string $name
      * @param  mixed $value
-     * @return void
      */
     public function offsetSet($name, $value)
     {
@@ -193,7 +190,6 @@ class Zend_Cloud_DocumentService_Document
      * ArrayAccess: remove field from document
      *
      * @param  string $name
-     * @return void
      */
     public function offsetUnset($name)
     {

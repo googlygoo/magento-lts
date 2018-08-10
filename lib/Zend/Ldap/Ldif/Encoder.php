@@ -51,7 +51,6 @@ class Zend_Ldap_Ldif_Encoder
      * Constructor.
      *
      * @param  array $options Additional options used during encoding
-     * @return void
      */
     protected function __construct(array $options = array())
     {

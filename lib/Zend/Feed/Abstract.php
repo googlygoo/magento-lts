@@ -60,6 +60,20 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
     protected $_entries;
 
     /**
+     * The class Name for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend_Feed_Entry_Abstract';
+
+    /**
+     * The element name for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryElementName = '';
+
+    /**
      * Feed constructor
      *
      * The Zend_Feed_Abstract constructor takes the URI of a feed or a
@@ -68,7 +82,6 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
      * @param  string $uri The full URI of the feed to load, or NULL if not retrieved via HTTP or as an array.
      * @param  string $string The feed as a string, or NULL if retrieved via HTTP or as an array.
      * @param  Zend_Feed_Builder_Interface $builder The feed as a builder instance or NULL if retrieved as a string or via HTTP.
-     * @return void
      * @throws Zend_Feed_Exception If loading the feed failed.
      */
     public function __construct($uri = null, $string = null, Zend_Feed_Builder_Interface $builder = null)
@@ -106,7 +119,6 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
     /**
      * Load the feed as an XML DOMDocument object
      *
-     * @return void
      * @throws Zend_Feed_Exception
      */
     public function __wakeup()
@@ -154,7 +166,6 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
      * Cache the individual feed elements so they don't need to be
      * searched for on every operation.
      *
-     * @return void
      */
     protected function _buildEntryCache()
     {
@@ -181,7 +192,6 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
     /**
      * Required by the Iterator interface.
      *
-     * @return void
      */
     public function rewind()
     {
@@ -214,9 +224,7 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
 
 
     /**
-     * Required by the Iterator interface.
-     *
-     * @return mixed The next row, or null if no more rows.
+     * Move forward to next element
      */
     public function next()
     {
@@ -255,7 +263,6 @@ abstract class Zend_Feed_Abstract extends Zend_Feed_Element implements Iterator,
      * Send feed to a http client with the correct header
      *
      * @throws Zend_Feed_Exception if headers have already been sent
-     * @return void
      */
     abstract public function send();
 

@@ -82,6 +82,21 @@ class Zend_Service_Amazon_Item
     public $Offers;
 
     /**
+     * @var string
+     */
+    public $CurrencyCode;
+
+    /**
+     * @var int
+     */
+    public $Amount;
+
+    /**
+     * @var string
+     */
+    public $FormattedPrice;
+
+    /**
      * @var Zend_Service_Amazon_CustomerReview[]
      */
     public $CustomerReviews = array();
@@ -108,12 +123,10 @@ class Zend_Service_Amazon_Item
 
     protected $_dom;
 
-
     /**
      * Parse the given <Item> element
      *
      * @param  null|DOMElement $dom
-     * @return void
      * @throws    Zend_Service_Amazon_Exception
      *
      * @group ZF-9547

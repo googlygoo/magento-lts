@@ -35,7 +35,6 @@ class Zend_Filter_Word_CamelCaseToUnderscore extends Zend_Filter_Word_CamelCaseT
     /**
      * Constructor
      *
-     * @return void
      */
     public function __construct()
     {

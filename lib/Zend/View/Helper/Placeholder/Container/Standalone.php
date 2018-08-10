@@ -62,7 +62,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Standalone extends Zend_Vi
     /**
      * Constructor
      *
-     * @return void
      */
     public function __construct()
     {
@@ -159,7 +158,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Standalone extends Zend_Vi
      *
      * @param  string $key
      * @param  mixed $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -199,7 +197,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Standalone extends Zend_Vi
      * Overloading: unset property
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {
@@ -294,22 +291,20 @@ abstract class Zend_View_Helper_Placeholder_Container_Standalone extends Zend_Vi
      *
      * @param  string|int $offset
      * @param  mixed $value
-     * @return void
      */
     public function offsetSet($offset, $value)
     {
-        return $this->getContainer()->offsetSet($offset, $value);
+        $this->getContainer()->offsetSet($offset, $value);
     }
 
     /**
      * ArrayAccess: offsetUnset
      *
      * @param  string|int $offset
-     * @return void
      */
     public function offsetUnset($offset)
     {
-        return $this->getContainer()->offsetUnset($offset);
+        $this->getContainer()->offsetUnset($offset);
     }
 
     /**

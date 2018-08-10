@@ -228,7 +228,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * request against its routes.
      *
      * @param Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function routeStartup(Zend_Controller_Request_Abstract $request)
     {
@@ -251,7 +250,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * the route set.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function routeShutdown(Zend_Controller_Request_Abstract $request)
     {
@@ -278,7 +276,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * Zend_Controller_Request_Abstract object to controllers/actions.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function dispatchLoopStartup(Zend_Controller_Request_Abstract $request)
     {
@@ -300,7 +297,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * Called before an action is dispatched by Zend_Controller_Dispatcher.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function preDispatch(Zend_Controller_Request_Abstract $request)
     {
@@ -324,7 +320,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * Called after an action is dispatched by Zend_Controller_Dispatcher.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function postDispatch(Zend_Controller_Request_Abstract $request)
     {
@@ -346,7 +341,6 @@ class Zend_Controller_Plugin_Broker extends Zend_Controller_Plugin_Abstract
      * Called before Zend_Controller_Front exits its dispatch loop.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     public function dispatchLoopShutdown()
     {

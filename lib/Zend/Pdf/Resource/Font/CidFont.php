@@ -160,8 +160,10 @@ abstract class Zend_Pdf_Resource_Font_CidFont extends Zend_Pdf_Resource_Font
         ksort($charWidths, SORT_NUMERIC);
 
         /* Width array optimization. Step2: Compact character codes sequences */
-        $lastCharCode = -1;
-        $widthsSequences = array();
+        $lastCharCode      = -1;
+        $sequenceStartCode = -1;
+        $widthsSequences   = array();
+        $charCodesSequense = array();
         foreach ($charWidths as $charCode => $width) {
             if ($lastCharCode == -1) {
                 $charCodesSequense = array();

@@ -58,7 +58,6 @@ class Zend_Feed_Reader_FeedSet extends ArrayObject
      *
      * @param DOMNodeList $links
      * @param string $uri
-     * @return void
      */
     public function addLinks(DOMNodeList $links, $uri)
     {

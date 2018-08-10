@@ -92,7 +92,6 @@ class Zend_Barcode_Renderer_Pdf extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Check renderer parameters
      *
-     * @return void
      */
     protected function _checkParams()
     {
@@ -111,7 +110,6 @@ class Zend_Barcode_Renderer_Pdf extends Zend_Barcode_Renderer_RendererAbstract
 
     /**
      * Initialize the PDF resource
-     * @return void
      */
     protected function _initRenderer()
     {

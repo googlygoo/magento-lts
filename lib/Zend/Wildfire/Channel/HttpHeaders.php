@@ -131,7 +131,6 @@ class Zend_Wildfire_Channel_HttpHeaders extends Zend_Controller_Plugin_Abstract 
      *
      * Primarily used for testing.
      *
-     * @return void
      */
     public static function destroyInstance()
     {
@@ -215,7 +214,6 @@ class Zend_Wildfire_Channel_HttpHeaders extends Zend_Controller_Plugin_Abstract 
     /**
      * Register this object as a controller plugin.
      *
-     * @return void
      */
     protected function _registerControllerPlugin()
     {
@@ -294,7 +292,6 @@ class Zend_Wildfire_Channel_HttpHeaders extends Zend_Controller_Plugin_Abstract 
     /**
      * Flush messages to headers as late as possible but before headers have been sent.
      *
-     * @return void
      */
     public function dispatchLoopShutdown()
     {

@@ -485,7 +485,6 @@ class Zend_Controller_Router_Route extends Zend_Controller_Router_Route_Abstract
      * Set a default translator
      *
      * @param  Zend_Translate $translator
-     * @return void
      */
     public static function setDefaultTranslator(Zend_Translate $translator = null)
     {
@@ -506,7 +505,6 @@ class Zend_Controller_Router_Route extends Zend_Controller_Router_Route_Abstract
      * Set a translator
      *
      * @param  Zend_Translate $translator
-     * @return void
      */
     public function setTranslator(Zend_Translate $translator)
     {
@@ -547,7 +545,6 @@ class Zend_Controller_Router_Route extends Zend_Controller_Router_Route_Abstract
      * Set a default locale
      *
      * @param  mixed $locale
-     * @return void
      */
     public static function setDefaultLocale($locale = null)
     {
@@ -568,7 +565,6 @@ class Zend_Controller_Router_Route extends Zend_Controller_Router_Route_Abstract
      * Set a locale
      *
      * @param  mixed $locale
-     * @return void
      */
     public function setLocale($locale)
     {

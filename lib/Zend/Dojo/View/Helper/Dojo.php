@@ -64,7 +64,6 @@ class Zend_Dojo_View_Helper_Dojo
      * Retrieve container from registry or create new container and store in
      * registry.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -81,7 +80,6 @@ class Zend_Dojo_View_Helper_Dojo
      * Set view object
      *
      * @param  Zend_Dojo_View_Interface $view
-     * @return void
      */
     public function setView(Zend_View_Interface $view)
     {
@@ -120,7 +118,6 @@ class Zend_Dojo_View_Helper_Dojo
     /**
      * Set whether or not dijits should be created declaratively
      *
-     * @return void
      */
     public static function setUseDeclarative()
     {
@@ -134,7 +131,6 @@ class Zend_Dojo_View_Helper_Dojo
      * programmatic dojo.
      *
      * @param  int $style
-     * @return void
      */
     public static function setUseProgrammatic($style = self::PROGRAMMATIC_SCRIPT)
     {

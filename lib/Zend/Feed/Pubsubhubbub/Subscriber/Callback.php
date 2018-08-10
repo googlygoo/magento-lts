@@ -87,7 +87,6 @@ class Zend_Feed_Pubsubhubbub_Subscriber_Callback
      *
      * @param  array $httpGetData GET data if available and not in $_GET
      * @param  bool $sendResponseNow Whether to send response now or when asked
-     * @return void
      */
     public function handle(array $httpGetData = null, $sendResponseNow = false)
     {
@@ -298,7 +297,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_Callback
      * This bypasses $_GET which munges parameter names and cannot accept
      * multiple parameters with the same key.
      *
-     * @return array|void
+     * @return array
      */
     protected function _parseQueryString()
     {

@@ -172,7 +172,6 @@ class Zend_XmlRpc_Request
      *
      * @param mixed $value
      * @param string $type Optional; type hinting
-     * @return void
      */
     public function addParam($value, $type = null)
     {
@@ -209,7 +208,6 @@ class Zend_XmlRpc_Request
      * </code>
      *
      * @access public
-     * @return void
      */
     public function setParams()
     {

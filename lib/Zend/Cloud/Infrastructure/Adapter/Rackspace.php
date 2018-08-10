@@ -91,7 +91,6 @@ class Zend_Cloud_Infrastructure_Adapter_Rackspace extends Zend_Cloud_Infrastruct
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {

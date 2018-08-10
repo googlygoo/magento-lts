@@ -74,7 +74,6 @@ class Zend_Ldap_Collection_Iterator_Default implements Iterator, Countable
      *
      * @param  Zend_Ldap $ldap
      * @param  resource  $resultId
-     * @return void
      */
     public function __construct(Zend_Ldap $ldap, $resultId)
     {
@@ -199,9 +198,8 @@ class Zend_Ldap_Collection_Iterator_Default implements Iterator, Countable
         }
 
         $entry = array('dn' => $this->key());
-        $ber_identifier = null;
-        $name = @ldap_first_attribute($this->_ldap->getResource(), $this->_current,
-            $ber_identifier);
+
+        $name = @ldap_first_attribute($this->_ldap->getResource(), $this->_current);
         while ($name) {
             $data = @ldap_get_values_len($this->_ldap->getResource(), $this->_current, $name);
             unset($data['count']);
@@ -221,8 +219,7 @@ class Zend_Ldap_Collection_Iterator_Default implements Iterator, Countable
                     break;
             }
             $entry[$attrName] = $data;
-            $name = @ldap_next_attribute($this->_ldap->getResource(), $this->_current,
-                $ber_identifier);
+            $name = @ldap_next_attribute($this->_ldap->getResource(), $this->_current);
         }
         ksort($entry, SORT_LOCALE_STRING);
         return $entry;

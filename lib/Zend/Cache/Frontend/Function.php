@@ -59,7 +59,6 @@ class Zend_Cache_Frontend_Function extends Zend_Cache_Core
      * Constructor
      *
      * @param  array $options Associative array of options
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -94,7 +93,7 @@ class Zend_Cache_Frontend_Function extends Zend_Cache_Core
             return call_user_func_array($callback, $parameters);
         }
 
-        $id = $this->_makeId($callback, $parameters);
+        $id = $this->makeId($callback, $parameters);
         if ( ($rs = $this->load($id)) && isset($rs[0], $rs[1])) {
             // A cache is available
             $output = $rs[0];

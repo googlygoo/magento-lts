@@ -40,7 +40,6 @@ class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
      *
      * @param  null|array $data
      * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
      */
     public function __construct(array $data = null, Zend_Oauth_Http_Utility $utility = null)
     {

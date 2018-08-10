@@ -60,7 +60,6 @@ class Zend_Registry extends ArrayObject
      *
      * @param Zend_Registry $registry An object instance of type Zend_Registry,
      *   or a subclass.
-     * @return void
      * @throws Zend_Exception if registry is already initialized.
      */
     public static function setInstance(Zend_Registry $registry)
@@ -77,7 +76,6 @@ class Zend_Registry extends ArrayObject
     /**
      * Initialize the default registry instance.
      *
-     * @return void
      */
     protected static function init()
     {
@@ -90,7 +88,6 @@ class Zend_Registry extends ArrayObject
      * for the next time you instantiate.
      *
      * @param string $registryClassName
-     * @return void
      * @throws Zend_Exception if the registry is initialized or if the
      *   class name is not valid.
      */
@@ -135,6 +132,7 @@ class Zend_Registry extends ArrayObject
      * static instance stored in the class.
      *
      * @param string $index - get the value associated with $index
+     *
      * @return mixed
      * @throws Zend_Exception if no entry is registered for $index.
      */
@@ -160,7 +158,6 @@ class Zend_Registry extends ArrayObject
      * @param string $index The location in the ArrayObject in which to store
      *   the value.
      * @param mixed $value The object to store in the ArrayObject.
-     * @return void
      */
     public static function set($index, $value)
     {
@@ -196,10 +193,11 @@ class Zend_Registry extends ArrayObject
     }
 
     /**
-     * @param string $index
-     * @returns mixed
-     *
      * Workaround for http://bugs.php.net/bug.php?id=40442 (ZF-960).
+     *
+     * @param string $index
+     *
+     * @return bool
      */
     public function offsetExists($index)
     {

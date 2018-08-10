@@ -87,7 +87,6 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
     /**
      * Constructor; setup constraint state
      *
-     * @return void
      */
     public function __construct()
     {
@@ -97,7 +96,6 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
      * Indicate negative match
      *
      * @param  bool $flag
-     * @return void
      */
     public function setNegate($flag = true)
     {
@@ -186,7 +184,6 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
      * @param  mixed $other
      * @param  string $description Additional message to display
      * @param  bool $not
-     * @return void
      * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function fail($other, $description, $not = false)

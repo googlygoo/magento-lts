@@ -115,7 +115,6 @@ class Zend_Cache_Backend_Memcached extends Zend_Cache_Backend implements Zend_Ca
      *
      * @param array $options associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -291,7 +290,6 @@ class Zend_Cache_Backend_Memcached extends Zend_Cache_Backend implements Zend_Ca
      *
      * @param  array $directives Assoc of directives
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setDirectives($directives)
     {

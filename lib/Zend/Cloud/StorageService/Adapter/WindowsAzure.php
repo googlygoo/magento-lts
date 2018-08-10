@@ -237,7 +237,6 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      *
      * @param  string $path
      * @param  array  $options
-     * @return void
      */
     public function deleteItem($path, $options = null)
     {
@@ -257,7 +256,6 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      * @param  string $sourcePath
      * @param  string $destinationPath
      * @param  array  $options
-     * @return void
      */
     public function copyItem($sourcePath, $destinationPath, $options = null)
     {
@@ -279,7 +277,8 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      * @param  string $sourcePath
      * @param  string $destinationPath
      * @param  array  $options
-     * @return void
+     *
+     * @throws Zend_Cloud_StorageService_Exception
      */
     public function moveItem($sourcePath, $destinationPath, $options = null)
     {
@@ -308,11 +307,12 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      * @param  string $path
      * @param  string $name
      * @param  array $options
-     * @return void
+     *
+     * @throws Zend_Cloud_StorageService_Exception
      */
     public function renameItem($path, $name, $options = null)
     {
-        return $this->moveItem($path, $name, $options);
+        $this->moveItem($path, $name, $options);
     }
 
     /**
@@ -386,8 +386,9 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      * $destinationPath.
      *
      * @param  string $destinationPath
-     * @param  array $options
-     * @return void
+     * @param  array  $options
+     *
+     * @throws Zend_Cloud_StorageService_Exception
      */
     public function storeMetadata($destinationPath, $metadata, $options = null)
     {
@@ -404,13 +405,14 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
      * Delete a key/value array of metadata at the given path.
      *
      * @param  string $path
-     * @param  array $options
-     * @return void
+     * @param  array  $options
+     *
+     * @throws Zend_Cloud_StorageService_Exception
      */
     public function deleteMetadata($path, $options = null)
     {
         try {
-            $this->_storageClient->setBlobMetadata($this->_container, $destinationPath, array());
+            $this->_storageClient->setBlobMetadata($this->_container, $path, array());
         } catch (Zend_Service_WindowsAzure_Exception $e) {
             if (strpos($e->getMessage(), "could not be accessed") === false) {
                 throw new Zend_Cloud_StorageService_Exception('Error on delete metadata: '.$e->getMessage(), $e->getCode(), $e);
@@ -421,7 +423,6 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzure
     /**
      * Delete container
      *
-     * @return void
      */
     public function deleteContainer()
     {

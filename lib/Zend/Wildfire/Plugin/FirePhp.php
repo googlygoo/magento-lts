@@ -203,7 +203,6 @@ class Zend_Wildfire_Plugin_FirePhp implements Zend_Wildfire_Plugin_Interface
 
     /**
      * Constructor
-     * @return void
      */
     protected function __construct()
     {
@@ -230,7 +229,6 @@ class Zend_Wildfire_Plugin_FirePhp implements Zend_Wildfire_Plugin_Interface
      *
      * Primarily used for testing.
      *
-     * @return void
      */
     public static function destroyInstance()
     {
@@ -313,7 +311,6 @@ class Zend_Wildfire_Plugin_FirePhp implements Zend_Wildfire_Plugin_Interface
      *
      * @param string $Class The class name of the object
      * @param array $Filter An array of members to exclude
-     * @return void
      */
     public function setObjectFilter($class, $filter) {
       $this->_objectFilters[$class] = $filter;
@@ -805,7 +802,6 @@ class Zend_Wildfire_Plugin_FirePhp implements Zend_Wildfire_Plugin_Interface
      * Flush any buffered data.
      *
      * @param string $protocolUri The URI of the protocol that should be flushed to
-     * @return void
      */
     public function flushMessages($protocolUri)
     {

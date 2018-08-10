@@ -200,6 +200,7 @@ abstract class Zend_Cache
      *
      * Note : for perf reasons, the "load" of Zend/Cache/Exception is dynamic
      * @param  string $msg  Message for the exception
+     *
      * @throws Zend_Cache_Exception
      */
     public static function throwException($msg, Exception $e = null)

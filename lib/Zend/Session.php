@@ -194,7 +194,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @param  array $userOptions - pass-by-keyword style array of <option name, option value> pairs
      * @throws Zend_Session_Exception
-     * @return void
      */
     public static function setOptions(array $userOptions = array())
     {
@@ -260,7 +259,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @param Zend_Session_SaveHandler_Interface $interface
      * @throws Zend_Session_Exception When the session_set_save_handler call fails
-     * @return void
      */
     public static function setSaveHandler(Zend_Session_SaveHandler_Interface $saveHandler)
     {
@@ -302,7 +300,6 @@ class Zend_Session extends Zend_Session_Abstract
      * at start time.
      *
      * @throws Zend_Session_Exception
-     * @return void
      */
     public static function regenerateId()
     {
@@ -330,7 +327,6 @@ class Zend_Session extends Zend_Session_Abstract
      * large values are recommended to avoid undesirable expiration of session cookies.
      *
      * @param int $seconds OPTIONAL specifies TTL for cookie in seconds from present time
-     * @return void
      */
     public static function rememberMe($seconds = null)
     {
@@ -345,7 +341,6 @@ class Zend_Session extends Zend_Session_Abstract
      * forgetMe() - Write a volatile session cookie, removing any persistent cookie that may have existed. The session
      * would end upon, for example, termination of a web browser program.
      *
-     * @return void
      */
     public static function forgetMe()
     {
@@ -358,7 +353,6 @@ class Zend_Session extends Zend_Session_Abstract
      * sure that it gets resent to the browser via regenerateId()
      *
      * @param int $seconds
-     * @return void
      */
     public static function rememberUntil($seconds = 0)
     {
@@ -416,7 +410,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @param bool|array $options  OPTIONAL Either user supplied options, or flag indicating if start initiated automatically
      * @throws Zend_Session_Exception
-     * @return void
      */
     public static function start($options = false)
     {
@@ -545,7 +538,6 @@ class Zend_Session extends Zend_Session_Abstract
      * _processGlobalMetadata() - this method initizes the sessions GLOBAL
      * metadata, mostly global data expiration calculations.
      *
-     * @return void
      */
     private static function _processStartupMetadataGlobal()
     {
@@ -657,7 +649,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @throws Zend_Session_Exception
      * @param string $id
-     * @return void
      */
     public static function setId($id)
     {
@@ -689,7 +680,6 @@ class Zend_Session extends Zend_Session_Abstract
      * every future request
      *
      * @param Zend_Session_Validator_Interface $validator
-     * @return void
      */
     public static function registerValidator(Zend_Session_Validator_Interface $validator)
     {
@@ -700,7 +690,6 @@ class Zend_Session extends Zend_Session_Abstract
     /**
      * stop() - Disable write access.  Optionally disable read (not implemented).
      *
-     * @return void
      */
     public static function stop()
     {
@@ -713,7 +702,6 @@ class Zend_Session extends Zend_Session_Abstract
      * This will complete the internal data transformation on this request.
      *
      * @param bool $readonly - OPTIONAL remove write access (i.e. throw error if Zend_Session's attempt writes)
-     * @return void
      */
     public static function writeClose($readonly = true)
     {
@@ -739,7 +727,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @param bool $remove_cookie - OPTIONAL remove session id cookie, defaults to true (remove cookie)
      * @param bool $readonly - OPTIONAL remove write access (i.e. throw error if Zend_Session's attempt writes)
-     * @return void
      */
     public static function destroy($remove_cookie = true, $readonly = true)
     {
@@ -767,7 +754,6 @@ class Zend_Session extends Zend_Session_Abstract
     /**
      * expireSessionCookie() - Sends an expired session id cookie, causing the client to delete the session cookie
      *
-     * @return void
      */
     public static function expireSessionCookie()
     {
@@ -800,7 +786,6 @@ class Zend_Session extends Zend_Session_Abstract
      * _processValidator() - internal function that is called in the existence of VALID metadata
      *
      * @throws Zend_Session_Exception
-     * @return void
      */
     private static function _processValidators()
     {
@@ -836,7 +821,6 @@ class Zend_Session extends Zend_Session_Abstract
      *
      * @param string $namespace
      * @throws Zend_Session_Exception
-     * @return void
      */
     public static function namespaceUnset($namespace)
     {

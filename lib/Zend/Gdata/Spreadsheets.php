@@ -113,6 +113,11 @@ class Zend_Gdata_Spreadsheets extends Zend_Gdata
     );
 
     /**
+     * @var string
+     */
+    protected $_server;
+
+    /**
      * Create Gdata_Spreadsheets object
      *
      * @param Zend_Http_Client $client (optional) The HTTP client to use when

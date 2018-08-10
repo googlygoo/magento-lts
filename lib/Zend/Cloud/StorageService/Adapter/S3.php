@@ -59,7 +59,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -129,7 +128,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      * @param string $destinationPath
      * @param string|resource $data
      * @param  array $options
-     * @return void
      */
     public function storeItem($destinationPath, $data, $options = array())
     {
@@ -150,7 +148,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     public function deleteItem($path, $options = array())
     {
@@ -172,7 +169,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function copyItem($sourcePath, $destinationPath, $options = array())
     {
@@ -198,7 +194,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function moveItem($sourcePath, $destinationPath, $options = array())
     {
@@ -222,7 +217,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      * @param  string $path
      * @param  string $name
      * @param  array $options
-     * @return void
      */
     public function renameItem($path, $name, $options = null)
     {
@@ -273,7 +267,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      *
      * @param  string $destinationPath
      * @param  array $options
-     * @return void
      */
     public function storeMetadata($destinationPath, $metadata, $options = array())
     {
@@ -286,7 +279,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     public function deleteMetadata($path)
     {
@@ -299,7 +291,6 @@ class Zend_Cloud_StorageService_Adapter_S3
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     protected function _getFullPath($path, $options)
     {

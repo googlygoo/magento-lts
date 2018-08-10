@@ -38,7 +38,6 @@ abstract class Zend_Service_Amazon_Authentication
      * @param  string $accessKey
      * @param  string $secretKey
      * @param  string $apiVersion
-     * @return void
      */
     public function __construct($accessKey, $secretKey, $apiVersion)
     {
@@ -51,7 +50,6 @@ abstract class Zend_Service_Amazon_Authentication
      * Set access key
      *
      * @param  string $accessKey
-     * @return void
      */
     public function setAccessKey($accessKey)
     {
@@ -62,7 +60,6 @@ abstract class Zend_Service_Amazon_Authentication
      * Set secret key
      *
      * @param  string $secretKey
-     * @return void
      */
     public function setSecretKey($secretKey)
     {
@@ -73,7 +70,6 @@ abstract class Zend_Service_Amazon_Authentication
      * Set API version
      *
      * @param  string $apiVersion
-     * @return void
      */
     public function setApiVersion($apiVersion)
     {

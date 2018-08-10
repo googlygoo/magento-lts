@@ -66,7 +66,6 @@ abstract class Zend_Form_Decorator_Abstract implements Zend_Form_Decorator_Inter
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -143,7 +142,6 @@ abstract class Zend_Form_Decorator_Abstract implements Zend_Form_Decorator_Inter
      * Remove single option
      *
      * @param mixed $key
-     * @return void
      */
     public function removeOption($key)
     {

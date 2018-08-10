@@ -75,7 +75,6 @@ class Zend_Form_Element_Hash extends Zend_Form_Element_Xhtml
      *
      * @param  string|array|Zend_Config $spec
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($spec, $options = null)
     {
@@ -219,7 +218,6 @@ class Zend_Form_Element_Hash extends Zend_Form_Element_Xhtml
     /**
      * Initialize CSRF token in session
      *
-     * @return void
      */
     public function initCsrfToken()
     {
@@ -247,7 +245,6 @@ class Zend_Form_Element_Hash extends Zend_Form_Element_Xhtml
      * Generates CSRF token and stores both in {@link $_hash} and element
      * value.
      *
-     * @return void
      */
     protected function _generateHash()
     {

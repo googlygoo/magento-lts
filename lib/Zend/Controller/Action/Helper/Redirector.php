@@ -205,7 +205,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
     /**
      * Set redirect in response object
      *
-     * @return void
      */
     protected function _redirect($url)
     {
@@ -266,7 +265,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  string $controller
      * @param  string $module
      * @param  array  $params
-     * @return void
      */
     public function setGotoSimple($action, $controller = null, $module = null, array $params = array())
     {
@@ -311,7 +309,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  string  $name Route name
      * @param  boolean $reset
      * @param  boolean $encode
-     * @return void
      */
     public function setGotoRoute(array $urlOptions = array(), $name = null, $reset = false, $encode = true)
     {
@@ -343,7 +340,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      *
      * @param  string $url
      * @param  array  $options
-     * @return void
      */
     public function setGotoUrl($url, array $options = array())
     {
@@ -377,7 +373,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  string $controller
      * @param  string $module
      * @param  array  $params
-     * @return void
      */
     public function gotoSimple($action, $controller = null, $module = null, array $params = array())
     {
@@ -395,7 +390,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  mixed $controller
      * @param  mixed $module
      * @param  array $params
-     * @return void
      */
     public function gotoSimpleAndExit($action, $controller = null, $module = null, array $params = array())
     {
@@ -413,7 +407,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  string  $name
      * @param  boolean $reset
      * @param  boolean $encode
-     * @return void
      */
     public function gotoRoute(array $urlOptions = array(), $name = null, $reset = false, $encode = true)
     {
@@ -433,7 +426,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  array   $urlOptions Array of key/value pairs used to assemble URL
      * @param  string  $name
      * @param  boolean $reset
-     * @return void
      */
     public function gotoRouteAndExit(array $urlOptions = array(), $name = null, $reset = false)
     {
@@ -446,7 +438,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      *
      * @param  string $url
      * @param  array  $options
-     * @return void
      */
     public function gotoUrl($url, array $options = array())
     {
@@ -462,7 +453,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      *
      * @param  string $url
      * @param  array  $options
-     * @return void
      */
     public function gotoUrlAndExit($url, array $options = array())
     {
@@ -473,7 +463,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
     /**
      * exit(): Perform exit for redirector
      *
-     * @return void
      */
     public function redirectAndExit()
     {
@@ -498,7 +487,6 @@ class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_He
      * @param  string $controller
      * @param  string $module
      * @param  array  $params
-     * @return void
      */
     public function direct($action, $controller = null, $module = null, array $params = array())
     {

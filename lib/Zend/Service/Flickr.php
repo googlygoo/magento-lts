@@ -60,7 +60,6 @@ class Zend_Service_Flickr
      *  # Saves the API key
      *
      * @param  string $apiKey Your Flickr API key
-     * @return void
      */
     public function __construct($apiKey)
     {
@@ -399,7 +398,6 @@ class Zend_Service_Flickr
      * Validate User Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateUserSearch(array $options)
@@ -453,7 +451,6 @@ class Zend_Service_Flickr
      * Validate Tag Search Options
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _validateTagSearch(array $options)
@@ -513,7 +510,6 @@ class Zend_Service_Flickr
     *
     * @param  array $options
     * @throws Zend_Service_Exception
-    * @return void
     */
     protected function _validateGroupPoolGetPhotos(array $options)
     {
@@ -566,7 +562,6 @@ class Zend_Service_Flickr
      * Throws an exception if and only if the response status indicates a failure
      *
      * @param  DOMDocument $dom
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected static function _checkErrors(DOMDocument $dom)
@@ -606,7 +601,6 @@ class Zend_Service_Flickr
      *
      * @param  array $options      User options
      * @param  array $validOptions Valid options
-     * @return void
      * @throws Zend_Service_Exception
      */
     protected function _compareOptions(array $options, array $validOptions)

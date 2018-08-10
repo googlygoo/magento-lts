@@ -72,7 +72,6 @@ class Zend_Feed_Rss extends Zend_Feed_Abstract
     /**
      * Override Zend_Feed_Abstract to set up the $_element and $_entries aliases.
      *
-     * @return void
      * @throws Zend_Feed_Exception
      */
     public function __wakeup()
@@ -262,7 +261,6 @@ class Zend_Feed_Rss extends Zend_Feed_Abstract
      *
      * @param  DOMElement $root
      * @param  array $array
-     * @return void
      */
     private function _buildiTunes(DOMElement $root, $array)
     {
@@ -388,7 +386,6 @@ class Zend_Feed_Rss extends Zend_Feed_Abstract
      *
      * @param  DOMElement $root the root node to use
      * @param  array $array the data to use
-     * @return void
      */
     protected function _mapFeedEntries(DOMElement $root, $array)
     {
@@ -509,7 +506,6 @@ class Zend_Feed_Rss extends Zend_Feed_Abstract
     /**
      * Send feed to a http client with the correct header
      *
-     * @return void
      * @throws Zend_Feed_Exception if headers have already been sent
      */
     public function send()

@@ -388,7 +388,6 @@ class Zend_Feed_Reader_Feed_Atom extends Zend_Feed_Reader_FeedAbstract
     /**
      * Read all entries to the internal entries array
      *
-     * @return void
      */
     protected function _indexEntries()
     {

@@ -78,7 +78,6 @@ class Zend_Cloud_Infrastructure_Instance
      * 
      * @param  Adapter $adapter
      * @param  array $data 
-     * @return void
      */
     public function __construct($adapter, $data = null)
     {

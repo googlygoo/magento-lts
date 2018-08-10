@@ -52,7 +52,6 @@ class Zend_Oauth
      * Client instance.
      *
      * @param Zend_Http_Client $httpClient
-     * @return void
      */
     public static function setHttpClient(Zend_Http_Client $httpClient)
     {
@@ -81,7 +80,6 @@ class Zend_Oauth
      * Simple mechanism to delete the entire singleton HTTP Client instance
      * which forces an new instantiation for subsequent requests.
      *
-     * @return void
      */
     public static function clearHttpClient()
     {

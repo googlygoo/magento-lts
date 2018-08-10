@@ -169,7 +169,6 @@ class Zend_Cache_Backend_File extends Zend_Cache_Backend implements Zend_Cache_B
      * @param  string  $value
      * @param  boolean $trailingSeparator If true, add a trailing separator is necessary
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setCacheDir($value, $trailingSeparator = true)
     {
@@ -551,7 +550,6 @@ class Zend_Cache_Backend_File extends Zend_Cache_Backend implements Zend_Cache_B
     /**
      * Clear the metadatas array
      *
-     * @return void
      */
     protected function _cleanMetadatas()
     {
@@ -913,8 +911,9 @@ class Zend_Cache_Backend_File extends Zend_Cache_Backend implements Zend_Cache_B
      * Return the complete directory path of a filename (including hashedDirectoryStructure)
      *
      * @param  string $id Cache id
-     * @param  boolean $parts if true, returns array of directory parts instead of single string
-     * @return string Complete directory path
+     * @param  bool   $parts if true, returns array of directory parts instead of single string
+     *
+     * @return string|array Complete directory path
      */
     protected function _path($id, $parts = false)
     {

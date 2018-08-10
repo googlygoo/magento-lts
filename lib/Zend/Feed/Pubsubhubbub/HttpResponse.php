@@ -56,7 +56,6 @@ class Zend_Feed_Pubsubhubbub_HttpResponse
     /**
      * Send the response, including all headers
      *
-     * @return void
      */
     public function sendResponse()
     {
@@ -70,7 +69,6 @@ class Zend_Feed_Pubsubhubbub_HttpResponse
      * Sends any headers specified. If an {@link setHttpResponseCode() HTTP response code}
      * has been specified, it is sent with the first header.
      *
-     * @return void
      */
     public function sendHeaders()
     {

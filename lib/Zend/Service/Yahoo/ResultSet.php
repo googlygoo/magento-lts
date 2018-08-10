@@ -85,7 +85,6 @@ class Zend_Service_Yahoo_ResultSet implements SeekableIterator
      * Parse the search response and retrieve the results for iteration
      *
      * @param  DOMDocument $dom the REST fragment for this object
-     * @return void
      */
     public function __construct(DOMDocument $dom)
     {
@@ -146,7 +145,6 @@ class Zend_Service_Yahoo_ResultSet implements SeekableIterator
     /**
      * Implement SeekableIterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -157,7 +155,6 @@ class Zend_Service_Yahoo_ResultSet implements SeekableIterator
     /**
      * Implement SeekableIterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {
@@ -169,7 +166,6 @@ class Zend_Service_Yahoo_ResultSet implements SeekableIterator
      * Implement SeekableIterator::seek()
      *
      * @param  int $index
-     * @return void
      * @throws OutOfBoundsException
      */
     public function seek($index)

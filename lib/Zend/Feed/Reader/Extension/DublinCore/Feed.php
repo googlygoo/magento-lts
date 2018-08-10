@@ -299,7 +299,6 @@ class Zend_Feed_Reader_Extension_DublinCore_Feed
     /**
      * Register the default namespaces for the current feed format
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

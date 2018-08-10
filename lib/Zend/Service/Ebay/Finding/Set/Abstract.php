@@ -41,7 +41,6 @@ abstract class Zend_Service_Ebay_Finding_Set_Abstract implements SeekableIterato
 
     /**
      * @param  DOMNodeList $nodes
-     * @return void
      */
     public function __construct(DOMNodeList $nodes)
     {
@@ -54,7 +53,6 @@ abstract class Zend_Service_Ebay_Finding_Set_Abstract implements SeekableIterato
      *
      * Called from {@link __construct()} as final step of object initialization.
      *
-     * @return void
      */
     protected function _init()
     {
@@ -65,7 +63,6 @@ abstract class Zend_Service_Ebay_Finding_Set_Abstract implements SeekableIterato
      *
      * @param  integer $key
      * @throws OutOfBoundsException When $key is not seekable
-     * @return void
      */
     public function seek($key)
     {
@@ -89,7 +86,6 @@ abstract class Zend_Service_Ebay_Finding_Set_Abstract implements SeekableIterato
     /**
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -99,7 +95,6 @@ abstract class Zend_Service_Ebay_Finding_Set_Abstract implements SeekableIterato
     /**
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

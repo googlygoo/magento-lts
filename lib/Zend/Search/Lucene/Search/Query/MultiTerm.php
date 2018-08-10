@@ -137,7 +137,6 @@ class Zend_Search_Lucene_Search_Query_MultiTerm extends Zend_Search_Lucene_Searc
      *
      * @param  Zend_Search_Lucene_Index_Term $term
      * @param  boolean|null $sign
-     * @return void
      */
     public function addTerm(Zend_Search_Lucene_Index_Term $term, $sign = null) {
         if ($sign !== true || $this->_signs !== null) {       // Skip, if all terms are required

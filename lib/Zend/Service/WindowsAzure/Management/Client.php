@@ -1156,7 +1156,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot;
-    	return $this->_deleteDeployment($operationUrl);
+    	$this->_deleteDeployment($operationUrl);
     }
     
     /**
@@ -1178,7 +1178,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId;
-    	return $this->_deleteDeployment($operationUrl);
+    	$this->_deleteDeployment($operationUrl);
     }
     
     /**
@@ -1223,7 +1223,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot;
-    	return $this->_updateDeploymentStatus($operationUrl, $status);
+    	$this->_updateDeploymentStatus($operationUrl, $status);
     }
     
     /**
@@ -1251,7 +1251,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId;
-    	return $this->_updateDeploymentStatus($operationUrl, $status);
+    	$this->_updateDeploymentStatus($operationUrl, $status);
     }
     
     /**
@@ -1483,7 +1483,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot;
-    	return $this->_configureDeployment($operationUrl, $configuration);
+    	$this->_configureDeployment($operationUrl, $configuration);
     }
     
     /**
@@ -1516,7 +1516,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId;
-    	return $this->_configureDeployment($operationUrl, $configuration);
+    	$this->_configureDeployment($operationUrl, $configuration);
     }
     
     /**
@@ -1594,7 +1594,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
 		$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot;
-    	return $this->_upgradeDeployment($operationUrl, $label, $packageUrl, $configuration, $mode, $roleToUpgrade);  	
+    	$this->_upgradeDeployment($operationUrl, $label, $packageUrl, $configuration, $mode, $roleToUpgrade);
     }
     
     /**
@@ -1646,7 +1646,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
 		$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId;
-    	return $this->_upgradeDeployment($operationUrl, $label, $packageUrl, $configuration, $mode, $roleToUpgrade);  	
+    	$this->_upgradeDeployment($operationUrl, $label, $packageUrl, $configuration, $mode, $roleToUpgrade);
     }
     
     
@@ -1698,7 +1698,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
 		$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot;
-    	return $this->_walkUpgradeDomain($operationUrl, $upgradeDomain);  	
+    	$this->_walkUpgradeDomain($operationUrl, $upgradeDomain);
     }
     
     /**
@@ -1721,7 +1721,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
 		$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId;
-    	return $this->_walkUpgradeDomain($operationUrl, $upgradeDomain);  	
+    	$this->_walkUpgradeDomain($operationUrl, $upgradeDomain);
     }
     
     
@@ -1771,7 +1771,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot . '/roleinstances/' . $roleInstanceName;
-    	return $this->_rebootOrReimageRoleInstance($operationUrl, 'reboot');
+    	$this->_rebootOrReimageRoleInstance($operationUrl, 'reboot');
     }
     
     /**
@@ -1799,7 +1799,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId . '/roleinstances/' . $roleInstanceName;
-    	return $this->_rebootOrReimageRoleInstance($operationUrl, 'reboot');
+    	$this->_rebootOrReimageRoleInstance($operationUrl, 'reboot');
     }
 
     /**
@@ -1828,7 +1828,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deploymentslots/' . $deploymentSlot . '/roleinstances/' . $roleInstanceName;
-    	return $this->_rebootOrReimageRoleInstance($operationUrl, 'reimage');
+    	$this->_rebootOrReimageRoleInstance($operationUrl, 'reimage');
     }
     
     /**
@@ -1856,7 +1856,7 @@ class Zend_Service_WindowsAzure_Management_Client
     	}
     	
     	$operationUrl = self::OP_HOSTED_SERVICES . '/' . $serviceName . '/deployments/' . $deploymentId . '/roleinstances/' . $roleInstanceName;
-    	return $this->_rebootOrReimageRoleInstance($operationUrl, 'reimage');
+    	$this->_rebootOrReimageRoleInstance($operationUrl, 'reimage');
     }
     
     /**

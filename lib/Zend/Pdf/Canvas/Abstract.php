@@ -500,6 +500,8 @@ abstract class Zend_Pdf_Canvas_Abstract implements Zend_Pdf_Canvas_Interface
         $this->_addProcSet('PDF');
 
         $firstPoint = true;
+        $path       = '';
+
         foreach ($x as $id => $xVal) {
             $xObj = new Zend_Pdf_Element_Numeric($xVal);
             $yObj = new Zend_Pdf_Element_Numeric($y[$id]);
@@ -605,17 +607,14 @@ abstract class Zend_Pdf_Canvas_Abstract implements Zend_Pdf_Canvas_Interface
      */
     public function drawEllipse($x1, $y1, $x2, $y2, $param5 = null, $param6 = null, $param7 = null)
     {
+        $startAngle = null;
+        $endAngle = null;
+
         if ($param5 === null) {
-            // drawEllipse($x1, $y1, $x2, $y2);
-            $startAngle = null;
             $fillType = Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE;
         } else if ($param6 === null) {
-            // drawEllipse($x1, $y1, $x2, $y2, $fillType);
-            $startAngle = null;
             $fillType = $param5;
         } else {
-            // drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);
-            // drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle, $fillType);
             $startAngle = $param5;
             $endAngle   = $param6;
 
@@ -805,6 +804,8 @@ abstract class Zend_Pdf_Canvas_Abstract implements Zend_Pdf_Canvas_Interface
         $this->_addProcSet('PDF');
 
         $firstPoint = true;
+        $path       = '';
+
         foreach ($x as $id => $xVal) {
             $xObj = new Zend_Pdf_Element_Numeric($xVal);
             $yObj = new Zend_Pdf_Element_Numeric($y[$id]);

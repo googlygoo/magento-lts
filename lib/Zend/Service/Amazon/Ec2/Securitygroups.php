@@ -80,8 +80,8 @@ class Zend_Service_Amazon_Ec2_Securitygroups extends Zend_Service_Amazon_Ec2_Abs
         $params = array();
         $params['Action'] = 'DescribeSecurityGroups';
         if(is_array($name) && !empty($name)) {
-            foreach($name as $k=>$name) {
-                $params['GroupName.' . ($k+1)] = $name;
+            foreach($name as $k => $_name) {
+                $params['GroupName.' . ($k+1)] = $_name;
             }
         } elseif($name) {
             $params['GroupName.1'] = $name;

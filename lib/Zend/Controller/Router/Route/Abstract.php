@@ -70,7 +70,6 @@ abstract class Zend_Controller_Router_Route_Abstract implements Zend_Controller_
      * Set partially matched path
      *
      * @param  string $path
-     * @return void
      */
     public function setMatchedPath($path)
     {

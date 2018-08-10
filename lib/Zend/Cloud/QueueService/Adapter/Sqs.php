@@ -55,7 +55,6 @@ class Zend_Cloud_QueueService_Adapter_Sqs
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -167,7 +166,6 @@ class Zend_Cloud_QueueService_Adapter_Sqs
      * @param  array  $metadata
      * @param  string $queueId
      * @param  array  $options
-     * @return void
      */
     public function storeQueueMetadata($queueId, $metadata, $options = null)
     {
@@ -235,7 +233,6 @@ class Zend_Cloud_QueueService_Adapter_Sqs
      * @param  string $queueId
      * @param  Zend_Cloud_QueueService_Message $message
      * @param  array  $options
-     * @return void
      */
     public function deleteMessage($queueId, $message, $options = null)
     {

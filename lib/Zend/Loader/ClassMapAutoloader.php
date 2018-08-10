@@ -50,7 +50,6 @@ class Zend_Loader_ClassMapAutoloader implements Zend_Loader_SplAutoloader
      * Create a new instance, and optionally configure the autoloader.
      * 
      * @param  null|array|Traversable $options 
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -140,7 +139,6 @@ class Zend_Loader_ClassMapAutoloader implements Zend_Loader_SplAutoloader
      * Defined by Autoloadable
      * 
      * @param  string $class 
-     * @return void
      */
     public function autoload($class)
     {
@@ -152,7 +150,6 @@ class Zend_Loader_ClassMapAutoloader implements Zend_Loader_SplAutoloader
     /**
      * Register the autoloader with spl_autoload registry
      * 
-     * @return void
      */
     public function register()
     {
@@ -235,7 +232,6 @@ class Zend_Loader_ClassMapAutoloader implements Zend_Loader_SplAutoloader
      * @param  string $value 
      * @param  int $key 
      * @param  array $parts 
-     * @return void
      */
     public static function resolvePharParentPath($value, $key, &$parts)
     {

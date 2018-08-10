@@ -121,7 +121,6 @@ class Zend_Log_Writer_Mail extends Zend_Log_Writer_Abstract
      *
      * @param  Zend_Mail $mail Mail instance
      * @param  Zend_Layout $layout Layout instance; optional
-     * @return void
      */
     public function __construct(Zend_Mail $mail, Zend_Layout $layout = null)
     {
@@ -259,7 +258,6 @@ class Zend_Log_Writer_Mail extends Zend_Log_Writer_Abstract
      * rendered with Zend_Layout.
      *
      * @param  array $event Event data
-     * @return void
      */
     protected function _write($event)
     {
@@ -351,7 +349,6 @@ class Zend_Log_Writer_Mail extends Zend_Log_Writer_Abstract
      * Sends mail to recipient(s) if log entries are present.  Note that both
      * plaintext and HTML portions of email are handled here.
      *
-     * @return void
      */
     public function shutdown()
     {

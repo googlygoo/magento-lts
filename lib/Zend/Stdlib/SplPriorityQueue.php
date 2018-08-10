@@ -69,7 +69,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * 
          * Creates a new, empty queue
          * 
-         * @return void
          */
         public function __construct()
         {
@@ -197,7 +196,6 @@ if (!is_array($this->preparedQueue)) {
          *
          * @param  mixed $value
          * @param  mixed $priority
-         * @return void
          */
         public function insert($value, $priority)
         {
@@ -235,7 +233,6 @@ if (!is_array($this->preparedQueue)) {
         /**
          * Iterator: Move pointer forward
          *
-         * @return void
          */
         public function next()
         {
@@ -248,7 +245,6 @@ if (!is_array($this->preparedQueue)) {
          * Unimplemented, and only included in order to retain the same interface as PHP's 
          * SplPriorityQueue.
          *
-         * @return void
          */
         public function recoverFromCorruption()
         {
@@ -257,7 +253,6 @@ if (!is_array($this->preparedQueue)) {
         /**
          * Iterator: Move pointer to first item
          *
-         * @return void
          */
         public function rewind()
         {
@@ -279,7 +274,6 @@ if (!is_array($this->preparedQueue)) {
          * The default mode is SplPriorityQueue::EXTR_DATA.
          *
          * @param  int $flags
-         * @return void
          */
         public function setExtractFlags($flags)
         {
@@ -336,7 +330,6 @@ if (!is_array($this->preparedQueue)) {
         /**
          * Sort the queue
          * 
-         * @return void
          */
         protected function sort()
         {
@@ -346,7 +339,6 @@ if (!is_array($this->preparedQueue)) {
         /**
          * Prepare the queue for iteration and/or extraction
          * 
-         * @return void
          */
         protected function prepareQueue()
         {
@@ -399,7 +391,6 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
     /**
      * Constructor
      * 
-     * @return void
      */
     public function __construct()
     {
@@ -414,7 +405,6 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      * 
      * @param  mixed $datum 
      * @param  mixed $priority 
-     * @return void
      */
     public function insert($datum, $priority)
     {
@@ -488,7 +478,6 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      * Deserialize
      * 
      * @param  string $data
-     * @return void
      */
     public function unserialize($data)
     {

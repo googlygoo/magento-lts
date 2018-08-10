@@ -42,19 +42,21 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
      * @var array Array of Zend_Service_Rackspace_Files_Container
      */
     protected $objects = array();
+
     /**
      * @var int Iterator key
      */
     protected $iteratorKey = 0;
+
     /**
      * @var RackspaceFiles
      */
     protected $service;
+
     /**
      * Constructor
      *
      * @param  array $list
-     * @return boolean
      */
     public function __construct($service,$list = array())
     {
@@ -65,11 +67,11 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
         $this->service= $service;
         $this->_constructFromArray($list);
     }
+
     /**
      * Transforms the Array to array of container
      *
      * @param  array $list
-     * @return void
      */
     private function _constructFromArray(array $list)
     {
@@ -77,6 +79,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
             $this->_addObject(new Zend_Service_Rackspace_Files_Container($this->service,$container));
         }
     }
+
     /**
      * Add an object
      *
@@ -88,6 +91,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
         $this->objects[] = $obj;
         return $this;
     }
+
     /**
      * Return number of servers
      *
@@ -99,6 +103,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
     {
         return count($this->objects);
     }
+
     /**
      * Return the current element
      *
@@ -110,6 +115,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
     {
         return $this->objects[$this->iteratorKey];
     }
+
     /**
      * Return the key of the current element
      *
@@ -121,28 +127,29 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
     {
         return $this->iteratorKey;
     }
+
     /**
      * Move forward to next element
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
         $this->iteratorKey += 1;
     }
+
     /**
      * Rewind the Iterator to the first element
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {
         $this->iteratorKey = 0;
     }
+
     /**
      * Check if there is a current element after calls to rewind() or next()
      *
@@ -159,6 +166,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
             return false;
         }
     }
+
     /**
      * Whether the offset exists
      *
@@ -171,6 +179,7 @@ class Zend_Service_Rackspace_Files_ContainerList implements Countable, Iterator,
     {
         return ($offset < $this->count());
     }
+
     /**
      * Return value at given offset
      *

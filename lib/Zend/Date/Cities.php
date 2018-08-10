@@ -256,7 +256,6 @@ class Zend_Date_Cities
         'Tbilisi'     => array('latitude' =>   41.725,     'longitude' =>   44.7908333),
         'Tegucigalpa' => array('latitude' =>   14.1,       'longitude' =>  -87.2166667),
         'Tehran'      => array('latitude' =>   35.6719444, 'longitude' =>   51.4244444),
-        'The Hague'   => array('latitude' =>   52.0833333, 'longitude' =>    4.3),
         'Thimphu'     => array('latitude' =>   27.4833333, 'longitude' =>   89.6),
         'Tirana'      => array('latitude' =>   41.3275,    'longitude' =>   19.8188889),
         'Tiraspol'    => array('latitude' =>   46.8402778, 'longitude' =>   29.6433333),

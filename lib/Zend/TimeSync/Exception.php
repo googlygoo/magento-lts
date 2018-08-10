@@ -45,7 +45,6 @@ class Zend_TimeSync_Exception extends Zend_Exception
      * Adds an exception to the exception list
      *
      * @param  Zend_TimeSync_Exception $exception New exteption to throw
-     * @return void
      */
     public function addException(Zend_TimeSync_Exception $exception)
     {

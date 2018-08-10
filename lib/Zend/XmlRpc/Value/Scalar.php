@@ -39,7 +39,6 @@ abstract class Zend_XmlRpc_Value_Scalar extends Zend_XmlRpc_Value
     /**
      * Generate the XML code that represent a scalar native MXL-RPC value
      *
-     * @return void
      */
     protected function _generateXml()
     {

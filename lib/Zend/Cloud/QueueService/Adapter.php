@@ -93,7 +93,6 @@ interface Zend_Cloud_QueueService_Adapter
      * @param  string $queueId
      * @param  array  $metadata
      * @param  array  $options
-     * @return void
      */
     public function storeQueueMetadata($queueId, $metadata,  $options = null);
 
@@ -134,7 +133,6 @@ interface Zend_Cloud_QueueService_Adapter
      * @param  string $queueId
      * @param  Zend_Cloud_QueueService_Message $message Message to delete
      * @param  array  $options
-     * @return void
      *
      */
     public function deleteMessage($queueId, $message,  $options = null);

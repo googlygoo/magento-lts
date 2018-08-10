@@ -40,7 +40,6 @@ class Zend_EventManager_StaticEventManager extends Zend_EventManager_SharedEvent
     /**
      * Singleton
      * 
-     * @return void
      */
     protected function __construct()
     {
@@ -49,7 +48,6 @@ class Zend_EventManager_StaticEventManager extends Zend_EventManager_SharedEvent
     /**
      * Singleton
      *
-     * @return void
      */
     private function __clone()
     {
@@ -71,7 +69,6 @@ class Zend_EventManager_StaticEventManager extends Zend_EventManager_SharedEvent
     /**
      * Reset the singleton instance
      * 
-     * @return void
      */
     public static function resetInstance()
     {

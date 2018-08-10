@@ -63,7 +63,6 @@ abstract class Zend_Service_Amazon_Abstract extends Zend_Service_Abstract
      *
      * @param  string $access_key       Set the default Access Key
      * @param  string $secret_key       Set the default Secret Key
-     * @return void
      */
     public static function setKeys($accessKey, $secretKey)
     {
@@ -76,7 +75,6 @@ abstract class Zend_Service_Amazon_Abstract extends Zend_Service_Abstract
      *
      * @param  string $access_key       Override the default Access Key
      * @param  string $secret_key       Override the default Secret Key
-     * @return void
      */
     public function __construct($accessKey=null, $secretKey=null)
     {

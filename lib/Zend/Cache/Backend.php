@@ -71,12 +71,11 @@ class Zend_Cache_Backend
      *
      * @param  array $directives Assoc of directives
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setDirectives($directives)
     {
         if (!is_array($directives)) Zend_Cache::throwException('Directives parameter must be an array');
-        while (list($name, $value) = each($directives)) {
+        foreach ($directives as $name => $value) {
             if (!is_string($name)) {
                 Zend_Cache::throwException("Incorrect option name : $name");
             }
@@ -96,7 +95,6 @@ class Zend_Cache_Backend
      * @param  string $name
      * @param  mixed  $value
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setOption($name, $value)
     {
@@ -113,8 +111,9 @@ class Zend_Cache_Backend
      * Returns an option
      *
      * @param string $name Optional, the options name to return
-     * @throws Zend_Cache_Exceptions
+     *
      * @return mixed
+     * @throws Zend_Cache_Exceptions
      */
     public function getOption($name)
     {
@@ -239,7 +238,6 @@ class Zend_Cache_Backend
      * Create a default log object if none is set.
      *
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _loggerSanity()
     {
@@ -268,7 +266,6 @@ class Zend_Cache_Backend
      *
      * @param  string $message
      * @param  int    $priority
-     * @return void
      */
     protected function _log($message, $priority = 4)
     {

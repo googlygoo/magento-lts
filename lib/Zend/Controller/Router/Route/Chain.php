@@ -143,12 +143,14 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
     /**
      * Assembles a URL path defined by this route
      *
-     * @param  array $data An array of variable and value pairs used as parameters
-     * @param  bool  $reset
-     * @param  bool  $encode
+     * @param array $data    An array of variable and value pairs used as parameters
+     * @param bool  $reset
+     * @param bool  $encode
+     * @param bool  $partial Ignored, PHP 7.2 method signature compatibility
+     *
      * @return string Route path with user submitted parameters
      */
-    public function assemble($data = array(), $reset = false, $encode = false)
+    public function assemble($data = array(), $reset = false, $encode = false, $partial = false)
     {
         $value     = '';
         $numRoutes = count($this->_routes);
@@ -176,7 +178,6 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
      * Set the request object for this and the child routes
      *
      * @param  Zend_Controller_Request_Abstract|null $request
-     * @return void
      */
     public function setRequest(Zend_Controller_Request_Abstract $request = null)
     {

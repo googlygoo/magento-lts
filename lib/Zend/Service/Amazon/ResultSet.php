@@ -69,7 +69,6 @@ class Zend_Service_Amazon_ResultSet implements SeekableIterator
      * Create an instance of Zend_Service_Amazon_ResultSet and create the necessary data objects
      *
      * @param  DOMDocument $dom
-     * @return void
      */
     public function __construct(DOMDocument $dom)
     {
@@ -124,7 +123,6 @@ class Zend_Service_Amazon_ResultSet implements SeekableIterator
     /**
      * Implement SeekableIterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -134,7 +132,6 @@ class Zend_Service_Amazon_ResultSet implements SeekableIterator
     /**
      * Implement SeekableIterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {
@@ -146,7 +143,6 @@ class Zend_Service_Amazon_ResultSet implements SeekableIterator
      *
      * @param  int $index
      * @throws OutOfBoundsException
-     * @return void
      */
     public function seek($index)
     {

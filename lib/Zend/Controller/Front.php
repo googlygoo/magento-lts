@@ -125,7 +125,6 @@ class Zend_Controller_Front
      *
      * Instantiates the plugin broker.
      *
-     * @return void
      */
     protected function __construct()
     {
@@ -135,7 +134,6 @@ class Zend_Controller_Front
     /**
      * Enforce singleton; disallow cloning
      *
-     * @return void
      */
     private function __clone()
     {
@@ -162,7 +160,6 @@ class Zend_Controller_Front
      *
      * Also resets action helper broker, clearing all registered helpers.
      *
-     * @return void
      */
     public function resetInstance()
     {
@@ -202,7 +199,6 @@ class Zend_Controller_Front
      *
      * @param string|array $controllerDirectory Path to Zend_Controller_Action
      * controller classes or array of such paths
-     * @return void
      * @throws Zend_Controller_Exception if called from an object instance
      */
     public static function run($controllerDirectory)

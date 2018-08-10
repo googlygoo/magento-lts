@@ -117,7 +117,6 @@ class Zend_Queue_Message
      *
      * @param  string $key   The message key.
      * @param  mixed  $value The value for the property.
-     * @return void
      * @throws Zend_Queue_Exception
      */
     public function __set($key, $value)
@@ -159,7 +158,6 @@ class Zend_Queue_Message
      * A de-serialized Message should not be assumed to have access to a live
      * queue connection, so set _connected = false.
      *
-     * @return void
      */
     public function __wakeup()
     {

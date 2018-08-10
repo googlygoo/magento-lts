@@ -57,7 +57,6 @@ abstract class Zend_Navigation_Container implements RecursiveIterator, Countable
     /**
      * Sorts the page index according to page order
      *
-     * @return void
      */
     protected function _sort()
     {
@@ -86,7 +85,6 @@ abstract class Zend_Navigation_Container implements RecursiveIterator, Countable
     /**
      * Notifies container that the order of pages are updated
      *
-     * @return void
      */
     public function notifyOrderUpdated()
     {
@@ -543,7 +541,6 @@ abstract class Zend_Navigation_Container implements RecursiveIterator, Countable
      *
      * Implements RecursiveIterator interface.
      *
-     * @return void
      */
     public function next()
     {
@@ -556,7 +553,6 @@ abstract class Zend_Navigation_Container implements RecursiveIterator, Countable
      *
      * Implements RecursiveIterator interface.
      *
-     * @return void
      */
     public function rewind()
     {

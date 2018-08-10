@@ -38,7 +38,6 @@ class Zend_Cloud_DocumentService_DocumentSet implements Countable, IteratorAggre
      * Constructor
      *
      * @param  array $documents
-     * @return void
      */
     public function __construct(array $documents)
     {

@@ -91,7 +91,7 @@ abstract class Zend_Db_Table_Abstract
     /**
      * Optional Zend_Db_Table_Definition object
      *
-     * @var unknown_type
+     * @var Zend_Db_Table_Definition
      */
     protected $_definition = null;
 
@@ -251,7 +251,6 @@ abstract class Zend_Db_Table_Abstract
      * - metadataCache   = cache for information from adapter describeTable().
      *
      * @param  mixed $config Array of user-specified config options, or just the Db Adapter.
-     * @return void
      */
     public function __construct($config = array())
     {
@@ -523,7 +522,7 @@ abstract class Zend_Db_Table_Abstract
     /**
      * returns the default source flag that determines where defaultSources come from
      *
-     * @return unknown
+     * @return string
      */
     public function getDefaultSource()
     {
@@ -556,7 +555,6 @@ abstract class Zend_Db_Table_Abstract
      * Sets the default Zend_Db_Adapter_Abstract for all Zend_Db_Table objects.
      *
      * @param  mixed $db Either an Adapter object, or a string naming a Registry key
-     * @return void
      */
     public static function setDefaultAdapter($db = null)
     {
@@ -620,7 +618,6 @@ abstract class Zend_Db_Table_Abstract
      * If $defaultMetadataCache is null, then no metadata cache is used by default.
      *
      * @param  mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return void
      */
     public static function setDefaultMetadataCache($metadataCache = null)
     {
@@ -646,7 +643,10 @@ abstract class Zend_Db_Table_Abstract
      * option for the class constructor upon instantiation.
      *
      * @param  mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
+     *
+     * @return $this
+     * @throws Zend_Db_Table_Exception
+     * @throws Zend_Exception
      */
     protected function _setMetadataCache($metadataCache)
     {
@@ -690,8 +690,10 @@ abstract class Zend_Db_Table_Abstract
 
     /**
      * @param mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return Zend_Cache_Core
+     *
+     * @return Zend_Cache_Core|null
      * @throws Zend_Db_Table_Exception
+     * @throws Zend_Exception
      */
     protected static function _setupMetadataCache($metadataCache)
     {
@@ -704,7 +706,9 @@ abstract class Zend_Db_Table_Abstract
         }
         if (!$metadataCache instanceof Zend_Cache_Core) {
             #require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception('Argument must be of type Zend_Cache_Core, or a Registry key where a Zend_Cache_Core object is stored');
+            throw new Zend_Db_Table_Exception(
+                'Argument must be of type Zend_Cache_Core, or a Registry key where a Zend_Cache_Core object is stored'
+            );
         }
         return $metadataCache;
     }
@@ -719,7 +723,8 @@ abstract class Zend_Db_Table_Abstract
      *   Use this for natural keys, for example.
      *
      * @param mixed $sequence
-     * @return Zend_Db_Table_Adapter_Abstract Provides a fluent interface
+     *
+     * @return $this
      */
     protected function _setSequence($sequence)
     {
@@ -733,7 +738,6 @@ abstract class Zend_Db_Table_Abstract
      * Calls other protected methods for individual tasks, to make it easier
      * for a subclass to override part of the setup logic.
      *
-     * @return void
      */
     protected function _setup()
     {
@@ -744,7 +748,6 @@ abstract class Zend_Db_Table_Abstract
     /**
      * Initialize database adapter.
      *
-     * @return void
      * @throws Zend_Db_Table_Exception
      */
     protected function _setupDatabaseAdapter()
@@ -767,7 +770,6 @@ abstract class Zend_Db_Table_Abstract
      * A schema name provided with the table name (e.g., "schema.table") overrides
      * any existing value for $this->_schema.
      *
-     * @return void
      */
     protected function _setupTableName()
     {
@@ -784,8 +786,9 @@ abstract class Zend_Db_Table_Abstract
      * If metadata cannot be loaded from cache, adapter's describeTable() method is called to discover metadata
      * information. Returns true if and only if the metadata are loaded from cache.
      *
-     * @return boolean
+     * @return bool
      * @throws Zend_Db_Table_Exception
+     * @throws Zend_Exception
      */
     protected function _setupMetadata()
     {
@@ -866,7 +869,6 @@ abstract class Zend_Db_Table_Abstract
      * If $_primary is not defined, discover primary keys
      * from the information returned by describeTable().
      *
-     * @return void
      * @throws Zend_Db_Table_Exception
      */
     protected function _setupPrimaryKey()
@@ -962,7 +964,6 @@ abstract class Zend_Db_Table_Abstract
      *
      * Called from {@link __construct()} as final step of object instantiation.
      *
-     * @return void
      */
     public function init()
     {

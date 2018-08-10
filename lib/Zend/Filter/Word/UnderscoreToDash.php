@@ -36,7 +36,6 @@ class Zend_Filter_Word_UnderscoreToDash extends Zend_Filter_Word_SeparatorToSepa
      * Constructor
      *
      * @param  string $separator Space by default
-     * @return void
      */
     public function __construct()
     {

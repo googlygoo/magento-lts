@@ -55,7 +55,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * Constructor
      *
      * @param  array|Traversable $options
-     * @return void
      */
     function __construct($options = array())
     {
@@ -107,7 +106,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $destinationPath
      * @param  mixed $data
      * @param  array $options
-     * @return void
      */
     public function storeItem($destinationPath, $data, $options = null)
     {
@@ -122,7 +120,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     public function deleteItem($path, $options = null)
     {
@@ -138,7 +135,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function copyItem($sourcePath, $destinationPath, $options = null)
     {
@@ -156,7 +152,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function moveItem($sourcePath, $destinationPath, $options = null)
     {
@@ -179,7 +174,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $path
      * @param  string $name
      * @param  array $options
-     * @return void
      */
     public function renameItem($path, $name, $options = null)
     {
@@ -220,7 +214,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $destinationPath
      * @param  array  $metadata        associative array specifying the key/value pairs for the metadata.
      * @param  array  $options
-     * @return void
      */
     public function storeMetadata($destinationPath, $metadata, $options = null)
     {
@@ -238,7 +231,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      *                           to be deleted.  If null, all metadata associated with the object will
      *                           be deleted.
      * @param  array $options
-     * @return void
      */
     public function deleteMetadata($path, $metadata = null, $options = null)
     {
@@ -271,7 +263,6 @@ class Zend_Cloud_StorageService_Adapter_Rackspace
      * @param  string $path        folder path to get the list of folders from.
      * @param  array& $resultArray reference to the array that contains the path names
      *                             for each folder.
-     * @return void
      */
     private function getAllFolders($path, &$resultArray)
     {

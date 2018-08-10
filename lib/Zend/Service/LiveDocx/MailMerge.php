@@ -62,7 +62,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
     /**
      * Constructor (LiveDocx.MailMerge SOAP Service)
      *
-     * @return void
      * @return throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 1.0
      */
@@ -325,7 +324,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Merge assigned data with template to generate document
      *
      * @throws Zend_Service_LiveDocx_Excpetion
-     * @return void
      * @since  LiveDocx 1.0
      */
     public function createDocument()
@@ -593,7 +591,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Upload a template file to LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 1.0
      */
@@ -644,7 +641,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Delete a template file from LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 1.0
      */
@@ -741,7 +737,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Delete a shared document from LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @since  LiveDocx 1.0
      */
     public function deleteSharedDocument($filename)
@@ -955,7 +950,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Upload an image file to LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 2.0
      */
@@ -980,7 +974,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Download an image file from LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 2.0
      */
@@ -1026,7 +1019,6 @@ class Zend_Service_LiveDocx_MailMerge extends Zend_Service_LiveDocx
      * Delete an image file from LiveDocx service
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Service_LiveDocx_Exception
      * @since  LiveDocx 2.0
      */

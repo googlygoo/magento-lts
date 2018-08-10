@@ -82,7 +82,6 @@ class Zend_Feed_Reader_Extension_Thread_Entry
     /**
      * Register Atom Thread Extension 1.0 namespace
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

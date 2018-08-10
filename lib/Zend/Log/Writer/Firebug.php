@@ -74,7 +74,6 @@ class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
     /**
      * Class constructor
      *
-     * @return void
      */
     public function __construct()
     {
@@ -177,7 +176,6 @@ class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
      * Log a message to the Firebug Console.
      *
      * @param array $event The event data
-     * @return void
      */
     protected function _write($event)
     {

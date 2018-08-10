@@ -51,7 +51,6 @@ class Zend_Serializer_Adapter_Wddx extends Zend_Serializer_Adapter_AdapterAbstra
      * Constructor
      *
      * @param  array $opts
-     * @return void
      * @throws Zend_Serializer_Exception if wddx extension not found
      */
     public function __construct($opts = array())

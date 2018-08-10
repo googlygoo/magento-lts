@@ -77,7 +77,6 @@ class Zend_Queue_Message_Iterator implements Iterator, Countable
      * Constructor
      *
      * @param  array $options ('queue', 'messageClass', 'data'=>array());
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -134,7 +133,6 @@ class Zend_Queue_Message_Iterator implements Iterator, Countable
      * A de-serialized Message should not be assumed to have access to a live
      * queue connection, so set _connected = false.
      *
-     * @return void
      */
     public function __wakeup()
     {
@@ -210,7 +208,6 @@ class Zend_Queue_Message_Iterator implements Iterator, Countable
      * Similar to the reset() function for arrays in PHP.
      * Required by interface Iterator.
      *
-     * @return void
      */
     public function rewind()
     {
@@ -248,7 +245,6 @@ class Zend_Queue_Message_Iterator implements Iterator, Countable
      * Similar to the next() function for arrays in PHP.
      * Required by interface Iterator.
      *
-     * @return void
      */
     public function next()
     {

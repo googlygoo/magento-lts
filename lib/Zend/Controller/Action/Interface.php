@@ -53,7 +53,6 @@ interface Zend_Controller_Action_Interface
      * @param Zend_Controller_Request_Abstract $request
      * @param Zend_Controller_Response_Abstract $response
      * @param array $invokeArgs Any additional invocation arguments
-     * @return void
      */
     public function __construct(Zend_Controller_Request_Abstract $request,
                                 Zend_Controller_Response_Abstract $response,
@@ -63,7 +62,6 @@ interface Zend_Controller_Action_Interface
      * Dispatch the requested action
      *
      * @param string $action Method name of action
-     * @return void
      */
     public function dispatch($action);
 }

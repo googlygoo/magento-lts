@@ -52,7 +52,6 @@ class Zend_Gdata_Analytics_DataEntry extends Zend_Gdata_Entry
 
     /**
      * @param DOMElement $child
-     * @return void
      */
     protected function takeChildFromDOM($child)
     {

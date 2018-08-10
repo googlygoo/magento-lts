@@ -650,7 +650,6 @@ class Zend_Navigation_Page_Mvc extends Zend_Navigation_Page
      * @see getHref()
      *
      * @param  Zend_Controller_Action_Helper_Url $uh  URL helper
-     * @return void
      */
     public static function setUrlHelper(Zend_Controller_Action_Helper_Url $uh)
     {
@@ -663,7 +662,6 @@ class Zend_Navigation_Page_Mvc extends Zend_Navigation_Page
      * @see getHref()
      *
      * @param  Zend_View_Helper_ServerUrl $sh   scheme helper
-     * @return void
      */
     public static function setSchemeHelper(Zend_View_Helper_ServerUrl $sh)
     {

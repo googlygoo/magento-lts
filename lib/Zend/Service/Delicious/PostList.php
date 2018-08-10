@@ -51,7 +51,6 @@ class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAcces
     /**
      * @param  Zend_Service_Delicious $service Service that has downloaded the post
      * @param  DOMNodeList|array      $posts
-     * @return void
      */
     public function __construct(Zend_Service_Delicious $service, $posts = null)
     {
@@ -67,7 +66,6 @@ class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAcces
      * Transforms DOMNodeList to array of posts
      *
      * @param  DOMNodeList $nodeList
-     * @return void
      */
     private function _constructFromNodeList(DOMNodeList $nodeList)
     {
@@ -83,7 +81,6 @@ class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAcces
      * Transforms the Array to array of posts
      *
      * @param  array $postList
-     * @return void
      */
     private function _constructFromArray(array $postList)
     {
@@ -195,7 +192,6 @@ class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAcces
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -207,7 +203,6 @@ class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAcces
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

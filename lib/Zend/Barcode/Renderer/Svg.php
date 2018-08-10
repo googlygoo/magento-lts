@@ -138,7 +138,6 @@ class Zend_Barcode_Renderer_Svg extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Initialize the image resource
      *
-     * @return void
      */
     protected function _initRenderer()
     {
@@ -228,7 +227,6 @@ class Zend_Barcode_Renderer_Svg extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Check barcode parameters
      *
-     * @return void
      */
     protected function _checkParams()
     {
@@ -238,7 +236,6 @@ class Zend_Barcode_Renderer_Svg extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Check barcode dimensions
      *
-     * @return void
      * @throws Zend_Barcode_Renderer_Exception
      */
     protected function _checkDimensions()

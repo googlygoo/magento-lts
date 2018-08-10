@@ -117,7 +117,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      *
      * @param array|Zend_Config $options
      *
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -176,7 +175,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      *
      * @param string $encoding
      *
-     * @return void
      */
     public static function setEncoding($encoding)
     {
@@ -276,7 +274,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      *
      * @param string $name
      *
-     * @return void
      */
     public function removeMarkup($name)
     {
@@ -286,7 +283,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
     /**
      * Remove the default tags
      *
-     * @return void
      */
     public function clearMarkups()
     {
@@ -547,7 +543,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
     /**
      * Get the default filter
      *
-     * @return void
      */
     public function getDefaultFilter()
     {
@@ -563,7 +558,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      *
      * @param string $filter
      *
-     * @return void
      */
     public function addDefaultFilter(Zend_Filter_Interface $filter, $placement = Zend_Filter::CHAIN_APPEND)
     {
@@ -581,7 +575,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      *
      * @param Zend_Filter_Interface $filter
      *
-     * @return void
      */
     public function setDefaultFilter(Zend_Filter_Interface $filter)
     {
@@ -671,7 +664,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
      * @param array $allowedInside
      * @param array $allowsInside
      *
-     * @return void
      */
     public function addGroup($name, array $allowedInside = array(), array $allowsInside = array())
     {
@@ -695,7 +687,6 @@ abstract class Zend_Markup_Renderer_RendererAbstract
     /**
      * Set the default filters
      *
-     * @return void
      */
     abstract public function addDefaultFilters();
 

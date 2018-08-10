@@ -387,7 +387,6 @@ class Zend_Rest_Server implements Zend_Server_Interface
      * @param mixed $struct
      * @param DOMDocument $dom
      * @param DOMElement $parent
-     * @return void
      */
     protected function _structValue(
         $struct, DOMDocument $dom, DOMElement $parent

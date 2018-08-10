@@ -63,7 +63,6 @@ class Zend_Config_Yaml extends Zend_Config
      * Indicate whether parser should ignore constants or not
      *
      * @param  bool $flag
-     * @return void
      */
     public static function setIgnoreConstants($flag)
     {
@@ -289,7 +288,7 @@ class Zend_Config_Yaml extends Zend_Config
     {
         $config   = array();
         $inIndent = false;
-        while (list($n, $line) = each($lines)) {
+        foreach ($lines as $n => $line) {
             $lineno = $n + 1;
 
             $line = rtrim(preg_replace("/#.*$/", "", $line));

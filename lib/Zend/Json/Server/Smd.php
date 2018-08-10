@@ -291,7 +291,6 @@ class Zend_Json_Server_Smd
      * Add Service
      *
      * @param Zend_Json_Server_Smd_Service|array $service
-     * @return void
      */
     public function addService($service)
     {

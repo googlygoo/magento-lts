@@ -58,7 +58,6 @@ class Zend_Filter_HtmlEntities implements Zend_Filter_Interface
      *
      * @param  integer|array $quoteStyle
      * @param  string  $charSet
-     * @return void
      */
     public function __construct($options = array())
     {

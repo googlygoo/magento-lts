@@ -46,7 +46,6 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      *
      * @param  array|Zend_Config $options
      * @param  Zend_Queue|null $queue
-     * @return void
      */
     public function __construct($options, Zend_Queue $queue = null)
     {
@@ -111,7 +110,6 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      *
      * @param  string  $name    queue name
      * @param  integer $timeout default visibility timeout
-     * @return void
      * @throws Zend_Queue_Exception
      */
     public function create($name, $timeout=null)
@@ -124,7 +122,6 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      * Delete a queue and all of its messages
      *
      * @param  string $name queue name
-     * @return void
      * @throws Zend_Queue_Exception
      */
     public function delete($name)
@@ -136,7 +133,6 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
     /**
      * Get an array of all available queues
      *
-     * @return void
      * @throws Zend_Queue_Exception
      */
     public function getQueues()
@@ -323,7 +319,6 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
     /**
      * Unserialize
      *
-     * @return void
      */
     public function __wakeup()
     {

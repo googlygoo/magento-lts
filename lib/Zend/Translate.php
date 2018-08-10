@@ -172,7 +172,6 @@ class Zend_Translate {
      * Sets a cache for all instances of Zend_Translate
      *
      * @param  Zend_Cache_Core $cache Cache to store to
-     * @return void
      */
     public static function setCache(Zend_Cache_Core $cache)
     {
@@ -192,7 +191,6 @@ class Zend_Translate {
     /**
      * Removes any set cache
      *
-     * @return void
      */
     public static function removeCache()
     {
@@ -203,7 +201,6 @@ class Zend_Translate {
      * Clears all set cache data
      *
      * @param string $tag Tag to clear when the default tag name is not used
-     * @return void
      */
     public static function clearCache($tag = null)
     {

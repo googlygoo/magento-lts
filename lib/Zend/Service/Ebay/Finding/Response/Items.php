@@ -69,7 +69,6 @@ class Zend_Service_Ebay_Finding_Response_Items extends Zend_Service_Ebay_Finding
     protected static $_pageCache = array();
 
     /**
-     * @return void
      */
     protected function _init()
     {

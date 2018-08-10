@@ -177,7 +177,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      *
      * @param  Zend_View_Interface $view
      * @param  array               $options
-     * @return void
      */
     public function __construct(Zend_View_Interface $view = null, array $options = array())
     {
@@ -193,7 +192,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
     /**
      * Clone - also make sure the view is cloned.
      *
-     * @return void
      */
     public function __clone()
     {
@@ -311,7 +309,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * Set inflector target
      *
      * @param  string $target
-     * @return void
      */
     protected function _setInflectorTarget($target)
     {
@@ -322,7 +319,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * Set internal module directory representation
      *
      * @param  string $dir
-     * @return void
      */
     protected function _setModuleDir($dir)
     {
@@ -447,7 +443,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * @param  string $prefix
      * @param  array  $options
      * @throws Zend_Controller_Action_Exception
-     * @return void
      */
     public function initView($path = null, $prefix = null, array $options = array())
     {
@@ -505,7 +500,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
     /**
      * init - initialize view
      *
-     * @return void
      */
     public function init()
     {
@@ -900,7 +894,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      *
      * @param  string $script
      * @param  string $name
-     * @return void
      */
     public function renderScript($script, $name = null)
     {
@@ -924,7 +917,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * @param  string  $action
      * @param  string  $name
      * @param  boolean $noController
-     * @return void
      */
     public function render($action = null, $name = null, $noController = null)
     {
@@ -942,7 +934,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * @param  string $action
      * @param  array  $vars
      * @param  string $name
-     * @return void
      */
     public function renderBySpec($action = null, array $vars = array(), $name = null)
     {
@@ -964,7 +955,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * - request has not been re-dispatched (i.e., _forward() has not been called)
      * - response is not a redirect
      *
-     * @return void
      */
     public function postDispatch()
     {
@@ -995,7 +985,6 @@ class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_
      * @param  string  $action
      * @param  string  $name
      * @param  boolean $noController
-     * @return void
      */
     public function direct($action = null, $name = null, $noController = null)
     {

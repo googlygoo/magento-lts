@@ -77,7 +77,6 @@ class Zend_Oauth_Http
      * @param  Zend_Oauth_Consumer $consumer
      * @param  null|array $parameters
      * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
      */
     public function __construct(
         Zend_Oauth_Consumer $consumer,
@@ -217,7 +216,6 @@ class Zend_Oauth_Http
      * scheme during a request cycle.
      *
      * @param  Zend_Http_Response
-     * @return void
      * @throws Zend_Oauth_Exception if unable to retrieve valid token response
      */
     protected function _assessRequestAttempt(Zend_Http_Response $response = null)

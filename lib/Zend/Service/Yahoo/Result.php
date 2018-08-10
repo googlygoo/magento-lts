@@ -78,7 +78,6 @@ class Zend_Service_Yahoo_Result
      * Initializes the result
      *
      * @param  DOMElement $result
-     * @return void
      */
     public function __construct(DOMElement $result)
     {
@@ -108,7 +107,6 @@ class Zend_Service_Yahoo_Result
     /**
      * Sets the Thumbnail property
      *
-     * @return void
      */
     protected function _setThumbnail()
     {

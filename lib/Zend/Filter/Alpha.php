@@ -69,7 +69,6 @@ class Zend_Filter_Alpha implements Zend_Filter_Interface
      * Sets default option values for this instance
      *
      * @param  boolean $allowWhiteSpace
-     * @return void
      */
     public function __construct($allowWhiteSpace = false)
     {

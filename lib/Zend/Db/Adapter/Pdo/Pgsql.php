@@ -75,7 +75,6 @@ class Zend_Db_Adapter_Pdo_Pgsql extends Zend_Db_Adapter_Pdo_Abstract
     /**
      * Creates a PDO object and connects to the database.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     protected function _connect()

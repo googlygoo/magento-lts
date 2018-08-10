@@ -388,7 +388,6 @@ class Zend_Filter_Inflector implements Zend_Filter_Interface
      *
      * @param mixed $spec
      * @param mixed $ruleSet
-     * @return void
      */
     public function addFilterRule($spec, $ruleSet)
     {

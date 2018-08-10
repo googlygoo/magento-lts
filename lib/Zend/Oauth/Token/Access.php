@@ -92,7 +92,7 @@ class Zend_Oauth_Token_Access extends Zend_Oauth_Token
      */
     public function getHttpClient(array $oauthOptions, $uri = null, $config = null, $excludeCustomParamsFromHeader = true)
     {
-        $client = new Zend_Oauth_Client($oauthOptions, $uri, $config, $excludeCustomParamsFromHeader);
+        $client = new Zend_Oauth_Client($oauthOptions, $uri, $config);
         $client->setToken($this);
         return $client;
     }

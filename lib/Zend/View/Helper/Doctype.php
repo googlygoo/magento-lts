@@ -78,7 +78,6 @@ class Zend_View_Helper_Doctype extends Zend_View_Helper_Abstract
      *
      * Map constants to doctype strings, and set default doctype
      *
-     * @return void
      */
     public function __construct()
     {

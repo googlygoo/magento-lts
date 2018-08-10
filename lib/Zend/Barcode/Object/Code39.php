@@ -93,7 +93,6 @@ class Zend_Barcode_Object_Code39 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial check of Code39 barcode
-     * @return void
      */
     protected function _checkParams()
     {

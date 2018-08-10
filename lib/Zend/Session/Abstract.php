@@ -99,8 +99,8 @@ abstract class Zend_Session_Abstract
      *
      * @param  string $namespace
      * @param  string $name
+     *
      * @throws Zend_Session_Exception
-     * @return void
      */
     protected static function _namespaceUnset($namespace, $name = null)
     {

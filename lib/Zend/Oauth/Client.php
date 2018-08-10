@@ -72,7 +72,6 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * @param  array|Zend_Config $oauthOptions
      * @param  string            $uri
      * @param  array|Zend_Config $config
-     * @return void
      */
     public function __construct($oauthOptions, $uri = null, $config = null)
     {
@@ -97,7 +96,6 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * Load the connection adapter
      *
      * @param Zend_Http_Client_Adapter_Interface $adapter
-     * @return void
      */
     public function setAdapter($adapter)
     {
@@ -113,7 +111,6 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * sending the raw (already encoded) POST data from a stream source.
      *
      * @param boolean $value The value to set.
-     * @return void
      */
     public function setStreamingRequest($value)
     {
@@ -230,7 +227,6 @@ class Zend_Oauth_Client extends Zend_Http_Client
      * all parameters, and applying the correct OAuth scheme to the method
      * being used.
      *
-     * @return void
      * @throws Zend_Oauth_Exception If POSTBODY scheme requested, but GET request method used; or if invalid request scheme provided
      */
     public function prepareOauth()

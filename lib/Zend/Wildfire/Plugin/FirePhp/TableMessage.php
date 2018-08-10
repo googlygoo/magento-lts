@@ -65,7 +65,6 @@ class Zend_Wildfire_Plugin_FirePhp_TableMessage extends Zend_Wildfire_Plugin_Fir
      * Set the table header
      *
      * @param array $header The header columns
-     * @return void
      */
     public function setHeader($header)
     {
@@ -76,7 +75,6 @@ class Zend_Wildfire_Plugin_FirePhp_TableMessage extends Zend_Wildfire_Plugin_Fir
      * Append a row to the end of the table.
      *
      * @param array $row An array of column values representing a row.
-     * @return void
      */
     public function addRow($row)
     {

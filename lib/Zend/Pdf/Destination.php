@@ -44,7 +44,9 @@ abstract class Zend_Pdf_Destination extends Zend_Pdf_Target
      *
      * @internal
      * @param Zend_Pdf_Element $resource
+     *
      * @return Zend_Pdf_Destination
+     * @throws Zend_Pdf_Exception
      */
     public static function load(Zend_Pdf_Element $resource)
     {

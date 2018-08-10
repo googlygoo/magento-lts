@@ -41,8 +41,6 @@
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-
-
 class Zend_Db_Select
 {
 
@@ -82,6 +80,27 @@ class Zend_Db_Select
     const SQL_ON         = 'ON';
     const SQL_ASC        = 'ASC';
     const SQL_DESC       = 'DESC';
+
+    const REGEX_COLUMN_EXPR       = '/^([\w]*\s*\(([^\(\)]|(?1))*\))$/';
+    const REGEX_COLUMN_EXPR_ORDER = '/^([\w]+\s*\(([^\(\)]|(?1))*\))$/';
+    const REGEX_COLUMN_EXPR_GROUP = '/^([\w]+\s*\(([^\(\)]|(?1))*\))$/';
+
+    // @see http://stackoverflow.com/a/13823184/2028814
+    const REGEX_SQL_COMMENTS      = '@
+    (([\'"]).*?[^\\\]\2) # $1 : Skip single & double quoted expressions
+    |(                   # $3 : Match comments
+        (?:\#|--).*?$    # - Single line comments
+        |                # - Multi line (nested) comments
+         /\*             #   . comment open marker
+            (?: [^/*]    #   . non comment-marker characters
+                |/(?!\*) #   . ! not a comment open
+                |\*(?!/) #   . ! not a comment close
+                |(?R)    #   . recursive case
+            )*           #   . repeat eventually
+        \*\/             #   . comment close marker
+    )\s*                 # Trim after comments
+    |(?<=;)\s+           # Trim after semi-colon
+    @msx';
 
     /**
      * Bind variables for query
@@ -525,8 +544,10 @@ class Zend_Db_Select
         }
 
         foreach ($spec as $val) {
-            if (preg_match('/\(.*\)/', (string) $val)
-                && !$this->isContainControlCharacters((string) $val)
+            // Remove comments from SQL statement
+            $noComments = preg_replace(self::REGEX_SQL_COMMENTS, '$1', (string) $val);
+            if (preg_match(self::REGEX_COLUMN_EXPR_GROUP, $noComments)
+                && !$this->isContainControlCharacters($noComments)
             ) {
                 $val = new Zend_Db_Expr($val);
             }
@@ -635,8 +656,10 @@ class Zend_Db_Select
                     $val = trim($matches[1]);
                     $direction = $matches[2];
                 }
-                if (preg_match('/\(.*\)/', (string) $val)
-                    && !$this->isContainControlCharacters((string) $val)
+                // Remove comments from SQL statement
+                $noComments = preg_replace(self::REGEX_SQL_COMMENTS, '$1', (string) $val);
+                if (preg_match(self::REGEX_COLUMN_EXPR_ORDER, $noComments)
+                    && !$this->isContainControlCharacters($noComments)
                 ) {
                     $val = new Zend_Db_Expr($val);
                 }
@@ -841,9 +864,7 @@ class Zend_Db_Select
                  * @see Zend_Db_Select_Exception
                  */
                 #require_once 'Zend/Db/Select/Exception.php';
-                throw new Zend_Db_Select_Exception(
-                    "You cannot define a correlation name '$correlationName' more than once"
-                );
+                throw new Zend_Db_Select_Exception("You cannot define a correlation name '$correlationName' more than once");
             }
 
             if ($type == self::FROM) {
@@ -958,7 +979,6 @@ class Zend_Db_Select
      * @param  array|string $cols The list of columns; preferably as
      * an array, but possibly as a string containing one column.
      * @param  bool|string True if it should be prepended, a correlation name if it should be inserted
-     * @return void
      */
     protected function _tableCols($correlationName, $cols, $afterCorrelationName = null)
     {
@@ -976,12 +996,13 @@ class Zend_Db_Select
             $currentCorrelationName = $correlationName;
             if (is_string($col)) {
                 // Check for a column matching "<column> AS <alias>" and extract the alias name
+                $col = trim(str_replace("\n", ' ', $col));
                 if (preg_match('/^(.+)\s+' . self::SQL_AS . '\s+(.+)$/i', $col, $m)) {
                     $col = $m[1];
                     $alias = $m[2];
                 }
                 // Check for columns that look like functions and convert to Zend_Db_Expr
-                if (preg_match('/\(.*\)/', (string) $col)
+                if (preg_match(self::REGEX_COLUMN_EXPR, (string) $col)
                     && !$this->isContainControlCharacters((string) $col)
                 ) {
                     $col = new Zend_Db_Expr($col);

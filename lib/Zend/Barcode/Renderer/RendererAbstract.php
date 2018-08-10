@@ -366,7 +366,6 @@ abstract class Zend_Barcode_Renderer_RendererAbstract
 
     /**
      * Check if a barcode object is correctly provided
-     * @return void
      * @throws Zend_Barcode_Renderer_Exception
      */
     protected function _checkBarcodeObject()
@@ -388,7 +387,6 @@ abstract class Zend_Barcode_Renderer_RendererAbstract
      *
      * @param float $supportHeight
      * @param float $supportWidth
-     * @return void
      */
     protected function _adjustPosition($supportHeight, $supportWidth)
     {
@@ -504,7 +502,6 @@ abstract class Zend_Barcode_Renderer_RendererAbstract
 
     /**
      * Checking of parameters after all settings
-     * @return void
      */
     abstract protected function _checkParams();
 
@@ -516,7 +513,6 @@ abstract class Zend_Barcode_Renderer_RendererAbstract
 
     /**
      * Initialize the rendering resource
-     * @return void
      */
     abstract protected function _initRenderer();
 

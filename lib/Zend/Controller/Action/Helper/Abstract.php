@@ -50,7 +50,8 @@ abstract class Zend_Controller_Action_Helper_Abstract
      * setActionController()
      *
      * @param  Zend_Controller_Action $actionController
-     * @return Zend_Controller_ActionHelper_Abstract Provides a fluent interface
+     *
+     * @return $this
      */
     public function setActionController(Zend_Controller_Action $actionController = null)
     {
@@ -81,7 +82,6 @@ abstract class Zend_Controller_Action_Helper_Abstract
     /**
      * Hook into action controller initialization
      *
-     * @return void
      */
     public function init()
     {
@@ -90,7 +90,6 @@ abstract class Zend_Controller_Action_Helper_Abstract
     /**
      * Hook into action controller preDispatch() workflow
      *
-     * @return void
      */
     public function preDispatch()
     {
@@ -99,7 +98,6 @@ abstract class Zend_Controller_Action_Helper_Abstract
     /**
      * Hook into action controller postDispatch() workflow
      *
-     * @return void
      */
     public function postDispatch()
     {

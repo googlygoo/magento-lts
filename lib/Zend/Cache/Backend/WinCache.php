@@ -51,7 +51,6 @@ class Zend_Cache_Backend_WinCache extends Zend_Cache_Backend implements Zend_Cac
      *
      * @param  array $options associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {

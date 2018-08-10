@@ -74,7 +74,6 @@ class Zend_Amf_Parse_Amf3_Serializer extends Zend_Amf_Parse_Serializer
      * @param  mixed $data
      * @param  int $markerType
      * @param  mixed $dataByVal
-     * @return void
      */
     public function writeTypeMarker(&$data, $markerType = null, $dataByVal = false)
     {

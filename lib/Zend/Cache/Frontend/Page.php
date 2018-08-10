@@ -125,7 +125,6 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
      * @param  array   $options                Associative array of options
      * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -158,7 +157,6 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
      *
      * @param  array $options Associative array
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _setDefaultOptions($options)
     {
@@ -180,7 +178,6 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
      * Set the deprecated contentTypeMemorization option
      *
      * @param boolean $value value
-     * @return void
      * @deprecated
      */
     protected function _setContentTypeMemorization($value)
@@ -207,7 +204,6 @@ class Zend_Cache_Frontend_Page extends Zend_Cache_Core
      *
      * @param  array $options Associative array
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _setRegexps($regexps)
     {

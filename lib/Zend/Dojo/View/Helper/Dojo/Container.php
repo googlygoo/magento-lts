@@ -169,7 +169,6 @@ class Zend_Dojo_View_Helper_Dojo_Container
      * Set view object
      *
      * @param  Zend_Dojo_View_Interface $view
-     * @return void
      */
     public function setView(Zend_View_Interface $view)
     {
@@ -851,7 +850,6 @@ class Zend_Dojo_View_Helper_Dojo_Container
     /**
      * Create dijit loader functionality
      *
-     * @return void
      */
     public function registerDijitLoader()
     {
@@ -919,7 +917,6 @@ EOJ;
     /**
      * Capture arbitrary javascript to include in dojo script
      *
-     * @return void
      */
     public function javascriptCaptureStart()
     {

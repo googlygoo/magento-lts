@@ -74,7 +74,6 @@ abstract class Zend_Mobile_Push_Abstract implements Zend_Mobile_Push_Interface
     /**
      * Close the Connection to the Push Server
      *
-     * @return void
      */
     public function close()
     {

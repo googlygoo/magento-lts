@@ -113,7 +113,6 @@ class Zend_Feed_Writer
      *
      * @param  string $prefix
      * @param  string $path
-     * @return void
      */
     public static function addPrefixPath($prefix, $path)
     {
@@ -126,7 +125,6 @@ class Zend_Feed_Writer
      * Add multiple Extension prefix paths at once
      *
      * @param  array $spec
-     * @return void
      */
     public static function addPrefixPaths(array $spec)
     {
@@ -144,7 +142,6 @@ class Zend_Feed_Writer
      * Register an Extension by name
      *
      * @param  string $name
-     * @return void
      * @throws Zend_Feed_Exception if unable to resolve Extension class
      */
     public static function registerExtension($name)
@@ -228,7 +225,6 @@ class Zend_Feed_Writer
     /**
      * Reset class state to defaults
      *
-     * @return void
      */
     public static function reset()
     {
@@ -245,7 +241,6 @@ class Zend_Feed_Writer
     /**
      * Register core (default) extensions
      *
-     * @return void
      */
     public static function registerCoreExtensions()
     {

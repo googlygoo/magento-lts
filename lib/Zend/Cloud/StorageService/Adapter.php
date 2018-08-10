@@ -58,7 +58,6 @@ interface Zend_Cloud_StorageService_Adapter
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     public function deleteItem($path, $options = null);
 
@@ -70,7 +69,6 @@ interface Zend_Cloud_StorageService_Adapter
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function copyItem($sourcePath, $destinationPath, $options = null);
 
@@ -82,7 +80,6 @@ interface Zend_Cloud_StorageService_Adapter
      * @param  string $sourcePath
      * @param  string $destination path
      * @param  array $options
-     * @return void
      */
     public function moveItem($sourcePath, $destinationPath, $options = null);
 
@@ -93,7 +90,6 @@ interface Zend_Cloud_StorageService_Adapter
      * @param  string $path
      * @param  string $name
      * @param  array $options
-     * @return void
      */
     public function renameItem($path, $name, $options = null);
 
@@ -125,7 +121,6 @@ interface Zend_Cloud_StorageService_Adapter
      *
      * @param  string $destinationPath
      * @param  array $options
-     * @return void
      */
     public function storeMetadata($destinationPath, $metadata, $options = null);
 
@@ -134,7 +129,6 @@ interface Zend_Cloud_StorageService_Adapter
      *
      * @param  string $path
      * @param  array $options
-     * @return void
      */
     public function deleteMetadata($path);
 

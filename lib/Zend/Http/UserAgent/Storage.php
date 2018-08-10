@@ -51,7 +51,6 @@ interface Zend_Http_UserAgent_Storage
      *
      * @param  mixed $contents
      * @throws Zend_Http_UserAgent_Storage_Exception If writing $contents to storage is impossible
-     * @return void
      */
     public function write($contents);
 
@@ -59,7 +58,6 @@ interface Zend_Http_UserAgent_Storage
      * Clears contents from storage
      *
      * @throws Zend_Http_UserAgent_Storage_Exception If clearing contents from storage is impossible
-     * @return void
      */
     public function clear();
 }

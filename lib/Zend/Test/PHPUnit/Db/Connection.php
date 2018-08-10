@@ -79,7 +79,6 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
     /**
      * Close this connection.
      *
-     * @return void
      */
     public function close()
     {

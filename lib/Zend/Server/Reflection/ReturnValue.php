@@ -70,7 +70,6 @@ class Zend_Server_Reflection_ReturnValue
      * Set parameter type
      *
      * @param string|null $type
-     * @return void
      */
     public function setType($type)
     {
@@ -96,7 +95,6 @@ class Zend_Server_Reflection_ReturnValue
      * Set parameter description
      *
      * @param string|null $description
-     * @return void
      */
     public function setDescription($description)
     {

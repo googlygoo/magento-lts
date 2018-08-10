@@ -46,7 +46,6 @@ class Zend_Loader
      * @param string $class      - The full class name of a Zend component.
      * @param string|array $dirs - OPTIONAL Either a path or an array of paths
      *                             to search.
-     * @return void
      * @throws Zend_Exception
      */
     public static function loadClass($class, $dirs = null)
@@ -245,7 +244,6 @@ class Zend_Loader
      * @deprecated Since 1.8.0
      * @param string $class (optional)
      * @param boolean $enabled (optional)
-     * @return void
      * @throws Zend_Exception if spl_autoload() is not found
      * or if the specified class does not have an autoload() method.
      */
@@ -278,7 +276,6 @@ class Zend_Loader
      * Ensure that filename does not contain exploits
      *
      * @param  string $filename
-     * @return void
      * @throws Zend_Exception
      */
     protected static function _securityCheck($filename)

@@ -142,7 +142,6 @@ class Zend_ProgressBar
      *
      * @param  float  $value
      * @param  string $text
-     * @return void
      */
     public function update($value = null, $text = null)
     {
@@ -186,7 +185,6 @@ class Zend_ProgressBar
      * Update the progressbar to the next value
      *
      * @param  string $text
-     * @return void
      */
     public function next($diff = 1, $text = null)
     {
@@ -196,7 +194,6 @@ class Zend_ProgressBar
     /**
      * Call the adapters finish() behaviour
      *
-     * @return void
      */
     public function finish()
     {

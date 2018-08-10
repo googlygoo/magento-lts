@@ -68,7 +68,6 @@ class Zend_Feed_Entry_Rss extends Zend_Feed_Entry_Abstract
      *
      * @param  string $var The property to change.
      * @param  string $val The property's new value.
-     * @return void
      */
     public function __set($var, $value)
     {

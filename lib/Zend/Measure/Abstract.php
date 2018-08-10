@@ -213,7 +213,7 @@ abstract class Zend_Measure_Abstract
     /**
      * Returns the original type
      *
-     * @return type
+     * @return string
      */
     public function getType()
     {

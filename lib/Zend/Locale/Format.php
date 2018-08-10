@@ -1329,7 +1329,6 @@ class Zend_Locale_Format
      * default_charset for PHP >= 5.6 or iconv_set_encoding otherwise.
      *
      * @param string $encoding
-     * @return void
      */
     protected static function _setEncoding($encoding)
     {

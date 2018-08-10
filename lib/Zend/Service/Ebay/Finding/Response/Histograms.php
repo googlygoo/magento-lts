@@ -57,7 +57,6 @@ class Zend_Service_Ebay_Finding_Response_Histograms extends Zend_Service_Ebay_Fi
     public $categoryHistogramContainer;
 
     /**
-     * @return void
      */
     protected function _init()
     {

@@ -19,6 +19,7 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
+
 /** @see Zend_Serializer_Adapter_AdapterAbstract */
 #require_once 'Zend/Serializer/Adapter/AdapterAbstract.php';
 

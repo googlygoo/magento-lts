@@ -331,7 +331,6 @@ class Zend_Mail_Storage_Mbox extends Zend_Mail_Storage_Abstract
      * Close resource for mail lib. If you need to control, when the resource
      * is closed. Otherwise the destructor would call this.
      *
-     * @return void
      */
     public function close()
     {
@@ -343,7 +342,6 @@ class Zend_Mail_Storage_Mbox extends Zend_Mail_Storage_Abstract
     /**
      * Waste some CPU cycles doing nothing.
      *
-     * @return void
      */
     public function noop()
     {

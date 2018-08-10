@@ -75,7 +75,6 @@ class Zend_Service_Ebay_Finding extends Zend_Service_Ebay_Abstract
     /**
      * @param  Zend_Config|array|string $options Application Id or array of options
      * @throws Zend_Service_Ebay_Finding_Exception When application id is missing
-     * @return void
      */
     public function __construct($options)
     {

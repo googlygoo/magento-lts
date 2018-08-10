@@ -75,7 +75,6 @@ abstract class Zend_Feed_Reader_EntryAbstract
      * @param  DOMElement  $entry
      * @param  int         $entryKey
      * @param  string|null $type
-     * @return void
      */
     public function __construct(DOMElement $entry, $entryKey, $type = null)
     {
@@ -223,7 +222,6 @@ abstract class Zend_Feed_Reader_EntryAbstract
     /**
      * Load extensions from Zend_Feed_Reader
      *
-     * @return void
      */
     protected function _loadExtensions()
     {

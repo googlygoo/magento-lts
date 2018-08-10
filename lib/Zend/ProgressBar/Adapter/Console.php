@@ -183,7 +183,8 @@ class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
      * Set a different output-stream
      *
      * @param  string $resource
-     * @return Zend_ProgressBar_Adapter_Console
+     *
+     * @throws Zend_ProgressBar_Adapter_Exception
      */
     public function setOutputStream($resource)
     {
@@ -388,7 +389,6 @@ class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
      * @param  integer $timeTaken     Taken time in seconds
      * @param  integer $timeRemaining Remaining time in seconds
      * @param  string  $text          Status text
-     * @return void
      */
     public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text)
     {
@@ -469,7 +469,6 @@ class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
     /**
      * Defined by Zend_ProgressBar_Adapter_Interface
      *
-     * @return void
      */
     public function finish()
     {
@@ -496,7 +495,6 @@ class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
     /**
      * Calculate the bar width when other elements changed
      *
-     * @return void
      */
     protected function _calculateBarWidth()
     {
@@ -525,7 +523,6 @@ class Zend_ProgressBar_Adapter_Console extends Zend_ProgressBar_Adapter
      * This split-off is required for unit-testing.
      *
      * @param  string $data
-     * @return void
      */
     protected function _outputData($data)
     {

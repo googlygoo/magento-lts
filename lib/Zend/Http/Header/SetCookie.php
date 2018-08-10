@@ -51,6 +51,10 @@
  */
 class Zend_Http_Header_SetCookie
 {
+    /**
+     * @var string
+     */
+    protected $type;
 
     /**
      * Cookie name
@@ -184,7 +188,8 @@ class Zend_Http_Header_SetCookie
      * @param bool $httponly
      * @param string $maxAge
      * @param int $version
-     * @return SetCookie
+     *
+     * @throws Zend_Http_Header_Exception_InvalidArgumentException
      */
     public function __construct($name = null, $value = null, $expires = null, $path = null, $domain = null, $secure = false, $httponly = false, $maxAge = null, $version = null)
     {

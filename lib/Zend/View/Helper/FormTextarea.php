@@ -74,6 +74,11 @@ class Zend_View_Helper_FormTextarea extends Zend_View_Helper_FormElement
     public function formTextarea($name, $value = null, $attribs = null)
     {
         $info = $this->_getInfo($name, $value, $attribs);
+
+        /**
+         * @var string $id
+         * @var bool $disable
+         */
         extract($info); // name, value, attribs, options, listsep, disable
 
         // is it disabled?

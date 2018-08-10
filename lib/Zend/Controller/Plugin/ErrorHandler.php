@@ -95,7 +95,6 @@ class Zend_Controller_Plugin_ErrorHandler extends Zend_Controller_Plugin_Abstrac
      * - action
      *
      * @param  Array $options
-     * @return void
      */
     public function __construct(Array $options = array())
     {
@@ -230,7 +229,6 @@ class Zend_Controller_Plugin_ErrorHandler extends Zend_Controller_Plugin_Abstrac
      * returns early.
      *
      * @param  Zend_Controller_Request_Abstract $request
-     * @return void
      */
     protected function _handleError(Zend_Controller_Request_Abstract $request)
     {

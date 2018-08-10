@@ -84,7 +84,6 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @param  DOMDocument         $dom
      * @param  Zend_Service_Flickr $flickr
-     * @return void
      */
     public function __construct(DOMDocument $dom, Zend_Service_Flickr $flickr)
     {
@@ -141,7 +140,6 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
     /**
      * Implements SeekableIterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -151,7 +149,6 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
     /**
      * Implements SeekableIterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {
@@ -163,7 +160,6 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @param  int $index
      * @throws OutOfBoundsException
-     * @return void
      */
     public function seek($index)
     {

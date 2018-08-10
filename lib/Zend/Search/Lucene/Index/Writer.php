@@ -769,7 +769,6 @@ class Zend_Search_Lucene_Index_Writer
      * Merges the provided indexes into this index.
      *
      * @param array $readers
-     * @return void
      */
     public function addIndexes($readers)
     {

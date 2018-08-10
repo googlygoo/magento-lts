@@ -62,7 +62,6 @@ class Zend_Barcode_Object_Postnet extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Default options for Postnet barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {
@@ -88,7 +87,6 @@ class Zend_Barcode_Object_Postnet extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial check of interleaved Postnet barcode
-     * @return void
      */
     protected function _checkParams()
     {}

@@ -63,7 +63,6 @@ abstract class Zend_Oauth_Signature_SignatureAbstract
      * @param  string $consumerSecret
      * @param  null|string $tokenSecret
      * @param  null|string $hashAlgo
-     * @return void
      */
     public function __construct($consumerSecret, $tokenSecret = null, $hashAlgo = null)
     {

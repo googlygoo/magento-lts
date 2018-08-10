@@ -66,13 +66,13 @@ class Zend_Dom_Query_Css2Xpath
                 continue;
             }
             if (0 === strpos($pathSegment, '[contains(')) {
-                foreach ($paths as $key => $xpath) {
-                    $paths[$key] .= '//*' . ltrim($pathSegment, '*');
+                foreach ($paths as $_key => $xpath) {
+                    $paths[$_key] .= '//*' . ltrim($pathSegment, '*');
                     $paths[]      = $xpath . $pathSegment;
                 }
             } else {
-                foreach ($paths as $key => $xpath) {
-                    $paths[$key] .= '//' . $pathSegment;
+                foreach ($paths as $_key => $xpath) {
+                    $paths[$_key] .= '//' . $pathSegment;
                 }
             }
         }

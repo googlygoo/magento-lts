@@ -279,7 +279,6 @@ abstract class Zend_Validate_Abstract implements Zend_Validate_Interface
     /**
      * @param  string $messageKey
      * @param  string $value      OPTIONAL
-     * @return void
      */
     protected function _error($messageKey, $value = null)
     {
@@ -298,7 +297,6 @@ abstract class Zend_Validate_Abstract implements Zend_Validate_Interface
      * Sets the value to be validated and clears the messages and errors arrays
      *
      * @param  mixed $value
-     * @return void
      */
     protected function _setValue($value)
     {

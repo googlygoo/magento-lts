@@ -46,7 +46,6 @@ class Zend_Feed_Writer_Extension_Content_Renderer_Entry
     /**
      * Render entry
      *
-     * @return void
      */
     public function render()
     {
@@ -62,7 +61,6 @@ class Zend_Feed_Writer_Extension_Content_Renderer_Entry
     /**
      * Append namespaces to root element
      *
-     * @return void
      */
     protected function _appendNamespaces()
     {
@@ -75,7 +73,6 @@ class Zend_Feed_Writer_Extension_Content_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setContent(DOMDocument $dom, DOMElement $root)
     {

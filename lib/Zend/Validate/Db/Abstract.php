@@ -72,7 +72,7 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
     /**
      * Database adapter to use. If null isValid() will use Zend_Db::getInstance instead
      *
-     * @var unknown_type
+     * @var Zend_Db_Adapter_Abstract
      */
     protected $_adapter = null;
 
@@ -153,8 +153,8 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
     /**
      * Returns the set adapter
      *
+     * @return Zend_Db_Adapter_Abstract
      * @throws Zend_Validate_Exception
-     * @return Zend_Db_Adapter
      */
     public function getAdapter()
     {
@@ -335,8 +335,9 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
     /**
      * Run query and returns matches, or null if no matches are found.
      *
-     * @param  String $value
-     * @return Array when matches are found.
+     * @param  string $value
+     *
+     * @return array when matches are found.
      */
     protected function _query($value)
     {

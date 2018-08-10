@@ -91,7 +91,6 @@ class Zend_Dojo_BuildLayer
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      * @throws Zend_Dojo_Exception for invalid option argument
      */
     public function __construct($options = null)
@@ -511,7 +510,6 @@ class Zend_Dojo_BuildLayer
      * Retrieve module prefix
      *
      * @param  string $module
-     * @return void
      */
     protected function _getPrefix($module)
     {

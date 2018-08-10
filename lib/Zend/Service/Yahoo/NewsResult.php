@@ -98,7 +98,6 @@ class Zend_Service_Yahoo_NewsResult extends Zend_Service_Yahoo_Result
      * Initializes the news result
      *
      * @param  DOMElement $result
-     * @return void
      */
     public function __construct(DOMElement $result)
     {

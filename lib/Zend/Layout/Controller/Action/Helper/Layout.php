@@ -54,7 +54,6 @@ class Zend_Layout_Controller_Action_Helper_Layout extends Zend_Controller_Action
      * Constructor
      *
      * @param  Zend_Layout $layout
-     * @return void
      */
     public function __construct(Zend_Layout $layout = null)
     {

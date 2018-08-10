@@ -52,7 +52,6 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryTable extends PHPUnit_Extensions_Databas
     /**
      * Load data from the database.
      *
-     * @return void
      */
     protected function loadData()
     {

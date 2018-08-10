@@ -75,7 +75,7 @@ class Zend_Gdata_Gapps_Error extends Zend_Gdata_App_Base
 
     public function __construct($errorCode = null, $reason = null,
             $invalidInput = null) {
-        parent::__construct("Google Apps error received: $errorCode ($reason)");
+        parent::__construct();
         $this->_errorCode = $errorCode;
         $this->_reason = $reason;
         $this->_invalidInput = $invalidInput;

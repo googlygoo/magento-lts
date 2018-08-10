@@ -94,7 +94,6 @@ abstract class Zend_Service_Amazon_Ec2_Abstract extends Zend_Service_Amazon_Abst
      * @param  string $access_key       Override the default Access Key
      * @param  string $secret_key       Override the default Secret Key
      * @param  string $region           Sets the AWS Region
-     * @return void
      */
     public function __construct($accessKey=null, $secretKey=null, $region=null)
     {
@@ -257,7 +256,6 @@ abstract class Zend_Service_Amazon_Ec2_Abstract extends Zend_Service_Amazon_Abst
      * @param Zend_Service_Amazon_Ec2_Response $response the response object to
      *                                                   check.
      *
-     * @return void
      *
      * @throws Zend_Service_Amazon_Ec2_Exception if one or more errors are
      *         returned from Amazon.

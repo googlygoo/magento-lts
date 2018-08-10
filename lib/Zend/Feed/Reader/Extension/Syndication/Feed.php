@@ -159,7 +159,6 @@ class Zend_Feed_Reader_Extension_Syndication_Feed
     /**
      * Register Syndication namespaces
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

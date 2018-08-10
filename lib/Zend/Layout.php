@@ -137,7 +137,6 @@ class Zend_Layout
      * plugin.
      *
      * @param  string|array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = null, $initMvc = false)
     {
@@ -200,7 +199,6 @@ class Zend_Layout
      *
      * Unregisters plugins and helpers, and destroys MVC layout instance.
      *
-     * @return void
      */
     public static function resetMvcInstance()
     {
@@ -225,7 +223,6 @@ class Zend_Layout
      * Set options en masse
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function setOptions($options)
     {
@@ -247,7 +244,6 @@ class Zend_Layout
     /**
      * Initialize MVC integration
      *
-     * @return void
      */
     protected function _initMvc()
     {
@@ -258,7 +254,6 @@ class Zend_Layout
     /**
      * Initialize front controller plugin
      *
-     * @return void
      */
     protected function _initPlugin()
     {
@@ -281,7 +276,6 @@ class Zend_Layout
     /**
      * Initialize action helper
      *
-     * @return void
      */
     protected function _initHelper()
     {
@@ -685,7 +679,6 @@ class Zend_Layout
      *
      * @param  string $key
      * @param  mixed $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -722,7 +715,6 @@ class Zend_Layout
      * Unset a layout variable?
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {

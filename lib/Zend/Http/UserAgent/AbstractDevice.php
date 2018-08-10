@@ -102,7 +102,6 @@ abstract class Zend_Http_UserAgent_AbstractDevice
      * @param  null|string|array $userAgent If array, restores from serialized version
      * @param  array $server
      * @param  array $config
-     * @return void
      */
     public function __construct($userAgent = null, array $server = array(), array $config = array())
     {
@@ -141,7 +140,6 @@ abstract class Zend_Http_UserAgent_AbstractDevice
      * Unserialize
      *
      * @param  string $serialized
-     * @return void
      */
     public function unserialize($serialized)
     {
@@ -153,7 +151,6 @@ abstract class Zend_Http_UserAgent_AbstractDevice
      * Restore object state from array
      *
      * @param  array $spec
-     * @return void
      */
     protected function _restoreFromArray(array $spec)
     {
@@ -209,6 +206,8 @@ abstract class Zend_Http_UserAgent_AbstractDevice
         if ($this->hasFeature($feature)) {
             return $this->_aFeatures[$feature];
         }
+
+        return null;
     }
 
     /**
@@ -281,7 +280,6 @@ abstract class Zend_Http_UserAgent_AbstractDevice
      * Sets all the standard features extracted from the User Agent chain and $this->_server
      * vars
      *
-     * @return void
      */
     protected function _getDefaultFeatures()
     {
@@ -934,7 +932,7 @@ abstract class Zend_Http_UserAgent_AbstractDevice
     }
 
     /**
-     * @return the $_images
+     * @return array $_images
      */
     public function getImages()
     {

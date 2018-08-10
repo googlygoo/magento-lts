@@ -38,11 +38,15 @@ class Zend_EventManager_FilterChain implements Zend_EventManager_Filter
     protected $filters;
 
     /**
+     * @var null|Zend_EventManager_ResponseCollection
+     */
+    protected $responses = null;
+
+    /**
      * Constructor
      *
      * Initializes Zend_EventManager_Filter_FilterIterator in which filters will be aggregated
      * 
-     * @return void
      */
     public function __construct()
     {
@@ -117,7 +121,6 @@ class Zend_EventManager_FilterChain implements Zend_EventManager_Filter
     /**
      * Clear all filters
      * 
-     * @return void
      */
     public function clearFilters()
     {

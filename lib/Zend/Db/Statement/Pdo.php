@@ -49,7 +49,6 @@ class Zend_Db_Statement_Pdo extends Zend_Db_Statement implements IteratorAggrega
      * Prepare a string SQL statement and create a statement object.
      *
      * @param string $sql
-     * @return void
      * @throws Zend_Db_Statement_Exception
      */
     protected function _prepare($sql)

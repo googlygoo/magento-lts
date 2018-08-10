@@ -344,23 +344,24 @@ class Zend_Service_SqlAzure_Management_Client
 	 * @param string $administratorLogin Administrator login.
 	 * @param string $administratorPassword Administrator password.
 	 * @param string $location Location of the server.
+     *
 	 * @return Zend_Service_SqlAzure_Management_ServerInstance Server information.
 	 * @throws Zend_Service_SqlAzure_Management_Exception
 	 */
 	public function createServer($administratorLogin, $administratorPassword, $location)
 	{
 		if ($administratorLogin == '' || is_null($administratorLogin)) {
-                    #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
-                    throw new Zend_Service_SqlAzure_Management_Exception('Administrator login should be specified.');
-                }
+            #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
+            throw new Zend_Service_SqlAzure_Management_Exception('Administrator login should be specified.');
+        }
 		if ($administratorPassword == '' || is_null($administratorPassword)) {
-                    #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
-                    throw new Zend_Service_SqlAzure_Management_Exception('Administrator password should be specified.');
-                }
-                if (is_null($location) && is_null($affinityGroup)) {
-                    #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
-                    throw new Zend_Service_SqlAzure_Management_Exception('Please specify a location for the server.');
-                }
+            #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
+            throw new Zend_Service_SqlAzure_Management_Exception('Administrator password should be specified.');
+        }
+        if (is_null($location)) {
+            #require_once 'Zend/Service/SqlAzure/Management/Exception.php';
+            throw new Zend_Service_SqlAzure_Management_Exception('Please specify a location for the server.');
+        }
     	
                 $response = $this->_performRequest(self::OP_SERVERS, '',
     		Zend_Http_Client::POST,

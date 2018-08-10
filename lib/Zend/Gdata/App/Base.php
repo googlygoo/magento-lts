@@ -424,7 +424,6 @@ abstract class Zend_Gdata_App_Base
      *        Defaults to '1'.
      * @param integer $minorVersion The minor protocol version in effect.
      *        Defaults to null (use latest).
-     * @return void
      */
     public function registerNamespace($prefix,
                                       $namespaceUri,
@@ -455,7 +454,6 @@ abstract class Zend_Gdata_App_Base
      * minor protocol version and adds them with calls to ->registerNamespace()
      *
      * @param array $namespaceArray An array of namespaces.
-     * @return void
      */
     public function registerAllNamespaces($namespaceArray)
     {
@@ -500,6 +498,9 @@ abstract class Zend_Gdata_App_Base
      *
      * @param string $name
      * @param string $value
+     *
+     * @return mixed
+     * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function __set($name, $val)
     {

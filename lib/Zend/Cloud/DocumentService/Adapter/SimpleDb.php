@@ -65,7 +65,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -103,7 +102,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb
      *
      * @param  string $name
      * @param  array  $options
-     * @return void
      */
     public function createCollection($name, $options = null)
     {
@@ -119,7 +117,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb
      *
      * @param  string $name
      * @param  array  $options
-     * @return void
      */
     public function deleteCollection($name, $options = null)
     {
@@ -170,7 +167,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb
      * @param  string $collectionName Collection into which to insert document
      * @param  array|Zend_Cloud_DocumentService_Document $document
      * @param  array $options
-     * @return void
      */
     public function insertDocument($collectionName, $document, $options = null)
     {
@@ -199,7 +195,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb
      * @param  string $collectionName
      * @param  array|Zend_Cloud_DocumentService_Document $document
      * @param  array $options
-     * @return void
      */
     public function replaceDocument($collectionName, $document, $options = null)
     {

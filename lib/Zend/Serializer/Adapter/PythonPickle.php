@@ -229,7 +229,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a value
      *
      * @param  mixed $value
-     * @return void
      * @throws Zend_Serializer_Exception on invalid or unrecognized value type
      */
     protected function _write($value)
@@ -267,7 +266,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write pickle protocol
      *
      * @param  int $protocol
-     * @return void
      */
     protected function _writeProto($protocol)
     {
@@ -278,7 +276,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a get
      *
      * @param  int $id Id of memo
-     * @return void
      */
     protected function _writeGet($id)
     {
@@ -303,7 +300,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a put
      *
      * @param  int $id Id of memo
-     * @return void
      */
     protected function _writePut($id)
     {
@@ -327,7 +323,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Write a null as None
      *
-     * @return void
      */
     protected function _writeNull()
     {
@@ -337,7 +332,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Write a boolean true
      *
-     * @return void
      */
     protected function _writeTrue()
     {
@@ -351,7 +345,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Write a boolean false
      *
-     * @return void
      */
     protected function _writeFalse()
     {
@@ -366,7 +359,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write an integer value
      *
      * @param  int $value
-     * @return void
      */
     protected function _writeInt($value)
     {
@@ -404,7 +396,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a float value
      *
      * @param  float $value
-     * @return void
      */
     protected function _writeFloat($value)
     {
@@ -424,7 +415,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a string value
      *
      * @param  string $value
-     * @return void
      */
     protected function _writeString($value)
     {
@@ -457,7 +447,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write an associative array value as dictionary
      *
      * @param  array $value
-     * @return void
      */
     protected function _writeArrayDict(array $value)
     {
@@ -480,7 +469,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write a simple array value as list
      *
      * @param  array $value
-     * @return void
      */
     protected function _writeArrayList(array $value)
     {
@@ -501,7 +489,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Write an object as an dictionary
      *
      * @param  object $value
-     * @return void
      */
     protected function _writeObject($value)
     {
@@ -512,7 +499,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Write stop
      *
-     * @return void
      */
     protected function _writeStop()
     {
@@ -525,7 +511,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Add a value to the memo and write the id
      *
      * @param mixed $value
-     * @return void
      */
     protected function _momorize($value)
     {
@@ -625,7 +610,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
      * Load a pickle opcode
      *
      * @param  string $op
-     * @return void
      * @throws Zend_Serializer_Exception on invalid opcode
      */
     protected function _load($op)
@@ -757,7 +741,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a PUT opcode
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing stack
      */
     protected function _loadPut()
@@ -775,7 +758,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a binary PUT
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing stack
      */
     protected function _loadBinPut()
@@ -793,7 +775,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a long binary PUT
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing stack
      */
     protected function _loadLongBinPut()
@@ -815,7 +796,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a GET operation
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing GET identifier
      */
     protected function _loadGet()
@@ -832,7 +812,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a binary GET operation
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing GET identifier
      */
     protected function _loadBinGet()
@@ -849,7 +828,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a long binary GET operation
      *
-     * @return void
      * @throws Zend_Serializer_Exception on missing GET identifier
      */
     protected function _loadLongBinGet()
@@ -870,7 +848,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a NONE operator
      *
-     * @return void
      */
     protected function _loadNone()
     {
@@ -880,7 +857,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a boolean TRUE operator
      *
-     * @return void
      */
     protected function _loadNewTrue()
     {
@@ -890,7 +866,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a boolean FALSE operator
      *
-     * @return void
      */
     protected function _loadNewFalse()
     {
@@ -900,7 +875,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an integer operator
      *
-     * @return void
      */
     protected function _loadInt()
     {
@@ -917,7 +891,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a binary integer operator
      *
-     * @return void
      */
     protected function _loadBinInt()
     {
@@ -932,7 +905,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load the first byte of a binary integer
      *
-     * @return void
      */
     protected function _loadBinInt1()
     {
@@ -942,7 +914,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load the second byte of a binary integer
      *
-     * @return void
      */
     protected function _loadBinInt2()
     {
@@ -954,7 +925,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a long (float) operator
      *
-     * @return void
      */
     protected function _loadLong()
     {
@@ -969,7 +939,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a one byte long integer
      *
-     * @return void
      */
     protected function _loadLong1()
     {
@@ -981,7 +950,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a 4 byte long integer
      *
-     * @return void
      */
     protected function _loadLong4()
     {
@@ -998,7 +966,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a float value
      *
-     * @return void
      */
     protected function _loadFloat()
     {
@@ -1009,7 +976,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a binary float value
      *
-     * @return void
      */
     protected function _loadBinFloat()
     {
@@ -1024,7 +990,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a string
      *
-     * @return void
      */
     protected function _loadString()
     {
@@ -1034,7 +999,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a binary string
      *
-     * @return void
      */
     protected function _loadBinString()
     {
@@ -1049,7 +1013,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a short binary string
      *
-     * @return void
      */
     protected function _loadShortBinString()
     {
@@ -1060,7 +1023,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load arbitrary binary bytes
      *
-     * @return void
      */
     protected function _loadBinBytes()
     {
@@ -1076,7 +1038,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a single binary byte
      *
-     * @return void
      */
     protected function _loadShortBinBytes()
     {
@@ -1087,7 +1048,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a unicode string
      *
-     * @return void
      */
     protected function _loadUnicode()
     {
@@ -1148,7 +1108,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load binary unicode sequence
      *
-     * @return void
      */
     protected function _loadBinUnicode()
     {
@@ -1166,7 +1125,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a marker sequence
      *
-     * @return void
      */
     protected function _loadMark()
     {
@@ -1176,7 +1134,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an array (list)
      *
-     * @return void
      */
     protected function _loadList()
     {
@@ -1185,7 +1142,7 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
 
         // remove all elements after marker
         $max = count($this->_stack);
-        for ($i = $k+1, $max; $i < $max; $i++) {
+        for ($i = $k+1; $i < $max; $i++) {
             unset($this->_stack[$i]);
         }
     }
@@ -1193,7 +1150,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an append (to list) sequence
      *
-     * @return void
      */
     protected function _loadAppend()
     {
@@ -1205,7 +1161,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an empty list sequence
      *
-     * @return void
      */
     protected function _loadEmptyList()
     {
@@ -1215,7 +1170,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load multiple append (to list) sequences at once
      *
-     * @return void
      */
     protected function _loadAppends()
     {
@@ -1232,7 +1186,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an associative array (Python dictionary)
      *
-     * @return void
      */
     protected function _loadDict()
     {
@@ -1249,7 +1202,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an item from a set
      *
-     * @return void
      */
     protected function _loadSetItem()
     {
@@ -1262,7 +1214,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load an empty dictionary
      *
-     * @return void
      */
     protected function _loadEmptyDict()
     {
@@ -1272,7 +1223,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load set items
      *
-     * @return void
      */
     protected function _loadSetItems()
     {
@@ -1291,7 +1241,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a tuple
      *
-     * @return void
      */
     protected function _loadTuple()
     {
@@ -1308,7 +1257,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load single item tuple
      *
-     * @return void
      */
     protected function _loadTuple1()
     {
@@ -1319,7 +1267,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load two item tuple
      *
-     * @return void
      */
     protected function _loadTuple2()
     {
@@ -1331,7 +1278,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load three item tuple
      *
-     * @return void
      */
     protected function _loadTuple3() {
         $value3 = array_pop($this->_stack);
@@ -1343,7 +1289,6 @@ class Zend_Serializer_Adapter_PythonPickle extends Zend_Serializer_Adapter_Adapt
     /**
      * Load a proto value
      *
-     * @return void
      * @throws Zend_Serializer_Exception if Pickle version does not support this feature
      */
     protected function _loadProto()

@@ -105,7 +105,6 @@ class Zend_Ldap_Node_Schema_ObjectClass_OpenLdap extends Zend_Ldap_Node_Schema_I
     /**
      * Resolves the inheritance tree
      *
-     * @return void
      */
     protected function _resolveInheritance()
     {

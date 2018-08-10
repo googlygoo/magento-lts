@@ -246,7 +246,7 @@ class Zend_Amf_Server implements Zend_Server_Interface
             $class = is_object($object)?get_class($object):$object;
             if(!$this->_acl->has($class)) {
                 #require_once 'Zend/Acl/Resource.php';
-                $this->_acl->add(new Zend_Acl_Resource($class));
+                $this->_acl->addResource(new Zend_Acl_Resource($class));
             }
             $call = array($object, "initAcl");
             if(is_callable($call) && !call_user_func($call, $this->_acl)) {
@@ -851,7 +851,6 @@ class Zend_Amf_Server implements Zend_Server_Interface
      * The dispatch table consists of a an array of method name =>
      * Zend_Server_Reflection_Function_Abstract pairs
      *
-     * @return void
      */
     protected function _buildDispatchTable()
     {
@@ -896,7 +895,6 @@ class Zend_Amf_Server implements Zend_Server_Interface
      * Unimplemented
      *
      * @param  string|Exception $fault
-     * @return void
      */
     public function fault($fault = null, $code = 404)
     {
@@ -921,7 +919,6 @@ class Zend_Amf_Server implements Zend_Server_Interface
      * Unimplemented
      *
      * @param  mixed $mode
-     * @return void
      */
     public function setPersistence($mode)
     {
@@ -933,7 +930,6 @@ class Zend_Amf_Server implements Zend_Server_Interface
      * Unimplemented
      *
      * @param  array $definition
-     * @return void
      */
     public function loadFunctions($definition)
     {

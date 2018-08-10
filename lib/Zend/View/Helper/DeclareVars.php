@@ -61,7 +61,6 @@ class Zend_View_Helper_DeclareVars extends Zend_View_Helper_Abstract
      * </code>
      *
      * @param string|array variable number of arguments, all string names of variables to test
-     * @return void
      */
     public function declareVars()
     {
@@ -84,7 +83,6 @@ class Zend_View_Helper_DeclareVars extends Zend_View_Helper_Abstract
      *
      * @param  string $key
      * @param  string $value Defaults to an empty string
-     * @return void
      */
     protected function _declareVar($key, $value = '')
     {

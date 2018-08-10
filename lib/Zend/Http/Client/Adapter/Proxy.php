@@ -236,7 +236,6 @@ class Zend_Http_Client_Adapter_Proxy extends Zend_Http_Client_Adapter_Socket
      * @param integer $port
      * @param string  $http_ver
      * @param array   $headers
-     * @return void
      * @throws Zend_Http_Client_Adapter_Exception
      */
     protected function connectHandshake(

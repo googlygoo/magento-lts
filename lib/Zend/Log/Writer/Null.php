@@ -37,7 +37,6 @@ class Zend_Log_Writer_Null extends Zend_Log_Writer_Abstract
      * Write a message to the log.
      *
      * @param  array  $event  event data
-     * @return void
      */
     protected function _write($event)
     {

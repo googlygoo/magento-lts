@@ -48,7 +48,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      * Constructor
      *
      * @param  Zend_Feed_Writer_Feed $container
-     * @return void
      */
     public function __construct (Zend_Feed_Writer_Feed $container)
     {
@@ -123,7 +122,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setLanguage(DOMDocument $dom, DOMElement $root)
     {
@@ -141,7 +139,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setTitle(DOMDocument $dom, DOMElement $root)
     {
@@ -169,7 +166,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setDescription(DOMDocument $dom, DOMElement $root)
     {
@@ -196,7 +192,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setDateModified(DOMDocument $dom, DOMElement $root)
     {
@@ -217,7 +212,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setGenerator(DOMDocument $dom, DOMElement $root)
     {
@@ -245,7 +239,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setLink(DOMDocument $dom, DOMElement $root)
     {
@@ -276,7 +269,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setAuthors(DOMDocument $dom, DOMElement $root)
     {
@@ -301,7 +293,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setCopyright(DOMDocument $dom, DOMElement $root)
     {
@@ -320,7 +311,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setImage(DOMDocument $dom, DOMElement $root)
     {
@@ -428,7 +418,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setDateCreated(DOMDocument $dom, DOMElement $root)
     {
@@ -447,7 +436,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setLastBuildDate(DOMDocument $dom, DOMElement $root)
     {
@@ -468,7 +456,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setBaseUrl(DOMDocument $dom, DOMElement $root)
     {
@@ -484,7 +471,6 @@ class Zend_Feed_Writer_Renderer_Feed_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setCategories(DOMDocument $dom, DOMElement $root)
     {

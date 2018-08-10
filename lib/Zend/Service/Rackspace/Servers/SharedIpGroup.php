@@ -57,7 +57,6 @@ class Zend_Service_Rackspace_Servers_SharedIpGroup
      * 
      * @param  Zend_Service_Rackspace_Servers $service
      * @param  array $data
-     * @return void
      */
     public function __construct($service, $data)
     {

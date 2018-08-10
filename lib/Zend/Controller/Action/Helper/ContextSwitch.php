@@ -124,7 +124,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -160,7 +159,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      * Reset the view script suffix to the original state, or store the
      * original state.
      *
-     * @return void
      */
     public function init()
     {
@@ -227,7 +225,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      *
      * @param  mixed $format
      * @throws Zend_Controller_Action_Exception
-     * @return void
      */
     public function initContext($format = null)
     {
@@ -319,7 +316,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      *
      * Turns off viewRenderer auto-rendering
      *
-     * @return void
      */
     public function initJsonContext()
     {
@@ -1073,7 +1069,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      * Execute postDispatch callback for current context, if available
      *
      * @throws Zend_Controller_Action_Exception
-     * @return void
      */
     public function postDispatch()
     {
@@ -1102,7 +1097,6 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      *
      * JSON serialize view variables to response body
      *
-     * @return void
      */
     public function postJsonContext()
     {
@@ -1132,14 +1126,15 @@ class Zend_Controller_Action_Helper_ContextSwitch extends Zend_Controller_Action
      *
      * @param  string       $action
      * @param  string|array $context
-     * @return Zend_Controller_Action_Helper_ContextSwitch|void Provides a fluent interface
+     *
+     * @return $this
      */
     public function addActionContext($action, $context)
     {
         $this->hasContext($context, true);
         $controller = $this->getActionController();
         if (null === $controller) {
-            return;
+            return $this;
         }
         $action     = (string) $action;
         $contextKey = $this->_contextKey;

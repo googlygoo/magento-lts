@@ -45,7 +45,6 @@ class Zend_Service_Amazon_EditorialReview
      * Assigns values to properties relevant to EditorialReview
      *
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {

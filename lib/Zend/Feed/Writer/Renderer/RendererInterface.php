@@ -30,7 +30,6 @@ interface Zend_Feed_Writer_Renderer_RendererInterface
     /**
      * Render feed/entry
      *
-     * @return void
      */
     public function render();
 

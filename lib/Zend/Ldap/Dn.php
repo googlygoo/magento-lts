@@ -301,7 +301,7 @@ class Zend_Ldap_Dn implements ArrayAccess
      * Assert if value is in a correct RDN format
      *
      * @param  array $value
-     * @return boolean
+     *
      * @throws Zend_Ldap_Exception
      */
     protected static function _assertRdn(array $value)

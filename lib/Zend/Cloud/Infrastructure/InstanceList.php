@@ -39,7 +39,6 @@ class Zend_Cloud_Infrastructure_InstanceList implements Countable, Iterator, Arr
      *
      * @param  Adapter $adapter
      * @param  array $instances
-     * @return void
      */
     public function __construct($adapter, array $instances = null)
     {
@@ -60,7 +59,6 @@ class Zend_Cloud_Infrastructure_InstanceList implements Countable, Iterator, Arr
      * Transforms the Array to array of Instances
      *
      * @param  array $list
-     * @return void
      */
     protected function constructFromArray(array $list)
     {
@@ -122,7 +120,6 @@ class Zend_Cloud_Infrastructure_InstanceList implements Countable, Iterator, Arr
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -134,7 +131,6 @@ class Zend_Cloud_Infrastructure_InstanceList implements Countable, Iterator, Arr
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

@@ -45,7 +45,6 @@ class Zend_Service_Amazon_Accessories
      * Assigns values to properties relevant to Accessories
      *
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {

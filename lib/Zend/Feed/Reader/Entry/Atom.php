@@ -60,7 +60,6 @@ class Zend_Feed_Reader_Entry_Atom extends Zend_Feed_Reader_EntryAbstract impleme
      * @param  DOMElement $entry
      * @param  int $entryKey
      * @param  string $type
-     * @return void
      */
     public function __construct(DOMElement $entry, $entryKey, $type = null)
     {

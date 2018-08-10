@@ -164,7 +164,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
         'dateTime.iso8601'           => 'dateTime.iso8601',
         'date'                       => 'dateTime.iso8601',
         'time'                       => 'dateTime.iso8601',
-        'time'                       => 'dateTime.iso8601',
         'Zend_Date'                  => 'dateTime.iso8601',
         'DateTime'                   => 'dateTime.iso8601',
         'array'                      => 'array',
@@ -184,11 +183,15 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
     protected $_sendArgumentsToAllMethods = true;
 
     /**
+     * @var Zend_XmlRpc_Server_System
+     */
+    protected $_system;
+
+    /**
      * Constructor
      *
      * Creates system.* methods.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -227,7 +230,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
      *
      * @param string|array $function Valid callback
      * @param string $namespace Optional namespace prefix
-     * @return void
      * @throws Zend_XmlRpc_Server_Exception
      */
     public function addFunction($function, $namespace = '')
@@ -268,7 +270,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
      * @param string|object $class
      * @param string $namespace Optional
      * @param mixed $argv Optional arguments to pass to methods
-     * @return void
      * @throws Zend_XmlRpc_Server_Exception on invalid input
      */
     public function setClass($class, $namespace = '', $argv = null)
@@ -353,7 +354,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
      * results pulled from {@link Zend_XmlRpc_Server_Cache::get()}.
      *
      * @param  array|Zend_Server_Definition $definition
-     * @return void
      * @throws Zend_XmlRpc_Server_Exception on invalid input
      */
     public function loadFunctions($definition)
@@ -410,7 +410,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
      * Do nothing; persistence is handled via {@link Zend_XmlRpc_Server_Cache}
      *
      * @param  mixed $mode
-     * @return void
      */
     public function setPersistence($mode)
     {
@@ -604,7 +603,6 @@ class Zend_XmlRpc_Server extends Zend_Server_Abstract
     /**
      * Register system methods with the server
      *
-     * @return void
      */
     protected function _registerSystemMethods()
     {

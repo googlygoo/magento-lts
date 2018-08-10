@@ -82,7 +82,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      *
      * Set separator to PHP_EOL.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -132,7 +131,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      *
      * @param  string $method
      * @param  array $args
-     * @return void
      * @throws Zend_View_Exception When no $content provided or invalid method
      */
     public function __call($method, $args)
@@ -199,7 +197,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      * Override append to enforce style creation
      *
      * @param  mixed $value
-     * @return void
      */
     public function append($value)
     {
@@ -218,7 +215,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      *
      * @param  string|int $index
      * @param  mixed $value
-     * @return void
      */
     public function offsetSet($index, $value)
     {
@@ -236,7 +232,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      * Override prepend to enforce style creation
      *
      * @param  mixed $value
-     * @return void
      */
     public function prepend($value)
     {
@@ -254,7 +249,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      * Override set to enforce style creation
      *
      * @param  mixed $value
-     * @return void
      */
     public function set($value)
     {
@@ -273,7 +267,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
      *
      * @param  mixed $captureType
      * @param  string $typeOrAttrs
-     * @return void
      */
     public function captureStart($type = Zend_View_Helper_Placeholder_Container_Abstract::APPEND, $attrs = null)
     {
@@ -293,7 +286,6 @@ class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_
     /**
      * End capture action and store
      *
-     * @return void
      */
     public function captureEnd()
     {

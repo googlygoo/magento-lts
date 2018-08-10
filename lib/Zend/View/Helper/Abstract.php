@@ -56,7 +56,6 @@ abstract class Zend_View_Helper_Abstract implements Zend_View_Helper_Interface
     /**
      * Strategy pattern: currently unutilized
      *
-     * @return void
      */
     public function direct()
     {

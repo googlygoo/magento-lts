@@ -193,7 +193,6 @@ class Zend_Stdlib_PriorityQueue implements Countable, IteratorAggregate, Seriali
      * Serialization format is compatible with {@link Zend_Stdlib_SplPriorityQueue}
      * 
      * @param  string $data 
-     * @return void
      */
     public function unserialize($data)
     {

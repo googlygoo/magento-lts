@@ -127,7 +127,6 @@ class Zend_Db_Adapter_Pdo_Mssql extends Zend_Db_Adapter_Pdo_Abstract
     }
 
     /**
-     * @return void
      */
     protected function _connect()
     {

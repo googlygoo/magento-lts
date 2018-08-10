@@ -84,7 +84,6 @@ class Zend_Cache_Frontend_File extends Zend_Cache_Core
      *
      * @param  array $options Associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -151,12 +150,11 @@ class Zend_Cache_Frontend_File extends Zend_Cache_Core
      * @param  string $name  Name of the option
      * @param  mixed  $value Value of the option
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setOption($name, $value)
     {
         if ($name == 'master_file') {
-            $this->setMasterFile($value);
+            $this->setMasterFiles(array($value));
         } else if ($name == 'master_files') {
             $this->setMasterFiles($value);
         } else {

@@ -549,7 +549,6 @@ class Zend_Text_Figlet
      * width) if justification is 0, 1 or 2 respectively.
      *
      * @param  string $string The string to add to the output
-     * @return void
      */
     protected function _putString($string)
     {
@@ -575,7 +574,6 @@ class Zend_Text_Figlet
     /**
      * Appends the current line to the output
      *
-     * @return void
      */
     protected function _appendLine()
     {
@@ -591,7 +589,6 @@ class Zend_Text_Figlet
      * Makes a new line out of the first part and appends it using appendLine().
      * Makes a new line out of the second part and returns.
      *
-     * @return void
      */
     protected function _splitLine()
     {
@@ -636,7 +633,6 @@ class Zend_Text_Figlet
     /**
      * Clears the current line
      *
-     * @return void
      */
     protected function _clearLine()
     {
@@ -711,7 +707,6 @@ class Zend_Text_Figlet
      * Gets the requested character and sets current and previous char width.
      *
      * @param  string $char The character from which to get the letter of
-     * @return void
      */
     protected function _getLetter($char)
     {
@@ -962,7 +957,6 @@ class Zend_Text_Figlet
      * @throws Zend_Text_Figlet_Exception When font file was not found
      * @throws Zend_Text_Figlet_Exception When GZIP library is required but not found
      * @throws Zend_Text_Figlet_Exception When font file is not readable
-     * @return void
      */
     protected function _loadFont($fontFile)
     {
@@ -1117,7 +1111,6 @@ class Zend_Text_Figlet
      * Set the used smush mode, according to smush override, user smsush and
      * font smush.
      *
-     * @return void
      */
     protected function _setUsedSmush()
     {
@@ -1151,7 +1144,6 @@ class Zend_Text_Figlet
      * Skip a stream to the end of line
      *
      * @param  resource $fp File pointer to the font file
-     * @return void
      */
     protected function _skipToEol($fp)
     {

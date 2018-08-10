@@ -48,7 +48,6 @@ class Zend_Controller_Action_Helper_AjaxContext extends Zend_Controller_Action_H
      *
      * Add HTML context
      *
-     * @return void
      */
     public function __construct()
     {
@@ -62,7 +61,6 @@ class Zend_Controller_Action_Helper_AjaxContext extends Zend_Controller_Action_H
      * Checks for XHR requests; if detected, attempts to perform context switch.
      *
      * @param  string $format
-     * @return void
      */
     public function initContext($format = null)
     {
@@ -75,6 +73,8 @@ class Zend_Controller_Action_Helper_AjaxContext extends Zend_Controller_Action_H
             return;
         }
 
-        return parent::initContext($format);
+        parent::initContext($format);
+
+        return;
     }
 }

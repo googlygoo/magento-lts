@@ -384,7 +384,6 @@ class Zend_Soap_AutoDiscover implements Zend_Server_Interface
      * @param Zend_Soap_Wsdl                           $wsdl     WSDL document
      * @param object                                   $port     wsdl:portType
      * @param object                                   $binding  wsdl:binding
-     * @return void
      */
     protected function _addFunctionToWsdl($function, $wsdl, $port, $binding)
     {

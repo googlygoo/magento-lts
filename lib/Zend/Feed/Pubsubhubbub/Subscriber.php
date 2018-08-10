@@ -572,7 +572,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber
      */
     public function subscribeAll()
     {
-        return $this->_doRequest('subscribe');
+        $this->_doRequest('subscribe');
     }
 
     /**
@@ -581,7 +581,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber
      */
     public function unsubscribeAll()
     {
-        return $this->_doRequest('unsubscribe');
+        $this->_doRequest('unsubscribe');
     }
 
     /**

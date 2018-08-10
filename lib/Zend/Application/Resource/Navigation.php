@@ -74,7 +74,6 @@ class Zend_Application_Resource_Navigation
     /**
      * Stores navigation container in registry or Navigation view helper
      *
-     * @return void
      */
     public function store()
     {
@@ -90,7 +89,6 @@ class Zend_Application_Resource_Navigation
     /**
      * Stores navigation container in the registry
      *
-     * @return void
      */
     protected function _storeRegistry()
     {
@@ -110,7 +108,6 @@ class Zend_Application_Resource_Navigation
     /**
      * Stores navigation container in the Navigation helper
      *
-     * @return void
      */
     protected function _storeHelper()
     {

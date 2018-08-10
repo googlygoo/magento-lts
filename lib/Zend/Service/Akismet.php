@@ -79,7 +79,6 @@ class Zend_Service_Akismet extends Zend_Service_Abstract
      *
      * @param string $apiKey Akismet API key
      * @param string $blog Blog URL
-     * @return void
      */
     public function __construct($apiKey, $blog)
     {
@@ -349,7 +348,6 @@ class Zend_Service_Akismet extends Zend_Service_Abstract
      * This method implements Akismet's submit-spam REST method.
      *
      * @param array $params
-     * @return void
      * @throws Zend_Service_Exception with invalid API key
      */
     public function submitSpam($params)
@@ -378,7 +376,6 @@ class Zend_Service_Akismet extends Zend_Service_Abstract
      * this method implements Akismet's submit-ham REST method.
      *
      * @param array $params
-     * @return void
      */
     public function submitHam($params)
     {

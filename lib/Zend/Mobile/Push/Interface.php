@@ -50,7 +50,6 @@ interface Zend_Mobile_Push_Interface
     /**
      * Close the Connection to the Push Server
      *
-     * @return void
      */
     public function close();
 

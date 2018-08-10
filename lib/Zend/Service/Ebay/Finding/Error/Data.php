@@ -135,7 +135,6 @@ class Zend_Service_Ebay_Finding_Error_Data extends Zend_Service_Ebay_Finding_Abs
     public $subdomain;
 
     /**
-     * @return void
      */
     protected function _init()
     {

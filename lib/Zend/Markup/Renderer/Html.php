@@ -89,7 +89,6 @@ class Zend_Markup_Renderer_Html extends Zend_Markup_Renderer_RendererAbstract
      *
      * @param array|Zend_Config $options
      *
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -116,7 +115,6 @@ class Zend_Markup_Renderer_Html extends Zend_Markup_Renderer_RendererAbstract
     /**
      * Define the default markups
      *
-     * @return void
      */
     protected function _defineDefaultMarkups()
     {
@@ -352,7 +350,6 @@ class Zend_Markup_Renderer_Html extends Zend_Markup_Renderer_RendererAbstract
     /**
      * Add the default filters
      *
-     * @return void
      */
     public function addDefaultFilters()
     {

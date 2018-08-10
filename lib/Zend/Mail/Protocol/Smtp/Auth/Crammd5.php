@@ -44,7 +44,6 @@ class Zend_Mail_Protocol_Smtp_Auth_Crammd5 extends Zend_Mail_Protocol_Smtp
      * @param  string $host   (Default: 127.0.0.1)
      * @param  int    $port   (Default: null)
      * @param  array  $config Auth-specific parameters
-     * @return void
      */
     public function __construct($host = '127.0.0.1', $port = null, $config = null)
     {
@@ -64,7 +63,6 @@ class Zend_Mail_Protocol_Smtp_Auth_Crammd5 extends Zend_Mail_Protocol_Smtp
     /**
      * @todo Perform CRAM-MD5 authentication with supplied credentials
      *
-     * @return void
      */
     public function auth()
     {

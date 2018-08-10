@@ -37,7 +37,6 @@ class Zend_Feed_Builder_Header_Itunes extends ArrayObject
      * Constructor
      *
      * @param  array $categories Categories columns and in iTunes Music Store Browse
-     * @return void
      */
     public function __construct(array $categories)
     {
@@ -254,7 +253,6 @@ class Zend_Feed_Builder_Header_Itunes extends ArrayObject
      *
      * @param  string $name  name of the property to set
      * @param  mixed  $value value to set
-     * @return void
      */
     public function __set($name, $value)
     {
@@ -276,7 +274,6 @@ class Zend_Feed_Builder_Header_Itunes extends ArrayObject
      * Unset accessor
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {

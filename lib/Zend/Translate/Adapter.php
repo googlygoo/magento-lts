@@ -123,7 +123,6 @@ abstract class Zend_Translate_Adapter {
      * @param  string|array [$content]
      * @param  string|Zend_Locale [$locale]
      * @throws Zend_Translate_Exception
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -943,7 +942,6 @@ abstract class Zend_Translate_Adapter {
     /**
      * Removes any set cache
      *
-     * @return void
      */
     public static function removeCache()
     {
@@ -954,7 +952,6 @@ abstract class Zend_Translate_Adapter {
      * Clears all set cache data
      *
      * @param string $tag Tag to clear when the default tag name is not used
-     * @return void
      */
     public static function clearCache($tag = null)
     {

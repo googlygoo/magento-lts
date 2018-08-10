@@ -119,7 +119,6 @@ class Zend_Db_Profiler
      * specifically enabled by passing in $enabled here or calling setEnabled().
      *
      * @param  boolean $enabled
-     * @return void
      */
     public function __construct($enabled = false)
     {

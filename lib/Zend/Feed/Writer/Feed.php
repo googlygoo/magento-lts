@@ -173,7 +173,6 @@ implements Iterator, Countable
      *
      * Using this method will alter the original indexation.
      *
-     * @return void
      */
     public function orderByDate()
     {
@@ -218,7 +217,7 @@ implements Iterator, Countable
     /**
      * Return the current feed key
      *
-     * @return unknown
+     * @return int
      */
     public function key()
     {
@@ -228,7 +227,6 @@ implements Iterator, Countable
     /**
      * Move the feed pointer forward
      *
-     * @return void
      */
     public function next()
     {
@@ -238,7 +236,6 @@ implements Iterator, Countable
     /**
      * Reset the pointer in the feed object
      *
-     * @return void
      */
     public function rewind()
     {

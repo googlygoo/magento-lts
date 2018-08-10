@@ -76,7 +76,6 @@ class Zend_Barcode_Object_Code25 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial check of interleaved 2 of 5 barcode
-     * @return void
      */
     protected function _checkParams()
     {

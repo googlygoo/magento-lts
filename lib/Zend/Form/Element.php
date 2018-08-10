@@ -243,7 +243,6 @@ class Zend_Form_Element implements Zend_Validate_Interface
      *
      * @param  string|array|Zend_Config $spec
      * @param  array|Zend_Config $options
-     * @return void
      * @throws Zend_Form_Exception if no element name after initialization
      */
     public function __construct($spec, $options = null)
@@ -281,7 +280,6 @@ class Zend_Form_Element implements Zend_Validate_Interface
     /**
      * Initialize object; used by extending classes
      *
-     * @return void
      */
     public function init()
     {
@@ -586,7 +584,6 @@ class Zend_Form_Element implements Zend_Validate_Interface
      *
      * @param  string $value
      * @param  string $key
-     * @return void
      */
     protected function _filterValue(&$value, &$key)
     {
@@ -970,7 +967,6 @@ class Zend_Form_Element implements Zend_Validate_Interface
      *
      * @param  string $key
      * @param  mixed $value
-     * @return voide
      */
     public function __set($key, $value)
     {

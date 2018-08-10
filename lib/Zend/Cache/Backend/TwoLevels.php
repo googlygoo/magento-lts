@@ -122,7 +122,6 @@ class Zend_Cache_Backend_TwoLevels extends Zend_Cache_Backend implements Zend_Ca
      *
      * @param  array $options Associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {

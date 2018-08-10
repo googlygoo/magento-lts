@@ -278,11 +278,18 @@ class Zend_Http_Client
     protected static $_fileInfoDb = null;
 
     /**
+     * @var null|string
+     */
+    protected $_stream_name = null;
+
+    /**
      * Constructor method. Will create a new HTTP client. Accepts the target
      * URL and optionally configuration array.
      *
      * @param Zend_Uri_Http|string $uri
      * @param array $config Configuration key-value pairs.
+     *
+     * @throws Zend_Http_Client_Exception
      */
     public function __construct($uri = null, $config = null)
     {
@@ -538,7 +545,6 @@ class Zend_Http_Client
      * @param string $type GET or POST
      * @param string $name
      * @param string $value
-     * @return null
      */
     protected function _setParameter($type, $name, $value)
     {
@@ -917,7 +923,7 @@ class Zend_Http_Client
      * seperated from ->request() to preserve logic and readability
      *
      * @param Zend_Http_Client_Adapter_Interface|string $adapter
-     * @return null
+     *
      * @throws Zend_Http_Client_Exception
      */
     public function setAdapter($adapter)

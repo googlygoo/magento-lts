@@ -89,7 +89,6 @@ class Zend_TimeSync_Sntp extends Zend_TimeSync_Protocol
      * Writes data to to the timeserver
      *
      * @param  string $data Data to write to the timeserver
-     * @return void
      */
     protected function _write($data)
     {

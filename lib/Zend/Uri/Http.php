@@ -193,7 +193,6 @@ class Zend_Uri_Http extends Zend_Uri
      * @param  string $schemeSpecific The scheme-specific portion to parse
      * @throws Zend_Uri_Exception When scheme-specific decoposition fails
      * @throws Zend_Uri_Exception When authority decomposition fails
-     * @return void
      */
     protected function _parseUri($schemeSpecific)
     {

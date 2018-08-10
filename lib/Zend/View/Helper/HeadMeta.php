@@ -65,7 +65,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      *
      * Set separator to PHP_EOL
      *
-     * @return void
      */
     public function __construct()
     {
@@ -234,7 +233,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      * Append
      *
      * @param  string $value
-     * @return void
      * @throws Zend_View_Exception
      */
     public function append($value)
@@ -254,7 +252,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      *
      * @param  string|int $index
      * @param  string $value
-     * @return void
      * @throws Zend_View_Exception
      */
     public function offsetSet($index, $value)
@@ -273,7 +270,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      * OffsetUnset
      *
      * @param  string|int $index
-     * @return void
      * @throws Zend_View_Exception
      */
     public function offsetUnset($index)
@@ -292,7 +288,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      * Prepend
      *
      * @param  string $value
-     * @return void
      * @throws Zend_View_Exception
      */
     public function prepend($value)
@@ -311,7 +306,6 @@ class Zend_View_Helper_HeadMeta extends Zend_View_Helper_Placeholder_Container_S
      * Set
      *
      * @param  string $value
-     * @return void
      * @throws Zend_View_Exception
      */
     public function set($value)

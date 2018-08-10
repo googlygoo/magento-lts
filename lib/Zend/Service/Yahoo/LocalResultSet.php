@@ -62,7 +62,6 @@ class Zend_Service_Yahoo_LocalResultSet extends Zend_Service_Yahoo_ResultSet
      * Initializes the local result set
      *
      * @param  DOMDocument $dom
-     * @return void
      */
     public function __construct(DOMDocument $dom)
     {

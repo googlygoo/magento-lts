@@ -47,7 +47,6 @@ interface Zend_View_Interface
      * @param string|array The directory (-ies) to set as the path. Note that
      * the concrete view implentation may not necessarily support multiple
      * directories.
-     * @return void
      */
     public function setScriptPath($path);
 
@@ -63,7 +62,6 @@ interface Zend_View_Interface
      *
      * @param  string $path
      * @param  string $classPrefix
-     * @return void
      */
     public function setBasePath($path, $classPrefix = 'Zend_View');
 
@@ -72,7 +70,6 @@ interface Zend_View_Interface
      *
      * @param  string $path
      * @param  string $classPrefix
-     * @return void
      */
     public function addBasePath($path, $classPrefix = 'Zend_View');
 
@@ -81,7 +78,6 @@ interface Zend_View_Interface
      *
      * @param string $key The variable name.
      * @param mixed $val The variable value.
-     * @return void
      */
     public function __set($key, $val);
 
@@ -97,7 +93,6 @@ interface Zend_View_Interface
      * Allows unset() on object properties to work
      *
      * @param string $key
-     * @return void
      */
     public function __unset($key);
 
@@ -113,7 +108,6 @@ interface Zend_View_Interface
      * => value pairs)
      * @param mixed $value (Optional) If assigning a named variable, use this
      * as the value.
-     * @return void
      */
     public function assign($spec, $value = null);
 
@@ -123,7 +117,6 @@ interface Zend_View_Interface
      * Clears all variables assigned to Zend_View either via {@link assign()} or
      * property overloading ({@link __get()}/{@link __set()}).
      *
-     * @return void
      */
     public function clearVars();
 

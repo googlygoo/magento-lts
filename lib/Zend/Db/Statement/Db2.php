@@ -50,7 +50,6 @@ class Zend_Db_Statement_Db2 extends Zend_Db_Statement
      * Prepare a statement handle.
      *
      * @param string $sql
-     * @return void
      * @throws Zend_Db_Statement_Db2_Exception
      */
     public function _prepare($sql)

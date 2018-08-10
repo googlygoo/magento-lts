@@ -77,7 +77,6 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignature
 	 * Zend_Service_WindowsAzure_Credentials_Zend_Service_WindowsAzure_Credentials_SharedAccessSignature instance
 	 * 
 	 * @param  array $value Permission set
-	 * @return void
 	 */
     public function setPermissionSet($value = array())
 	{

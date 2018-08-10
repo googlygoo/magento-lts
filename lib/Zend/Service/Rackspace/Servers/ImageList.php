@@ -54,7 +54,6 @@ class Zend_Service_Rackspace_Servers_ImageList implements Countable, Iterator, A
      *
      * @param  RackspaceServers $service
      * @param  array $list
-     * @return void
      */
     public function __construct($service,$list = array())
     {
@@ -69,7 +68,6 @@ class Zend_Service_Rackspace_Servers_ImageList implements Countable, Iterator, A
      * Transforms the array to array of Server
      *
      * @param  array $list
-     * @return void
      */
     private function constructFromArray(array $list)
     {
@@ -139,7 +137,6 @@ class Zend_Service_Rackspace_Servers_ImageList implements Countable, Iterator, A
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -150,7 +147,6 @@ class Zend_Service_Rackspace_Servers_ImageList implements Countable, Iterator, A
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

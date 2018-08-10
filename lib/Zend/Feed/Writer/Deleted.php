@@ -48,7 +48,9 @@ class Zend_Feed_Writer_Deleted
     /**
      * Set the feed character encoding
      *
-     * @return string|null
+     * @param string $encoding
+     *
+     * @throws Zend_Feed_Exception
      */
     public function setEncoding($encoding)
     {

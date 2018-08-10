@@ -108,7 +108,6 @@ class Zend_Service_Audioscrobbler
     /**
      * Lazy load Http Client if none is instantiated yet.
      *
-     * @return void
      */
     protected function lazyLoadHttpClient()
     {
@@ -646,7 +645,6 @@ class Zend_Service_Audioscrobbler
      * @param  string  $errfile
      * @param  integer $errline
      * @param  array   $errcontext
-     * @return void
      */
     public function _errorHandler($errno, $errstr, $errfile, $errline, array $errcontext)
     {

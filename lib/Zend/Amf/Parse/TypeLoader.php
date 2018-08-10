@@ -62,7 +62,6 @@ final class Zend_Amf_Parse_TypeLoader
      */
     public static $classMap = array (
         'flex.messaging.messages.AcknowledgeMessage' => 'Zend_Amf_Value_Messaging_AcknowledgeMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_AsyncMessage',
         'flex.messaging.messages.CommandMessage'     => 'Zend_Amf_Value_Messaging_CommandMessage',
         'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_ErrorMessage',
         'flex.messaging.messages.RemotingMessage'    => 'Zend_Amf_Value_Messaging_RemotingMessage',
@@ -74,7 +73,6 @@ final class Zend_Amf_Parse_TypeLoader
      */
     protected static $_defaultClassMap = array(
         'flex.messaging.messages.AcknowledgeMessage' => 'Zend_Amf_Value_Messaging_AcknowledgeMessage',
-        'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_AsyncMessage',
         'flex.messaging.messages.CommandMessage'     => 'Zend_Amf_Value_Messaging_CommandMessage',
         'flex.messaging.messages.ErrorMessage'       => 'Zend_Amf_Value_Messaging_ErrorMessage',
         'flex.messaging.messages.RemotingMessage'    => 'Zend_Amf_Value_Messaging_RemotingMessage',
@@ -137,7 +135,6 @@ final class Zend_Amf_Parse_TypeLoader
      *
      * @param  string $asClassName
      * @param  string $phpClassName
-     * @return void
      */
     public static function setMapping($asClassName, $phpClassName)
     {
@@ -147,7 +144,6 @@ final class Zend_Amf_Parse_TypeLoader
     /**
      * Reset type map
      *
-     * @return void
      */
     public static function resetMap()
     {

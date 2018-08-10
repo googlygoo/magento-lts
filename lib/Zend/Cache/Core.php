@@ -132,7 +132,6 @@ class Zend_Cache_Core
      *
      * @param  array|Zend_Config $options Associative array of options or Zend_Config instance
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -169,7 +168,6 @@ class Zend_Cache_Core
      *
      * @param  Zend_Cache_Backend $backendObject
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setBackend(Zend_Cache_Backend $backendObject)
     {
@@ -206,7 +204,6 @@ class Zend_Cache_Core
      * @param  string $name  Name of the option
      * @param  mixed  $value Value of the option
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setOption($name, $value)
     {
@@ -230,8 +227,9 @@ class Zend_Cache_Core
      * Public frontend to get an option value
      *
      * @param  string $name  Name of the option
-     * @throws Zend_Cache_Exception
+     *
      * @return mixed option value
+     * @throws Zend_Cache_Exception
      */
     public function getOption($name)
     {
@@ -256,7 +254,6 @@ class Zend_Cache_Core
      * @param  string $name  Name of the option
      * @param  mixed  $value Value of the option
      * @throws Zend_Cache_Exception
-     * @return void
      */
     private function _setOption($name, $value)
     {
@@ -275,7 +272,6 @@ class Zend_Cache_Core
      * The new value is set for the core/frontend but for the backend too (directive)
      *
      * @param  int $newLifetime New lifetime (in seconds)
-     * @return void
      */
     public function setLifetime($newLifetime)
     {
@@ -291,7 +287,9 @@ class Zend_Cache_Core
      * @param  string  $id                     Cache id
      * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
      * @param  boolean $doNotUnserialize       Do not serialize (even if automatic_serialization is true) => for internal use
+     *
      * @return mixed|false Cached datas
+     * @throws Zend_Cache_Exception
      */
     public function load($id, $doNotTestCacheValidity = false, $doNotUnserialize = false)
     {
@@ -665,7 +663,6 @@ class Zend_Cache_Core
      *
      * @param  string $string Cache id or tag
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _validateIdOrTag($string)
     {
@@ -687,7 +684,6 @@ class Zend_Cache_Core
      *
      * @param  array $tags Array of tags
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _validateTagsArray($tags)
     {
@@ -706,7 +702,6 @@ class Zend_Cache_Core
      * Create a default log object if none is set.
      *
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _loggerSanity()
     {
@@ -732,7 +727,6 @@ class Zend_Cache_Core
      *
      * @param string $message
      * @throws Zend_Cache_Exception
-     * @return void
      */
     protected function _log($message, $priority = 4)
     {

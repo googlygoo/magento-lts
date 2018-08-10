@@ -207,7 +207,6 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * Load function definitions
      *
      * @param  array|Zend_Server_Definition $definition
-     * @return void
      */
     public function loadFunctions($definition)
     {
@@ -342,7 +341,6 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * Add service method to service map
      *
      * @param  Zend_Server_Reflection_Function $method
-     * @return void
      */
     protected function _addMethodServiceMap(Zend_Server_Method_Definition $method)
     {
@@ -497,7 +495,6 @@ class Zend_Json_Server extends Zend_Server_Abstract
     /**
      * Internal method for handling request
      *
-     * @return void
      */
     protected function _handle()
     {

@@ -77,7 +77,7 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * Entries signs.
      * Used in GM_SIGNS grouping mode
      *
-     * @var arrays
+     * @var array
      */
     private $_signs = array();
 
@@ -179,6 +179,8 @@ class Zend_Search_Lucene_Search_QueryParserContext
     /**
      * Process fuzzy search or proximity search modifier
      *
+     * @param mixed $parameter
+     *
      * @throws Zend_Search_Lucene_Search_QueryParserException
      */
     public function processFuzzyProximityModifier($parameter = null)
@@ -206,6 +208,8 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * Set boost factor to the entry
      *
      * @param float $boostFactor
+     *
+     * @throws Zend_Search_Lucene_Search_QueryParserException
      */
     public function boost($boostFactor)
     {
@@ -232,6 +236,8 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * Process logical operator
      *
      * @param integer $operator
+     *
+     * @throws Zend_Search_Lucene_Search_QueryParserException
      */
     public function addLogicalOperator($operator)
     {
@@ -278,8 +284,8 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * Generate 'boolean style' query from the context
      * 'term1 and term2   or   term3 and (<subquery1>) and not (<subquery2>)'
      *
-     * @return Zend_Search_Lucene_Search_Query
-     * @throws Zend_Search_Lucene
+     * @returnZend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene_Search_QueryParserException
      */
     private function _booleanExpressionQuery()
     {
@@ -316,7 +322,7 @@ class Zend_Search_Lucene_Search_QueryParserContext
                             break;
 
                         default:
-                            throw new Zend_Search_Lucene('Boolean expression error. Unknown operator type.');
+                            throw new Zend_Search_Lucene_Search_QueryParserException('Boolean expression error. Unknown operator type.');
                     }
                 }
             }
@@ -389,6 +395,7 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * Generate query from current context
      *
      * @return Zend_Search_Lucene_Search_Query
+     * @throws Zend_Search_Lucene_Search_QueryParserException
      */
     public function getQuery()
     {

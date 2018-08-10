@@ -47,7 +47,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure_Query
      * Constructor
      *
      * @param  null|Zend_Service_WindowsAzure_Storage_TableEntityQuery $select Table select object
-     * @return void
      */
     public function __construct($select = null)
     {

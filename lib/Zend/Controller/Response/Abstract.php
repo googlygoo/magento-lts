@@ -504,7 +504,6 @@ abstract class Zend_Controller_Response_Abstract
      *
      * @param string $name
      * @param string $content
-     * @return void
      */
     public function prepend($name, $content)
     {
@@ -580,7 +579,6 @@ abstract class Zend_Controller_Response_Abstract
     /**
      * Echo the body segments
      *
-     * @return void
      */
     public function outputBody()
     {
@@ -720,7 +718,6 @@ abstract class Zend_Controller_Response_Abstract
      * Retrieve all exceptions of a given code
      *
      * @param mixed $code
-     * @return void
      */
     public function getExceptionByCode($code)
     {
@@ -761,7 +758,6 @@ abstract class Zend_Controller_Response_Abstract
      * Send the response, including all headers, rendering exceptions if so
      * requested.
      *
-     * @return void
      */
     public function sendResponse()
     {

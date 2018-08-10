@@ -36,6 +36,11 @@ class Zend_Service_Rackspace_Files_Container
     protected $name;
 
     /**
+     * @var Zend_Service_Rackspace_Files
+     */
+    protected $service;
+
+    /**
      * Construct
      *
      * @param Zend_Service_Rackspace_Files $service

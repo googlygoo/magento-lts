@@ -64,7 +64,6 @@ class Zend_Feed_Reader_Extension_WellFormedWeb_Entry
     /**
      * Register Slash namespaces
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

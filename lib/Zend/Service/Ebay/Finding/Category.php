@@ -50,7 +50,6 @@ class Zend_Service_Ebay_Finding_Category extends Zend_Service_Ebay_Finding_Abstr
     public $categoryName;
 
     /**
-     * @return void
      */
     protected function _init()
     {

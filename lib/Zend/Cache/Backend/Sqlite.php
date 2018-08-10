@@ -79,7 +79,6 @@ class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache
      *
      * @param  array $options Associative array of options
      * @throws Zend_cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -96,7 +95,6 @@ class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache
     /**
      * Destructor
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -522,7 +520,6 @@ class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache
     /**
      * Deal with the automatic vacuum process
      *
-     * @return void
      */
     private function _automaticVacuum()
     {

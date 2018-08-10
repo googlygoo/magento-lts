@@ -43,7 +43,6 @@ class Zend_Service_Ebay_Finding_Search_Result extends Zend_Service_Ebay_Finding_
     public $item;
 
     /**
-     * @return void
      */
     protected function _init()
     {

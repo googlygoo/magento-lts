@@ -53,7 +53,6 @@ class Zend_Feed_Writer_Renderer_Feed_Atom
      * Constructor
      *
      * @param  Zend_Feed_Writer_Feed $container
-     * @return void
      */
     public function __construct (Zend_Feed_Writer_Feed $container)
     {

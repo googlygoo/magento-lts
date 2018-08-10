@@ -74,7 +74,6 @@ class Zend_Controller_Action_Helper_FlashMessenger extends Zend_Controller_Actio
      * __construct() - Instance constructor, needed to get iterators, etc
      *
      * @param  string $namespace
-     * @return void
      */
     public function __construct()
     {
@@ -304,7 +303,6 @@ class Zend_Controller_Action_Helper_FlashMessenger extends Zend_Controller_Actio
      * Strategy pattern: proxy to addMessage()
      *
      * @param  string $message
-     * @return void
      */
     public function direct($message, $namespace=NULL)
     {

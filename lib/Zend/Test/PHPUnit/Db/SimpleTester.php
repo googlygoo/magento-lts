@@ -43,9 +43,26 @@
 class Zend_Test_PHPUnit_Db_SimpleTester extends PHPUnit_Extensions_Database_DefaultTester
 {
     /**
+     * @var PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     */
+    protected $connection;
+
+    /**
+     * @var PHPUnit_Extensions_Database_Operation_Composite
+     */
+    protected $setUpOperation;
+
+    /**
+     * @var PHPUnit_Extensions_Database_Operation_Factory
+     */
+    protected $tearDownOperation;
+
+    /**
      * Creates a new default database tester using the given connection.
      *
      * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
+     *
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     public function __construct(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection)
     {

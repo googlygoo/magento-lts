@@ -113,7 +113,6 @@ class Zend_Gdata_MediaMimeStream
     /**
      * Sandwiches the entry body into a MIME message
      *
-     * @return void
      */
     private function wrapEntry($entry, $fileMimeType)
     {
@@ -167,7 +166,6 @@ class Zend_Gdata_MediaMimeStream
     /**
      * Close the internal file that we are streaming to the socket.
      *
-     * @return void
      */
     public function closeFileHandle()
     {

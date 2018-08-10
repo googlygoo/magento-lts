@@ -201,7 +201,6 @@ class Zend_OpenId_Provider
     /**
      * Performs logout. Clears information about logged in user.
      *
-     * @return void
      */
     public function logout()
     {

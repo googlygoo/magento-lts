@@ -65,7 +65,6 @@ class Zend_Loader_StandardAutoloader implements Zend_Loader_SplAutoloader
      * Constructor
      *
      * @param  null|array|Traversable $options
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -251,7 +250,6 @@ class Zend_Loader_StandardAutoloader implements Zend_Loader_SplAutoloader
     /**
      * Register the autoloader with spl_autoload
      *
-     * @return void
      */
     public function register()
     {
@@ -266,7 +264,6 @@ class Zend_Loader_StandardAutoloader implements Zend_Loader_SplAutoloader
      * 
      * @param mixed $errno 
      * @param mixed $errstr 
-     * @return void
      */
     public function handleError($errno, $errstr)
     {
@@ -301,7 +298,6 @@ class Zend_Loader_StandardAutoloader implements Zend_Loader_SplAutoloader
      *
      * @param  string $class
      * @param  string $type
-     * @return void
      */
     protected function loadClass($class, $type)
     {

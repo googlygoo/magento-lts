@@ -98,7 +98,6 @@ class Zend_Service_ShortUrl_BitLy extends Zend_Service_ShortUrl_AbstractShortene
 
     /**
      * prepare http client
-     * @return void
      */
     protected function _setAccessParameter()
     {

@@ -45,7 +45,6 @@ class Zend_Service_Ebay_Finding_Aspect extends Zend_Service_Ebay_Finding_Abstrac
     public $valueHistogram;
 
     /**
-     * @return void
      */
     protected function _init()
     {

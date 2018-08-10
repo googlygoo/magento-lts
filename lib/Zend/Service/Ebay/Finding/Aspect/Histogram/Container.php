@@ -80,7 +80,6 @@ class Zend_Service_Ebay_Finding_Aspect_Histogram_Container extends Zend_Service_
     public $domainName;
 
     /**
-     * @return void
      */
     protected function _init()
     {

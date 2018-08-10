@@ -57,7 +57,6 @@ class Zend_Controller_Dispatcher_Standard extends Zend_Controller_Dispatcher_Abs
      * Constructor: Set current module to default value
      *
      * @param  array $params
-     * @return void
      */
     public function __construct(array $params = array())
     {
@@ -231,7 +230,6 @@ class Zend_Controller_Dispatcher_Standard extends Zend_Controller_Dispatcher_Abs
      *
      * @param Zend_Controller_Request_Abstract $request
      * @param Zend_Controller_Response_Abstract $response
-     * @return void
      * @throws Zend_Controller_Dispatcher_Exception
      */
     public function dispatch(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response)

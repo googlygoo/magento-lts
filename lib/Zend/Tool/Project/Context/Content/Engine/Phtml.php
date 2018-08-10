@@ -72,8 +72,10 @@ class Zend_Tool_Project_Context_Content_Engine_Phtml
      * getContent()
      *
      * @param Zend_Tool_Project_Context_Interface $context
-     * @param string $method
-     * @param mixed $parameters
+     * @param string                              $method
+     * @param mixed                               $parameters
+     *
+     * @return string
      */
     public function getContent(Zend_Tool_Project_Context_Interface $context, $method, $parameters)
     {

@@ -155,7 +155,6 @@ class Zend_Http_UserAgent implements Serializable
      * Constructor
      *
      * @param  null|array|Zend_Config|ArrayAccess $options
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -187,7 +186,6 @@ class Zend_Http_UserAgent implements Serializable
      * Unserialize a previous representation of the object
      *
      * @param  string $serialized
-     * @return void
      */
     public function unserialize($serialized)
     {
@@ -464,7 +462,6 @@ class Zend_Http_UserAgent implements Serializable
      * Clean the persistent storage
      *
      * @param  string $browser Browser identifier (User Agent chain)
-     * @return void
      */
     public function clearStorage($browser = null)
     {
@@ -625,7 +622,6 @@ class Zend_Http_UserAgent implements Serializable
      * data that will be introspected.
      *
      * @param  array|ArrayAccess $server
-     * @return void
      * @throws Zend_Http_UserAgent_Exception on invalid parameter
      */
     public function setServer($server)
@@ -687,7 +683,6 @@ class Zend_Http_UserAgent implements Serializable
      *
      * @param  string|int|float $key
      * @param  mixed $value
-     * @return void
      */
     public function setServerValue($key, $value)
     {
@@ -842,7 +837,6 @@ class Zend_Http_UserAgent implements Serializable
     /**
      * Creates device object instance
      *
-     * @return void
      */
     protected function _createDevice()
     {

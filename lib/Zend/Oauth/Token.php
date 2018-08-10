@@ -62,7 +62,6 @@ abstract class Zend_Oauth_Token
      *
      * @param  null|Zend_Http_Response $response
      * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
      */
     public function __construct(
         Zend_Http_Response $response = null,
@@ -213,7 +212,6 @@ abstract class Zend_Oauth_Token
      *
      * @param  string $key
      * @param  string $value
-     * @return void
      */
     public function __set($key, $value)
     {

@@ -56,7 +56,6 @@ class Zend_Service_Amazon_Image
      * Assigns values to properties relevant to Image
      *
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {

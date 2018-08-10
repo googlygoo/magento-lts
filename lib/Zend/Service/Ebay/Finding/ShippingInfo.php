@@ -108,7 +108,6 @@ class Zend_Service_Ebay_Finding_ShippingInfo extends Zend_Service_Ebay_Finding_A
     public $shipToLocations;
 
     /**
-     * @return void
      */
     protected function _init()
     {

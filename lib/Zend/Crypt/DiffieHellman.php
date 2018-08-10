@@ -359,7 +359,6 @@ class Zend_Crypt_DiffieHellman
      * problem or bug.
      *
      * @param string $extension
-     * @return void
      */
     public function setBigIntegerMath($extension = null)
     {

@@ -159,7 +159,6 @@ class Zend_Service_Amazon_S3_Stream
     /**
      * Close the stream
      *
-     * @return void
      */
     public function stream_close()
     {

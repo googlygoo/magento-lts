@@ -94,7 +94,6 @@ class Zend_Markup_Token
      * @param  string $name
      * @param  array $attributes
      * @param  Zend_Markup_Token $parent
-     * @return void
      */
     public function __construct(
         $tag,
@@ -228,7 +227,6 @@ class Zend_Markup_Token
     /**
      * Add a child token
      *
-     * @return void
      */
     public function addChild(Zend_Markup_Token $child)
     {
@@ -295,7 +293,6 @@ class Zend_Markup_Token
     /**
      * Magic clone function
      *
-     * @return void
      */
     public function __clone()
     {

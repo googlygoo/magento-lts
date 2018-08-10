@@ -75,8 +75,9 @@ class Zend_Gdata_ClientLogin
      * 'HOSTED_OR_GOOGLE'. See: http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html#Request
      * @throws Zend_Gdata_App_AuthException
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_CaptchaRequiredException
+     *
      * @return Zend_Gdata_HttpClient
+     * @throws Zend_Gdata_App_CaptchaRequiredException
      */
     public static function getHttpClient($email, $password, $service = 'xapi',
         $client = null,

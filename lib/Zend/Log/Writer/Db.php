@@ -60,7 +60,6 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      * @param Zend_Db_Adapter $db   Database adapter instance
      * @param string $table         Log table in database
      * @param array $columnMap
-     * @return void
      */
     public function __construct($db, $table, $columnMap = null)
     {
@@ -98,7 +97,6 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
     /**
      * Formatting is not possible on this writer
      *
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function setFormatter(Zend_Log_Formatter_Interface $formatter)
@@ -110,7 +108,6 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
     /**
      * Remove reference to database adapter
      *
-     * @return void
      */
     public function shutdown()
     {
@@ -121,7 +118,6 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      * Write a message to the log.
      *
      * @param  array  $event  event data
-     * @return void
      * @throws Zend_Log_Exception
      */
     protected function _write($event)

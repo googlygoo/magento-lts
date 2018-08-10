@@ -45,7 +45,6 @@ interface Zend_Feed_Pubsubhubbub_CallbackInterface
      * to retrieve any data needed to be set on your HTTP Response object, or
      * simply give this object the HTTP Response instance to work with for you!
      *
-     * @return void
      */
     public function sendResponse();
 

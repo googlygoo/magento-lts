@@ -122,7 +122,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * @param Zend_Controller_Request_Abstract $request
      * @param Zend_Controller_Response_Abstract $response
      * @param array $invokeArgs Any additional invocation arguments
-     * @return void
      */
     public function __construct(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response, array $invokeArgs = array())
     {
@@ -138,7 +137,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      *
      * Called from {@link __construct()} as final step of object instantiation.
      *
-     * @return void
      */
     public function init()
     {
@@ -204,7 +202,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * @param  string|null $action Defaults to action registered in request object
      * @param  string|null $name Response object named path segment to use; defaults to null
      * @param  bool $noController  Defaults to false; i.e. use controller name as subdir in which to search for view script
-     * @return void
      */
     public function render($action = null, $name = null, $noController = false)
     {
@@ -235,7 +232,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      *
      * @param  string $script
      * @param  string $name
-     * @return void
      */
     public function renderScript($script, $name = null)
     {
@@ -443,7 +439,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * {@link $_request Request object} and reset its dispatched flag in order
      * to skip processing the current action.
      *
-     * @return void
      */
     public function preDispatch()
     {
@@ -460,7 +455,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * Common usages for postDispatch() include rendering content in a sitewide
      * template, link url correction, setting headers, etc.
      *
-     * @return void
      */
     public function postDispatch()
     {
@@ -474,7 +468,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      *
      * @param  string $methodName
      * @param  array $args
-     * @return void
      * @throws Zend_Controller_Action_Exception
      */
     public function __call($methodName, $args)
@@ -492,7 +485,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * Dispatch the requested action
      *
      * @param string $action Method name of action
-     * @return void
      */
     public function dispatch($action)
     {
@@ -710,7 +702,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * @param string $controller
      * @param string $module
      * @param array $params
-     * @return void
      * @deprecated Deprecated as of Zend Framework 1.7. Use
      *             forward() instead.
      */
@@ -743,7 +734,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      * @param string $controller
      * @param string $module
      * @param array $params
-     * @return void
      */
     final public function forward($action, $controller = null, $module = null, array $params = null)
     {
@@ -773,7 +763,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      *
      * @param string $url
      * @param array $options Options to be used when redirecting
-     * @return void
      * @deprecated Deprecated as of Zend Framework 1.7. Use
      *             redirect() instead.
      */
@@ -789,7 +778,6 @@ abstract class Zend_Controller_Action implements Zend_Controller_Action_Interfac
      *
      * @param string $url
      * @param array $options Options to be used when redirecting
-     * @return void
      */
     public function redirect($url, array $options = array())
     {

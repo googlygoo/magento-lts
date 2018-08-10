@@ -83,7 +83,6 @@ class Zend_Wildfire_Plugin_FirePhp_Message
      *
      * @param string $style Style of the message.
      * @param mixed $message The message
-     * @return void
      */
     function __construct($style, $message)
     {
@@ -96,7 +95,6 @@ class Zend_Wildfire_Plugin_FirePhp_Message
      * Set the label of the message
      *
      * @param string $label The label to be set
-     * @return void
      */
     public function setLabel($label)
     {
@@ -165,7 +163,6 @@ class Zend_Wildfire_Plugin_FirePhp_Message
     /**
      * Set the style of the message
      *
-     * @return void
      */
     public function setStyle($style)
     {
@@ -185,7 +182,6 @@ class Zend_Wildfire_Plugin_FirePhp_Message
     /**
      * Set the actual message to be sent in its final format.
      *
-     * @return void
      */
     public function setMessage($message)
     {

@@ -46,7 +46,6 @@ abstract class Zend_Amf_Parse_Deserializer
      * Constructor
      *
      * @param  Zend_Amf_Parse_InputStream $stream
-     * @return void
      */
     public function __construct(Zend_Amf_Parse_InputStream $stream)
     {

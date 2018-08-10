@@ -75,7 +75,6 @@ class Zend_Reflection_Docblock implements Reflector
      * Reqired by the Reflector interface.
      *
      * @todo   What should this do?
-     * @return void
      */
     public static function export()
     {
@@ -248,7 +247,6 @@ class Zend_Reflection_Docblock implements Reflector
     /**
      * Parse the docblock
      *
-     * @return void
      */
     protected function _parse()
     {

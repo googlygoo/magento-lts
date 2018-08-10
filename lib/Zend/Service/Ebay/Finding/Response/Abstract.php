@@ -111,7 +111,6 @@ abstract class Zend_Service_Ebay_Finding_Response_Abstract extends Zend_Service_
     protected $_options = array();
 
     /**
-     * @return void
      */
     protected function _init()
     {

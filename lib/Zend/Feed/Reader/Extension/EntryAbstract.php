@@ -75,7 +75,6 @@ abstract class Zend_Feed_Reader_Extension_EntryAbstract
      * @param  Zend_Feed_Entry_Abstract $entry
      * @param  int $entryKey
      * @param  string $type
-     * @return void
      */
     public function __construct(DOMElement $entry, $entryKey, $type = null)
     {
@@ -194,7 +193,6 @@ abstract class Zend_Feed_Reader_Extension_EntryAbstract
     /**
      * Register XML namespaces
      *
-     * @return void
      */
     protected abstract function _registerNamespaces();
 }

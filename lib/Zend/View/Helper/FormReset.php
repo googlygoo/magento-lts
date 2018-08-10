@@ -56,6 +56,11 @@ class Zend_View_Helper_FormReset extends Zend_View_Helper_FormElement
     public function formReset($name = '', $value = 'Reset', $attribs = null)
     {
         $info = $this->_getInfo($name, $value, $attribs);
+
+        /**
+         * @var string $id
+         * @var bool $disable
+         */
         extract($info); // name, value, attribs, options, listsep, disable
 
         // check if disabled

@@ -32,7 +32,6 @@ class Zend_Cloud_Infrastructure_Factory extends Zend_Cloud_AbstractFactory
      *
      * Private ctor - should not be used
      *
-     * @return void
      */
     private function __construct()
     {
@@ -42,7 +41,6 @@ class Zend_Cloud_Infrastructure_Factory extends Zend_Cloud_AbstractFactory
      * Retrieve an adapter instance
      *
      * @param  array $options
-     * @return void
      */
     public static function getAdapter($options = array())
     {

@@ -56,6 +56,9 @@ class Zend_Serializer_Adapter_PhpCode extends Zend_Serializer_Adapter_AdapterAbs
      */
     public function unserialize($code, array $opts = array())
     {
+        /**
+         * @var mixed $ret
+         */
         $eval = @eval('$ret=' . $code . ';');
         if ($eval === false) {
                 $lastErr = error_get_last();

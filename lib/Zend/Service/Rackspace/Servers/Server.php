@@ -96,7 +96,6 @@ class Zend_Service_Rackspace_Servers_Server
      *
      * @param  Zend_Service_Rackspace_Servers $service
      * @param  array $data
-     * @return void
      */
     public function __construct($service, $data)
     {

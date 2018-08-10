@@ -50,7 +50,6 @@ class Zend_Service_Ebay_Finding_Storefront extends Zend_Service_Ebay_Finding_Abs
     public $storeURL;
 
     /**
-     * @return void
      */
     protected function _init()
     {

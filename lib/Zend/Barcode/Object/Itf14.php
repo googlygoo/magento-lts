@@ -39,7 +39,6 @@ class Zend_Barcode_Object_Itf14 extends Zend_Barcode_Object_Code25interleaved
 
     /**
      * Default options for Identcode barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {

@@ -72,7 +72,6 @@ class Zend_View_Helper_HeadLink extends Zend_View_Helper_Placeholder_Container_S
      *
      * Use PHP_EOL as separator
      *
-     * @return void
      */
     public function __construct()
     {
@@ -141,7 +140,6 @@ class Zend_View_Helper_HeadLink extends Zend_View_Helper_Placeholder_Container_S
      *
      * @param mixed $method
      * @param mixed $args
-     * @return void
      */
     public function __call($method, $args)
     {
@@ -212,7 +210,6 @@ class Zend_View_Helper_HeadLink extends Zend_View_Helper_Placeholder_Container_S
      * append()
      *
      * @param  array $value
-     * @return void
      */
     public function append($value)
     {
@@ -231,7 +228,6 @@ class Zend_View_Helper_HeadLink extends Zend_View_Helper_Placeholder_Container_S
      *
      * @param  string|int $index
      * @param  array $value
-     * @return void
      */
     public function offsetSet($index, $value)
     {

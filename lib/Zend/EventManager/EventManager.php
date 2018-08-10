@@ -69,7 +69,6 @@ class Zend_EventManager_EventManager implements Zend_EventManager_EventCollectio
      * StaticEventManager.
      *
      * @param  null|string|int|array|Traversable $identifiers
-     * @return void
      */
     public function __construct($identifiers = null)
     {
@@ -106,7 +105,6 @@ class Zend_EventManager_EventManager implements Zend_EventManager_EventCollectio
      * Sets {@link $sharedCollections} to boolean false to disable ability
      * to lazy-load static event manager instance.
      * 
-     * @return void
      */
     public function unsetSharedCollections()
     {
@@ -401,7 +399,6 @@ class Zend_EventManager_EventManager implements Zend_EventManager_EventCollectio
      * Clear all listeners for a given event
      *
      * @param  string $event
-     * @return void
      */
     public function clearListeners($event)
     {
@@ -528,7 +525,6 @@ class Zend_EventManager_EventManager implements Zend_EventManager_EventCollectio
      * 
      * @param  Zend_Stdlib_PriorityQueue $masterListeners 
      * @param  Zend_Stdlib_PriorityQueue $listeners 
-     * @return void
      */
     protected function insertListeners($masterListeners, $listeners)
     {

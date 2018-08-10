@@ -62,7 +62,6 @@ interface Zend_EventManager_EventDescription
      * Set the event name
      * 
      * @param  string $name 
-     * @return void
      */
     public function setName($name);
 
@@ -70,7 +69,6 @@ interface Zend_EventManager_EventDescription
      * Set the event target/context
      * 
      * @param  null|string|object $target 
-     * @return void
      */
     public function setTarget($target);
 
@@ -78,7 +76,6 @@ interface Zend_EventManager_EventDescription
      * Set event parameters
      * 
      * @param  string $params 
-     * @return void
      */
     public function setParams($params);
 
@@ -87,7 +84,6 @@ interface Zend_EventManager_EventDescription
      * 
      * @param  string $name 
      * @param  mixed $value 
-     * @return void
      */
     public function setParam($name, $value);
 
@@ -95,7 +91,6 @@ interface Zend_EventManager_EventDescription
      * Indicate whether or not the parent EventCollection should stop propagating events
      * 
      * @param  bool $flag 
-     * @return void
      */
     public function stopPropagation($flag = true);
 

@@ -110,7 +110,6 @@ class Zend_XmlRpc_Server_Fault extends Zend_XmlRpc_Fault
      * Attach valid exceptions that can be used to define xmlrpc faults
      *
      * @param string|array $classes Class name or array of class names
-     * @return void
      */
     public static function attachFaultException($classes)
     {
@@ -129,7 +128,6 @@ class Zend_XmlRpc_Server_Fault extends Zend_XmlRpc_Fault
      * Detach fault exception classes
      *
      * @param string|array $classes Class name or array of class names
-     * @return void
      */
     public static function detachFaultException($classes)
     {

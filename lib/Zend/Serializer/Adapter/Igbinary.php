@@ -41,7 +41,6 @@ class Zend_Serializer_Adapter_Igbinary extends Zend_Serializer_Adapter_AdapterAb
      * Constructor
      *
      * @param  array|Zend_Config $opts
-     * @return void
      * @throws Zend_Serializer_Exception If igbinary extension is not present
      */
     public function __construct($opts = array())

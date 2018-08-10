@@ -254,10 +254,10 @@ abstract class Zend_Mail_Storage_Abstract implements Countable, ArrayAccess, See
      /**
       * ArrayAccess::offsetSet()
       *
-      * @param    id     $id
+      * @param    mixed  $id
       * @param    mixed  $value
+      *
       * @throws   Zend_Mail_Storage_Exception
-      * @return   void
       */
      public function offsetSet($id, $value)
      {
@@ -348,7 +348,6 @@ abstract class Zend_Mail_Storage_Abstract implements Countable, ArrayAccess, See
       * SeekableIterator::seek()
       *
       * @param  int $pos
-      * @return void
       * @throws OutOfBoundsException
       */
      public function seek($pos)

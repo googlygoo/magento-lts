@@ -127,7 +127,6 @@ class Zend_Soap_Wsdl_Strategy_ArrayOfTypeSequence extends Zend_Soap_Wsdl_Strateg
      *
      * @param  string $arrayType
      * @param  string $childTypeName
-     * @return void
      */
     protected function _addElementFromWsdlAndChildTypes($arrayType, $childTypeName)
     {

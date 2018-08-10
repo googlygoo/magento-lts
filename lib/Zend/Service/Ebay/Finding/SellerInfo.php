@@ -128,7 +128,6 @@ class Zend_Service_Ebay_Finding_SellerInfo extends Zend_Service_Ebay_Finding_Abs
     public $topRatedSeller;
 
     /**
-     * @return void
      */
     protected function _init()
     {

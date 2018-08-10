@@ -1544,7 +1544,6 @@ class Zend_Locale_Data
     /**
      * Removes any set cache
      *
-     * @return void
      */
     public static function removeCache()
     {
@@ -1554,7 +1553,6 @@ class Zend_Locale_Data
     /**
      * Clears all set cache data
      *
-     * @return void
      */
     public static function clearCache()
     {

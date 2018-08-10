@@ -256,7 +256,6 @@ class Zend_Feed_Reader_Extension_DublinCore_Entry
     /**
      * Register DC namespaces
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

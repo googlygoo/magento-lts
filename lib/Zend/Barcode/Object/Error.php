@@ -80,7 +80,6 @@ class Zend_Barcode_Object_Error extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * For compatibility reason
-     * @return void
      */
     protected function _prepareBarcode()
     {
@@ -88,7 +87,6 @@ class Zend_Barcode_Object_Error extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * For compatibility reason
-     * @return void
      */
     protected function _checkParams()
     {
@@ -96,7 +94,6 @@ class Zend_Barcode_Object_Error extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * For compatibility reason
-     * @return void
      */
     protected function _calculateBarcodeWidth()
     {

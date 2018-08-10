@@ -110,10 +110,10 @@ abstract class Zend_Cloud_Infrastructure_Adapter_AbstractAdapter implements Zend
             throw new Zend_Cloud_Infrastructure_Exception('You must specify the shell commands to run on the instance');
         }
 
-        if (empty($params) 
+        if (
+            empty($params)
             || empty($params[Zend_Cloud_Infrastructure_Instance::SSH_USERNAME]) 
-            || (empty($params[Zend_Cloud_Infrastructure_Instance::SSH_PASSWORD]) 
-                && empty($params[Zend_Cloud_Infrastructure_Instance::SSH_KEY]))
+            || empty($params[Zend_Cloud_Infrastructure_Instance::SSH_PASSWORD])
         ) {
             #require_once 'Zend/Cloud/Infrastructure/Exception.php';
             throw new Zend_Cloud_Infrastructure_Exception('You must specify the params for the SSH connection');

@@ -55,7 +55,6 @@ class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
      *
      * @param  array $values
      * @throws Zend_Tag_Exception When value list is empty
-     * @return void
      */
     public function spreadWeightValues(array $values)
     {
@@ -116,7 +115,6 @@ class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
      *
      * @param  integer $index
      * @throws OutOfBoundsException When the seek position is invalid
-     * @return void
      */
     public function seek($index)
     {
@@ -176,7 +174,6 @@ class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
     /**
      * Rewind the Iterator to the first element
      *
-     * @return void
      */
     public function rewind()
     {
@@ -209,7 +206,6 @@ class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
      * @param  mixed          $offset
      * @param  Zend_Tag_Taggable $item
      * @throws OutOfBoundsException When item does not implement Zend_Tag_Taggable
-     * @return void
      */
     public function offsetSet($offset, $item) {
         // We need to make that check here, as the method signature must be
@@ -230,7 +226,6 @@ class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
      * Unset an item
      *
      * @param  mixed $offset
-     * @return void
      */
     public function offsetUnset($offset) {
         unset($this->_items[$offset]);

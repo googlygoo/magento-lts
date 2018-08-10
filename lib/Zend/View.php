@@ -103,7 +103,6 @@ class Zend_View extends Zend_View_Abstract
      * Register Zend_View_Stream stream wrapper if short tags are disabled.
      *
      * @param  array $config
-     * @return void
      */
     public function __construct($config = array())
     {

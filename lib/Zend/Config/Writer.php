@@ -95,7 +95,6 @@ abstract class Zend_Config_Writer
     /**
      * Write a Zend_Config object to it's target
      *
-     * @return void
      */
     abstract public function write();
 }

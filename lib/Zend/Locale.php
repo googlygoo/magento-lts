@@ -1182,7 +1182,6 @@ class Zend_Locale
      * @param  float              $quality The quality to set from 0 to 1
      * @throws Zend_Locale_Exception When a autolocale was given
      * @throws Zend_Locale_Exception When a unknown locale was given
-     * @return void
      */
     public static function setDefault($locale, $quality = 1)
     {
@@ -1345,7 +1344,6 @@ class Zend_Locale
      * Sets a new locale
      *
      * @param  string|Zend_Locale $locale (Optional) New locale to set
-     * @return void
      */
     public function setLocale($locale = null)
     {
@@ -1628,7 +1626,8 @@ class Zend_Locale
     /**
      * Internal function for preparing the returned question regex string
      *
-     * @param  string $input Regex to parse
+     * @param  array $input Regex to parse
+     *
      * @return string
      */
     private static function _prepareQuestionString($input)
@@ -1815,7 +1814,6 @@ class Zend_Locale
      * Sets a cache
      *
      * @param  Zend_Cache_Core $cache Cache to set
-     * @return void
      */
     public static function setCache(Zend_Cache_Core $cache)
     {
@@ -1837,7 +1835,6 @@ class Zend_Locale
     /**
      * Removes any set cache
      *
-     * @return void
      */
     public static function removeCache()
     {
@@ -1849,7 +1846,6 @@ class Zend_Locale
      * Clears all set cache data
      *
      * @param string $tag Tag to clear when the default tag name is not used
-     * @return void
      */
     public static function clearCache($tag = null)
     {
@@ -1861,7 +1857,6 @@ class Zend_Locale
      * Disables the set cache
      *
      * @param  boolean $flag True disables any set cache, default is false
-     * @return void
      */
     public static function disableCache($flag)
     {

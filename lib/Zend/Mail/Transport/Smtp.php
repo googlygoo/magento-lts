@@ -110,7 +110,6 @@ class Zend_Mail_Transport_Smtp extends Zend_Mail_Transport_Abstract
      *
      * @param  string $host OPTIONAL (Default: 127.0.0.1)
      * @param  array|null $config OPTIONAL (Default: null)
-     * @return void
      *
      * @todo Someone please make this compatible
      *       with the SendMail transport class.
@@ -135,7 +134,6 @@ class Zend_Mail_Transport_Smtp extends Zend_Mail_Transport_Abstract
     /**
      * Class destructor to ensure all open connections are closed
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -155,7 +153,6 @@ class Zend_Mail_Transport_Smtp extends Zend_Mail_Transport_Abstract
      *
      * @param Zend_Mail_Protocol_Abstract $client
      *
-     * @return void
      */
     public function setConnection(Zend_Mail_Protocol_Abstract $connection)
     {
@@ -179,7 +176,6 @@ class Zend_Mail_Transport_Smtp extends Zend_Mail_Transport_Abstract
      * The connection via the protocol adapter is made just-in-time to allow a
      * developer to add a custom adapter if required before mail is sent.
      *
-     * @return void
      * @todo Rename this to sendMail, it's a public method...
      */
     public function _sendMail()

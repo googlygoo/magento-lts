@@ -60,7 +60,6 @@ class Zend_Db_Statement_Mysqli extends Zend_Db_Statement
 
     /**
      * @param  string $sql
-     * @return void
      * @throws Zend_Db_Statement_Mysqli_Exception
      */
     public function _prepare($sql)

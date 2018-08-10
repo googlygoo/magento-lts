@@ -115,7 +115,6 @@ class Zend_Form_Element_Captcha extends Zend_Form_Element_Xhtml
      * - Zend_Config: Zend_Config with options for configuring element
      *
      * @param  string|array|Zend_Config $spec
-     * @return void
      */
     public function __construct($spec, $options = null)
     {

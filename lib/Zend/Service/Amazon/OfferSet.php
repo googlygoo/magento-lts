@@ -80,7 +80,6 @@ class Zend_Service_Amazon_OfferSet
      * Parse the given Offer Set Element
      *
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {

@@ -38,7 +38,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      * Constructor
      *
      * @param  Zend_Feed_Writer_Entry $container
-     * @return void
      */
     public function __construct (Zend_Feed_Writer_Entry $container)
     {
@@ -83,7 +82,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setTitle(DOMDocument $dom, DOMElement $root)
     {
@@ -112,7 +110,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setDescription(DOMDocument $dom, DOMElement $root)
     {
@@ -145,7 +142,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setDateModified(DOMDocument $dom, DOMElement $root)
     {
@@ -166,7 +162,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setDateCreated(DOMDocument $dom, DOMElement $root)
     {
@@ -185,7 +180,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setAuthors(DOMDocument $dom, DOMElement $root)
     {
@@ -210,7 +204,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setEnclosure(DOMDocument $dom, DOMElement $root)
     {
@@ -261,7 +254,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setLink(DOMDocument $dom, DOMElement $root)
     {
@@ -279,7 +271,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setId(DOMDocument $dom, DOMElement $root)
     {
@@ -306,7 +297,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setCommentLink(DOMDocument $dom, DOMElement $root)
     {
@@ -325,7 +315,6 @@ class Zend_Feed_Writer_Renderer_Entry_Rss
      *
      * @param DOMDocument $dom
      * @param DOMElement $root
-     * @return void
      */
     protected function _setCategories(DOMDocument $dom, DOMElement $root)
     {

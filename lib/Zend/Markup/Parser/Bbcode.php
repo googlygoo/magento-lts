@@ -204,7 +204,6 @@ class Zend_Markup_Parser_Bbcode implements Zend_Markup_Parser_ParserInterface
      *
      * @param string $input
      *
-     * @return void
      */
     protected function _tokenize()
     {
@@ -328,7 +327,6 @@ class Zend_Markup_Parser_Bbcode implements Zend_Markup_Parser_ParserInterface
      *
      * @param array $tokens
      *
-     * @return void
      */
     public function _createTree()
     {
@@ -424,7 +422,6 @@ class Zend_Markup_Parser_Bbcode implements Zend_Markup_Parser_ParserInterface
      *
      * @param string $name
      *
-     * @return void
      */
     protected function _checkTagDeclaration($name)
     {
@@ -472,7 +469,6 @@ class Zend_Markup_Parser_Bbcode implements Zend_Markup_Parser_ParserInterface
      * Add to searched stoppers
      *
      * @param  Zend_Markup_Token $token
-     * @return void
      */
     protected function _addToSearchedStoppers(Zend_Markup_Token $token)
     {
@@ -490,7 +486,6 @@ class Zend_Markup_Parser_Bbcode implements Zend_Markup_Parser_ParserInterface
      * Remove from searched stoppers
      *
      * @param  Zend_Markup_Token $token
-     * @return void
      */
     protected function _removeFromSearchedStoppers(Zend_Markup_Token $token)
     {

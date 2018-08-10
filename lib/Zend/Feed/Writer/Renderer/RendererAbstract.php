@@ -83,7 +83,6 @@ class Zend_Feed_Writer_Renderer_RendererAbstract
      * Constructor
      *
      * @param  mixed $container
-     * @return void
      */
     public function __construct($container)
     {
@@ -228,7 +227,6 @@ class Zend_Feed_Writer_Renderer_RendererAbstract
     /**
      * Load extensions from Zend_Feed_Writer
      *
-     * @return void
      */
     protected function _loadExtensions()
     {

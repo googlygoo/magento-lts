@@ -135,7 +135,6 @@ class Zend_Feed_Reader_Extension_Slash_Entry
     /**
      * Register Slash namespaces
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

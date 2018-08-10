@@ -77,7 +77,6 @@ class Zend_Service_Delicious_Post extends Zend_Service_Delicious_SimplePost
      * @param  Zend_Service_Delicious $service Service that has downloaded the post
      * @param  DOMElement|array       $values  Post content
      * @throws Zend_Service_Delicious_Exception
-     * @return void
      */
     public function __construct(Zend_Service_Delicious $service, $values)
     {

@@ -76,7 +76,6 @@ class Zend_Http_UserAgent_Storage_Session implements Zend_Http_UserAgent_Storage
      * - member
      *
      * @param  null|array|object $options
-     * @return void
      * @throws Zend_Http_UserAgent_Storage_Exception on invalid $options argument
      */
     public function __construct($options = null)
@@ -147,7 +146,6 @@ class Zend_Http_UserAgent_Storage_Session implements Zend_Http_UserAgent_Storage
      * Defined by Zend_Http_UserAgent_Storage
      *
      * @param  mixed $contents
-     * @return void
      */
     public function write($content)
     {
@@ -157,7 +155,6 @@ class Zend_Http_UserAgent_Storage_Session implements Zend_Http_UserAgent_Storage
     /**
      * Defined by Zend_Http_UserAgent_Storage
      *
-     * @return void
      */
     public function clear()
     {

@@ -74,7 +74,6 @@ class Zend_Db_Profiler_Query
      *
      * @param  string  $query
      * @param  integer $queryType
-     * @return void
      */
     public function __construct($query, $queryType)
     {
@@ -86,7 +85,6 @@ class Zend_Db_Profiler_Query
 
     /**
      * Clone handler for the query object.
-     * @return void
      */
     public function __clone()
     {
@@ -101,7 +99,6 @@ class Zend_Db_Profiler_Query
      * to restart the clock.  For instance, this is useful
      * right before executing a prepared query.
      *
-     * @return void
      */
     public function start()
     {
@@ -111,7 +108,6 @@ class Zend_Db_Profiler_Query
     /**
      * Ends the query and records the time so that the elapsed time can be determined later.
      *
-     * @return void
      */
     public function end()
     {
@@ -151,7 +147,6 @@ class Zend_Db_Profiler_Query
     /**
      * @param string $param
      * @param mixed $variable
-     * @return void
      */
     public function bindParam($param, $variable)
     {
@@ -160,7 +155,6 @@ class Zend_Db_Profiler_Query
 
     /**
      * @param array $param
-     * @return void
      */
     public function bindParams(array $params)
     {

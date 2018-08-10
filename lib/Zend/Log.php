@@ -357,7 +357,6 @@ class Zend_Log
     /**
      * Class destructor.  Shutdown log writers
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -375,7 +374,6 @@ class Zend_Log
      *
      * @param  string  $method  priority name
      * @param  string  $params  message to log
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function __call($method, $params)
@@ -410,7 +408,6 @@ class Zend_Log
      * @param  string   $message   Message to log
      * @param  integer  $priority  Priority of message
      * @param  mixed    $extras    Extra information to log in event
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function log($message, $priority, $extras = null)

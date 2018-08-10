@@ -44,7 +44,6 @@ class Zend_Service_Ebay_Finding_Aspect_Histogram_Value extends Zend_Service_Ebay
     public $count;
 
     /**
-     * @return void
      */
     protected function _init()
     {

@@ -177,7 +177,6 @@ class Zend_Service_WindowsAzure_Storage_Blob_Stream
     /**
      * Close the stream
      *
-     * @return void
      */
     public function stream_close()
     {

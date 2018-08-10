@@ -74,7 +74,6 @@ abstract class Zend_Feed_Writer_Extension_RendererAbstract
      * Constructor
      *
      * @param  mixed $container
-     * @return void
      */
     public function __construct($container)
     {
@@ -96,7 +95,6 @@ abstract class Zend_Feed_Writer_Extension_RendererAbstract
     /**
      * Get feed encoding
      *
-     * @return void
      */
     public function getEncoding()
     {
@@ -174,7 +172,6 @@ abstract class Zend_Feed_Writer_Extension_RendererAbstract
     /**
      * Append namespaces to feed
      *
-     * @return void
      */
     abstract protected function _appendNamespaces();
 }

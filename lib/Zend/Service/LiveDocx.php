@@ -178,7 +178,6 @@ class Zend_Service_LiveDocx
      *
      * @param  string $endpoint
      * @throws Zend_Service_LiveDocx_Exception
-     * @return void
      * @since  LiveDocx 1.2
      */
     protected function _initSoapClient($endpoint)

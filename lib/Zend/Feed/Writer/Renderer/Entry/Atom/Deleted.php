@@ -38,7 +38,6 @@ class Zend_Feed_Writer_Renderer_Entry_Atom_Deleted
      * Constructor
      *
      * @param  Zend_Feed_Writer_Deleted $container
-     * @return void
      */
     public function __construct (Zend_Feed_Writer_Deleted $container)
     {
@@ -71,7 +70,6 @@ class Zend_Feed_Writer_Renderer_Entry_Atom_Deleted
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setComment(DOMDocument $dom, DOMElement $root)
     {
@@ -90,7 +88,6 @@ class Zend_Feed_Writer_Renderer_Entry_Atom_Deleted
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setBy(DOMDocument $dom, DOMElement $root)
     {

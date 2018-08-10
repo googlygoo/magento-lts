@@ -98,7 +98,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      *
      * Set separator to PHP_EOL.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -145,7 +144,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      *
      * @param  mixed $captureType
      * @param  string $typeOrAttrs
-     * @return void
      */
     public function captureStart($captureType = Zend_View_Helper_Placeholder_Container_Abstract::APPEND, $type = 'text/javascript', $attrs = array())
     {
@@ -166,7 +164,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
     /**
      * End capture action and store
      *
-     * @return void
      */
     public function captureEnd()
     {
@@ -313,7 +310,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      * Override append
      *
      * @param  string $value
-     * @return void
      */
     public function append($value)
     {
@@ -331,7 +327,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      * Override prepend
      *
      * @param  string $value
-     * @return void
      */
     public function prepend($value)
     {
@@ -349,7 +344,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      * Override set
      *
      * @param  string $value
-     * @return void
      */
     public function set($value)
     {
@@ -368,7 +362,6 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
      *
      * @param  string|int $index
      * @param  mixed $value
-     * @return void
      */
     public function offsetSet($index, $value)
     {

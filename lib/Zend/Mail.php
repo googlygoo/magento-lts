@@ -769,7 +769,6 @@ class Zend_Mail extends Zend_Mime_Message
      *
      * @param  string $email
      * @param  string $name optional
-     * @return void
      */
     public static function setDefaultFrom($email, $name = null)
     {
@@ -789,7 +788,6 @@ class Zend_Mail extends Zend_Mime_Message
     /**
      * Clears the default sender from the mail
      *
-     * @return void
      */
     public static function clearDefaultFrom()
     {
@@ -820,7 +818,6 @@ class Zend_Mail extends Zend_Mime_Message
      *
      * @param  string $email
      * @param  string $name optional
-     * @return void
      */
     public static function setDefaultReplyTo($email, $name = null)
     {
@@ -840,7 +837,6 @@ class Zend_Mail extends Zend_Mime_Message
     /**
      * Clears the default ReplyTo-address and -name from the mail
      *
-     * @return void
      */
     public static function clearDefaultReplyTo()
     {

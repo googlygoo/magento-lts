@@ -115,7 +115,6 @@ class Zend_Form_Decorator_FormErrors extends Zend_Form_Decorator_Abstract
     /**
      * Initialize options
      *
-     * @return void
      */
     public function initOptions()
     {

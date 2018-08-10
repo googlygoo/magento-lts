@@ -50,7 +50,6 @@ class Zend_Ldap_Attribute
      * @param  string                   $attribName
      * @param  scalar|array|Traversable $value
      * @param  boolean                  $append
-     * @return void
      */
     public static function setAttribute(array &$data, $attribName, $value, $append = false)
     {
@@ -143,7 +142,6 @@ class Zend_Ldap_Attribute
      *
      * @param array  $data
      * @param string $attribName
-     * @return void
      */
     public static function removeDuplicatesFromAttribute(array &$data, $attribName)
     {
@@ -158,7 +156,6 @@ class Zend_Ldap_Attribute
      * @param array       $data
      * @param string      $attribName
      * @param mixed|array $value
-     * @return void
      */
     public static function removeFromAttribute(array &$data, $attribName, $value)
     {
@@ -268,7 +265,6 @@ class Zend_Ldap_Attribute
      * @param  string      $password
      * @param  string      $hashType
      * @param  string|null $attribName
-     * @return null
      */
     public static function setPassword(array &$data, $password, $hashType = self::PASSWORD_HASH_MD5,
         $attribName = null)
@@ -344,7 +340,6 @@ class Zend_Ldap_Attribute
      * @param  integer|array|Traversable $value
      * @param  boolean                   $utc
      * @param  boolean                   $append
-     * @return null
      */
     public static function setDateTimeAttribute(array &$data, $attribName, $value, $utc = false,
         $append = false)

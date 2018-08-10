@@ -100,7 +100,6 @@ class Zend_Config implements Countable, Iterator
      *
      * @param  array   $array
      * @param  boolean $allowModifications
-     * @return void
      */
     public function __construct(array $array, $allowModifications = false)
     {
@@ -151,8 +150,8 @@ class Zend_Config implements Countable, Iterator
      *
      * @param  string $name
      * @param  mixed  $value
+     *
      * @throws Zend_Config_Exception
-     * @return void
      */
     public function __set($name, $value)
     {
@@ -173,8 +172,6 @@ class Zend_Config implements Countable, Iterator
     /**
      * Deep clone of this instance to ensure that nested Zend_Configs
      * are also cloned.
-     *
-     * @return void
      */
     public function __clone()
     {
@@ -223,8 +220,8 @@ class Zend_Config implements Countable, Iterator
      * Support unset() overloading on PHP 5.1
      *
      * @param  string $name
+     *
      * @throws Zend_Config_Exception
-     * @return void
      */
     public function __unset($name)
     {
@@ -400,7 +397,6 @@ class Zend_Config implements Countable, Iterator
      *
      * @param  string $extendingSection
      * @param  string $extendedSection
-     * @return void
      */
     public function setExtend($extendingSection, $extendedSection = null)
     {
@@ -417,8 +413,8 @@ class Zend_Config implements Countable, Iterator
      *
      * @param  string $extendingSection
      * @param  string $extendedSection
+     *
      * @throws Zend_Config_Exception
-     * @return void
      */
     protected function _assertValidExtend($extendingSection, $extendedSection)
     {

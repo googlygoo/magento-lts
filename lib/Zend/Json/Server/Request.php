@@ -243,7 +243,6 @@ class Zend_Json_Server_Request
      * Set request state based on JSON
      *
      * @param  string $json
-     * @return void
      */
     public function loadJson($json)
     {

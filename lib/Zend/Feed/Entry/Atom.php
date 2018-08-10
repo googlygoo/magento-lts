@@ -70,7 +70,7 @@ class Zend_Feed_Entry_Atom extends Zend_Feed_Entry_Abstract
      * Usually the response would be 204 No Content, but the Atom
      * Publishing Protocol permits it to be 200 OK.
      *
-     * @return void
+     * @return bool
      * @throws Zend_Feed_Exception
      */
     public function delete()
@@ -133,7 +133,6 @@ class Zend_Feed_Entry_Atom extends Zend_Feed_Entry_Abstract
      * link rel="edit".
      *
      * @param  string $postUri Location to POST for creating new entries.
-     * @return void
      * @throws Zend_Feed_Exception
      */
     public function save($postUri = null)
@@ -223,7 +222,7 @@ class Zend_Feed_Entry_Atom extends Zend_Feed_Entry_Abstract
              */
             #require_once 'Zend/Feed/Exception.php';
             throw new Zend_Feed_Exception('No root <feed> element found in server response:'
-                                          . "\n\n" . $client->responseBody);
+                                          . "\n\n" . $client->getLastResponse());
         }
 
         if ($this->_element->parentNode) {

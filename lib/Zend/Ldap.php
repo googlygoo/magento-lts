@@ -116,7 +116,6 @@ class Zend_Ldap
      * Constructor.
      *
      * @param  array|Zend_Config $options Options used in connecting, binding, etc.
-     * @return void
      * @throws Zend_Ldap_Exception if ext/ldap is not installed
      */
     public function __construct($options = array())
@@ -135,7 +134,6 @@ class Zend_Ldap
     /**
      * Destructor.
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -498,7 +496,6 @@ class Zend_Ldap
      * @param string $name  The name to split
      * @param string $dname The resulting domain name (this is an out parameter)
      * @param string $aname The resulting account name (this is an out parameter)
-     * @return void
      */
     protected function _splitName($name, &$dname, &$aname)
     {
@@ -1162,7 +1159,6 @@ class Zend_Ldap
      * Prepares an ldap data entry array for insert/update operation
      *
      * @param  array $entry
-     * @return void
      * @throws InvalidArgumentException
      */
     public static function prepareLdapEntryArray(array &$entry)

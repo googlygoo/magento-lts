@@ -439,7 +439,6 @@ class Zend_Loader_PluginLoader implements Zend_Loader_PluginLoader_Interface
      * plugin class loaded. This is an opt-in feature for performance purposes.
      *
      * @param  string $file
-     * @return void
      * @throws Zend_Loader_PluginLoader_Exception if file is not writeable or path does not exist
      */
     public static function setIncludeFileCache($file)
@@ -486,7 +485,6 @@ class Zend_Loader_PluginLoader implements Zend_Loader_PluginLoader_Interface
      * Append an include_once statement to the class file cache
      *
      * @param  string $incFile
-     * @return void
      */
     protected static function _appendIncFile($incFile)
     {

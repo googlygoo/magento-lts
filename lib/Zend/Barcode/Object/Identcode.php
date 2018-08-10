@@ -43,7 +43,6 @@ class Zend_Barcode_Object_Identcode extends Zend_Barcode_Object_Code25interleave
 
     /**
      * Default options for Identcode barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {

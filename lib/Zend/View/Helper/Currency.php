@@ -44,7 +44,6 @@ class Zend_View_Helper_Currency extends Zend_View_Helper_Abstract
      * Constructor for manually handling
      *
      * @param  Zend_Currency $currency Instance of Zend_Currency
-     * @return void
      */
     public function __construct($currency = null)
     {

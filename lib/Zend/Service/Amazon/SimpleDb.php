@@ -185,7 +185,6 @@ class Zend_Service_Amazon_SimpleDb extends Zend_Service_Amazon_Abstract
      * @param  string $itemName
      * @param  array|Traversable $attributes
      * @param  array $replace
-     * @return void
      */
     public function putAttributes(
         $domainName, $itemName, $attributes, $replace = array()
@@ -220,7 +219,6 @@ class Zend_Service_Amazon_SimpleDb extends Zend_Service_Amazon_Abstract
      * @param  array $items
      * @param  string $domainName
      * @param  array $replace
-     * @return void
      */
     public function batchPutAttributes($items, $domainName, array $replace = array())
     {
@@ -260,7 +258,6 @@ class Zend_Service_Amazon_SimpleDb extends Zend_Service_Amazon_Abstract
      * @param  string $domainName
      * @param  string $itemName
      * @param  array $attributes
-     * @return void
      */
     public function deleteAttributes($domainName, $itemName, array $attributes = array())
     {

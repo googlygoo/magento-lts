@@ -65,7 +65,6 @@ interface Zend_EventManager_Filter
     /**
      * Clear all filters
      * 
-     * @return void
      */
     public function clearFilters();
 

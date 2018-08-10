@@ -97,7 +97,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
      *
      * @param string $namespace       - programmatic name of the requested namespace
      * @param bool $singleInstance    - prevent creation of additional accessor instance objects for this namespace
-     * @return void
      */
     public function __construct($namespace = 'Default', $singleInstance = false)
     {
@@ -216,7 +215,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
     /**
      * lock() - mark a session/namespace as readonly
      *
-     * @return void
      */
     public function lock()
     {
@@ -227,7 +225,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
     /**
      * unlock() - unmark a session/namespace to enable read & write
      *
-     * @return void
      */
     public function unlock()
     {
@@ -238,7 +235,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
     /**
      * unlockAll() - unmark all session/namespaces to enable read & write
      *
-     * @return void
      */
     public static function unlockAll()
     {
@@ -259,12 +255,10 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
 
     /**
      * unsetAll() - unset all variables in this namespace
-     *
-     * @return true
      */
     public function unsetAll()
     {
-        return parent::_namespaceUnset($this->_namespace);
+        parent::_namespaceUnset($this->_namespace);
     }
 
 
@@ -399,7 +393,8 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
      * __unset() - unset a variable in this object's namespace.
      *
      * @param string $name - programmatic name of a key, in a <key,value> pair in the current namespace
-     * @return true
+     *
+     * @throws Zend_Session_Exception
      */
     public function __unset($name)
     {
@@ -411,7 +406,7 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
             throw new Zend_Session_Exception("The '$name' key must be a non-empty string");
         }
 
-        return parent::_namespaceUnset($this->_namespace, $name);
+        parent::_namespaceUnset($this->_namespace, $name);
     }
 
 
@@ -422,7 +417,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
      * @param int $seconds     - expires in this many seconds
      * @param mixed $variables - OPTIONAL list of variables to expire (defaults to all)
      * @throws Zend_Session_Exception
-     * @return void
      */
     public function setExpirationSeconds($seconds, $variables = null)
     {
@@ -470,7 +464,6 @@ class Zend_Session_Namespace extends Zend_Session_Abstract implements IteratorAg
      * @param mixed $variables - OPTIONAL list of variables to expire (defaults to all)
      * @param boolean $hopCountOnUsageOnly - OPTIONAL if set, only count a hop/request if this namespace is used
      * @throws Zend_Session_Exception
-     * @return void
      */
     public function setExpirationHops($hops, $variables = null, $hopCountOnUsageOnly = false)
     {

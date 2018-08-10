@@ -214,7 +214,6 @@ class Zend_Gdata_App_Entry extends Zend_Gdata_App_FeedEntryParent
      * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
      * entry's link collection.
      *
-     * @return void
      * @throws Zend_Gdata_App_Exception
      */
     public function delete()

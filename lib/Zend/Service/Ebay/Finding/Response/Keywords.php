@@ -51,7 +51,6 @@ class Zend_Service_Ebay_Finding_Response_Keywords extends Zend_Service_Ebay_Find
     public $keywords;
 
     /**
-     * @return void
      */
     protected function _init()
     {

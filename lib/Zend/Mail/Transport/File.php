@@ -57,7 +57,6 @@ class Zend_Mail_Transport_File extends Zend_Mail_Transport_Abstract
      * Constructor
      *
      * @param  array|Zend_Config $options OPTIONAL (Default: null)
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -82,7 +81,6 @@ class Zend_Mail_Transport_File extends Zend_Mail_Transport_Abstract
      * Sets options
      *
      * @param  array $options
-     * @return void
      */
     public function setOptions(array $options)
     {
@@ -97,7 +95,6 @@ class Zend_Mail_Transport_File extends Zend_Mail_Transport_Abstract
     /**
      * Saves e-mail message to a file
      *
-     * @return void
      * @throws Zend_Mail_Transport_Exception on not writable target directory
      * @throws Zend_Mail_Transport_Exception on file_put_contents() failure
      */

@@ -63,7 +63,6 @@ class Zend_Cloud_QueueService_Adapter_WindowsAzure
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -107,7 +106,7 @@ class Zend_Cloud_QueueService_Adapter_WindowsAzure
                 $this->_storageClient->setProxy(true, $proxyHost, $proxyPort, $proxyCredentials);
             }
             if (isset($options[self::HTTP_ADAPTER])) {
-                $this->_storageClient->setHttpClientChannel($httpAdapter);
+                $this->_storageClient->setHttpClientChannel($options[self::HTTP_ADAPTER]);
             }
         } catch(Zend_Service_WindowsAzure_Exception $e) {
             throw new Zend_Cloud_QueueService_Exception('Error on create: '.$e->getMessage(), $e->getCode(), $e);
@@ -205,7 +204,6 @@ class Zend_Cloud_QueueService_Adapter_WindowsAzure
      * @param  string $queueId
      * @param  array  $metadata
      * @param  array  $options
-     * @return void
      */
     public function storeQueueMetadata($queueId, $metadata, $options = null)
     {
@@ -291,7 +289,6 @@ class Zend_Cloud_QueueService_Adapter_WindowsAzure
      * @param  string $queueId
      * @param  Zend_Cloud_QueueService_Message $message Message ID or message
      * @param  array  $options
-     * @return void
      */
     public function deleteMessage($queueId, $message, $options = null)
     {

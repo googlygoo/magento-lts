@@ -62,7 +62,6 @@ class Zend_Controller_Response_HttpTestCase extends Zend_Controller_Response_Htt
      * Can we send headers?
      *
      * @param  bool $throw
-     * @return void
      */
     public function canSendHeaders($throw = false)
     {

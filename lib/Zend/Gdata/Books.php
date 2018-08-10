@@ -194,7 +194,6 @@ class Zend_Gdata_Books extends Zend_Gdata
      * Delete a Volume
      *
      * @param Zend_Gdata_Books_VolumeEntry $entry
-     * @return void
      */
     public function deleteVolume($entry)
     {

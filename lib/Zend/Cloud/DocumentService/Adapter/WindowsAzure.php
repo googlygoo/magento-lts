@@ -78,7 +78,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure
      * Constructor
      *
      * @param array $options
-     * @return void
      */
     public function __construct($options = array())
     {
@@ -385,7 +384,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure
      *
      * @param  mixed  $document Document ID or Document object.
      * @param  array  $options
-     * @return void
      */
     public function deleteDocument($collectionName, $documentId, $options = null)
     {
@@ -518,7 +516,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure
      * Validate a partition or row key
      *
      * @param  string $key
-     * @return void
      * @throws Zend_Cloud_DocumentService_Exception
      */
     protected function _validateKey($key)
@@ -587,7 +584,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure
      * element tag names, the field names must be valid XML names.
      *
      * @param  Zend_Cloud_DocumentService_Document|array $document
-     * @return void
      * @throws Zend_Cloud_DocumentService_Exception
      */
     public function _validateFields($document)
@@ -614,7 +610,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzure
      * invalid field names will raise an exception.
      *
      * @param  string $key
-     * @return void
      * @throws Zend_Cloud_DocumentService_Exception
      */
     public function _validateFieldKey($key)

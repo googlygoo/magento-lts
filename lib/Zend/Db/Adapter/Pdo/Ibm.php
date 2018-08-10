@@ -90,7 +90,6 @@ class Zend_Db_Adapter_Pdo_Ibm extends Zend_Db_Adapter_Pdo_Abstract
      * Current options are DB2 or IDS
      * @todo also differentiate between z/OS and i/5
      *
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     public function _connect()
@@ -169,7 +168,6 @@ class Zend_Db_Adapter_Pdo_Ibm extends Zend_Db_Adapter_Pdo_Abstract
      *
      * @param  array $config
      * @throws Zend_Db_Adapter_Exception
-     * @return void
      */
     protected function _checkRequiredOptions(array $config)
     {

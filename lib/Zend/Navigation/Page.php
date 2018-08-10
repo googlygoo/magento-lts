@@ -298,7 +298,6 @@ abstract class Zend_Navigation_Page extends Zend_Navigation_Container
     /**
      * Initializes page (used by subclasses)
      *
-     * @return void
      */
     protected function _init()
     {
@@ -1114,7 +1113,6 @@ abstract class Zend_Navigation_Page extends Zend_Navigation_Container
      *
      * @param  string $name               property name
      * @param  mixed  $value              value to set
-     * @return void
      * @throws Zend_Navigation_Exception  if property name is invalid
      */
     public function __set($name, $value)
@@ -1164,7 +1162,6 @@ abstract class Zend_Navigation_Page extends Zend_Navigation_Container
      * Magic overload for enabling <code>unset($page->propname)</code>.
      *
      * @param  string $name               property name
-     * @return void
      * @throws Zend_Navigation_Exception  if the property is native
      */
     public function __unset($name)

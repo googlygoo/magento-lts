@@ -63,7 +63,6 @@ class Zend_Service_Flickr_Image
      * Parse given Flickr Image element
      *
      * @param  DOMElement $image
-     * @return void
      */
     public function __construct(DOMElement $image)
     {

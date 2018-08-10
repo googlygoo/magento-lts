@@ -71,7 +71,6 @@ class Zend_Server_Reflection_Node
      * @param Zend_Server_Reflection_Node $node
      * @param boolean $new Whether or not the child node is newly created
      * and should always be attached
-     * @return void
      */
     public function setParent(Zend_Server_Reflection_Node $node, $new = false)
     {
@@ -101,7 +100,6 @@ class Zend_Server_Reflection_Node
      * Attach a child node
      *
      * @param Zend_Server_Reflection_Node $node
-     * @return void
      */
     public function attachChild(Zend_Server_Reflection_Node $node)
     {
@@ -156,7 +154,6 @@ class Zend_Server_Reflection_Node
      * Set the node value
      *
      * @param mixed $value
-     * @return void
      */
     public function setValue($value)
     {

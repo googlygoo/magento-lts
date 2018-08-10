@@ -52,7 +52,6 @@ abstract class Zend_Dojo_Form_Element_Dijit extends Zend_Form_Element
      * @todo Should we set dojo view helper paths here?
      * @param  mixed $spec
      * @param  mixed $options
-     * @return void
      */
     public function __construct($spec, $options = null)
     {
@@ -151,7 +150,6 @@ abstract class Zend_Dojo_Form_Element_Dijit extends Zend_Form_Element
     /**
      * Load default decorators
      *
-     * @return void
      */
     public function loadDefaultDecorators()
     {

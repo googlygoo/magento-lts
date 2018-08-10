@@ -80,7 +80,6 @@ class Zend_Feed_Reader_Extension_CreativeCommons_Feed
     /**
      * Register Creative Commons namespaces
      *
-     * @return void
      */
     protected function _registerNamespaces()
     {

@@ -199,7 +199,6 @@ class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
     /**
      * Creates a connection to the database.
      *
-     * @return void
      */
     protected function _connect()
     {
@@ -219,7 +218,6 @@ class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     public function closeConnection()
     {
@@ -301,7 +299,6 @@ class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
      * Set the fetch mode.
      *
      * @param integer $mode
-     * @return void
      * @throws Zend_Db_Adapter_Exception
      */
     public function setFetchMode($mode)

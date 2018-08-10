@@ -86,7 +86,6 @@ abstract class Zend_Application_Module_Bootstrap
     /**
      * Ensure resource loader is loaded
      *
-     * @return void
      */
     public function initResourceLoader()
     {

@@ -55,7 +55,6 @@ class Zend_Stdlib_CallbackHandler
      * @param  string $event Event to which slot is subscribed
      * @param  string|array|object $callback PHP callback 
      * @param  array $options Options used by the callback handler (e.g., priority)
-     * @return void
      */
     public function __construct($callback, array $metadata = array())
     {
@@ -70,7 +69,6 @@ class Zend_Stdlib_CallbackHandler
      * 
      * @param  int $errno 
      * @param  string $errstr 
-     * @return void
      */
     public function errorHandler($errno, $errstr)
     {
@@ -88,7 +86,6 @@ class Zend_Stdlib_CallbackHandler
      * to registering the callback.
      * 
      * @param  Callable $callback 
-     * @return void
      */
     protected function registerCallback($callback)
     {

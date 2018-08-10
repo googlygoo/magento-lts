@@ -76,7 +76,6 @@ class Zend_Barcode_Object_Ean13 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Default options for Postnet barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {
@@ -101,7 +100,6 @@ class Zend_Barcode_Object_Ean13 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial check of interleaved EAN/UPC barcode
-     * @return void
      */
     protected function _checkParams()
     {}
@@ -177,7 +175,6 @@ class Zend_Barcode_Object_Ean13 extends Zend_Barcode_Object_ObjectAbstract
 
     /**
      * Partial function to draw text
-     * @return void
      */
     protected function _drawText()
     {

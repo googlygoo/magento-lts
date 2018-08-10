@@ -73,7 +73,6 @@ class Zend_Gdata_Analytics_AccountEntry extends Zend_Gdata_Entry
 
     /**
      * @param DOMElement $child
-     * @return void
      */
     protected function takeChildFromDOM($child)
     {

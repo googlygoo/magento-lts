@@ -77,7 +77,6 @@ class Zend_Http_UserAgent_Storage_NonPersistent
      *
      * @param  mixed $contents
      * @throws Zend_Http_UserAgent_Storage_Exception If writing $contents to storage is impossible
-     * @return void
      */
     public function write($contents)
     {
@@ -88,7 +87,6 @@ class Zend_Http_UserAgent_Storage_NonPersistent
      * Clears contents from storage
      *
      * @throws Zend_Http_UserAgent_Storage_Exception If clearing contents from storage is impossible
-     * @return void
      */
     public function clear()
     {

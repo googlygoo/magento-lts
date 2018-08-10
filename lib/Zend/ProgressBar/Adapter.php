@@ -100,14 +100,12 @@ abstract class Zend_ProgressBar_Adapter
      * @param  integer $timeTaken     Taken time in seconds
      * @param  integer $timeRemaining Remaining time in seconds
      * @param  string  $text          Status text
-     * @return void
      */
     abstract public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text);
 
     /**
      * Called when the progress is explicitly finished
      *
-     * @return void
      */
     abstract public function finish();
 }

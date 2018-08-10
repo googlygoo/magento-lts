@@ -42,7 +42,6 @@ class Zend_Cache_Frontend_Output extends Zend_Cache_Core
      * Constructor
      *
      * @param  array $options Associative array of options
-     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -83,7 +82,6 @@ class Zend_Cache_Frontend_Output extends Zend_Cache_Core
      * @param  string  $forcedDatas      If not null, force written datas with this
      * @param  boolean $echoData         If set to true, datas are sent to the browser
      * @param  int     $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends
-     * @return void
      */
     public function end($tags = array(), $specificLifetime = false, $forcedDatas = null, $echoData = true, $priority = 8)
     {

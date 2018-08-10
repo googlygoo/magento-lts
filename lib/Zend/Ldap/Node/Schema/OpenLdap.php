@@ -147,7 +147,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
     /**
      * Loads the attribute Types
      *
-     * @return void
      */
     protected function _loadAttributeTypes()
     {
@@ -215,7 +214,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
     /**
      * Loads the object classes
      *
-     * @return void
      */
     protected function _loadObjectClasses()
     {
@@ -291,7 +289,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
     /**
      * Loads the LDAP syntaxes
      *
-     * @return void
      */
     protected function _loadLdapSyntaxes()
     {
@@ -326,7 +323,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
     /**
      * Loads the matching rules
      *
-     * @return void
      */
     protected function _loadMatchingRules()
     {
@@ -366,7 +362,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
     /**
      * Loads the matching rule use
      *
-     * @return void
      */
     protected function _loadMatchingRuleUse()
     {
@@ -429,7 +424,6 @@ class Zend_Ldap_Node_Schema_OpenLdap extends Zend_Ldap_Node_Schema
      *
      * @param  array $data
      * @param  array $tokens
-     * @return void
      */
     protected function _parseLdapSchemaSyntax(array &$data, array $tokens)
     {

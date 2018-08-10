@@ -62,7 +62,6 @@ class Zend_Controller_Action_HelperBroker
      * Set PluginLoader for use with broker
      *
      * @param  Zend_Loader_PluginLoader_Interface $loader
-     * @return void
      */
     public static function setPluginLoader($loader)
     {
@@ -106,7 +105,6 @@ class Zend_Controller_Action_HelperBroker
      *
      * @param string $path
      * @param string $prefix Optional; defaults to 'Zend_Controller_Action_Helper'
-     * @return void
      */
     static public function addPath($path, $prefix = 'Zend_Controller_Action_Helper')
     {
@@ -117,7 +115,6 @@ class Zend_Controller_Action_HelperBroker
      * addHelper() - Add helper objects
      *
      * @param Zend_Controller_Action_Helper_Abstract $helper
-     * @return void
      */
     static public function addHelper(Zend_Controller_Action_Helper_Abstract $helper)
     {
@@ -128,7 +125,6 @@ class Zend_Controller_Action_HelperBroker
     /**
      * resetHelpers()
      *
-     * @return void
      */
     static public function resetHelpers()
     {
@@ -243,7 +239,6 @@ class Zend_Controller_Action_HelperBroker
      * Constructor
      *
      * @param Zend_Controller_Action $actionController
-     * @return void
      */
     public function __construct(Zend_Controller_Action $actionController)
     {
@@ -257,7 +252,6 @@ class Zend_Controller_Action_HelperBroker
     /**
      * notifyPreDispatch() - called by action controller dispatch method
      *
-     * @return void
      */
     public function notifyPreDispatch()
     {
@@ -269,7 +263,6 @@ class Zend_Controller_Action_HelperBroker
     /**
      * notifyPostDispatch() - called by action controller dispatch method
      *
-     * @return void
      */
     public function notifyPostDispatch()
     {
@@ -358,7 +351,6 @@ class Zend_Controller_Action_HelperBroker
      * Load a helper
      *
      * @param  string $name
-     * @return void
      */
     protected static function _loadHelper($name)
     {

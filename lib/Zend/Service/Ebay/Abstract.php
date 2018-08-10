@@ -44,7 +44,6 @@ abstract class Zend_Service_Ebay_Abstract
 
     /**
      * @param  Zend_Config|array $options
-     * @return void
      */
     public function __construct($options = null)
     {

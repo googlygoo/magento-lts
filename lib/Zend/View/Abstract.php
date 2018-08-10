@@ -250,7 +250,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      *
      * Triggered by {@link __construct() the constructor} as its final action.
      *
-     * @return void
      */
     public function init()
     {
@@ -298,7 +297,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      *
      * @param string $key The variable name.
      * @param mixed $val The variable value.
-     * @return void
      * @throws Zend_View_Exception if an attempt to set a private or protected
      * member is detected
      */
@@ -319,7 +317,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * Allows unset() on object properties to work
      *
      * @param string $key
-     * @return void
      */
     public function __unset($key)
     {
@@ -860,7 +857,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * Clears all variables assigned to Zend_View either via {@link assign()} or
      * property overloading ({@link __set()}).
      *
-     * @return void
      */
     public function clearVars()
     {
@@ -957,7 +953,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * Finds a view script from the available directories.
      *
      * @param string $name The base name of the script.
-     * @return void
      */
     protected function _script($name)
     {
@@ -1025,7 +1020,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * @param string|array $path The path specification.
      * @param string $prefix Class prefix to use with path (helpers and filters
      * only)
-     * @return void
      */
     private function _addPath($type, $path, $prefix = null)
     {
@@ -1096,7 +1090,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * @param  string $name
      * @param  string $class
      * @param  string $file path to class file
-     * @return void
      */
     private function _setHelperClass($name, $class, $file)
     {
@@ -1110,7 +1103,6 @@ abstract class Zend_View_Abstract implements Zend_View_Interface
      * @param  string $name
      * @param  string $class
      * @param  string $file path to class file
-     * @return void
      */
     private function _setFilterClass($name, $class, $file)
     {

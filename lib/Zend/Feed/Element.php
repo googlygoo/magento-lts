@@ -57,7 +57,6 @@ class Zend_Feed_Element implements ArrayAccess
      * Zend_Feed_Element constructor.
      *
      * @param  DOMElement $element The DOM element we're encapsulating.
-     * @return void
      */
     public function __construct($element = null)
     {
@@ -87,7 +86,6 @@ class Zend_Feed_Element implements ArrayAccess
      * DOM tree for this Zend_Feed_Element.
      *
      * @param  DOMElement $element
-     * @return void
      */
     public function setDOM(DOMElement $element)
     {
@@ -99,7 +97,6 @@ class Zend_Feed_Element implements ArrayAccess
      * Zend_Feed_Element.
      *
      * @param  Zend_Feed_Element $element
-     * @return void
      */
     public function setParent(Zend_Feed_Element $element)
     {
@@ -111,7 +108,6 @@ class Zend_Feed_Element implements ArrayAccess
     /**
      * Appends this element to its parent if necessary.
      *
-     * @return void
      */
     protected function ensureAppended()
     {
@@ -193,7 +189,7 @@ class Zend_Feed_Element implements ArrayAccess
         if ($length == 1) {
             return new Zend_Feed_Element($nodes[0]);
         } elseif ($length > 1) {
-            return array_map(create_function('$e', 'return new Zend_Feed_Element($e);'), $nodes);
+            return array_map(function($e) { return new Zend_Feed_Element($e); }, $nodes);
         } else {
             // When creating anonymous nodes for __set chaining, don't
             // call appendChild() on them. Instead we pass the current
@@ -219,7 +215,6 @@ class Zend_Feed_Element implements ArrayAccess
      *
      * @param  string $var The property to change.
      * @param  string $val The property's new value.
-     * @return void
      * @throws Zend_Feed_Exception
      */
     public function __set($var, $val)
@@ -275,6 +270,7 @@ class Zend_Feed_Element implements ArrayAccess
                 }
             }
         }
+        return false;
     }
 
 
@@ -307,7 +303,6 @@ class Zend_Feed_Element implements ArrayAccess
      * Remove all children matching $var.
      *
      * @param  string $var
-     * @return void
      */
     public function __unset($var)
     {

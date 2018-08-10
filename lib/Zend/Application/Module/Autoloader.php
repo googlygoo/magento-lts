@@ -49,7 +49,6 @@ class Zend_Application_Module_Autoloader extends Zend_Loader_Autoloader_Resource
     /**
      * Initialize default resource types for module resource classes
      *
-     * @return void
      */
     public function initDefaultResourceTypes()
     {

@@ -38,10 +38,28 @@
 class Zend_Test_PHPUnit_Db_DataSet_DbRowset extends PHPUnit_Extensions_Database_DataSet_AbstractTable
 {
     /**
+     * @var array
+     */
+    protected $data;
+
+    /**
+     * @var string
+     */
+    protected $tableName;
+
+    /**
+     * @var PHPUnit_Extensions_Database_DataSet_DefaultTableMetaData
+     */
+    protected $tableMetaData;
+
+    /**
      * Construct Table object from a Zend_Db_Table_Rowset
      *
      * @param Zend_Db_Table_Rowset_Abstract $rowset
-     * @param string $tableName
+     * @param string                        $tableName
+     *
+     * @throws Zend_Db_Table_Exception
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     public function __construct(Zend_Db_Table_Rowset_Abstract $rowset, $tableName = null)
     {

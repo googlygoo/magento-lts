@@ -60,7 +60,6 @@ class Zend_Mobile_Push_Test_ApnsProxy extends Zend_Mobile_Push_Apns
      * Set the write response
      *
      * @param mixed $resp
-     * @return void
      */
     public function setWriteResponse($resp)
     {

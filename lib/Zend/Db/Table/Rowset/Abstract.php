@@ -147,7 +147,6 @@ abstract class Zend_Db_Table_Rowset_Abstract implements SeekableIterator, Counta
      * A de-serialized Rowset should not be assumed to have access to a live
      * database connection, so set _connected = false.
      *
-     * @return void
      */
     public function __wakeup()
     {
@@ -159,7 +158,6 @@ abstract class Zend_Db_Table_Rowset_Abstract implements SeekableIterator, Counta
      *
      * Called from {@link __construct()} as final step of object instantiation.
      *
-     * @return void
      */
     public function init()
     {
@@ -267,7 +265,6 @@ abstract class Zend_Db_Table_Rowset_Abstract implements SeekableIterator, Counta
      * Similar to the next() function for arrays in PHP.
      * Required by interface Iterator.
      *
-     * @return void
      */
     public function next()
     {

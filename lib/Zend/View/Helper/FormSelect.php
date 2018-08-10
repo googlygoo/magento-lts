@@ -68,6 +68,11 @@ class Zend_View_Helper_FormSelect extends Zend_View_Helper_FormElement
         $options = null, $listsep = "<br />\n")
     {
         $info = $this->_getInfo($name, $value, $attribs, $options, $listsep);
+
+        /**
+         * @var string $id
+         * @var bool $disable
+         */
         extract($info); // name, id, value, attribs, options, listsep, disable
 
         // force $value to array so we can compare multiple values to multiple

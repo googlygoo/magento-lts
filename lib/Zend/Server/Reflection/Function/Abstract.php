@@ -148,7 +148,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      *
      * @param Zend_Server_Reflection_Node $parent
      * @param int $level
-     * @return void
      */
     protected function _addTree(Zend_Server_Reflection_Node $parent, $level = 0)
     {
@@ -195,7 +194,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * @param string $returnDesc Return value description
      * @param array $params Array of arguments (each an array of types)
      * @param array $paramDesc Array of parameter descriptions
-     * @return array
      */
     protected function _buildSignatures($return, $returnDesc, $paramTypes, $paramDesc)
     {
@@ -254,7 +252,8 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * ReflectionFunction and parsing of DocBlock @param and @return values.
      *
      * @param ReflectionFunction $function
-     * @return array
+     *
+     * @throws Zend_Server_Reflection_Exception
      */
     protected function _reflect()
     {
@@ -409,7 +408,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      *
      * @param string $key
      * @param mixed $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -420,7 +418,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * Set method's namespace
      *
      * @param string $namespace
-     * @return void
      */
     public function setNamespace($namespace)
     {
@@ -451,7 +448,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * Set the description
      *
      * @param string $string
-     * @return void
      */
     public function setDescription($string)
     {
@@ -466,7 +462,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
     /**
      * Retrieve the description
      *
-     * @return void
      */
     public function getDescription()
     {
@@ -500,7 +495,6 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * Reflection needs explicit instantiation to work correctly. Re-instantiate
      * reflection object on wakeup.
      *
-     * @return void
      */
     public function __wakeup()
     {

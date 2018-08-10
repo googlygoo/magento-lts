@@ -45,7 +45,6 @@ class Zend_Service_Amazon_SimilarProduct
      * Assigns values to properties relevant to SimilarProduct
      *
      * @param  DOMElement $dom
-     * @return void
      */
     public function __construct(DOMElement $dom)
     {

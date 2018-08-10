@@ -137,7 +137,6 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
     /**
      * Required by the Iterator interface.
      *
-     * @return void
      */
     public function rewind()
     {
@@ -226,7 +225,6 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @param int $key The index to set
      * @param Zend_Gdata_App_Entry $value The value to set
-     * @return void
      */
     public function offsetSet($key, $value)
     {

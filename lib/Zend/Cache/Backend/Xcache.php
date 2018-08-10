@@ -68,7 +68,6 @@ class Zend_Cache_Backend_Xcache extends Zend_Cache_Backend implements Zend_Cache
      *
      * @param  array $options associative array of options
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function __construct(array $options = array())
     {

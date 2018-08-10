@@ -120,7 +120,6 @@ class Zend_Cache_Frontend_Class extends Zend_Cache_Core
      * Set a specific life time
      *
      * @param  bool|int $specificLifetime
-     * @return void
      */
     public function setSpecificLifetime($specificLifetime = false)
     {
@@ -145,7 +144,6 @@ class Zend_Cache_Frontend_Class extends Zend_Cache_Core
      * @param  string $name  Name of the option
      * @param  mixed  $value Value of the option
      * @throws Zend_Cache_Exception
-     * @return void
      */
     public function setOption($name, $value)
     {
@@ -187,7 +185,6 @@ class Zend_Cache_Frontend_Class extends Zend_Cache_Core
      * Set the cache array
      *
      * @param  array $tags
-     * @return void
      */
     public function setTagsArray($tags = array())
     {

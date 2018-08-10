@@ -52,7 +52,6 @@ abstract class Zend_Dojo_View_Helper_DijitContainer extends Zend_Dojo_View_Helpe
      * @param  string $id
      * @param  array $params
      * @param  array $attribs
-     * @return void
      */
     public function captureStart($id, array $params = array(), array $attribs = array())
     {
@@ -85,6 +84,11 @@ abstract class Zend_Dojo_View_Helper_DijitContainer extends Zend_Dojo_View_Helpe
         }
 
         $content = ob_get_clean();
+
+        /**
+         * @var array $params
+         * @var array $attribs
+         */
         extract($this->_captureInfo[$id]);
         unset($this->_captureLock[$id], $this->_captureInfo[$id]);
         return $this->_createLayoutContainer($id, $content, $params, $attribs);

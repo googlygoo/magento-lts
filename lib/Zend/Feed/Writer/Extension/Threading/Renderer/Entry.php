@@ -46,7 +46,6 @@ class Zend_Feed_Writer_Extension_Threading_Renderer_Entry
     /**
      * Render entry
      *
-     * @return void
      */
     public function render()
     {
@@ -64,7 +63,6 @@ class Zend_Feed_Writer_Extension_Threading_Renderer_Entry
     /**
      * Append entry namespaces
      *
-     * @return void
      */
     protected function _appendNamespaces()
     {
@@ -77,7 +75,6 @@ class Zend_Feed_Writer_Extension_Threading_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setCommentLink(DOMDocument $dom, DOMElement $root)
     {
@@ -102,7 +99,6 @@ class Zend_Feed_Writer_Extension_Threading_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setCommentFeedLinks(DOMDocument $dom, DOMElement $root)
     {
@@ -129,7 +125,6 @@ class Zend_Feed_Writer_Extension_Threading_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setCommentCount(DOMDocument $dom, DOMElement $root)
     {

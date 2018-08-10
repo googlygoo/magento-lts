@@ -116,7 +116,6 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2 extends Zend_Cloud_Infrastructure_Ad
      * Constructor
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = array())
     {

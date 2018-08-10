@@ -46,7 +46,6 @@ class Zend_Service_Ebay_Finding_Category_Histogram_Container extends Zend_Servic
     public $categoryHistogram;
 
     /**
-     * @return void
      */
     protected function _init()
     {

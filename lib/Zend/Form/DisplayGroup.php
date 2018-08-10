@@ -118,7 +118,6 @@ class Zend_Form_DisplayGroup implements Iterator,Countable
      * @param  string $name
      * @param  Zend_Loader_PluginLoader $loader
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($name, Zend_Loader_PluginLoader $loader, $options = null)
     {
@@ -141,7 +140,6 @@ class Zend_Form_DisplayGroup implements Iterator,Countable
     /**
      * Initialize object; used by extending classes
      *
-     * @return void
      */
     public function init()
     {
@@ -1068,7 +1066,6 @@ class Zend_Form_DisplayGroup implements Iterator,Countable
     /**
      * Move pointer to next element
      *
-     * @return void
      */
     public function next()
     {
@@ -1079,7 +1076,6 @@ class Zend_Form_DisplayGroup implements Iterator,Countable
     /**
      * Move pointer to beginning of element loop
      *
-     * @return void
      */
     public function rewind()
     {
@@ -1111,7 +1107,6 @@ class Zend_Form_DisplayGroup implements Iterator,Countable
     /**
      * Sort items according to their order
      *
-     * @return void
      */
     protected function _sort()
     {

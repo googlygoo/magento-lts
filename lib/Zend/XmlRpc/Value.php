@@ -121,7 +121,6 @@ abstract class Zend_XmlRpc_Value
      * Sets XML generator instance
      *
      * @param Zend_XmlRpc_Generator_GeneratorAbstract $generator
-     * @return void
      */
     public static function setGenerator(Zend_XmlRpc_Generator_GeneratorAbstract $generator)
     {
@@ -132,7 +131,6 @@ abstract class Zend_XmlRpc_Value
      * Changes the encoding of the generator
      *
      * @param string $encoding
-     * @return void
      */
     public static function setEncoding($encoding)
     {
@@ -166,7 +164,6 @@ abstract class Zend_XmlRpc_Value
     /**
      * Generate XML code that represent a native XML/RPC value
      *
-     * @return void
      */
     public function generateXml()
     {
@@ -482,17 +479,18 @@ abstract class Zend_XmlRpc_Value
      * @param SimpleXMLElement $xml
      * @param string &$type Type bind variable
      * @param string &$value Value bind variable
-     * @return void
      */
     protected static function _extractTypeAndValue(SimpleXMLElement $xml, &$type, &$value)
     {
-        list($type, $value) = each($xml);
+        $type = key($xml);
+        $value = $xml->{$type};
 
         if (!$type and $value === null) {
             $namespaces = array('ex' => 'http://ws.apache.org/xmlrpc/namespaces/extensions');
             foreach ($namespaces as $namespaceName => $namespaceUri) {
                 $namespaceXml = $xml->children($namespaceUri);
-                list($type, $value) = each($namespaceXml);
+                $type = key($namespaceXml);
+                $value = $xml->{$type};
                 if ($type !== null) {
                     $type = $namespaceName . ':' . $type;
                     break;
@@ -516,7 +514,6 @@ abstract class Zend_XmlRpc_Value
 
     /**
      * @param string $xml
-     * @return void
      */
     protected function _setXML($xml)
     {

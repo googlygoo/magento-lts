@@ -298,8 +298,10 @@ class Zend_Currency
      *
      * @param  string             $currency (Optional) Currency name
      * @param  string|Zend_Locale $locale   (Optional) Locale to display informations
-     * @throws Zend_Currency_Exception When locale contains no region
-     * @return string The extracted locale representation as string
+     *
+     * @return array
+     * @throws Zend_Currency_Exception
+     * @throws Zend_Locale_Exception
      */
     private function _checkParams($currency = null, $locale = null)
     {
@@ -502,7 +504,6 @@ class Zend_Currency
      * Sets a cache for Zend_Currency
      *
      * @param  Zend_Cache_Core $cache Cache to set
-     * @return void
      */
     public static function setCache(Zend_Cache_Core $cache)
     {
@@ -522,7 +523,6 @@ class Zend_Currency
     /**
      * Removes any set cache
      *
-     * @return void
      */
     public static function removeCache()
     {
@@ -533,7 +533,6 @@ class Zend_Currency
      * Clears all set cache data
      *
      * @param string $tag Tag to clear when the default tag name is not used
-     * @return void
      */
     public static function clearCache($tag = null)
     {

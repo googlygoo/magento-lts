@@ -65,7 +65,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * 
          * @todo   Currently, IteratorMode is ignored, as we use the default (keep); should this be implemented?
          * @param  int $mode 
-         * @return void
          * @throws InvalidArgumentException
          */
         public function setIteratorMode($mode)
@@ -154,7 +153,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
         /**
          * Iterator: advance pointer to next item in the stack
          * 
-         * @return void
          */
         public function next()
         {
@@ -185,7 +183,7 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
         public function offsetGet($index)
         {
             if (!$this->offsetExists($index)) {
-                throw OutOfRangeException(sprintf('Invalid index ("%s") specified', $index));
+                throw new OutOfRangeException(sprintf('Invalid index ("%s") specified', $index));
             }
             return $this->data[$index];
         }
@@ -195,7 +193,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * 
          * @param  mixed $index 
          * @param  mixed $newval 
-         * @return void
          */
         public function offsetSet($index, $newval)
         {
@@ -208,13 +205,12 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * ArrayAccess: unset the item at the specified offset
          * 
          * @param  mixed $index 
-         * @return void
          * @throws OutOfRangeException
          */
         public function offsetUnset($index)
         {
             if (!$this->offsetExists($index)) {
-                throw OutOfRangeException(sprintf('Invalid index ("%s") specified', $index));
+                throw new OutOfRangeException(sprintf('Invalid index ("%s") specified', $index));
             }
             unset($this->data[$index]);
             $this->stack = false;
@@ -239,7 +235,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * Move the iterator to the previous node
          *
          * @todo   Does this need to be implemented?
-         * @return void
          */
         public function prev()
         {
@@ -249,7 +244,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * Push an element to the list
          * 
          * @param  mixed $value 
-         * @return void
          */
         public function push($value)
         {
@@ -261,7 +255,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
         /**
          * Iterator: rewind to beginning of stack
          * 
-         * @return void
          */
         public function rewind()
         {
@@ -312,7 +305,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * Unserialize the storage
          *
          * @param  string
-         * @return void
          */
         public function unserialize($serialized)
         {
@@ -324,7 +316,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * Unshift a node onto the beginning of the list
          *
          * @param  mixed $value
-         * @return void
          */
         public function unshift($value)
         {

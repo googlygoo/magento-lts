@@ -114,7 +114,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
     /**
      * Creates a connection resource.
      *
-     * @return void
      */
     protected function _connect()
     {
@@ -211,7 +210,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     public function closeConnection()
     {
@@ -252,7 +250,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
 
     /**
      * @param integer $mode
-     * @return void
      */
     public function _setExecuteMode($mode)
     {
@@ -573,7 +570,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
     /**
      * Begin a transaction.
      *
-     * @return void
      */
     protected function _beginTransaction()
     {
@@ -583,7 +579,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
     /**
      * Commit a transaction.
      *
-     * @return void
      */
     protected function _commit()
     {
@@ -603,7 +598,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
     /**
      * Rollback a transaction.
      *
-     * @return void
      */
     protected function _rollBack()
     {
@@ -623,7 +617,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
      * Set the fetch mode.
      *
      * @param integer $mode
-     * @return void
      * @throws Zend_Db_Adapter_Db2_Exception
      */
     public function setFetchMode($mode)
@@ -756,7 +749,6 @@ class Zend_Db_Adapter_Db2 extends Zend_Db_Adapter_Abstract
      * Check the connection parameters according to verify
      * type of used OS
      *
-     *  @return void
      */
     protected function _determineI5()
     {

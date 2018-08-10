@@ -172,7 +172,6 @@ class Zend_Feed_Builder implements Zend_Feed_Builder_Interface
      * </code>
      *
      * @param  array $data
-     * @return void
      */
     public function __construct(array $data)
     {
@@ -210,7 +209,6 @@ class Zend_Feed_Builder implements Zend_Feed_Builder_Interface
      *
      * @param  array $data
      * @throws Zend_Feed_Builder_Exception
-     * @return void
      */
     protected function _createHeader(array $data)
     {
@@ -338,7 +336,6 @@ class Zend_Feed_Builder implements Zend_Feed_Builder_Interface
      *
      * @param  array $data
      * @throws Zend_Feed_Builder_Exception
-     * @return void
      */
     protected function _createEntries(array $data)
     {

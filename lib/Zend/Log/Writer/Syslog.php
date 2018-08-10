@@ -99,7 +99,6 @@ class Zend_Log_Writer_Syslog extends Zend_Log_Writer_Abstract
      * Class constructor
      *
      * @param  array $params Array of options; may include "application" and "facility" keys
-     * @return void
      */
     public function __construct(array $params = array())
     {
@@ -132,7 +131,6 @@ class Zend_Log_Writer_Syslog extends Zend_Log_Writer_Abstract
     /**
      * Initialize values facilities
      *
-     * @return void
      */
     protected function _initializeValidFacilities()
     {
@@ -168,7 +166,6 @@ class Zend_Log_Writer_Syslog extends Zend_Log_Writer_Abstract
     /**
      * Initialize syslog / set application name and facility
      *
-     * @return void
      */
     protected function _initializeSyslog()
     {
@@ -230,7 +227,6 @@ class Zend_Log_Writer_Syslog extends Zend_Log_Writer_Abstract
     /**
      * Close syslog.
      *
-     * @return void
      */
     public function shutdown()
     {
@@ -241,7 +237,6 @@ class Zend_Log_Writer_Syslog extends Zend_Log_Writer_Abstract
      * Write a message to syslog.
      *
      * @param  array $event event data
-     * @return void
      */
     protected function _write($event)
     {

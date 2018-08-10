@@ -209,7 +209,6 @@ class Zend_View_Helper_Navigation
      * helper is configured to do so
      *
      * @param  Zend_View_Helper_Navigation_Helper $helper  helper instance
-     * @return void
      */
     protected function _inject(Zend_View_Helper_Navigation_Helper $helper)
     {

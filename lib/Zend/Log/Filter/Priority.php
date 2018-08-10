@@ -49,7 +49,6 @@ class Zend_Log_Filter_Priority extends Zend_Log_Filter_Abstract
      *
      * @param  integer  $priority  Priority
      * @param  string   $operator  Comparison operator
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function __construct($priority, $operator = null)

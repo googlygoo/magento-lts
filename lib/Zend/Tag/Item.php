@@ -72,7 +72,6 @@ class Zend_Tag_Item implements Zend_Tag_Taggable
      * @throws Zend_Tag_Exception When invalid options are provided
      * @throws Zend_Tag_Exception When title was not set
      * @throws Zend_Tag_Exception When weight was not set
-     * @return void
      */
     public function __construct($options)
     {

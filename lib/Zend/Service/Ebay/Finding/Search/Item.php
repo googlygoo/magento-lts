@@ -287,7 +287,6 @@ class Zend_Service_Ebay_Finding_Search_Item extends Zend_Service_Ebay_Finding_Ab
     public $viewItemURL;
 
     /**
-     * @return void
      */
     protected function _init()
     {

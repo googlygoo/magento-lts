@@ -50,7 +50,6 @@ class Zend_Barcode_Object_Ean2 extends Zend_Barcode_Object_Ean5
 
     /**
      * Default options for Ean2 barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {

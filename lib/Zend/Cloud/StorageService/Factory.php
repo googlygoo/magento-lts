@@ -39,7 +39,6 @@ class Zend_Cloud_StorageService_Factory extends Zend_Cloud_AbstractFactory
     /**
      * Constructor
      *
-     * @return void
      */
     private function __construct()
     {

@@ -204,7 +204,6 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Initialize the image resource
      *
-     * @return void
      * @throws Zend_Barcode_Exception
      */
     protected function _initRenderer()
@@ -279,7 +278,6 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Check barcode parameters
      *
-     * @return void
      */
     protected function _checkParams()
     {
@@ -289,7 +287,6 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
     /**
      * Check barcode dimensions
      *
-     * @return void
      * @throws Zend_Barcode_Renderer_Exception
      */
     protected function _checkDimensions()

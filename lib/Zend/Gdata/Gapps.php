@@ -282,7 +282,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      *
      * @param mixed $data The Zend_Gdata_App_Entry or URL to delete
      * @param integer $remainingRedirects (optional)
-     * @return void
      * @throws Zend_Gdata_App_HttpException
      * @throws Zend_Gdata_App_InvalidArgumentException
      * @throws Zend_Gdata_Gapps_ServiceException

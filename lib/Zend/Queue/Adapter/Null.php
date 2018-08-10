@@ -41,7 +41,6 @@ class Zend_Queue_Adapter_Null extends Zend_Queue_Adapter_AdapterAbstract
      *
      * @param  array|Zend_Config $options
      * @param  null|Zend_Queue $queue
-     * @return void
      */
     public function __construct($options, Zend_Queue $queue = null)
     {

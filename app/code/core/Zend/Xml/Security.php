@@ -91,7 +91,7 @@ class Zend_Xml_Security
         // error disabled with @ for PHP-FPM scenario
         set_error_handler(array('Zend_Xml_Security', 'loadXmlErrorHandler'), E_WARNING);
 
-        $result = $dom->loadXML($xml, LIBXML_NONET);
+        $result = $dom->loadXml($xml, LIBXML_NONET);
         restore_error_handler();
 
         if (!$result) {
@@ -160,11 +160,24 @@ class Zend_Xml_Security
      * (vs libxml checks) should be made, due to threading issues in libxml;
      * under php-fpm, threading becomes a concern.
      *
+     * However, PHP versions 5.5.22+ and 5.6.6+ contain a patch to the
+     * libxml support in PHP that makes the libxml checks viable; in such
+     * versions, this method will return false to enforce those checks, which
+     * are more strict and accurate than the heuristic checks.
+     *
      * @return boolean
      */
     public static function isPhpFpm()
     {
-        if (substr(php_sapi_name(), 0, 3) === 'fpm') {
+        $isVulnerableVersion = (
+            version_compare(PHP_VERSION, '5.5.22', 'lt')
+            || (
+                version_compare(PHP_VERSION, '5.6', 'gte')
+                && version_compare(PHP_VERSION, '5.6.6', 'lt')
+            )
+        );
+
+        if (substr(php_sapi_name(), 0, 3) === 'fpm' && $isVulnerableVersion) {
             return true;
         }
         return false;

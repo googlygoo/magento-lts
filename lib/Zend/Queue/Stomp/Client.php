@@ -62,7 +62,6 @@ class Zend_Queue_Stomp_Client
     /**
      * Shutdown
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -107,7 +106,6 @@ class Zend_Queue_Stomp_Client
      * Set client connection
      *
      * @param Zend_Queue_Stomp_Client_ConnectionInterface $connection
-     * @return void
      */
     public function setConnection(Zend_Queue_Stomp_Client_ConnectionInterface $connection)
     {

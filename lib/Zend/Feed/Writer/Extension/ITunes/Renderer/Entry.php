@@ -45,7 +45,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
     /**
      * Render entry
      *
-     * @return void
      */
     public function render()
     {
@@ -64,7 +63,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
     /**
      * Append namespaces to entry root
      *
-     * @return void
      */
     protected function _appendNamespaces()
     {
@@ -77,7 +75,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setAuthors(DOMDocument $dom, DOMElement $root)
     {
@@ -99,7 +96,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setBlock(DOMDocument $dom, DOMElement $root)
     {
@@ -119,7 +115,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setDuration(DOMDocument $dom, DOMElement $root)
     {
@@ -139,7 +134,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setExplicit(DOMDocument $dom, DOMElement $root)
     {
@@ -159,7 +153,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setKeywords(DOMDocument $dom, DOMElement $root)
     {
@@ -179,7 +172,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setSubtitle(DOMDocument $dom, DOMElement $root)
     {
@@ -199,7 +191,6 @@ class Zend_Feed_Writer_Extension_ITunes_Renderer_Entry
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setSummary(DOMDocument $dom, DOMElement $root)
     {

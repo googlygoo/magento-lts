@@ -191,7 +191,6 @@ class Zend_Gdata_App
      * to instantiante new objects.
      *
      * @param string $name The name of the package (eg Zend_Gdata_App)
-     * @return void
      */
     public function registerPackage($name)
     {
@@ -274,7 +273,6 @@ class Zend_Gdata_App
      * Sets the static HTTP client object to use for retrieving the feed.
      *
      * @param  Zend_Http_Client $httpClient
-     * @return void
      */
     public static function setStaticHttpClient(Zend_Http_Client $httpClient)
     {
@@ -313,7 +311,6 @@ class Zend_Gdata_App
      * DELETE as appropriate.
      *
      * @param  boolean $override Whether to override PUT and DELETE with POST.
-     * @return void
      */
     public static function setHttpMethodOverride($override = true)
     {
@@ -334,7 +331,6 @@ class Zend_Gdata_App
      * Toggle requesting gzip encoded responses
      *
      * @param  boolean $enabled Whether or not to enable gzipped responses
-     * @return void
      */
     public static function setGzipEnabled($enabled = false)
     {
@@ -388,7 +384,6 @@ class Zend_Gdata_App
      * Set the maximum number of redirects to follow during HTTP operations
      *
      * @param int $maxRedirects Maximum number of redirects to follow
-     * @return void
      */
     public static function setMaxRedirects($maxRedirects)
     {
@@ -609,8 +604,7 @@ class Zend_Gdata_App
         $major = $this->getMajorProtocolVersion();
         $minor = $this->getMinorProtocolVersion();
         if ($major >= 2) {
-            $headers['GData-Version'] = $major +
-                    (($minor === null) ? '.' + $minor : '');
+            $headers['GData-Version'] = $major . (($minor === null) ? '.' . $minor : '');
         }
 
         // check the overridden method
@@ -937,7 +931,6 @@ class Zend_Gdata_App
      * DELETE entry with client object
      *
      * @param mixed $data The Zend_Gdata_App_Entry or URL to delete
-     * @return void
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
      * @throws Zend_Gdata_App_InvalidArgumentException
@@ -1232,7 +1225,6 @@ class Zend_Gdata_App
      *
      * @param boolean $value Pass in true to use the XML to object mapping.
      *                       Pass in false or null to disable it.
-     * @return void
      */
     public function useObjectMapping($value)
     {

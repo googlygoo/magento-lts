@@ -235,7 +235,6 @@ class Zend_TimeSync_Ntp extends Zend_TimeSync_Protocol
      * Sends the NTP packet to the server
      *
      * @param  string $data Data to send to the timeserver
-     * @return void
      */
     protected function _write($data)
     {

@@ -244,7 +244,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
     /**
      * Clone form object and all children
      *
-     * @return void
      */
     public function __clone()
     {
@@ -296,7 +295,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
     /**
      * Initialize form (used by extending classes)
      *
-     * @return void
      */
     public function init()
     {
@@ -1553,7 +1551,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      * Set array to which elements belong
      *
      * @param  string $name Element name
-     * @return void
      */
     protected function _setElementsBelongTo($name = null)
     {
@@ -2616,7 +2613,7 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
         }
 
         $customMessages = $this->_getErrorMessages();
-        if ($this->isErrors() && !empty($customMessages)) {
+        if ($this->hasErrors() && !empty($customMessages)) {
             return $customMessages;
         }
 
@@ -3048,7 +3045,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      *
      * @param  Zend_Translate|Zend_Translate_Adapter|null $translator
      * @throws Zend_Form_Exception
-     * @return void
      */
     public static function setDefaultTranslator($translator = null)
     {
@@ -3169,7 +3165,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      *
      * @param  string $name
      * @param  Zend_Form_Element|Zend_Form $value
-     * @return void
      * @throws Zend_Form_Exception for invalid $value
      */
     public function __set($name, $value)
@@ -3216,7 +3211,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      * Overloading: access to elements, form groups, and display groups
      *
      * @param  string $name
-     * @return void
      */
     public function __unset($name)
     {
@@ -3304,7 +3298,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
     /**
      * Move pointer to next element/subform/display group
      *
-     * @return void
      */
     public function next()
     {
@@ -3315,7 +3308,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
     /**
      * Move pointer to beginning of element/subform/display group loop
      *
-     * @return void
      */
     public function rewind()
     {
@@ -3390,7 +3382,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      * Remove an element from iteration
      *
      * @param  string $name Element/group/form name
-     * @return void
      */
     public function removeFromIteration($name)
     {
@@ -3404,7 +3395,6 @@ class Zend_Form implements Iterator, Countable, Zend_Validate_Interface
      * Sort items according to their order
      *
      * @throws Zend_Form_Exception
-     * @return void
      */
     protected function _sort()
     {

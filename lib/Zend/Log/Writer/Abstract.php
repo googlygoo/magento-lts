@@ -73,7 +73,6 @@ abstract class Zend_Log_Writer_Abstract implements Zend_Log_FactoryInterface
      * Log a message to this writer.
      *
      * @param  array $event log data event
-     * @return void
      */
     public function write($event)
     {
@@ -92,6 +91,7 @@ abstract class Zend_Log_Writer_Abstract implements Zend_Log_FactoryInterface
      * Set a new formatter for this writer
      *
      * @param  Zend_Log_Formatter_Interface $formatter
+     *
      * @return Zend_Log_Writer_Abstract
      */
     public function setFormatter(Zend_Log_Formatter_Interface $formatter)
@@ -103,7 +103,6 @@ abstract class Zend_Log_Writer_Abstract implements Zend_Log_FactoryInterface
     /**
      * Perform shutdown activites such as closing open resources
      *
-     * @return void
      */
     public function shutdown()
     {}
@@ -112,7 +111,6 @@ abstract class Zend_Log_Writer_Abstract implements Zend_Log_FactoryInterface
      * Write a message to the log.
      *
      * @param  array $event log data event
-     * @return void
      */
     abstract protected function _write($event);
 

@@ -114,7 +114,6 @@ class Zend_Service_StrikeIron_Base
     /**
      * Initialize the SOAPClient instance
      *
-     * @return void
      */
     protected function _initSoapClient()
     {
@@ -131,7 +130,6 @@ class Zend_Service_StrikeIron_Base
     /**
      * Initialize the headers to pass to SOAPClient->__soapCall()
      *
-     * @return void
      * @throws Zend_Service_StrikeIron_Exception
      */
     protected function _initSoapHeaders()

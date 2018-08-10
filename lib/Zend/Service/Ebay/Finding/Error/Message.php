@@ -43,7 +43,6 @@ class Zend_Service_Ebay_Finding_Error_Message extends Zend_Service_Ebay_Finding_
     public $error;
 
     /**
-     * @return void
      */
     protected function _init()
     {

@@ -232,8 +232,9 @@ class Zend_Date extends Zend_Date_DateObject
      * Sets class wide options, if no option was given, the actual set options will be returned
      *
      * @param  array  $options  Options to set
-     * @throws Zend_Date_Exception
+     *
      * @return Options array if no option was given
+     * @throws Zend_Date_Exception
      */
     public static function setOptions(array $options = array())
     {
@@ -1984,17 +1985,17 @@ class Zend_Date extends Zend_Date_DateObject
                 if (is_numeric($date)) {
                     switch($calc) {
                         case 'set' :
-                            return $this->setMillisecond($date);
+                            return $this->setMilliSecond($date);
                             break;
                         case 'add' :
-                            return $this->addMillisecond($date);
+                            return $this->addMilliSecond($date);
                             break;
                         case 'sub' :
-                            return $this->subMillisecond($date);
+                            return $this->subMilliSecond($date);
                             break;
                     }
 
-                    return $this->compareMillisecond($date);
+                    return $this->compareMilliSecond($date);
                 }
 
                 #require_once 'Zend/Date/Exception.php';

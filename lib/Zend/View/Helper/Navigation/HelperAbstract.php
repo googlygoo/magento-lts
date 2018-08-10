@@ -941,7 +941,6 @@ abstract class Zend_View_Helper_Navigation_HelperAbstract
      *
      * @param  Zend_Acl $acl  [optional] ACL object. Default is null, which
      *                        sets no ACL object.
-     * @return void
      */
     public static function setDefaultAcl(Zend_Acl $acl = null)
     {
@@ -958,7 +957,6 @@ abstract class Zend_View_Helper_Navigation_HelperAbstract
      *                                   Default is null, which sets no default
      *                                   role.
      * @throws Zend_View_Exception       if role is invalid
-     * @return void
      */
     public static function setDefaultRole($role = null)
     {

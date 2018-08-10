@@ -86,13 +86,17 @@ class Zend_Json_Decoder
     protected $_decodeType;
 
     /**
+     * @var string|bool|null
+     */
+    protected $_tokenValue;
+
+    /**
      * Constructor
      *
      * @param string $source String source to decode
      * @param int $decodeType How objects should be decoded -- see
      * {@link Zend_Json::TYPE_ARRAY} and {@link Zend_Json::TYPE_OBJECT} for
      * valid values
-     * @return void
      */
     protected function __construct($source, $decodeType)
     {

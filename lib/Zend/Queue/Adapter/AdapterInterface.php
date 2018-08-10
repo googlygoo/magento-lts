@@ -36,7 +36,6 @@ interface Zend_Queue_Adapter_AdapterInterface
      *
      * @param  array|Zend_Config $options
      * @param  Zend_Queue $queue
-     * @return void
      */
     public function __construct($options, Zend_Queue $queue = null);
 

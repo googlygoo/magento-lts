@@ -51,7 +51,6 @@ class Zend_Session_Exception extends Zend_Exception
      * @see    http://framework.zend.com/issues/browse/ZF-1325
      * @param  int    $errno
      * @param  string $errstr
-     * @return void
      */
     static public function handleSessionStartError($errno, $errstr, $errfile, $errline, $errcontext)
     {
@@ -64,7 +63,6 @@ class Zend_Session_Exception extends Zend_Exception
      * @see    http://framework.zend.com/issues/browse/ZF-1325
      * @param  int    $errno
      * @param  string $errstr
-     * @return void
      */
     static public function handleSilentWriteClose($errno, $errstr, $errfile, $errline, $errcontext)
     {

@@ -87,7 +87,6 @@ interface Zend_Application_Bootstrap_Bootstrapper
     /**
      * Run the application
      *
-     * @return void
      */
     public function run();
 }

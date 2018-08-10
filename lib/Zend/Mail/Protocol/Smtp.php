@@ -117,7 +117,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      * @param  string  $host
      * @param  integer $port
      * @param  array   $config
-     * @return void
      * @throws Zend_Mail_Protocol_Exception
      */
     public function __construct($host = '127.0.0.1', $port = null, array $config = array())
@@ -173,7 +172,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * @param  string $host The client hostname or IP address (default: 127.0.0.1)
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function helo($host = '127.0.0.1')
     {
@@ -223,17 +221,18 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * @param  string $host The client hostname or IP address (default: 127.0.0.1)
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     protected function _ehlo($host)
     {
         // Support for older, less-compliant remote servers. Tries multiple attempts of EHLO or HELO.
         try {
-            $this->_send('EHLO ' . $host);
-            $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-        } catch (Zend_Mail_Protocol_Exception $e) {
-            $this->_send('HELO ' . $host);
-            $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
+            try {
+                $this->_send('EHLO ' . $host);
+                $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
+            } catch (Zend_Mail_Protocol_Exception $e) {
+                $this->_send('HELO ' . $host);
+                $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
+            }
         } catch (Zend_Mail_Protocol_Exception $e) {
             throw $e;
         }
@@ -245,7 +244,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * @param  string $from Sender mailbox
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function mail($from)
     {
@@ -272,7 +270,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * @param  string $to Receiver(s) mailbox
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function rcpt($to)
     {
@@ -296,7 +293,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * @param  string $data
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function data($data)
     {
@@ -331,7 +327,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * Can be used to restore a clean smtp communication state when a transaction has been cancelled or commencing a new transaction.
      *
-     * @return void
      */
     public function rset()
     {
@@ -350,7 +345,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      *
      * Not used by Zend_Mail, could be used to keep a connection alive or check if it is still open.
      *
-     * @return void
      */
     public function noop()
     {
@@ -365,7 +359,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      * Not used by Zend_Mail.
      *
      * @param  string $user User Name or eMail to verify
-     * @return void
      */
     public function vrfy($user)
     {
@@ -377,7 +370,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
     /**
      * Issues the QUIT command and clears the current session
      *
-     * @return void
      */
     public function quit()
     {
@@ -395,7 +387,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
      * This default method is implemented by AUTH adapters to properly authenticate to a remote host.
      *
      * @throws Zend_Mail_Protocol_Exception
-     * @return void
      */
     public function auth()
     {
@@ -412,7 +403,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
     /**
      * Closes connection
      *
-     * @return void
      */
     public function disconnect()
     {
@@ -423,7 +413,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
     /**
      * Start mail session
      *
-     * @return void
      */
     protected function _startSession()
     {
@@ -434,7 +423,6 @@ class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
     /**
      * Stop mail session
      *
-     * @return void
      */
     protected function _stopSession()
     {

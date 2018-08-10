@@ -167,7 +167,6 @@ class Zend_Soap_Server implements Zend_Server_Interface
      *
      * @param string $wsdl
      * @param array $options
-     * @return void
      */
     public function __construct($wsdl = null, array $options = null)
     {
@@ -671,7 +670,6 @@ class Zend_Soap_Server implements Zend_Server_Interface
      * Unimplemented: Load server definition
      *
      * @param array $array
-     * @return void
      * @throws Zend_Soap_Server_Exception Unimplemented
      */
     public function loadFunctions($definition)
@@ -1012,7 +1010,6 @@ class Zend_Soap_Server implements Zend_Server_Interface
      * @param string $errfile
      * @param int $errline
      * @param array $errcontext
-     * @return void
      * @throws SoapFault
      */
     public function handlePhpErrors($errno, $errstr, $errfile = null, $errline = null, array $errcontext = null)

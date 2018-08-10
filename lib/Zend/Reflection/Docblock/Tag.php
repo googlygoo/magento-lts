@@ -80,7 +80,6 @@ class Zend_Reflection_Docblock_Tag implements Reflector
      * Required by Reflector
      *
      * @todo   What should this do?
-     * @return void
      */
     public static function export()
     {
@@ -105,7 +104,6 @@ class Zend_Reflection_Docblock_Tag implements Reflector
      * Constructor
      *
      * @param  string $tagDocblockLine
-     * @return void
      */
     public function __construct($tagDocblockLine)
     {

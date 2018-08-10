@@ -103,7 +103,6 @@ class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
      * that information.
      *
      * @param string|Zend_Uri $uri
-     * @return void
      * @throws Zend_Controller_Request_Exception when invalid URI passed
      */
     public function __construct($uri = null)
@@ -181,7 +180,6 @@ class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
      *
      * @param string $key
      * @param mixed $value
-     * @return void
      * @throws Zend_Controller_Request_Exception
      */
     public function __set($key, $value)
@@ -195,7 +193,6 @@ class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
      *
      * @param string $key
      * @param mixed $value
-     * @return void
      */
     public function set($key, $value)
     {

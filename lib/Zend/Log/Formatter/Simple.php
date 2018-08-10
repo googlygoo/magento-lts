@@ -44,7 +44,6 @@ class Zend_Log_Formatter_Simple extends Zend_Log_Formatter_Abstract
      * Class constructor
      *
      * @param  null|string  $format  Format specifier for log messages
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function __construct($format = null)

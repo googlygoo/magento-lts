@@ -36,7 +36,6 @@ interface Zend_Session_Validator_Interface
      * Setup() - this method will store the environment variables
      * necessary to be able to validate against in future requests.
      *
-     * @return void
      */
     public function setup();
 

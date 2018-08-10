@@ -61,7 +61,6 @@ class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable
      * @param  string|null $identifier
      * @param  array|Traversable|null $items
      * @param  string|null $label
-     * @return void
      */
     public function __construct($identifier = null, $items = null, $label = null)
     {
@@ -441,7 +440,6 @@ class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable
      *
      * @param  string $offset
      * @param  array|object|null $value
-     * @return void
      */
     public function offsetSet($offset, $value)
     {
@@ -452,7 +450,6 @@ class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable
      * ArrayAccess: unset value by offset
      *
      * @param  string $offset
-     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -482,7 +479,6 @@ class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable
     /**
      * Iterator: get next item
      *
-     * @return void
      */
     public function next()
     {
@@ -492,7 +488,6 @@ class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable
     /**
      * Iterator: rewind to first value in collection
      *
-     * @return void
      */
     public function rewind()
     {

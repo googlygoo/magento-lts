@@ -202,7 +202,6 @@ abstract class Zend_Service_Rackspace_Abstract
      * Set the user account
      *
      * @param string $user
-     * @return void
      */
     public function setUser($user)
     {
@@ -214,7 +213,6 @@ abstract class Zend_Service_Rackspace_Abstract
      * Set the authentication key
      *
      * @param string $key
-     * @return void
      */
     public function setKey($key)
     {
@@ -226,7 +224,6 @@ abstract class Zend_Service_Rackspace_Abstract
      * Set the Authentication URL
      *
      * @param string $url
-     * @return void
      */
     public function setAuthUrl($url)
     {
@@ -288,7 +285,7 @@ abstract class Zend_Service_Rackspace_Abstract
     /**
      * Get the error code of the last HTTP call
      * 
-     * @return strig 
+     * @return string
      */
     public function getErrorCode() 
     {

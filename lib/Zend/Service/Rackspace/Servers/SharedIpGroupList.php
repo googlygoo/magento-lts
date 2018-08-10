@@ -54,7 +54,6 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @param  Zend_Service_Rackspace_Servers $service
      * @param  array $list
-     * @return void
      */
     public function __construct($service,$list = array())
     {
@@ -69,7 +68,6 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      * Transforms the array to array of Shared Ip Group
      *
      * @param  array $list
-     * @return void
      */
     private function constructFromArray(array $list)
     {
@@ -139,7 +137,6 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -150,7 +147,6 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

@@ -46,7 +46,6 @@ class Zend_Feed_Writer_Extension_Atom_Renderer_Feed
     /**
      * Render feed
      *
-     * @return void
      */
     public function render()
     {
@@ -67,7 +66,6 @@ class Zend_Feed_Writer_Extension_Atom_Renderer_Feed
     /**
      * Append namespaces to root element of feed
      *
-     * @return void
      */
     protected function _appendNamespaces()
     {
@@ -80,7 +78,6 @@ class Zend_Feed_Writer_Extension_Atom_Renderer_Feed
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setFeedLinks(DOMDocument $dom, DOMElement $root)
     {
@@ -104,7 +101,6 @@ class Zend_Feed_Writer_Extension_Atom_Renderer_Feed
      *
      * @param  DOMDocument $dom
      * @param  DOMElement $root
-     * @return void
      */
     protected function _setHubs(DOMDocument $dom, DOMElement $root)
     {

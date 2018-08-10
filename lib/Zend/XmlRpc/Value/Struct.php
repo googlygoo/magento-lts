@@ -51,7 +51,6 @@ class Zend_XmlRpc_Value_Struct extends Zend_XmlRpc_Value_Collection
     /**
      * Generate the XML code that represent struct native MXL-RPC value
      *
-     * @return void
      */
     protected function _generateXML()
     {

@@ -79,8 +79,7 @@ final class Zend_Mail_Header_HeaderName
      * Raises an exception if invalid.
      *
      * @param string $name
-     * @throws Exception\RuntimeException
-     * @return void
+     * @throws Zend_Mail_Exception
      */
     public static function assertValid($name)
     {

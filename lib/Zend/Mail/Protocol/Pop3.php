@@ -264,7 +264,6 @@ class Zend_Mail_Protocol_Pop3
      * @param  string $user      username
      * @param  string $password  password
      * @param  bool   $try_apop  should APOP be tried?
-     * @return void
      * @throws Zend_Mail_Protocol_Exception
      */
     public function login($user, $password, $tryApop = true)
@@ -288,7 +287,6 @@ class Zend_Mail_Protocol_Pop3
      *
      * @param  int $messages  out parameter with count of messages
      * @param  int $octets    out parameter with size in octects of messages
-     * @return void
      * @throws Zend_Mail_Protocol_Exception
      */
     public function status(&$messages, &$octets)

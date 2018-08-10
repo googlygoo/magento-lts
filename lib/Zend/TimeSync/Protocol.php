@@ -30,6 +30,13 @@
 abstract class Zend_TimeSync_Protocol
 {
     /**
+     * Port number for this timeserver
+     *
+     * @var integer
+     */
+    protected $_port;
+
+    /**
      * Holds the current socket connection
      *
      * @var array
@@ -75,7 +82,6 @@ abstract class Zend_TimeSync_Protocol
      * Abstract method that writes data to to the timeserver
      *
      * @param  string $data Data to write
-     * @return void
      */
     abstract protected function _write($data);
 
@@ -90,7 +96,6 @@ abstract class Zend_TimeSync_Protocol
     /**
      * Connect to the specified timeserver.
      *
-     * @return void
      * @throws Zend_TimeSync_Exception When the connection failed
      */
     protected function _connect()
@@ -108,7 +113,6 @@ abstract class Zend_TimeSync_Protocol
     /**
      * Disconnects from the peer, closes the socket.
      *
-     * @return void
      */
     protected function _disconnect()
     {

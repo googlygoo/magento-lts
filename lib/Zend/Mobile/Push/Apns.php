@@ -387,7 +387,6 @@ class Zend_Mobile_Push_Apns extends Zend_Mobile_Push_Abstract
     /**
      * Close Connection
      *
-     * @return void
      */
     public function close()
     {

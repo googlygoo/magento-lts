@@ -89,7 +89,6 @@ class Zend_Dojo_View_Helper_CustomDijit extends Zend_Dojo_View_Helper_DijitConta
      * @param  string $id
      * @param  array $params
      * @param  array $attribs
-     * @return void
      */
     public function captureStart($id, array $params = array(), array $attribs = array())
     {

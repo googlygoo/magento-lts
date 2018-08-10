@@ -99,7 +99,6 @@ class Zend_Application_Resource_Session extends Zend_Application_Resource_Resour
     /**
      * Defined by Zend_Application_Resource_Resource
      *
-     * @return void
      */
     public function init()
     {

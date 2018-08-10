@@ -51,7 +51,6 @@ class Zend_XmlRpc_Request_Stdin extends Zend_XmlRpc_Request
      * occurs in doing so, or if the XML is invalid, the request is declared a
      * fault.
      *
-     * @return void
      */
     public function __construct()
     {

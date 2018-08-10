@@ -91,9 +91,8 @@ abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObje
     protected $_captureKey;
 
     /**
-     * Constructor - This is needed so that we can attach a class member as the ArrayObject container
-     *
-     * @return \Zend_View_Helper_Placeholder_Container_Abstract
+     * Constructor - This is needed so that we can attach a class member
+     * as the ArrayObject container
      */
     public function __construct()
     {
@@ -104,7 +103,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObje
      * Set a single value
      *
      * @param  mixed $value
-     * @return void
      */
     public function set($value)
     {
@@ -115,7 +113,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObje
      * Prepend a value to the top of the container
      *
      * @param  mixed $value
-     * @return void
      */
     public function prepend($value)
     {
@@ -255,7 +252,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObje
      * @param int|string $type How to capture content into placeholder; append, prepend, or set
      * @param null       $key
      * @throws Zend_View_Helper_Placeholder_Container_Exception
-     * @return void
      */
     public function captureStart($type = Zend_View_Helper_Placeholder_Container_Abstract::APPEND, $key = null)
     {
@@ -277,7 +273,6 @@ abstract class Zend_View_Helper_Placeholder_Container_Abstract extends ArrayObje
     /**
      * End content capture
      *
-     * @return void
      */
     public function captureEnd()
     {

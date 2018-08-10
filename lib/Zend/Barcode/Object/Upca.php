@@ -43,7 +43,6 @@ class Zend_Barcode_Object_Upca extends Zend_Barcode_Object_Ean13
 
     /**
      * Default options for Postnet barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {
@@ -126,7 +125,6 @@ class Zend_Barcode_Object_Upca extends Zend_Barcode_Object_Ean13
 
     /**
      * Partial function to draw text
-     * @return void
      */
     protected function _drawText()
     {

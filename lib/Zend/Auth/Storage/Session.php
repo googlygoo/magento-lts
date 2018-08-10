@@ -130,7 +130,6 @@ class Zend_Auth_Storage_Session implements Zend_Auth_Storage_Interface
      * Defined by Zend_Auth_Storage_Interface
      *
      * @param  mixed $contents
-     * @return void
      */
     public function write($contents)
     {
@@ -140,7 +139,6 @@ class Zend_Auth_Storage_Session implements Zend_Auth_Storage_Interface
     /**
      * Defined by Zend_Auth_Storage_Interface
      *
-     * @return void
      */
     public function clear()
     {

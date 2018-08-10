@@ -184,7 +184,6 @@ class Zend_Service_Ebay_Finding_ListingInfo extends Zend_Service_Ebay_Finding_Ab
     public $startTime;
 
     /**
-     * @return void
      */
     protected function _init()
     {

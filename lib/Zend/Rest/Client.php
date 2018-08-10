@@ -62,7 +62,6 @@ class Zend_Rest_Client extends Zend_Service_Abstract
      * Constructor
      *
      * @param string|Zend_Uri_Http $uri URI for the web service
-     * @return void
      */
     public function __construct($uri = null)
     {
@@ -103,7 +102,6 @@ class Zend_Rest_Client extends Zend_Service_Abstract
      *
      * @param  string $path            The path to append to the URI
      * @throws Zend_Rest_Client_Exception
-     * @return void
      */
     private function _prepareRest($path)
     {

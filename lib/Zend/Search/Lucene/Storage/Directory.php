@@ -34,7 +34,6 @@ abstract class Zend_Search_Lucene_Storage_Directory
     /**
      * Closes the store.
      *
-     * @return void
      */
     abstract public function close();
 
@@ -58,7 +57,6 @@ abstract class Zend_Search_Lucene_Storage_Directory
      * Removes an existing $filename in the directory.
      *
      * @param string $filename
-     * @return void
      */
     abstract public function deleteFile($filename);
 
@@ -68,7 +66,6 @@ abstract class Zend_Search_Lucene_Storage_Directory
      * Method is used to prevent 'too many open files' error
      *
      * @param string $filename
-     * @return void
      */
     abstract public function purgeFile($filename);
 
@@ -104,7 +101,6 @@ abstract class Zend_Search_Lucene_Storage_Directory
      *
      * @param string $from
      * @param string $to
-     * @return void
      */
     abstract public function renameFile($from, $to);
 
@@ -113,7 +109,6 @@ abstract class Zend_Search_Lucene_Storage_Directory
      * Sets the modified time of $filename to now.
      *
      * @param string $filename
-     * @return void
      */
     abstract public function touchFile($filename);
 

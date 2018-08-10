@@ -135,7 +135,6 @@ class Zend_Controller_Router_Route_Module extends Zend_Controller_Router_Route_A
     /**
      * Set request keys based on values in request object
      *
-     * @return void
      */
     protected function _setRequestKeys()
     {

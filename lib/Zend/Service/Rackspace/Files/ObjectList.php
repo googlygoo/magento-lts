@@ -84,7 +84,6 @@ class Zend_Service_Rackspace_Files_ObjectList implements Countable, Iterator, Ar
      * Transforms the Array to array of container
      *
      * @param  array $list
-     * @return void
      */
     private function _constructFromArray(array $list)
     {
@@ -142,7 +141,6 @@ class Zend_Service_Rackspace_Files_ObjectList implements Countable, Iterator, Ar
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -153,7 +151,6 @@ class Zend_Service_Rackspace_Files_ObjectList implements Countable, Iterator, Ar
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

@@ -44,7 +44,6 @@ class Zend_Barcode_Object_Code25interleaved extends Zend_Barcode_Object_Code25
 
     /**
      * Default options for Code25interleaved barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {
@@ -134,7 +133,6 @@ class Zend_Barcode_Object_Code25interleaved extends Zend_Barcode_Object_Code25
     /**
      * Drawing of bearer bars (if enabled)
      *
-     * @return void
      */
     protected function _postDrawBarcode()
     {

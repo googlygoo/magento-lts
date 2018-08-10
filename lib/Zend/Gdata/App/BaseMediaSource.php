@@ -132,6 +132,13 @@ abstract class Zend_Gdata_App_BaseMediaSource implements Zend_Gdata_App_MediaSou
      * @param string $name
      * @param string $value
      */
+    /**
+     * @param $name
+     * @param $val
+     *
+     * @return mixed
+     * @throws Zend_Gdata_App_InvalidArgumentException
+     */
     public function __set($name, $val)
     {
         $method = 'set'.ucfirst($name);
@@ -150,6 +157,9 @@ abstract class Zend_Gdata_App_BaseMediaSource implements Zend_Gdata_App_MediaSou
      * Magic __isset method
      *
      * @param string $name
+     *
+     * @return bool
+     * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function __isset($name)
     {

@@ -231,7 +231,6 @@ class Zend_Feed_Pubsubhubbub_Publisher
      * Notifies a single Hub Server URL of changes
      *
      * @param  string $url The Hub Server's URL
-     * @return void
      * @throws Zend_Feed_Pubsubhubbub_Exception Thrown on failure
      */
     public function notifyHub($url)
@@ -262,7 +261,6 @@ class Zend_Feed_Pubsubhubbub_Publisher
      * the isSuccess() check will return FALSE. This method is designed not
      * to needlessly fail with an Exception/Error unless from Zend_Http_Client.
      *
-     * @return void
      * @throws Zend_Feed_Pubsubhubbub_Exception Thrown if no hubs attached
      */
     public function notifyAll()

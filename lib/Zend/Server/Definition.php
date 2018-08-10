@@ -44,7 +44,6 @@ class Zend_Server_Definition implements Countable, Iterator
      * Constructor
      *
      * @param  null|array $methods
-     * @return void
      */
     public function __construct($methods = null)
     {
@@ -57,7 +56,6 @@ class Zend_Server_Definition implements Countable, Iterator
      * Set flag indicating whether or not overwriting existing methods is allowed
      *
      * @param mixed $flag
-     * @return void
      */
     public function setOverwriteExistingMethods($flag)
     {
@@ -238,7 +236,6 @@ class Zend_Server_Definition implements Countable, Iterator
     /**
      * Iterator: advance to next method
      *
-     * @return void
      */
     public function next()
     {
@@ -248,7 +245,6 @@ class Zend_Server_Definition implements Countable, Iterator
     /**
      * Iterator: return to first method
      *
-     * @return void
      */
     public function rewind()
     {

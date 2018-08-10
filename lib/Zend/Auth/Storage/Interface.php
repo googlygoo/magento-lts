@@ -52,7 +52,6 @@ interface Zend_Auth_Storage_Interface
      *
      * @param  mixed $contents
      * @throws Zend_Auth_Storage_Exception If writing $contents to storage is impossible
-     * @return void
      */
     public function write($contents);
 
@@ -60,7 +59,6 @@ interface Zend_Auth_Storage_Interface
      * Clears contents from storage
      *
      * @throws Zend_Auth_Storage_Exception If clearing contents from storage is impossible
-     * @return void
      */
     public function clear();
 }

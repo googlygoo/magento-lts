@@ -98,7 +98,6 @@ class Zend_Loader_Autoloader
     /**
      * Reset the singleton instance
      *
-     * @return void
      */
     public static function resetInstance()
     {
@@ -138,7 +137,6 @@ class Zend_Loader_Autoloader
      * Set the default autoloader implementation
      *
      * @param  string|array $callback PHP callback
-     * @return void
      */
     public function setDefaultAutoloader($callback)
     {
@@ -455,7 +453,6 @@ class Zend_Loader_Autoloader
      *
      * Registers instance with spl_autoload stack
      *
-     * @return void
      */
     protected function __construct()
     {
@@ -503,7 +500,6 @@ class Zend_Loader_Autoloader
      *
      * @param  string $path
      * @param  string $version
-     * @return void
      */
     protected function _getVersionPath($path, $version)
     {

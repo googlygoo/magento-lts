@@ -43,7 +43,6 @@ class Zend_Barcode_Object_Leitcode extends Zend_Barcode_Object_Identcode
 
     /**
      * Default options for Leitcode barcode
-     * @return void
      */
     protected function _getDefaultOptions()
     {

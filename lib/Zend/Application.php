@@ -72,7 +72,6 @@ class Zend_Application
      * @param  string|array|Zend_Config $options String path to configuration file, or array/Zend_Config of configuration options
      * @param bool $suppressNotFoundWarnings Should warnings be suppressed when a file is not found during autoloading?
      * @throws Zend_Application_Exception When invalid options are provided
-     * @return void
      */
     public function __construct($environment, $options = null, $suppressNotFoundWarnings = null)
     {
@@ -330,7 +329,7 @@ class Zend_Application
         }
 
         if (!class_exists($class, false)) {
-            require_once $path;
+            #require_once $path;
             if (!class_exists($class, false)) {
                 throw new Zend_Application_Exception(
                     'Bootstrap class not found'
@@ -376,8 +375,6 @@ class Zend_Application
 
     /**
      * Run the application
-     *
-     * @return void
      */
     public function run()
     {

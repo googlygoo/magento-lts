@@ -56,7 +56,6 @@ class Zend_Json_Server_Response_Http extends Zend_Json_Server_Response
      * header. Otherwise, send content type header based on content type of
      * service map.
      *
-     * @return void
      */
     public function sendHeaders()
     {

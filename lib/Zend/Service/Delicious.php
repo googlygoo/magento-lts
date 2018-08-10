@@ -116,7 +116,6 @@ class Zend_Service_Delicious
      *
      * @param  string $uname Client username
      * @param  string $pass  Client password
-     * @return void
      */
     public function __construct($uname = null, $pass = null)
     {

@@ -39,7 +39,6 @@ class Zend_Service_Amazon_SimpleDb_Attribute
      * @param  string $itemName
      * @param  string $name
      * @param  array $values
-     * @return void
      */
     function __construct($itemName, $name, $values)
     {
@@ -87,7 +86,6 @@ class Zend_Service_Amazon_SimpleDb_Attribute
      * Add value
      *
      * @param  mixed $value
-     * @return void
      */
     public function addValue($value)
     {

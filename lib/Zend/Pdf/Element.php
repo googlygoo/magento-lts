@@ -39,6 +39,11 @@ abstract class Zend_Pdf_Element
     const TYPE_NULL        = 11;
 
     /**
+     * @var mixed
+     */
+    public $value = null;
+
+    /**
      * Reference to the top level indirect object, which contains this element.
      *
      * @var Zend_Pdf_Element_Object

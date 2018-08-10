@@ -43,7 +43,6 @@ class Zend_EventManager_GlobalEventManager
      * Set the event collection on which this will operate
      * 
      * @param  null|Zend_EventManager_EventCollection $events 
-     * @return void
      */
     public static function setEventCollection(Zend_EventManager_EventCollection $events = null)
     {
@@ -140,7 +139,6 @@ class Zend_EventManager_GlobalEventManager
      * Clear all listeners for a given event
      * 
      * @param  string $event 
-     * @return void
      */
     public static function clearListeners($event)
     {

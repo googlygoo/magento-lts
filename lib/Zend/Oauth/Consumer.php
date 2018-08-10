@@ -74,7 +74,6 @@ class Zend_Oauth_Consumer extends Zend_Oauth
      * instance containing initialising options.
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = null)
     {
@@ -154,7 +153,6 @@ class Zend_Oauth_Consumer extends Zend_Oauth
      * @param  null|array $customServiceParameters
      * @param  null|Zend_Oauth_Token_Request $token
      * @param  null|Zend_Oauth_Http_UserAuthorization $request
-     * @return void
      */
     public function redirect(
         array $customServiceParameters = null,

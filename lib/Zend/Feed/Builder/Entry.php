@@ -40,7 +40,6 @@ class Zend_Feed_Builder_Entry extends ArrayObject
      * @param  string $title
      * @param  string $link
      * @param  string $description short version of the entry, no html
-     * @return void
      */
     public function __construct($title, $link, $description)
     {
@@ -70,7 +69,6 @@ class Zend_Feed_Builder_Entry extends ArrayObject
      *
      * @param  string $name name of the property to set
      * @param  mixed $value value to set
-     * @return void
      */
     public function __set($name, $value)
     {
@@ -92,7 +90,6 @@ class Zend_Feed_Builder_Entry extends ArrayObject
      * Unset accessor
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {

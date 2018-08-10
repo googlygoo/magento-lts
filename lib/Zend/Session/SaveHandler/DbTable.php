@@ -157,7 +157,6 @@ class Zend_Session_SaveHandler_DbTable
      *      (optional; default: false)
      *
      * @param  Zend_Config|array $config      User-provided configuration
-     * @return void
      * @throws Zend_Session_SaveHandler_Exception
      */
     public function __construct($config)
@@ -210,7 +209,6 @@ class Zend_Session_SaveHandler_DbTable
     /**
      * Destructor
      *
-     * @return void
      */
     public function __destruct()
     {
@@ -396,7 +394,6 @@ class Zend_Session_SaveHandler_DbTable
     /**
      * Calls other protected methods for individual setup tasks and requirement checks
      *
-     * @return void
      */
     protected function _setup()
     {
@@ -411,7 +408,6 @@ class Zend_Session_SaveHandler_DbTable
     /**
      * Initialize table and schema names
      *
-     * @return void
      * @throws Zend_Session_SaveHandler_Exception
      */
     protected function _setupTableName()
@@ -433,7 +429,6 @@ class Zend_Session_SaveHandler_DbTable
     /**
      * Initialize session table primary key value assignment
      *
-     * @return void
      * @throws Zend_Session_SaveHandler_Exception
      */
     protected function _setupPrimaryAssignment()
@@ -472,7 +467,6 @@ class Zend_Session_SaveHandler_DbTable
     /**
      * Check for required session table columns
      *
-     * @return void
      * @throws Zend_Session_SaveHandler_Exception
      */
     protected function _checkRequiredColumns()

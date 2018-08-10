@@ -78,10 +78,16 @@ class Zend_Reflection_File implements Reflector
     protected $_contents        = null;
 
     /**
+     * @var bool|string
+     */
+    protected $_fileName;
+
+    /**
      * Constructor
      *
-     * @param  string $file
-     * @return void
+     * @param string $file
+     *
+     * @throws Zend_Reflection_Exception
      */
     public function __construct($file)
     {
@@ -302,7 +308,6 @@ class Zend_Reflection_File implements Reflector
      *
      * Uses PHP's tokenizer to perform file reflection.
      *
-     * @return void
      */
     protected function _reflect()
     {
@@ -410,7 +415,6 @@ class Zend_Reflection_File implements Reflector
      * Validate / check a file level docblock
      *
      * @param  array $tokens Array of tokenizer tokens
-     * @return void
      */
     protected function _checkFileDocBlock($tokens) {
         foreach ($tokens as $token) {

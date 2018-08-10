@@ -209,7 +209,6 @@ class Zend_Dojo_Form_Element_ValidationTextBox extends Zend_Dojo_Form_Element_Te
      *
      * @param  mixed $item
      * @param  string $key
-     * @return void
      */
     protected function _castBoolToString(&$item, $key)
     {

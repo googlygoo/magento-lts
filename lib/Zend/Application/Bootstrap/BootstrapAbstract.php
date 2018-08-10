@@ -624,7 +624,6 @@ abstract class Zend_Application_Bootstrap_BootstrapAbstract
      * It is the sole method called by {@link bootstrap()}.
      *
      * @param  null|string|array $resource
-     * @return void
      * @throws Zend_Application_Bootstrap_Exception When invalid argument was passed
      */
     protected function _bootstrap($resource = null)
@@ -659,7 +658,6 @@ abstract class Zend_Application_Bootstrap_BootstrapAbstract
      * Finally, if not found, it throws an exception.
      *
      * @param  string $resource
-     * @return void
      * @throws Zend_Application_Bootstrap_Exception When resource not found
      */
     protected function _executeResource($resource)
@@ -740,7 +738,6 @@ abstract class Zend_Application_Bootstrap_BootstrapAbstract
      * Mark a resource as having run
      *
      * @param  string $resource
-     * @return void
      */
     protected function _markRun($resource)
     {

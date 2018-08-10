@@ -34,7 +34,6 @@ interface Zend_EventManager_EventManagerAware
      * Inject an EventManager instance
      * 
      * @param  Zend_EventManager_EventCollection $eventManager 
-     * @return void
      */
     public function setEventManager(Zend_EventManager_EventCollection $eventManager);
 }

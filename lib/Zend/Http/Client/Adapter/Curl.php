@@ -94,7 +94,6 @@ class Zend_Http_Client_Adapter_Curl implements Zend_Http_Client_Adapter_Interfac
      *
      * Config is set using setConfig()
      *
-     * @return void
      * @throws Zend_Http_Client_Adapter_Exception
      */
     public function __construct()
@@ -196,7 +195,6 @@ class Zend_Http_Client_Adapter_Curl implements Zend_Http_Client_Adapter_Interfac
      * @param  string  $host
      * @param  int     $port
      * @param  boolean $secure
-     * @return void
      * @throws Zend_Http_Client_Adapter_Exception if unable to connect
      */
     public function connect($host, $port = 80, $secure = false)

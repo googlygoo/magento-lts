@@ -121,7 +121,6 @@ abstract class Zend_Db_Statement implements Zend_Db_Statement_Interface
      * Internal method called by abstract statment constructor to setup
      * the driver level statement
      *
-     * @return void
      */
     protected function _prepare($sql)
     {
@@ -130,7 +129,6 @@ abstract class Zend_Db_Statement implements Zend_Db_Statement_Interface
 
     /**
      * @param string $sql
-     * @return void
      */
     protected function _parseParameters($sql)
     {

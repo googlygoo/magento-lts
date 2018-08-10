@@ -95,7 +95,6 @@ class Zend_Gdata_HttpClient extends Zend_Http_Client
      * @param string $passphrase The optional private key passphrase
      * @param bool $useIncludePath Whether to search the include_path
      *                             for the file
-     * @return void
      */
     public function setAuthSubPrivateKeyFile($file, $passphrase = null,
                                              $useIncludePath = false) {
@@ -268,7 +267,6 @@ class Zend_Gdata_HttpClient extends Zend_Http_Client
      * Load the connection adapter
      *
      * @param Zend_Http_Client_Adapter_Interface $adapter
-     * @return void
      */
     public function setAdapter($adapter)
     {
@@ -284,7 +282,6 @@ class Zend_Gdata_HttpClient extends Zend_Http_Client
      * sending the raw (already encoded) POST data from a stream source.
      *
      * @param boolean $value The value to set.
-     * @return void
      */
     public function setStreamingRequest($value)
     {

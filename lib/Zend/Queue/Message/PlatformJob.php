@@ -61,7 +61,6 @@ class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
      * be created using that script and any options you provide.
      *
      * @param  array $options
-     * @return void
      * @throws Zend_Queue_Exception
      */
     public function __construct(array $options = array())
@@ -148,7 +147,6 @@ class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
      * options in ZendApi_Job will be used to set those options in that
      * instance.
      *
-     * @return void
      */
     protected function _setJobProperties() {
 

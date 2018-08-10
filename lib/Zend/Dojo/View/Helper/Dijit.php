@@ -277,7 +277,6 @@ abstract class Zend_Dojo_View_Helper_Dijit extends Zend_View_Helper_HtmlElement
      * @param  string $dijit
      * @param  string $id
      * @param  array $params
-     * @return void
      */
     protected function _createDijit($dijit, $id, array $params)
     {
@@ -293,7 +292,6 @@ abstract class Zend_Dojo_View_Helper_Dijit extends Zend_View_Helper_HtmlElement
      *
      * @param  mixed $item
      * @param  string $key
-     * @return void
      */
     protected function _castBoolToString(&$item, $key)
     {
@@ -323,7 +321,6 @@ abstract class Zend_Dojo_View_Helper_Dijit extends Zend_View_Helper_HtmlElement
     /**
      * Create JS function for retrieving parent form
      *
-     * @return void
      */
     protected function _createGetParentFormFunction()
     {

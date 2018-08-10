@@ -56,7 +56,6 @@ class Zend_Service_Ebay_Finding_Category_Histogram extends Zend_Service_Ebay_Fin
     public $count;
 
     /**
-     * @return void
      */
     protected function _init()
     {

@@ -39,7 +39,6 @@ interface Zend_Server_Interface
      * @param string $namespace
      * @param null|array Optional array of arguments to pass to callbacks at
      * dispatch.
-     * @return void
      */
     public function addFunction($function, $namespace = '');
 
@@ -60,7 +59,6 @@ interface Zend_Server_Interface
      * methods in the class will be valid callbacks.
      * @param null|array Optional array of arguments to pass to callbacks at
      * dispatch.
-     * @return void
      */
     public function setClass($class, $namespace = '', $argv = null);
 
@@ -103,7 +101,6 @@ interface Zend_Server_Interface
      * Used for persistence; loads a construct as returned by {@link getFunctions()}.
      *
      * @param array $array
-     * @return void
      */
     public function loadFunctions($definition);
 
@@ -112,7 +109,6 @@ interface Zend_Server_Interface
      *
      * @todo Determine how to implement this
      * @param int $mode
-     * @return void
      */
     public function setPersistence($mode);
 }

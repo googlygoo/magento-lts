@@ -48,12 +48,11 @@ abstract class Zend_Amf_Parse_Serializer
      * Constructor
      *
      * @param  Zend_Amf_Parse_OutputStream $stream
-     * @return void
      */
     public function __construct(Zend_Amf_Parse_OutputStream $stream)
     {
         $this->_stream = $stream;
-        $this->_mbStringFunctionsOverloaded = function_exists('mb_strlen') && (ini_get('mbstring.func_overload') !== '') && ((int)ini_get('mbstring.func_overload') & 2);
+        $this->mbStringFunctionsOverloaded = function_exists('mb_strlen') && (ini_get('mbstring.func_overload') !== '') && ((int)ini_get('mbstring.func_overload') & 2);
     }
 
     /**
@@ -62,7 +61,6 @@ abstract class Zend_Amf_Parse_Serializer
      * @param  mixed $content
      * @param  int $markerType
      * @param  mixed $contentByVal
-     * @return void
      */
     public abstract function writeTypeMarker(&$content, $markerType = null, $contentByVal = false);
 }

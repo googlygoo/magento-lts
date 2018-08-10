@@ -59,7 +59,6 @@ class Zend_Cloud_Infrastructure_ImageList implements Countable, Iterator, ArrayA
      * Transforms the Array to array of Instances
      *
      * @param  array $list
-     * @return void
      */
     protected function constructFromArray(array $list)
     {
@@ -121,7 +120,6 @@ class Zend_Cloud_Infrastructure_ImageList implements Countable, Iterator, ArrayA
      *
      * Implement Iterator::next()
      *
-     * @return void
      */
     public function next()
     {
@@ -133,7 +131,6 @@ class Zend_Cloud_Infrastructure_ImageList implements Countable, Iterator, ArrayA
      *
      * Implement Iterator::rewind()
      *
-     * @return void
      */
     public function rewind()
     {

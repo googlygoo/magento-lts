@@ -42,7 +42,6 @@ interface Zend_Queue_Stomp_Client_ConnectionInterface
 
     /**
      * @param  boolean $destructor
-     * @return void
      */
     public function close($destructor = false);
 

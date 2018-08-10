@@ -53,7 +53,6 @@ interface Zend_Cloud_DocumentService_Adapter
      *
      * @param  string $name
      * @param  array  $options
-     * @return void
      */
     public function deleteCollection($name, $options = null);
 
@@ -113,7 +112,6 @@ interface Zend_Cloud_DocumentService_Adapter
      * @param string $collectionName Collection name
      * @param mixed  $documentID Document ID, adapter-dependent
      * @param array  $options
-     * @return void
      */
     public function deleteDocument($collectionName, $documentID, $options = null);
 

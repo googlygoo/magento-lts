@@ -40,7 +40,6 @@ class Zend_XmlRpc_Generator_XmlWriter extends Zend_XmlRpc_Generator_GeneratorAbs
     /**
      * Initialized XMLWriter instance
      *
-     * @return void
      */
     protected function _init()
     {
@@ -54,7 +53,6 @@ class Zend_XmlRpc_Generator_XmlWriter extends Zend_XmlRpc_Generator_GeneratorAbs
      * Open a new XML element
      *
      * @param string $name XML element name
-     * @return void
      */
     protected function _openElement($name)
     {
@@ -65,7 +63,6 @@ class Zend_XmlRpc_Generator_XmlWriter extends Zend_XmlRpc_Generator_GeneratorAbs
      * Write XML text data into the currently opened XML element
      *
      * @param string $text XML text data
-     * @return void
      */
     protected function _writeTextData($text)
     {
@@ -76,7 +73,6 @@ class Zend_XmlRpc_Generator_XmlWriter extends Zend_XmlRpc_Generator_GeneratorAbs
      * Close an previously opened XML element
      *
      * @param string $name
-     * @return void
      */
     protected function _closeElement($name)
     {

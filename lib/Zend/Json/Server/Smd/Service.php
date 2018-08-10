@@ -118,7 +118,6 @@ class Zend_Json_Server_Smd_Service
      * Constructor
      *
      * @param  string|array $spec
-     * @return void
      * @throws Zend_Json_Server_Exception if no name provided
      */
     public function __construct($spec)

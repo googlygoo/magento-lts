@@ -945,7 +945,6 @@ class Zend_Db_Select
      * @param  array|string $cols The list of columns; preferably as
      * an array, but possibly as a string containing one column.
      * @param  bool|string True if it should be prepended, a correlation name if it should be inserted
-     * @return void
      */
     protected function _tableCols($correlationName, $cols, $afterCorrelationName = null)
     {

@@ -101,7 +101,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
     /**
      * Creates a connection resource.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Oracle_Exception
      */
     protected function _connect()
@@ -154,7 +153,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
     /**
      * Force the connection to close.
      *
-     * @return void
      */
     public function closeConnection()
     {
@@ -449,7 +447,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
     /**
      * Leave autocommit mode and begin a transaction.
      *
-     * @return void
      */
     protected function _beginTransaction()
     {
@@ -459,7 +456,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
     /**
      * Commit a transaction and return to autocommit mode.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Oracle_Exception
      */
     protected function _commit()
@@ -477,7 +473,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
     /**
      * Roll back a transaction and return to autocommit mode.
      *
-     * @return void
      * @throws Zend_Db_Adapter_Oracle_Exception
      */
     protected function _rollBack()
@@ -498,7 +493,6 @@ class Zend_Db_Adapter_Oracle extends Zend_Db_Adapter_Abstract
      * @todo Support FETCH_CLASS and FETCH_INTO.
      *
      * @param integer $mode A fetch mode.
-     * @return void
      * @throws Zend_Db_Adapter_Oracle_Exception
      */
     public function setFetchMode($mode)

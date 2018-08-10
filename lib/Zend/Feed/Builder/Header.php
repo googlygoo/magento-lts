@@ -50,7 +50,6 @@ class Zend_Feed_Builder_Header extends ArrayObject
      * @param  string $title title of the feed
      * @param  string $link canonical url of the feed
      * @param  string $charset charset of the textual data
-     * @return void
      */
     public function __construct($title, $link, $charset = 'utf-8')
     {
@@ -81,7 +80,6 @@ class Zend_Feed_Builder_Header extends ArrayObject
      *
      * @param string $name  name of the property to set
      * @param mixed  $value value to set
-     * @return void
      */
     public function __set($name, $value)
     {
@@ -103,7 +101,6 @@ class Zend_Feed_Builder_Header extends ArrayObject
      * Unset accessor
      *
      * @param  string $key
-     * @return void
      */
     public function __unset($key)
     {

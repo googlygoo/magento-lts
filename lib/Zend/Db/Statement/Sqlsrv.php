@@ -56,7 +56,6 @@ class Zend_Db_Statement_Sqlsrv extends Zend_Db_Statement
      * Prepares statement handle
      *
      * @param string $sql
-     * @return void
      * @throws Zend_Db_Statement_Sqlsrv_Exception
      */
     protected function _prepare($sql)

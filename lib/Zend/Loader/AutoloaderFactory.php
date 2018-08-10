@@ -64,7 +64,6 @@ abstract class Zend_Loader_AutoloaderFactory
      * loaded).
      *
      * @param  array|Traversable $options (optional) options to use. Defaults to Zend_Loader_StandardAutoloader
-     * @return void
      * @throws Zend_Loader_Exception_InvalidArgumentException for invalid options
      * @throws Zend_Loader_Exception_InvalidArgumentException for unloadable autoloader classes
      */
@@ -88,7 +87,7 @@ abstract class Zend_Loader_AutoloaderFactory
             );
         }
 
-        foreach ($options as $class => $options) {
+        foreach ($options as $class => $_options) {
             if (!isset(self::$loaders[$class])) {
                 // Check class map autoloader
                 if ($class == self::CLASS_MAP_AUTOLOADER) {
@@ -125,14 +124,14 @@ abstract class Zend_Loader_AutoloaderFactory
                 }
 
                 if ($class === self::STANDARD_AUTOLOADER) {
-                    $autoloader->setOptions($options);
+                    $autoloader->setOptions($_options);
                 } else {
-                    $autoloader = new $class($options);
+                    $autoloader = new $class($_options);
                 }
                 $autoloader->register();
                 self::$loaders[$class] = $autoloader;
             } else {
-                self::$loaders[$class]->setOptions($options);
+                self::$loaders[$class]->setOptions($_options);
             }
         }
     }
@@ -169,7 +168,6 @@ abstract class Zend_Loader_AutoloaderFactory
      * Unregisters all autoloaders that have been registered via the factory.
      * This will NOT unregister autoloaders registered outside of the fctory.
      *
-     * @return void
      */
     public static function unregisterAutoloaders()
     {

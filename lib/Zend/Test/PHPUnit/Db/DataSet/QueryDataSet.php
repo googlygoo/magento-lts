@@ -43,6 +43,11 @@
 class Zend_Test_PHPUnit_Db_DataSet_QueryDataSet extends PHPUnit_Extensions_Database_DataSet_QueryDataSet
 {
     /**
+     * @var PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     */
+    protected $databaseConnection;
+
+    /**
      * Creates a new dataset using the given database connection.
      *
      * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $databaseConnection
@@ -63,6 +68,8 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryDataSet extends PHPUnit_Extensions_Datab
      *
      * @param string                $tableName
      * @param string|Zend_Db_Select $query
+     *
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     public function addTable($tableName, $query = NULL)
     {

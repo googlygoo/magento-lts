@@ -476,7 +476,6 @@ class Zend_Cache_Backend_Static
      * have been irrevocably lost.
      *
      * @param  Zend_Cache_Core
-     * @return void
      */
     public function setInnerCache(Zend_Cache_Core $cache)
     {
@@ -527,7 +526,6 @@ class Zend_Cache_Backend_Static
      *
      * @param  string $string Cache id or tag
      * @throws Zend_Cache_Exception
-     * @return void
      * @deprecated Not usable until perhaps ZF 2.0
      */
     protected static function _validateIdOrTag($string)

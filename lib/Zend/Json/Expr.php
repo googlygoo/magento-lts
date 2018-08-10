@@ -61,7 +61,6 @@ class Zend_Json_Expr
      * Constructor
      *
      * @param  string $expression the expression to hold.
-     * @return void
      */
     public function __construct($expression)
     {

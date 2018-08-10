@@ -65,7 +65,6 @@ class Zend_Amf_Adobe_Introspector
     /**
      * Constructor
      *
-     * @return void
      */
     public function __construct()
     {
@@ -128,7 +127,6 @@ class Zend_Amf_Adobe_Introspector
      *
      * @param  string $typename type name
      * @param  DOMElement $typexml target XML element
-     * @return void
      */
     protected function _addClassAttributes($typename, DOMElement $typexml)
     {
@@ -159,7 +157,6 @@ class Zend_Amf_Adobe_Introspector
      *
      * @param  Zend_Server_Reflection_Class $refclass
      * @param  DOMElement $target target XML element
-     * @return void
      */
     protected function _addService(Zend_Server_Reflection_Class $refclass, DOMElement $target)
     {

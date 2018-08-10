@@ -79,7 +79,6 @@ class Zend_Service_Rackspace_Servers_Image
      * Construct
      * 
      * @param array $data
-     * @return void
      */
     public function __construct($service, $data)
     {

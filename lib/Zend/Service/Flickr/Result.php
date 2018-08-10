@@ -176,7 +176,6 @@ class Zend_Service_Flickr_Result
      *
      * @param  DOMElement          $image
      * @param  Zend_Service_Flickr $flickr Original Zend_Service_Flickr object with which the request was made
-     * @return void
      */
     public function __construct(DOMElement $image, Zend_Service_Flickr $flickr)
     {

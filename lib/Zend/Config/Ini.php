@@ -96,7 +96,6 @@ class Zend_Config_Ini extends Zend_Config
      * @param  mixed         $section
      * @param  boolean|array $options
      * @throws Zend_Config_Exception
-     * @return void
      */
     public function __construct($filename, $section = null, $options = false)
     {

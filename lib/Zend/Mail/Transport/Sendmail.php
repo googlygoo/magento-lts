@@ -70,7 +70,6 @@ class Zend_Mail_Transport_Sendmail extends Zend_Mail_Transport_Abstract
      * Constructor.
      *
      * @param  string|array|Zend_Config $parameters OPTIONAL (Default: null)
-     * @return void
      */
     public function __construct($parameters = null)
     {
@@ -90,7 +89,6 @@ class Zend_Mail_Transport_Sendmail extends Zend_Mail_Transport_Abstract
      * Send mail using PHP native mail()
      *
      * @access public
-     * @return void
      * @throws Zend_Mail_Transport_Exception if parameters is set
      *         but not a string
      * @throws Zend_Mail_Transport_Exception on mail() failure

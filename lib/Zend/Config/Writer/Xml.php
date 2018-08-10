@@ -83,7 +83,6 @@ class Zend_Config_Writer_Xml extends Zend_Config_Writer_FileAbstract
      * @param  Zend_Config      $config
      * @param  SimpleXMLElement $xml
      * @param  SimpleXMLElement $parent
-     * @return void
      */
     protected function _addBranch(Zend_Config $config, SimpleXMLElement $xml, SimpleXMLElement $parent)
     {

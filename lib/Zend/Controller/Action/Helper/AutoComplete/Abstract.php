@@ -110,7 +110,8 @@ abstract class Zend_Controller_Action_Helper_AutoComplete_Abstract extends Zend_
      *
      * @param  mixed $data
      * @param  bool  $keepLayouts
-     * @return string|void
+     *
+     * @return string
      */
     public function sendAutoCompletion($data, $keepLayouts = false)
     {
@@ -136,7 +137,7 @@ abstract class Zend_Controller_Action_Helper_AutoComplete_Abstract extends Zend_
      * @param  mixed $data
      * @param  bool  $sendNow
      * @param  bool  $keepLayouts
-     * @return string|void
+     * @return string
      */
     public function direct($data, $sendNow = true, $keepLayouts = false)
     {

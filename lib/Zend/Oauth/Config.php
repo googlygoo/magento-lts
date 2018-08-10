@@ -159,7 +159,6 @@ class Zend_Oauth_Config implements Zend_Oauth_Config_ConfigInterface
      * instance containing initialising options.
      *
      * @param  array|Zend_Config $options
-     * @return void
      */
     public function __construct($options = null)
     {

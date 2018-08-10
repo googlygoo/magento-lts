@@ -177,7 +177,6 @@ class Zend_Dojo_View_Helper_Editor extends Zend_Dojo_View_Helper_Dijit
      *
      * @param  string $hiddenId
      * @param  string $editorId
-     * @return void
      */
     protected function _createEditorOnSubmit($hiddenId, $editorId)
     {

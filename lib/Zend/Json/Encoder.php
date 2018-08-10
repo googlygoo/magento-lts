@@ -55,7 +55,6 @@ class Zend_Json_Encoder
      *
      * @param boolean $cycleCheck Whether or not to check for recursion when encoding
      * @param array $options Additional options used during encoding
-     * @return void
      */
     protected function __construct($cycleCheck = false, $options = array())
     {

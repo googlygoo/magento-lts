@@ -79,7 +79,6 @@ class Zend_Feed_Writer_Feed_FeedAbstract
      * Constructor: Primarily triggers the registration of core extensions and
      * loads those appropriate to this data container.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -792,7 +791,6 @@ class Zend_Feed_Writer_Feed_FeedAbstract
     /**
      * Resets the instance and deletes all data
      *
-     * @return void
      */
     public function reset()
     {
@@ -857,7 +855,6 @@ class Zend_Feed_Writer_Feed_FeedAbstract
     /**
      * Load extensions from Zend_Feed_Writer
      *
-     * @return void
      */
     protected function _loadExtensions()
     {

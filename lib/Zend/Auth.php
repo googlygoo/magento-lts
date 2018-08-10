@@ -44,16 +44,12 @@ class Zend_Auth
 
     /**
      * Singleton pattern implementation makes "new" unavailable
-     *
-     * @return void
      */
     protected function __construct()
     {}
 
     /**
      * Singleton pattern implementation makes "clone" unavailable
-     *
-     * @return void
      */
     protected function __clone()
     {}
@@ -159,8 +155,6 @@ class Zend_Auth
 
     /**
      * Clears the identity from persistent storage
-     *
-     * @return void
      */
     public function clearIdentity()
     {

@@ -641,7 +641,6 @@ class Zend_Filter_Input
      */
 
     /**
-     * @return void
      */
     protected function _filter()
     {
@@ -703,7 +702,6 @@ class Zend_Filter_Input
 
     /**
      * @param array $filterRule
-     * @return void
      */
     protected function _filterRule(array $filterRule)
     {
@@ -775,7 +773,6 @@ class Zend_Filter_Input
     }
 
     /**
-     * @return void
      */
     protected function _process()
     {
@@ -787,7 +784,6 @@ class Zend_Filter_Input
     }
 
     /**
-     * @return void
      */
     protected function _validate()
     {
@@ -978,7 +974,6 @@ class Zend_Filter_Input
 
     /**
      * @param array $validatorRule
-     * @return void
      */
     protected function _validateRule(array $validatorRule)
     {

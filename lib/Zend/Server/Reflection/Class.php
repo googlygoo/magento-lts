@@ -72,7 +72,6 @@ class Zend_Server_Reflection_Class
      * @param ReflectionClass $reflection
      * @param string $namespace
      * @param mixed $argv
-     * @return void
      */
     public function __construct(ReflectionClass $reflection, $namespace = null, $argv = false)
     {
@@ -134,7 +133,6 @@ class Zend_Server_Reflection_Class
      *
      * @param string $key
      * @param mixed $value
-     * @return void
      */
     public function __set($key, $value)
     {
@@ -166,7 +164,6 @@ class Zend_Server_Reflection_Class
      * Set namespace for this class
      *
      * @param string $namespace
-     * @return void
      */
     public function setNamespace($namespace)
     {
@@ -189,7 +186,6 @@ class Zend_Server_Reflection_Class
      * Reflection needs explicit instantiation to work correctly. Re-instantiate
      * reflection object on wakeup.
      *
-     * @return void
      */
     public function __wakeup()
     {

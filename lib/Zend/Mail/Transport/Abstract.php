@@ -160,7 +160,6 @@ abstract class Zend_Mail_Transport_Abstract
      * @param string $prefix
      * @static
      * @access protected
-     * @return void
      */
     protected static function _formatHeader(&$item, $key, $prefix)
     {
@@ -174,7 +173,6 @@ abstract class Zend_Mail_Transport_Abstract
      *
      * @param mixed $headers
      * @access protected
-     * @return void
      * @throws Zend_Mail_Transport_Exception if any header lines exceed 998
      * characters
      */
@@ -228,7 +226,6 @@ abstract class Zend_Mail_Transport_Abstract
      * The content part is then prepended to the list of Zend_Mime_Parts for
      * this message.
      *
-     * @return void
      */
     protected function _buildBody()
     {
@@ -299,7 +296,6 @@ abstract class Zend_Mail_Transport_Abstract
      *
      * @param  Zend_Mail $mail
      * @access public
-     * @return void
      * @throws Zend_Mail_Transport_Exception if mail is empty
      */
     public function send(Zend_Mail $mail)

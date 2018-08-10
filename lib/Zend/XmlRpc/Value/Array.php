@@ -51,7 +51,6 @@ class Zend_XmlRpc_Value_Array extends Zend_XmlRpc_Value_Collection
     /**
      * Generate the XML code that represent an array native MXL-RPC value
      *
-     * @return void
      */
     protected function _generateXml()
     {

@@ -48,7 +48,6 @@ class Zend_Log_Writer_Stream extends Zend_Log_Writer_Abstract
      *
      * @param array|string|resource $streamOrUrl Stream or URL to open as a stream
      * @param string|null $mode Mode, only applicable if a URL is given
-     * @return void
      * @throws Zend_Log_Exception
      */
     public function __construct($streamOrUrl, $mode = null)
@@ -110,7 +109,6 @@ class Zend_Log_Writer_Stream extends Zend_Log_Writer_Abstract
     /**
      * Close the stream resource.
      *
-     * @return void
      */
     public function shutdown()
     {
@@ -123,7 +121,6 @@ class Zend_Log_Writer_Stream extends Zend_Log_Writer_Abstract
      * Write a message to the log.
      *
      * @param  array  $event  event data
-     * @return void
      * @throws Zend_Log_Exception
      */
     protected function _write($event)

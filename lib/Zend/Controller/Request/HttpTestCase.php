@@ -139,7 +139,6 @@ class Zend_Controller_Request_HttpTestCase extends Zend_Controller_Request_Http
      * Set multiple cookies at once
      *
      * @param array $cookies
-     * @return void
      */
     public function setCookies(array $cookies)
     {

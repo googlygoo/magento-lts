@@ -100,7 +100,6 @@ class Zend_File_Transfer_Adapter_Http extends Zend_File_Transfer_Adapter_Abstrac
      * Send the file to the client (Download)
      *
      * @param  string|array $options Options for the file(s) to send
-     * @return void
      * @throws Zend_File_Transfer_Exception Not implemented
      */
     public function send($options = null)

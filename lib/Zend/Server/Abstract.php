@@ -91,7 +91,6 @@ abstract class Zend_Server_Abstract implements Zend_Server_Interface
      *
      * Setup server description
      *
-     * @return void
      */
     public function __construct()
     {

@@ -135,7 +135,6 @@ class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene
     /**
      * Closes the store.
      *
-     * @return void
      */
     public function close()
     {
@@ -197,7 +196,6 @@ class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene
      * Removes an existing $filename in the directory.
      *
      * @param string $filename
-     * @return void
      * @throws Zend_Search_Lucene_Exception
      */
     public function deleteFile($filename)
@@ -224,7 +222,6 @@ class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene
      * Method is used to prevent 'too many open files' error
      *
      * @param string $filename
-     * @return void
      */
     public function purgeFile($filename)
     {
@@ -280,7 +277,6 @@ class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene
      *
      * @param string $from
      * @param string $to
-     * @return void
      * @throws Zend_Search_Lucene_Exception
      */
     public function renameFile($from, $to)
@@ -324,7 +320,6 @@ class Zend_Search_Lucene_Storage_Directory_Filesystem extends Zend_Search_Lucene
      * Sets the modified time of $filename to now.
      *
      * @param string $filename
-     * @return void
      */
     public function touchFile($filename)
     {

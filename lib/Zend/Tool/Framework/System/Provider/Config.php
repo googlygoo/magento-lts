@@ -116,7 +116,6 @@ class Zend_Tool_Framework_System_Provider_Config extends Zend_Tool_Framework_Pro
     /**
      * Show Zend Tool User Configuration
      *
-     * @return void
      */
     public function show()
     {
