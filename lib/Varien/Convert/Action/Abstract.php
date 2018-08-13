@@ -138,8 +138,9 @@ abstract class Varien_Convert_Action_Abstract implements Varien_Convert_Action_I
     /**
      * Set action's container
      *
-     * @param Varien_Convert_Container_Abstract $container
-     * @return Varien_Convert_Action_Abstract
+     * @param Varien_Convert_Container_Interface $container
+     *
+     * @return $this
      */
     public function setContainer(Varien_Convert_Container_Interface $container)
     {

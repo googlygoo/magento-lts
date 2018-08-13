@@ -101,7 +101,6 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
      *
      * @param string $memoryValue
      *
-     * @throws Varien_Exception
      * @see http://php.net/manual/en/faq.using.php#faq.using.shorthandbytes
      *
      * @return int

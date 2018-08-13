@@ -138,14 +138,15 @@ class Varien_Object_Cache
     /**
      * Save an object entry
      *
-     * @param object $object
-     * @param string $idx
+     * @param object       $object
+     * @param string       $idx
      * @param array|string $tags
-     * @return string
+     *
+     * @return bool|mixed|null|string
+     * @throws Varien_Exception
      */
     public function save($object, $idx=null, $tags=null)
     {
-//Varien_Profiler::start('OBJECT_SAVE');
         if (!is_object($object)) {
             return false;
         }
@@ -193,8 +194,10 @@ class Varien_Object_Cache
      * Add a reference to an object
      *
      * @param string|array $refName
-     * @param string $idx
-     * @return boolean
+     * @param string       $idx
+     *
+     * @return bool
+     * @throws Varien_Exception
      */
     public function reference($refName, $idx)
     {
@@ -202,7 +205,7 @@ class Varien_Object_Cache
             foreach ($refName as $ref) {
                 $this->reference($ref, $idx);
             }
-            return;
+            return true;
         }
 
         if (isset($this->_references[$refName])) {
@@ -222,18 +225,14 @@ class Varien_Object_Cache
      */
     public function delete($idx)
     {
-//Varien_Profiler::start("OBJECT_DELETE");
         if (is_object($idx)) {
             $idx = $this->find($idx);
             if (false===$idx) {
-//Varien_Profiler::stop("OBJECT_DELETE");
                 return false;
             }
             unset($this->_objects[$idx]);
-//Varien_Profiler::stop("OBJECT_DELETE");
             return false;
         } elseif (!isset($this->_objects[$idx])) {
-//Varien_Profiler::stop("OBJECT_DELETE");
             return false;
         }
 
@@ -249,12 +248,11 @@ class Varien_Object_Cache
         }
 
         if (isset($this->_objectReferences[$idx])) {
-            foreach ($references as $r=>$dummy) {
+            foreach ($this->_references as $r=>$dummy) {
                 unset($this->_references[$r]);
             }
             unset($this->_objectReferences[$idx]);
         }
-//Varien_Profiler::stop("OBJECT_DELETE");
 
         return true;
     }
@@ -277,6 +275,8 @@ class Varien_Object_Cache
      * Cleanup objects by tags
      *
      * @param array|string $tags
+     *
+     * @return bool
      */
     public function deleteByTags($tags)
     {
@@ -351,7 +351,7 @@ class Varien_Object_Cache
                 if (isset($objects[$idx])) {
                     continue;
                 }
-                $objects[$ids] = $this->load($idx);
+                $objects[$idx] = $this->load($idx);
             }
         }
         return $objects;
@@ -361,6 +361,8 @@ class Varien_Object_Cache
      * Find by class name for objects of subclasses too
      *
      * @param string $class
+     *
+     * @return array
      */
     public function findByClass($class)
     {

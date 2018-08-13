@@ -46,7 +46,6 @@ class Varien_File_Object extends SplFileObject implements IFactory {
      * Constructor
      *
      * @param   string $path - path to directory
-     * @return  none
      */
     public function __construct($path)
     {
@@ -54,61 +53,65 @@ class Varien_File_Object extends SplFileObject implements IFactory {
         $this->_path=$path;
         $this->_filename=basename($path);
     }
+
     /**
      * add file name to array
      *
-     * @param   array &$files - array of files
-     * @return  none
+     * @param array &$files - array of files
      */
     public function getFilesName(&$files)
     {
         $this->getFileName($files);
     }
+
     /**
      * add file name to array
      *
      * @param   array &$files - array of files
-     * @return  none
+     *
+     * @return string
      */
     public function getFileName(&$files=null)
     {
         if($this->_isCorrect){
             if($files===null)
-            return $this->_filename;
+                return $this->_filename;
             $files[] = $this->_filename;
         }
     }
+
     /**
      * add file path to array
      *
-     * @param   array &$paths - array of paths
-     * @return  none
+     * @param array &$paths - array of paths
      */
     public function getFilesPaths(&$paths)
     {
         if($this->_isCorrect){
-            $paths[] = (string)$this->_path;
+            $paths[] = (string) $this->_path;
         }
     }
+
     /**
      * add file path to array
      *
-     * @param   array &$paths - array of paths
-     * @return  none
+     * @param array|null &$paths - array of paths
+     *
+     * @return string
      */
     public function getFilePath(&$path=null)
     {
-        if($this->_isCorrect){
-            if($path===null)
-            return $this->_path;
+        if ($this->_isCorrect){
+            if ($path===null)
+                return $this->_path;
             $paths[] = $this->_path;
         }
     }
+
     /**
      * use filter
      *
      * @param   bool $useFilter - use or not filter
-     * @return  none
      */
     public function useFilter($useFilter)
     {
@@ -120,11 +123,11 @@ class Varien_File_Object extends SplFileObject implements IFactory {
         }
 
     }
+
     /**
      * add file object to array
      *
      * @param   array &$objs - array of gile objects
-     * @return  none
      */
     public function getFilesObj(&$objs)
     {
@@ -132,46 +135,50 @@ class Varien_File_Object extends SplFileObject implements IFactory {
             $objs[] = $this;
         }
     }
+
     /**
      * nothing
      *
      * @param   array &$dirs - array of dirs
-     * @return  none
+     *
+     * @return string
      */
     public function getDirsName(&$dirs)
     {
         return Varien_Directory_Collection::getLastDir($this->_path);
     }
+
     /**
      * nothing
-     *
-     * @param   array &$dirs - array of dirs
-     * @return  none
+     * @return string
      */
     public function getDirName()
     {
-        return Varien_Directory_Collection::lastDir($this->_path);
+        $collection = new Varien_Directory_Collection();
+        $collection->setPath($this->_path);
+        return $collection->lastDir();
     }
+
     /**
      * set file filter
      *
      * @param   array $filter - array of filter
-     * @return  none
      */
     public function setFilesFilter($filter)
     {
         $this->addFilter($filter);
     }
+
     /**
      * set file filter
      *
      * @param   array $filter - array of filter
-     * @return  none
      */
     public function addFilter($filter)
     {
         $this->_filter = $filter;
     }
+
     /**
      * get extension of file
      *
@@ -181,6 +188,7 @@ class Varien_File_Object extends SplFileObject implements IFactory {
     {
         return self::getExt($this->_filename);
     }
+
     /**
      * get extension of file
      *
@@ -196,6 +204,7 @@ class Varien_File_Object extends SplFileObject implements IFactory {
             return '';
         }
     }
+
     /**
      * get name of file
      *
@@ -205,10 +214,9 @@ class Varien_File_Object extends SplFileObject implements IFactory {
     {
         return basename($this->_filename,'.'.$this->getExtension());
     }
+
     /**
      * render filters
-     *
-     * @return  none
      */
     public function renderFilter()
     {
@@ -258,11 +266,11 @@ class Varien_File_Object extends SplFileObject implements IFactory {
             }
         }
     }
+
     /**
      * add to array file name
      *
      * @param   array &$arr -export array
-     * @return  none
      */
     public function toArray(&$arr)
     {
@@ -270,14 +278,14 @@ class Varien_File_Object extends SplFileObject implements IFactory {
             $arr['files_in_dirs'][] = $this->_filename;
         }
     }
+
     /**
      * add to xml file name
      *
-     * @param   array &$xml -export xml
-     * @param   int $recursionLevel - level of recursion
-     * @param   bool $addOpenTag - nothing
-     * @param   string $rootName - nothing
-     * @return  none
+     * @param array  &$xml -export xml
+     * @param int    $recursionLevel - level of recursion
+     * @param bool   $addOpenTag - nothing
+     * @param string $rootName - nothing
      */
     public function toXml(&$xml,$recursionLevel=0,$addOpenTag=true,$rootName='Struct')
     {
@@ -287,5 +295,3 @@ class Varien_File_Object extends SplFileObject implements IFactory {
     }
 
 }
-
-?>

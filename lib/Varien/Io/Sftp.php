@@ -76,6 +76,7 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
     /**
      * Close a connection
      *
+     * @return bool
      */
     public function close()
     {
@@ -85,12 +86,15 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
     /**
      * Create a directory
      *
-     * @param $mode Ignored here; uses logged-in user's umask
-     * @param $recursive Analogous to mkdir -p
-     *
      * Note: if $recursive is true and an error occurs mid-execution,
      * false is returned and some part of the hierarchy might be created.
      * No rollback is performed.
+     *
+     * @param string $dir
+     * @param int    $mode      Ignored here; uses logged-in user's umask
+     * @param bool   $recursive Analogous to mkdir -p
+     *
+     * @return bool
      */
     public function mkdir($dir, $mode=0777, $recursive=true)
     {
@@ -124,7 +128,7 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
             $list = $this->_connection->nlist();
             if (!count($list)) {
                 // Go back
-                $this->_connection->chdir($pwd);
+                $this->_connection->chdir($cwd);
                 return $this->rmdir($dir, false);
             } else {
                 foreach ($list as $filename) {
@@ -136,7 +140,7 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
                     }
                 }
             }
-            $no_errors = $no_errors && ($this->_connection->chdir($pwd) && $this->_connection->rmdir($dir));
+            $no_errors = $no_errors && ($this->_connection->chdir($cwd) && $this->_connection->rmdir($dir));
             return $no_errors;
         } else {
             return $this->_connection->rmdir($dir);
@@ -175,7 +179,12 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
 
     /**
      * Write a file
-     * @param $src Must be a local file name
+     *
+     * @param string $filename
+     * @param string $src      Must be a local file name
+     * @param null   $mode
+     *
+     * @return bool
      */
     public function write($filename, $src, $mode=null)
     {

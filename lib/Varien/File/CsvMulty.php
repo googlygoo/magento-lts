@@ -72,4 +72,3 @@ class Varien_File_Csv_Multy extends Varien_File_Csv {
     }
 
 }
-?>

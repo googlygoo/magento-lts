@@ -33,7 +33,7 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
     /**
      * Creates a real connection to the database with multi-query capability.
      *
-     * @return void
+     * @throws Zend_Db_Adapter_Exception
      * @throws Zend_Db_Adapter_Mysqli_Exception
      */
     protected function _connect()
@@ -88,7 +88,10 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
      * Run RAW Query
      *
      * @param string $sql
+     *
      * @return Zend_Db_Statement_Interface
+     * @throws Zend_Db_Adapter_Exception
+     * @throws Zend_Db_Adapter_Mysqli_Exception
      */
     public function raw_query($sql)
     {
@@ -166,6 +169,9 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return true;
     }
 
+    /**
+     * @throws Zend_Db_Adapter_Mysqli_Exception
+     */
     public function clear_result()
     {
         while ($this->getConnection()->next_result()) {
@@ -207,6 +213,18 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
      * @param string $refKeyName
      * @param string $onUpdate
      * @param string $onDelete
+     */
+    /**
+     * @param        $fkName
+     * @param        $tableName
+     * @param        $keyName
+     * @param        $refTableName
+     * @param        $refKeyName
+     * @param string $onDelete
+     * @param string $onUpdate
+     *
+     * @return Zend_Db_Statement_Interface
+     * @throws Exception
      */
     public function addConstraint($fkName, $tableName, $keyName, $refTableName,
         $refKeyName, $onDelete = 'cascade', $onUpdate = 'cascade')

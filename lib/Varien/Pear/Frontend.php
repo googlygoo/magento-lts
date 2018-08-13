@@ -43,6 +43,8 @@ class Varien_Pear_Frontend extends PEAR_Frontend
      * Enter description here...
      *
      * @param string|resource $stream 'stdout' or open php stream
+     *
+     * @return $this
      */
     public function setLogStream($stream)
     {

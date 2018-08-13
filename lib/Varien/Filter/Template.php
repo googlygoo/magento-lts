@@ -70,6 +70,8 @@ class Varien_Filter_Template implements Zend_Filter_Interface
      * Sets template variables that's can be called througth {var ...} statement
      *
      * @param array $variables
+     *
+     * @return $this
      */
     public function setVariables(array $variables)
     {
@@ -84,6 +86,8 @@ class Varien_Filter_Template implements Zend_Filter_Interface
      * configuration path.
      *
      * @param array $callback it must return string
+     *
+     * @return $this
      */
     public function setTemplateProcessor(array $callback)
     {
@@ -105,6 +109,8 @@ class Varien_Filter_Template implements Zend_Filter_Interface
      * Sets the proccessor of includes.
      *
      * @param array $callback it must return string
+     *
+     * @return $this
      */
     public function setIncludeProcessor(array $callback)
     {

@@ -34,6 +34,9 @@
  */
 class Varien_Convert_Adapter_Zend_Cache extends Varien_Convert_Adapter_Abstract
 {
+    /**
+     * @throws Zend_Cache_Exception
+     */
     public function getResource()
     {
         if (!$this->_resource) {
@@ -42,12 +45,20 @@ class Varien_Convert_Adapter_Zend_Cache extends Varien_Convert_Adapter_Abstract
         return $this->_resource;
     }
 
+    /**
+     * @return $this
+     * @throws Zend_Cache_Exception
+     */
     public function load()
     {
         $this->setData($this->getResource()->load($this->getVar('id')));
         return $this;
     }
 
+    /**
+     * @return $this
+     * @throws Zend_Cache_Exception
+     */
     public function save()
     {
         $this->getResource()->save($this->getData(), $this->getVar('id'));

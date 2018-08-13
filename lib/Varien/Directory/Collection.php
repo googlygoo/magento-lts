@@ -47,7 +47,8 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
      *
      * @param   string $path - path to directory
      * @param   bool $is_recursion - use or not recursion
-     * @return  none
+     *
+     * @throws Exception
      */
     public function __construct($path,$isRecursion=true,$recursionLevel = 0)
     {
@@ -96,11 +97,14 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
     {
         return $this->_path;
     }
+
     /**
      * Set path to this directory
-     * @param   string $path - path to this directory
-     * @param   bool $isRecursion - use or not recursion
-     * @return  none
+     *
+     * @param string      $path - path to this directory
+     * @param bool|string $isRecursion - use or not recursion
+     *
+     * @throws Exception
      */
     public function setPath($path, $isRecursion='')
     {
@@ -120,7 +124,6 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
      * Set recursion
      *
      * @param   bool $isRecursion - use or not recursion
-     * @return  none
      */
     public function setRecursion($isRecursion)
     {
@@ -130,47 +133,46 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
      * Set level of recursion
      *
      * @param   int $recursionLevel - level of recursion
-     * @return  none
      */
     public function setRecursionLevel($recursionLevel)
     {
         $this->_recursionLevel = $recursionLevel;
     }
+
     /**
      * get latest dir in the path
      *
-     * @param   string $path - path to directory
-     * @return  string - latest dir in the path
+     * @return string - latest dir in the path
      */
     public function lastDir()
     {
         return self::getLastDir($this->getPath());
     }
+
     /**
      * get latest dir in the path
      *
-     * @param   string $path - path to directory
-     * @return  string - latest dir in the path
+     * @param string $path - path to directory
+     *
+     * @return string - latest dir in the path
      */
     static public function getLastDir($path){
-        if($path=='') $path = $this->getPath();
         $last = strrpos($path, "/");
         return substr($path,$last+1);
     }
+
     /**
      * add item to collection
      *
      * @param   IFactory $item - item of collection
-     * @return  none
      */
     public function addItem(IFactory $item)
     {
         $this->_items[] = $item;
     }
+
     /**
      * parse this directory
-     *
-     * @return  none
      */
     protected function parseDir()
     {
@@ -184,17 +186,18 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
             $iter->next();
         }
     }
+
     /**
      * set filter using
      *
      * @param   bool $useFilter - filter using
-     * @return  none
      */
     public function useFilter($useFilter)
     {
         $this->_renderFilters();
         $this->walk('useFilter', array($useFilter));
     }
+
     /**
      * get files names of current collection
      *
@@ -205,18 +208,18 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $files = array();
         $this->getFilesName($files);
         return $files;
-
     }
+
     /**
      * get files names of current collection
      *
      * @param   array $files - array of files names
-     * @return  none
      */
     public function getFilesName(&$files)
     {
         $this->walk('getFilesName', array(&$files));
     }
+
     /**
      * get files paths of current collection
      *
@@ -228,16 +231,17 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $this->getFilesPaths($paths);
         return $paths;
     }
+
     /**
      * get files paths of current collection
      *
      * @param   array $files - array of files paths
-     * @return  none
      */
     public function getFilesPaths(&$paths)
     {
         $this->walk('getFilesPaths', array(&$paths));
     }
+
     /**
      * get SplFileObject objects of files of current collection
      *
@@ -249,16 +253,17 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $this->getFilesObj($objs);
         return $objs;
     }
+
     /**
      * get SplFileObject objects of files of current collection
      *
      * @param   array $objs - array of SplFileObject objects
-     * @return  none
      */
     public function getFilesObj(&$objs)
     {
         $this->walk('getFilesObj', array(&$objs));
     }
+
     /**
      * get names of dirs of current collection
      *
@@ -270,11 +275,11 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $this->getDirsName($dir);
         return $dir;
     }
+
     /**
      * get names of dirs of current collection
      *
      * @param   array $dirs - array of names of dirs
-     * @return  none
      */
     public function getDirsName(&$dirs)
     {
@@ -282,16 +287,17 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         if($this->getRecursionLevel()>0)
         $dirs[] = $this->getDirName();
     }
+
     /**
      * set filters for files
      *
      * @param   array $filter - array of filters
-     * @return  none
      */
     protected function setFilesFilter($filter)
     {
         $this->walk('setFilesFilter', array($filter));
     }
+
     /**
      * display this collection as array
      *
@@ -303,10 +309,10 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $this->toArray($arr);
         return $arr;
     }
+
     /**
      * display this collection as array
      * @param   array &$arr - this collection array
-     * @return  none
      */
     public function toArray(&$arr)
     {
@@ -317,11 +323,13 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
             $this->walk('toArray', array(&$arr));
         }
     }
+
     /**
      * get this collection as xml
+     *
      * @param   bool $addOpenTag - add or not header of xml
      * @param   string $rootName - root element name
-     * @return  none
+     * @return  string
      */
     public function __toXml($addOpenTag=true,$rootName='Struct')
     {
@@ -329,14 +337,14 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
         $this->toXml($xml,$addOpenTag,$rootName);
         return $xml;
     }
+
     /**
      * get this collection as xml
      * @param   string &$xml - xml
      * @param   bool $addOpenTag - add or not header of xml
      * @param   string $rootName - root element name
-     * @return  none
      */
-    public function toXml(&$xml,$recursionLevel=0,$addOpenTag=true,$rootName='Struct')
+    public function toXml(&$xml, $recursionLevel=0, $addOpenTag=true, $rootName='Struct')
     {
         if($recursionLevel==0 ){
             $xml = '';
@@ -352,15 +360,16 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
             $xml.= '</'.$rootName.'>'."\n";
         }
     }
+
     /**
      * apply filters
-     * @return  none
      */
     protected function _renderFilters()
     {
         $exts = array();
         $names = array();
         $regName = array();
+
         foreach ($this->_filters as $filter){
             switch ($filter['field']){
                 case 'extension':
@@ -392,30 +401,41 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
                     break;
             }
         }
+
         $filter = array();
+
         if(count($exts)>0) {
             $filter['extension'] = $exts;
         } else {
             $filter['extension'] = null;
         }
+
         if(count($names)>0) {
             $filter['name']=$names;
         } else {
             $filter['name']=null;
         }
+
         if(count($regName)>0) {
 
             $filter['regName']=$regName;
         } else {
             $filter['regName']=null;
         }
+
         $this->setFilesFilter($filter);
     }
+
     /**
-     * add filter
-     * @return  none
+     * Add filter
+     *
+     * @param string $field
+     * @param string $value
+     * @param string $type  Ignored, PHP 7.2 method signature compatibility
+     *
+     * @return $this
      */
-    public function addFilter($field, $value)
+    public function addFilter($field, $value, $type = 'and')
     {
         $filter = array();
         $filter['field']   = $field;
@@ -455,7 +475,3 @@ class Varien_Directory_Collection extends Varien_Data_Collection implements IFac
  print $filesObj[0]->fgets();
 
  */
-
-
-
-?>

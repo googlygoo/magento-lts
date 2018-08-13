@@ -78,6 +78,8 @@ class Varien_Autoload
      * Load class source code
      *
      * @param string $class
+     *
+     * @return mixed
      */
     public function autoload($class)
     {
@@ -90,7 +92,7 @@ class Varien_Autoload
             $classFile = str_replace(' ', DIRECTORY_SEPARATOR, ucwords(str_replace('_', ' ', $class)));
         }
         $classFile.= '.php';
-        //echo $classFile;die();
+
         return include $classFile;
     }
 

@@ -86,7 +86,7 @@ class Varien_Pear
         $this->getConfig();
     }
 
-    public function getInstance()
+    public static function getInstance()
     {
         if (!self::$_instance) {
             self::$_instance = new self;

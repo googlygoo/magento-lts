@@ -229,7 +229,7 @@ class Varien_File_Uploader_Image extends Varien_File_Uploader
 
     public function setTextVisibilityPercent($percent)
     {
-        $this->uploader->image_text_percent = $visibilityPercent;
+        $this->uploader->image_text_percent = $percent;
     }
 
     public function setTextBackgroundColor($color)
@@ -367,4 +367,3 @@ class Varien_File_Uploader_Image extends Varien_File_Uploader
 // ft:php
 // fileformat:unix
 // tabstop:4
-?>

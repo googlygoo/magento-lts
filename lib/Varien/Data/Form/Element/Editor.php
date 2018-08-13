@@ -189,7 +189,7 @@ class Varien_Data_Form_Element_Editor extends Varien_Data_Form_Element_Textarea
      * Prepare Html buttons for additional WYSIWYG features
      *
      * @param bool $visible Display button or not
-     * @return void
+     * @return string
      */
     protected function _getPluginButtonsHtml($visible = true)
     {
@@ -217,9 +217,9 @@ class Varien_Data_Form_Element_Editor extends Varien_Data_Form_Element_Textarea
                                     ? ('store/' . $this->getConfig('store_id') . '/')
                                     : '')
                                . "')",
-            'class'     => 'add-image plugin',
-            'style'     => $visible ? '' : 'display:none',
-        ));
+                'class'     => 'add-image plugin',
+                'style'     => $visible ? '' : 'display:none',
+            ));
         }
 
         foreach ($this->getConfig('plugins') as $plugin) {

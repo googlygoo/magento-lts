@@ -453,7 +453,7 @@ abstract class Zend_Db_Adapter_Abstract
      *                      May be a string or Zend_Db_Select.
      * @param  mixed  $bind An array of data to bind to the placeholders.
      *
-     * @return Zend_Db_Statement_Interface
+     * @return Zend_Db_Statement|PDOStatement
      * @throws Zend_Db_Statement_Exception
      */
     public function query($sql, $bind = array())

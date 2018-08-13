@@ -84,6 +84,8 @@ class Varien_Data_Form_Element_Collection implements ArrayAccess, IteratorAggreg
      * Implementation of ArrayAccess:offsetGet()
      *
      * @param mixed $key
+     *
+     * @return mixed
      */
     public function offsetGet($key)
     {

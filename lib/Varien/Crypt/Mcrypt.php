@@ -28,6 +28,13 @@
 /**
  * Mcrypt plugin
  *
+ * @method $this setCipher(string $string)
+ * @method string getCipher()
+ * @method $this setMode(string $string)
+ * @method string getMode()
+ * @method $this setHandler(resource $resource)
+ * @method resource getHandler()
+ *
  * @category   Varien
  * @package    Varien_Crypt
  * @author      Magento Core Team <core@magentocommerce.com>
@@ -59,7 +66,9 @@ class Varien_Crypt_Mcrypt extends Varien_Crypt_Abstract
      * Initialize mcrypt module
      *
      * @param string $key cipher private key
-     * @return Varien_Crypt_Mcrypt
+     *
+     * @return $this
+     * @throws Varien_Exception
      */
     public function init($key)
     {
@@ -100,7 +109,9 @@ class Varien_Crypt_Mcrypt extends Varien_Crypt_Abstract
      * Encrypt data
      *
      * @param string $data source string
+     *
      * @return string
+     * @throws Varien_Exception
      */
     public function encrypt($data)
     {
@@ -117,7 +128,9 @@ class Varien_Crypt_Mcrypt extends Varien_Crypt_Abstract
      * Decrypt data
      *
      * @param string $data encrypted string
+     *
      * @return string
+     * @throws Varien_Exception
      */
     public function decrypt($data)
     {

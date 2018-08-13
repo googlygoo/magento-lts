@@ -100,9 +100,10 @@ class Varien_Db_Select extends Zend_Db_Select
      * $db->fetchAll($select, array('id' => 5));
      * </code>
      *
-     * @param string   $cond  The WHERE condition.
-     * @param string   $value OPTIONAL A single value to quote into the condition.
-     * @param constant $type  OPTIONAL The type of the given value
+     * @param string $cond  The WHERE condition.
+     * @param string $value OPTIONAL A single value to quote into the condition.
+     * @param string $type  OPTIONAL The type of the given value
+     *
      * @return Varien_Db_Select This Zend_Db_Select object.
      */
     public function where($cond, $value = null, $type = null)
@@ -404,7 +405,6 @@ class Varien_Db_Select extends Zend_Db_Select
      * @param  array|string $cols The list of columns; preferably as
      * an array, but possibly as a string containing one column.
      * @param  bool|string True if it should be prepended, a correlation name if it should be inserted
-     * @return void
      */
     protected function _tableCols($correlationName, $cols, $afterCorrelationName = null)
     {
@@ -418,7 +418,7 @@ class Varien_Db_Select extends Zend_Db_Select
             }
         }
 
-        return parent::_tableCols($correlationName, $cols, $afterCorrelationName);
+        parent::_tableCols($correlationName, $cols, $afterCorrelationName);
     }
 
     /**

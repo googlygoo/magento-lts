@@ -125,6 +125,8 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
      * @param string $field
      * @param string $value
      * @param string $type and|or|string
+     *
+     * @return $this
      */
     public function addFilter($field, $value, $type = 'and')
     {
@@ -173,6 +175,8 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
                 return $filter;
             }
         }
+
+        return null;
     }
 
     /**
@@ -188,8 +192,9 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
     /**
      * Set collection loading status flag
      *
-     * @param unknown_type $flag
-     * @return unknown
+     * @param bool $flag
+     *
+     * @return $this
      */
     protected function _setIsLoaded($flag = true)
     {
@@ -596,6 +601,8 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
      * Set select distinct
      *
      * @param bool $flag
+     *
+     * @return $this
      */
     public function distinct($flag)
     {

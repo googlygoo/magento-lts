@@ -64,16 +64,17 @@ class Varien_Data_Tree
     /**
      * Enter description here...
      *
-     * @param Varien_Data_Tree_Node $parentNode
+     * @param int|Varien_Data_Tree_Node $parentNode
+     * @param int                       $recursionLevel recursion level
      */
-    public function load($parentNode=null)
+    public function load($parentNode = null, $recursionLevel = 0)
     {
     }
 
     /**
      * Enter description here...
      *
-     * @param unknown_type $nodeId
+     * @param mixed $nodeId
      */
     public function loadNode($nodeId)
     {
@@ -196,7 +197,8 @@ class Varien_Data_Tree
     /**
      * Enter description here...
      *
-     * @param unknown_type $nodeId
+     * @param string|int $nodeId
+     *
      * @return Varien_Data_Tree_Node
      */
     public function getNodeById($nodeId)

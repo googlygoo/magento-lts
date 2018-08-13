@@ -49,7 +49,9 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
     /**
      * Add form element
      *
-     * @param   Varien_Data_Form_Element_Abstract $element
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @param bool|string|null                  $after
+     *
      * @return  Varien_Data_Form
      */
     public function addElement(Varien_Data_Form_Element_Abstract $element, $after=false)

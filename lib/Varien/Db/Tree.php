@@ -438,7 +438,7 @@ class Varien_Db_Tree
 
         if ($pId == 0) { //move to root
             $right_key_near = $this->_db->fetchOne('SELECT MAX('.$this->_right.') FROM '.$this->_table);
-        } elseif ($aId != 0 && $pID == $eInfo[$this->_pid]) { // if we have after ID
+        } elseif ($aId != 0 && $pId == $eInfo[$this->_pid]) { // if we have after ID
             $right_key_near = $aInfo[$this->_right];
             $left_key_near = $aInfo[$this->_left];
         } elseif ($aId == 0 && $pId == $eInfo[$this->_pid]) { // if we do not have after ID

@@ -42,7 +42,7 @@ class Varien_Directory_Factory{
      * @param   array $path - path to direcctory
      * @param   bool $is_recursion - use or not recursion
      * @param   int $recurse_level - recurse level
-     * @return  IFactor - Varien_Directory_Collection or Varien_File_Object object
+     * @return  IFactory - Varien_Directory_Collection or Varien_File_Object object
      */
     static public function getFactory($path,$is_recursion = true,$recurse_level=0)
     {
@@ -55,4 +55,3 @@ class Varien_Directory_Factory{
     }
 
 }
-?>

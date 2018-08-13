@@ -410,7 +410,8 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Run RAW Query
      *
      * @param string $sql
-     * @return Zend_Db_Statement_Interface
+     *
+     * @return Zend_Db_Statement_Pdo
      * @throws PDOException
      */
     public function raw_query($sql)
@@ -445,9 +446,11 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
     /**
      * Run RAW query and Fetch First row
      *
-     * @param string $sql
+     * @param string     $sql
      * @param string|int $field
-     * @return boolean
+     *
+     * @return bool
+     * @throws Zend_Db_Statement_Exception
      */
     public function raw_fetchRow($sql, $field = null)
     {
@@ -472,7 +475,6 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Check transaction level in case of DDL query
      *
      * @param string|Zend_Db_Select $sql
-     * @throws Zend_Db_Adapter_Exception
      */
     protected function _checkDdlTransaction($sql)
     {
@@ -490,10 +492,11 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Special handling for PDO query().
      * All bind parameter names must begin with ':'.
      *
-     * @param string|Zend_Db_Select $sql The SQL statement with placeholders.
-     * @param mixed $bind An array of data or data itself to bind to the placeholders.
-     * @return Zend_Db_Statement_Pdo
-     * @throws Zend_Db_Adapter_Exception To re-throw PDOException.
+     * @param string|Zend_Db_Select $sql  The SQL statement with placeholders.
+     * @param mixed                 $bind An array of data or data itself to bind to the placeholders.
+     *
+     * @return Zend_Db_Statement|PDOStatement
+     * @throws Zend_Db_Statement_Exception
      */
     public function query($sql, $bind = array())
     {
@@ -517,7 +520,8 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      *
      * @param Zend_Db_Select|string $sql
      * @param mixed $bind
-     * @return Varien_Db_Adapter_Pdo_Mysql
+     *
+     * @return $this
      */
     protected function _prepareQuery(&$sql, &$bind = array())
     {
@@ -679,7 +683,9 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Run Multi Query
      *
      * @param string $sql
+     *
      * @return array
+     * @throws PDOException
      */
     public function multi_query($sql)
     {
@@ -1508,6 +1514,8 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      *
      * @param string $tableName
      * @param string $schemaName
+     *
+     * @return string
      */
     protected function _getTableName($tableName, $schemaName = null)
     {
@@ -1585,7 +1593,9 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      *
      * @param string $tableName
      * @param string $schemaName OPTIONAL
-     * @return Varien_Db_Adapter_Pdo_Mysql
+     *
+     * @return $this|Varien_Db_Adapter_Interface
+     * @throws Zend_Cache_Exception
      */
     public function resetDdlCache($tableName = null, $schemaName = null)
     {
@@ -2193,8 +2203,10 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Create table
      *
      * @param Varien_Db_Ddl_Table $table
+     *
+     * @return PDOStatement|Zend_Db_Statement|Zend_Db_Statement_Interface
      * @throws Zend_Db_Exception
-     * @return Zend_Db_Pdo_Statement
+     * @throws Zend_Db_Statement_Exception
      */
     public function createTable(Varien_Db_Ddl_Table $table)
     {
@@ -2223,8 +2235,10 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * Create temporary table
      *
      * @param Varien_Db_Ddl_Table $table
+     *
+     * @return PDOStatement|Zend_Db_Statement|Zend_Db_Statement_Interface
      * @throws Zend_Db_Exception
-     * @return Zend_Db_Pdo_Statement
+     * @throws Zend_Db_Statement_Exception
      */
     public function createTemporaryTable(Varien_Db_Ddl_Table $table)
     {
@@ -2973,8 +2987,8 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
     /**
      * Prepare Sql condition
      *
-     * @param  $text Condition value
-     * @param  mixed $value
+     * @param  string $text Condition value
+     * @param  mixed  $value
      * @param  string $fieldName
      * @return string
      */
@@ -3094,6 +3108,8 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * @param Zend_Db_Expr|Zend_Db_Select|string $expression
      * @param string $true  true value
      * @param string $false false value
+     *
+     * @return Zend_Db_Expr
      */
     public function getCheckSql($expression, $true, $false)
     {
@@ -3728,7 +3744,7 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      *
      * @param array|string $tableNames array of tables names | table name
      * @param string $schemaName schema name
-     * @return arrray
+     * @return array
      */
     public function getTablesChecksum($tableNames, $schemaName = null)
     {
@@ -4018,7 +4034,6 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
      * @param string $tableName
      * @param Zend_Db_Select $select
      * @param bool $temporary
-     * @return mixed
      */
     public function createTableFromSelect($tableName, Zend_Db_Select $select, $temporary = false)
     {

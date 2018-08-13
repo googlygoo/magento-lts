@@ -66,7 +66,7 @@ class Varien_Simplexml_Config
     /**
      * Enter description here...
      *
-     * @var unknown_type
+     * @var string|bool|null
      */
     protected $_cacheChecksum = false;
 
@@ -141,7 +141,8 @@ class Varien_Simplexml_Config
      *
      * @see     Varien_Simplexml_Element::descend
      * @param   string $path
-     * @return  Varien_Simplexml_Element
+     *
+     * @return  bool|Varien_Simplexml_Element
      */
     public function getNode($path=null)
     {
@@ -158,7 +159,8 @@ class Varien_Simplexml_Config
      * Returns nodes found by xpath expression
      *
      * @param string $xpath
-     * @return array
+     *
+     * @return bool|SimpleXMLElement[]
      */
     public function getXpath($xpath)
     {
@@ -495,7 +497,7 @@ class Varien_Simplexml_Config
 
         $fileData = file_get_contents($filePath);
         $fileData = $this->processFileData($fileData);
-        return $this->loadString($fileData, $this->_elementClass);
+        return $this->loadString($fileData);
     }
 
     /**

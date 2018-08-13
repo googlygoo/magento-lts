@@ -45,7 +45,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     /**
      * Element type classes
      *
-     * @var unknown_type
+     * @var string[]
      */
     protected $_types = array();
 

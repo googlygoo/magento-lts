@@ -158,6 +158,8 @@ class Varien_Debug
      * Format argument in called method
      *
      * @param mixed $arg
+     *
+     * @return string
      */
     protected static function _formatCalledArgument($arg)
     {

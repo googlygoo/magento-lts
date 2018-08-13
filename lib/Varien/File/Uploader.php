@@ -179,8 +179,9 @@ class Varien_File_Uploader
      *
      * @param string $destinationFolder
      * @param string $newFileName
-     * @access public
-     * @return void|bool
+     *
+     * @return array|bool
+     * @throws Exception
      */
     public function save($destinationFolder, $newFileName = null)
     {

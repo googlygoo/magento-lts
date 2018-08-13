@@ -52,6 +52,12 @@ abstract class Varien_Convert_Container_Abstract implements Varien_Convert_Conta
         return $this->_vars;
     }
 
+    /**
+     * @param array|string $key
+     * @param null         $value
+     *
+     * @return $this
+     */
     public function setVar($key, $value=null)
     {
         if (is_array($key) && is_null($value)) {

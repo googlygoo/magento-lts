@@ -57,7 +57,7 @@ abstract class Varien_Io_Abstract implements Varien_Io_Interface
     /**
      * Open a connection
      *
-     * @param array $config
+     * @param array $args
      * @return bool
      */
     public function open(array $args = array())

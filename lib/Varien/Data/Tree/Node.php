@@ -92,7 +92,7 @@ class Varien_Data_Tree_Node extends Varien_Object
      * Set node id field name
      *
      * @param   string $idField
-     * @return  this
+     * @return  $this
      */
     public function setIdField($idField)
     {
@@ -114,7 +114,7 @@ class Varien_Data_Tree_Node extends Varien_Object
      * Set node tree object
      *
      * @param   Varien_Data_Tree $tree
-     * @return  this
+     * @return  $this
      */
     public function setTree(Varien_Data_Tree $tree)
     {

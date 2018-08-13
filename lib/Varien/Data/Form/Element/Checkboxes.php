@@ -126,7 +126,7 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         elseif ($checked = $this->getData('checked')) {
         }
         else {
-            return ;
+            return '';
         }
         if (!is_array($checked)) {
             $checked = array(strval($checked));
@@ -139,7 +139,7 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         if (in_array(strval($value), $checked)) {
             return 'checked';
         }
-        return ;
+        return '';
     }
 
     public function getDisabled($value)
@@ -157,7 +157,7 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
                 return 'disabled';
             }
         }
-        return ;
+        return '';
     }
 
     public function getOnclick($value)
@@ -165,7 +165,7 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         if ($onclick = $this->getData('onclick')) {
             return str_replace('$value', $value, $onclick);
         }
-        return ;
+        return '';
     }
 
     public function getOnchange($value)
@@ -173,7 +173,7 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         if ($onchange = $this->getData('onchange')) {
             return str_replace('$value', $value, $onchange);
         }
-        return ;
+        return '';
     }
 
 //    public function getName($value)

@@ -120,7 +120,7 @@ class Varien_Data_Collection_Filesystem extends Varien_Data_Collection
      * Set empty to not filter
      *
      * @param string $regex
-     * @return Varien_Data_Collection_Files
+     * @return $this
      */
     public function setDirsFilter($regex)
     {
@@ -133,7 +133,7 @@ class Varien_Data_Collection_Filesystem extends Varien_Data_Collection
      * Set empty to not filter
      *
      * @param string $regex
-     * @return Varien_Data_Collection_Files
+     * @return $this
      */
     public function setFilesFilter($regex)
     {
@@ -146,7 +146,7 @@ class Varien_Data_Collection_Filesystem extends Varien_Data_Collection
      * Set empty value to not use this filter
      *
      * @param string $regex
-     * @return Varien_Data_Collection_Files
+     * @return $this
      */
     public function setDisallowedFilesFilter($regex)
     {
@@ -194,7 +194,9 @@ class Varien_Data_Collection_Filesystem extends Varien_Data_Collection
      * Target directory setter. Adds directory to be scanned
      *
      * @param string $value
-     * @return Varien_Data_Collection_Filesystem
+     *
+     * @return $this
+     * @throws Exception
      */
     public function addTargetDir($value)
     {

@@ -92,6 +92,8 @@ abstract class Varien_Filter_Template_Tokenizer_Abstract
     
     /**
      * Set string for tokenize
+     *
+     * @param string $value
      */
     public function setString($value)
     {

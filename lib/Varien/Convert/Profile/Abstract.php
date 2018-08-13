@@ -109,7 +109,7 @@ abstract class Varien_Convert_Profile_Abstract
             $e = new Varien_Convert_Exception("Could not find any actions for this profile");
             $e->setLevel(Varien_Convert_Exception::FATAL);
             $this->addException($e);
-            return;
+            return $this;
         }
 
         foreach ($this->_actions as $action) {

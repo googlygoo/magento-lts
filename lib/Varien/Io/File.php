@@ -310,7 +310,7 @@ class Varien_Io_File extends Varien_Io_Abstract
      *
      * @param mixed $flag
      * @access public
-     * @return void
+     * @return $this
      */
     public function setAllowCreateFolders($flag)
     {
@@ -408,7 +408,9 @@ class Varien_Io_File extends Varien_Io_Abstract
      * Change current working directory
      *
      * @param string $dir
-     * @return boolean
+     *
+     * @return bool
+     * @throws Exception
      */
     public function cd($dir)
     {
@@ -418,7 +420,6 @@ class Varien_Io_File extends Varien_Io_Abstract
             return true;
         } else {
             throw new Exception('Unable to list current working directory.');
-            return false;
         }
     }
 
@@ -543,7 +544,7 @@ class Varien_Io_File extends Varien_Io_Abstract
      * File put content wrapper
      *
      * @param string $filename
-     * @param srting|resource $src
+     * @param string|resource $src
      *
      * @return int
      */
