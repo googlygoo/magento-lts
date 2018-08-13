@@ -128,15 +128,17 @@ class Mage_Connect_Package_Reader
     }
 
     /**
-    * Loads a package from specified resource
-    *
-    * @param resource $resource only file resources are supported at the moment
-    * @return Mage_Connect_Package
-    */
+     * Loads a package from specified resource
+     *
+     * @param resource $resource only file resources are supported at the moment
+     *
+     * @return string
+     * @throws Mage_Exception
+     */
     protected function _loadResource(&$resource)
     {
         $data = '';
-        //var_dump("====", $res, get_resource_type($resource));
+
         if ('stream' === get_resource_type($resource)) {
             while (!feof($resource)) {
                 $data .= fread($resource, 10240);
@@ -144,6 +146,7 @@ class Mage_Connect_Package_Reader
         } else {
             throw new Mage_Exception('Unsupported resource type');
         }
+
         return $data;
     }
 

@@ -48,7 +48,7 @@ class Mage_HTTP_Client_Socket
 
     /**
      * Stream resource
-     * @var object
+     * @var resource
      */
     private $_sock = null;
 
@@ -160,8 +160,8 @@ class Mage_HTTP_Client_Socket
     /**
      * Add header
      *
-     * @param $name name, ex. "Location"
-     * @param $value value ex. "http://google.com"
+     * @param string $name name, ex. "Location"
+     * @param string $value value ex. "http://google.com"
      */
     public function addHeader($name, $value)
     {

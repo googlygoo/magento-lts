@@ -41,7 +41,7 @@ class Mage_Connect_Command
 
     /**
      * Frontend object
-     * @var Mage_Connect_Fro
+     * @var Mage_Connect_Frontend
      */
     protected static $_frontend = null;
     protected static $_config = null;
@@ -73,7 +73,7 @@ class Mage_Connect_Command
     /**
      * Get command info (static)
      * @param string $name command name
-     * @return array/bool
+     * @return array|bool
      */
     public static function commandInfo($name)
     {
@@ -87,7 +87,7 @@ class Mage_Connect_Command
     /**
      * Get command info for current command object
      * @param string $name
-     * @return array/bool
+     * @return array|bool
      */
 
     public function getCommandInfo($name)
@@ -243,10 +243,10 @@ class Mage_Connect_Command
         $short_args = '';
         $long_args = array();
         if (empty($commandInfo) || empty($commandInfo['options'])) {
-            return;
+            return array();
         }
         reset($commandInfo['options']);
-        while (list($option, $info) = each($commandInfo['options'])) {
+        foreach ($commandInfo['options'] as $option => $info) {
             $larg = $sarg = '';
             if (isset($info['arg'])) {
                 if ($info['arg']{0} == '(') {
@@ -377,7 +377,7 @@ class Mage_Connect_Command
     
     /**
      * Get packager instance
-     * @return Mage_Connect_Pacakger
+     * @return Mage_Connect_Packager
      */
     public function getPackager() 
     {

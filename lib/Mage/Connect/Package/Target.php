@@ -52,7 +52,7 @@ class Mage_Connect_Package_Target
     /**
     * Retrieve content from target.xml.
     *
-    * @return SimpleXMLElement
+    * @return array
     */
     protected function _getTargetMap()
     {

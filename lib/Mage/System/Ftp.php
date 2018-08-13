@@ -45,7 +45,6 @@ class Mage_System_Ftp
      * Check connected, throw exception if not
      *
      * @throws Exception
-     * @return void
      */
     protected function checkConnected()
     {
@@ -57,8 +56,10 @@ class Mage_System_Ftp
     /**
      * ftp_mkdir wrapper
      *
-     * @param stin$name
-     * @return unknown_type
+     * @param string $name
+     *
+     * @return string|bool
+     * @throws Exception
      */
     public function mdkir($name)
     {
@@ -116,8 +117,9 @@ class Mage_System_Ftp
      * Validate connection string
      * 
      * @param string $string
+     *
+     * @return array
      * @throws Exception
-     * @return string
      */
     public function validateConnectionString($string)
     {
@@ -231,24 +233,26 @@ class Mage_System_Ftp
      * Can be used for relative and absoulte remote paths
      * Relative: use chdir before calling this
      *
-     * @param srting $remote
+     * @param string $remote
      * @param string $local
-     * @param int $dirMode
-     * @param int $ftpMode
-     * @return unknown_type
+     * @param int    $dirMode
+     * @param int    $ftpMode
+     *
+     * @return bool
+     * @throws Exception
      */
     public function upload($remote, $local, $dirMode = 0777, $ftpMode = FTP_BINARY)
     {
         $this->checkConnected();
 
         if(!file_exists($local)) {
-            throw new Exception("Local file doesn't exist: {$localFile}");
+            throw new Exception("Local file doesn't exist: {$local}");
         }
         if(!is_readable($local)) {
-            throw new Exception("Local file is not readable: {$localFile}");
+            throw new Exception("Local file is not readable: {$local}");
         }
         if(is_dir($local)) {
-            throw new Exception("Directory given instead of file: {$localFile}");
+            throw new Exception("Directory given instead of file: {$local}");
         }
 
         $globalPathMode = substr($remote, 0, 1) == "/";
@@ -365,7 +369,9 @@ class Mage_System_Ftp
      * ftp_nlist wrapper
      * 
      * @param string $dir
-     * @return bool
+     *
+     * @return array|bool
+     * @throws Exception
      */
     public function nlist($dir = "/")
     {

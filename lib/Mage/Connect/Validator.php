@@ -136,6 +136,12 @@ class Mage_Connect_Validator
         }
         $count = 0;
         foreach($data as $k=>$v) {
+            /**
+             * @var string $name
+             * @var string $channel
+             * @var string $min
+             * @var string $max
+             */
            foreach(array('name','channel','min','max') as $fld) {
                  $$fld = trim($v[$fld]);
            }
@@ -239,7 +245,8 @@ class Mage_Connect_Validator
 
     /**
      * Check if there are validator errors set
-     * @return unknown_type
+     *
+     * @return bool
      */
     public function hasErrors()
     {
@@ -408,7 +415,7 @@ class Mage_Connect_Validator
         }
         $maxAccepted = true;
         if($max) {
-            $maxAccepted = version_compate($ver, $max, "<=");
+            $maxAccepted = version_compare($ver, $max, "<=");
         }
         return (bool) $minAccepted && $maxAccepted;
     }

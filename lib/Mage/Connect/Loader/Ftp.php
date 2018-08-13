@@ -95,7 +95,7 @@ class Mage_Connect_Loader_Ftp
         }
         @unlink($localFile);
         $this->getFtp()->close();
-        return $out;
+        return true;
     }
 
     /**

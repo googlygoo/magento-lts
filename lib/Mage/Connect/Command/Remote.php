@@ -30,7 +30,7 @@ extends Mage_Connect_Command
 
     /**
      * List-upgrades callback
-     * @param srting $command
+     * @param string $command
      * @param array $options
      * @param array $params
      * @return void

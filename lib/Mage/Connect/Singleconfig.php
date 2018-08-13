@@ -100,7 +100,7 @@ class Mage_Connect_Singleconfig
 
     /**
      * Get data
-     * @return unknown_type
+     * @return array
      */
     public function getData()
     {
@@ -529,14 +529,17 @@ class Mage_Connect_Singleconfig
     /**
      * Converts channel name, url or alias to channel name
      * throws exception if not found
-     * @param srting $chanName
+     *
+     * @param string $chanName
+     *
      * @return string
+     * @throws Exception
      */
     public function chanName($chanName)
     {
         $channelData = $this->getChannel($chanName);
         if(!$channelData) {
-            return $this->doError("Channel '{$chanName}' doesn't exist");
+            $this->doError("Channel '{$chanName}' doesn't exist");
         }
         return $channelData[self::K_NAME];
     }
@@ -580,7 +583,8 @@ class Mage_Connect_Singleconfig
      * Delete package
      * @param string $chanName
      * @param string $package
-     * @return void
+     *
+     * @throws Exception
      */
     public function deletePackage($chanName, $package)
     {
@@ -591,9 +595,11 @@ class Mage_Connect_Singleconfig
 
     /**
      * Get package
-     * @param sting $chanName
+     *
+     * @param string $chanName
      * @param string $package
-     * @return void
+     *
+     * @return array|null
      */
     public function getPackage($chanName, $package)
     {

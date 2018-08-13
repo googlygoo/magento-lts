@@ -166,7 +166,8 @@ class Mage_Connect_Frontend
 
     /**
      * Ouptut method
-     * @param array $data
+     *
+     * @param array|string $data
      * @return void
      */
     public function output($data)
@@ -177,7 +178,7 @@ class Mage_Connect_Frontend
     /**
      * Get instance of derived class
      *
-     * @param $class CLI for example will produce Mage_Connect_Frontend_CLI
+     * @param string $class CLI for example will produce Mage_Connect_Frontend_CLI
      * @return object
      */
     public static function getInstance($class)

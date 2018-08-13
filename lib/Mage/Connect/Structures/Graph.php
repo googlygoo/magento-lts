@@ -95,7 +95,8 @@ class Mage_Connect_Structures_Graph
 
     /**
      * Is asyclic
-     * @return unknown_type
+     *
+     * @return bool
      */
     public function isAcyclic()
     {

@@ -104,7 +104,7 @@ implements Mage_HTTP_IClient
 
     /**
      * Curl
-     * @var object
+     * @var resource
      */
     protected $_ch;
 
@@ -157,8 +157,8 @@ implements Mage_HTTP_IClient
     /**
      * Add header
      *
-     * @param $name name, ex. "Location"
-     * @param $value value ex. "http://google.com"
+     * @param string $name name, ex. "Location"
+     * @param string $value value ex. "http://google.com"
      */
     public function addHeader($name, $value)
     {
@@ -464,7 +464,7 @@ implements Mage_HTTP_IClient
      * Set curl option directly
      *
      * @param string $name
-     * @param string $value
+     * @param string|array $value
      */
     protected function curlOption($name, $value)
     {

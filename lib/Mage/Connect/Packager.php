@@ -290,7 +290,7 @@ class Mage_Connect_Packager
      */
     public function getLocalModifiedFiles($chanName, $package, $cacheObj, $configObj)
     {
-        $p = $cachObj->getPackageObject($chanName, $package);
+        $p = $cacheObj->getPackageObject($chanName, $package);
         $hashContents = $p->getHashContents();
         $listModified = array();
         foreach ($hashContents as $file=>$hash) {
@@ -456,6 +456,10 @@ class Mage_Connect_Packager
                 $flds = array('name','channel','min','max');
                 $fldsCount = count($flds);
                 foreach($dependencies as $row) {
+                    /**
+                     * @var string $pChannel
+                     * @var string $pName
+                     */
                     foreach($flds as $key) {
                         $varName = "p".ucfirst($key);
                         $$varName = $row[$key];
@@ -511,7 +515,7 @@ class Mage_Connect_Packager
             if(!$releases || !count($releases)) {
                 throw new Exception("No releases for: '{$package}', skipping");
             }
-            $state = $config->preffered_state ? $confg->preffered_state : 'devel';
+            $state = $config->preffered_state ? $config->preffered_state : 'devel';
             $version = $cache->detectVersionFromRestArray($releases, $versionMin, $versionMax, $state);
             if(!$version) {
                 throw new Exception("Version for '{$package}' was not detected");
@@ -538,6 +542,12 @@ class Mage_Connect_Packager
                 $flds = array('name','channel','min','max');
                 $fldsCount = count($flds);
                 foreach($dependencies as $row) {
+                    /**
+                     * @var string $pChannel
+                     * @var string $pName
+                     * @var string $pMax
+                     * @var string $pMin
+                     */
                     foreach($flds as $key) {
                         $varName = "p".ucfirst($key);
                         $$varName = $row[$key];

@@ -60,6 +60,8 @@ class Mage_System_Args
         $this->flags = array();
         $this->filtered = array();
 
+        $argv = array();
+
         if(false === $source) {
             $argv = $GLOBALS['argv'];
             array_shift($argv);

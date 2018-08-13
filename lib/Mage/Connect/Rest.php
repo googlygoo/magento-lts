@@ -122,7 +122,10 @@ class Mage_Connect_Rest
 
     /**
      * Load URI response
-     * @param string $uri
+     *
+     * @param string $uriSuffix
+     *
+     * @return bool
      */
     protected function loadChannelUri($uriSuffix)
     {
@@ -162,7 +165,7 @@ class Mage_Connect_Rest
 
     /**
      * Get packages list of channel
-     * @return array
+     * @return array|bool
      */
     public function getPackages()
     {
@@ -231,8 +234,10 @@ class Mage_Connect_Rest
 
     /**
      * Stub
-     * @param $n
-     * @return unknown_type
+     *
+     * @param string $n
+     *
+     * @return string
      */
     public function escapePackageName($n)
     {
@@ -276,8 +281,9 @@ class Mage_Connect_Rest
 
     /**
      * Sort releases callback
-     * @param string $a
-     * @param srting $b
+     * @param array $a
+     * @param array $b
+     *
      * @return int
      */
     protected function sortReleasesCallback($a, $b)
@@ -288,8 +294,10 @@ class Mage_Connect_Rest
     /**
      * Get package info (package.xml)
      *
-     * @param $package
-     * @return unknown_type
+     * @param string $package
+     *
+     * @return bool|Mage_Connect_Package
+     * @throws Mage_Exception
      */
     public function getPackageInfo($package)
     {
@@ -302,9 +310,11 @@ class Mage_Connect_Rest
 
     /**
      *
-     * @param $package
-     * @param $version
-     * @return Mage_Connect_Package
+     * @param string $package
+     * @param string $version
+     *
+     * @return Mage_Connect_Package|bool
+     * @throws Mage_Exception
      */
     public function getPackageReleaseInfo($package, $version)
     {

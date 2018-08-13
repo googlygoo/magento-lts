@@ -475,7 +475,8 @@ class Mage_Archive_Tar extends Mage_Archive_Abstract implements Mage_Archive_Int
      *
      * @deprecated after 1.7.0.0
      * @param resource $pointer
-     * @return string
+     *
+     * @return array|bool
      */
     protected function _parseHeader(&$pointer)
     {
