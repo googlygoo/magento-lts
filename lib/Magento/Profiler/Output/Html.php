@@ -31,6 +31,8 @@ class Magento_Profiler_Output_Html extends Magento_Profiler_OutputAbstract
 {
     /**
      * Display profiling results
+     *
+     * @throws Varien_Exception
      */
     public function display()
     {

@@ -63,6 +63,8 @@ class Magento_Profiler_Output_Csvfile extends Magento_Profiler_OutputAbstract
 
     /**
      * Display profiling results
+     *
+     * @throws Varien_Exception
      */
     public function display()
     {
@@ -89,6 +91,8 @@ class Magento_Profiler_Output_Csvfile extends Magento_Profiler_OutputAbstract
      * Write content into an opened file handle
      *
      * @param resource $fileHandle
+     *
+     * @throws Varien_Exception
      */
     protected function _writeFileContent($fileHandle)
     {

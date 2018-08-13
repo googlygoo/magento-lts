@@ -47,11 +47,13 @@ class Magento_Db_Adapter_Pdo_Mysql extends Varien_Db_Adapter_Pdo_Mysql
      * Batched insert of specified select
      *
      * @param Varien_Db_Select $select
-     * @param string $table
-     * @param array $fields
-     * @param bool $mode
-     * @param int $step
+     * @param string           $table
+     * @param array            $fields
+     * @param bool             $mode
+     * @param int              $step
+     *
      * @return int
+     * @throws Zend_Db_Statement_Exception
      */
     public function insertBatchFromSelect(Varien_Db_Select $select, $table, array $fields = array(),
                                           $mode = false, $step = 10000
@@ -126,7 +128,9 @@ class Magento_Db_Adapter_Pdo_Mysql extends Varien_Db_Adapter_Pdo_Mysql
      *
      * @param mixed $value The value to quote.
      * @param null $type OPTIONAL the SQL datatype name, or constant, or null.
+     *
      * @return mixed|string An SQL-safe quoted value (or string of separated values).
+     * @throws Zend_Db_Adapter_Exception
      */
     public function quote($value, $type = null)
     {

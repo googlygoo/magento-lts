@@ -297,6 +297,7 @@ class Magento_Db_Sql_Trigger
      * Get trigger creating SQL script
      *
      * @return string
+     * @throws Exception
      */
     public function assemble()
     {
@@ -314,6 +315,7 @@ class Magento_Db_Sql_Trigger
      * Implement magic method
      *
      * @return string
+     * @throws Exception
      */
     public function __toString()
     {

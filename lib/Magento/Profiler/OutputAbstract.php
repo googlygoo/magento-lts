@@ -87,6 +87,9 @@ abstract class Magento_Profiler_OutputAbstract
      *
      * @param string $timerId
      * @param string $columnId
+     *
+     * @return string
+     * @throws Varien_Exception
      */
     protected function _renderColumnValue($timerId, $columnId)
     {
@@ -168,6 +171,7 @@ abstract class Magento_Profiler_OutputAbstract
      * Retrieve the list of timer Ids
      *
      * @return array
+     * @throws Varien_Exception
      */
     protected function _getTimers()
     {

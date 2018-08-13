@@ -72,6 +72,10 @@ class Magento_Profiler_Output_Firebug extends Magento_Profiler_OutputAbstract
 
     /**
      * Display profiling results and flush output buffer
+     *
+     * @throws Varien_Exception
+     * @throws Zend_Wildfire_Exception
+     * @throws Zend_Controller_Request_Exception
      */
     public function display()
     {
