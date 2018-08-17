@@ -83,7 +83,10 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
                 session_save_path($this->getSessionSavePath());
                 break;
         }
-        session_module_name($moduleName);
+
+        if ($moduleName != session_module_name()) {
+            session_module_name($moduleName);
+        }
 
         $cookie = $this->getCookie();
         if (Mage::app()->getStore()->isAdmin()) {

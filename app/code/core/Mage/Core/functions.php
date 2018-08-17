@@ -51,24 +51,6 @@ if (get_magic_quotes_gpc()) {
 }
 
 /**
- * Class autoload
- *
- * @todo change to spl_autoload_register
- * @deprecated
- * @param string $class
- */
-function __autoload($class)
-{
-    if (defined('COMPILER_INCLUDE_PATH')) {
-        $classFile = $class.'.php';
-    } else {
-        $classFile = uc_words($class, DIRECTORY_SEPARATOR).'.php';
-    }
-
-    include($classFile);
-}
-
-/**
  * Object destructor
  *
  * @param mixed $object
@@ -89,6 +71,8 @@ function destruct($object)
  * @deprecated 1.3
  * @param string $text the text to translate
  * @param mixed optional parameters to use in sprintf
+ *
+ * @return string
  */
 function __()
 {
@@ -271,21 +255,11 @@ function mageDebugBacktrace($return=false, $html=true, $showFirst=false)
 function mageSendErrorHeader()
 {
     return;
-    if (!isset($_SERVER['SCRIPT_NAME'])) {
-        return;
-    }
-    $action = Mage::app()->getRequest()->getBasePath()."bugreport.php";
-    echo '<form id="error_report" method="post" style="display:none" action="'.$action.'"><textarea name="error">';
 }
 
 function mageSendErrorFooter()
 {
     return;
-    if (!isset($_SERVER['SCRIPT_NAME'])) {
-        return;
-    }
-    echo '</textarea></form><script type="text/javascript">document.getElementById("error_report").submit()</script>';
-    exit;
 }
 
 function mageDelTree($path) {
