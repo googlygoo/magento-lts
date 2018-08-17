@@ -75,7 +75,6 @@ class Zend_Test_PHPUnit_Constraint_Redirect34 extends PHPUnit_Framework_Constrai
 
     /**
      * Constructor; setup constraint state
-     *
      */
     public function __construct()
     {
@@ -156,9 +155,11 @@ class Zend_Test_PHPUnit_Constraint_Redirect34 extends PHPUnit_Framework_Constrai
      * Report Failure
      *
      * @see    PHPUnit_Framework_Constraint for implementation details
+     *
      * @param  mixed $other
      * @param  string $description Additional message to display
      * @param  bool $not
+     *
      * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function fail($other, $description, $not = false)

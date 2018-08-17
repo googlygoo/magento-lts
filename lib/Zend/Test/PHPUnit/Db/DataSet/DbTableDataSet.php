@@ -48,10 +48,10 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Dat
      * By default a select * will be done on the given tablename.
      *
      * @param Zend_Db_Table_Abstract $table
-     * @param string $where
-     * @param string $order
-     * @param string $count
-     * @param string $offset
+     * @param string|null            $where
+     * @param string|null            $order
+     * @param string|null            $count
+     * @param string|null            $offset
      */
     public function addTable(Zend_Db_Table_Abstract $table, $where = null, $order = null, $count = null, $offset = null)
     {
@@ -64,7 +64,8 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Dat
      * true a reverse iterator will be returned.
      *
      * @param bool $reverse
-     * @return PHPUnit_Extensions_Database_DB_TableIterator
+     *
+     * @return PHPUnit_Extensions_Database_DataSet_DefaultTableIterator
      */
     protected function createIterator($reverse = FALSE)
     {
@@ -75,6 +76,7 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Dat
      * Returns a table object for the given table.
      *
      * @param string $tableName
+     *
      * @return PHPUnit_Extensions_Database_DB_Table
      */
     public function getTable($tableName)
@@ -89,7 +91,7 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Dat
     /**
      * Returns a list of table names for the database
      *
-     * @return Array
+     * @return array
      */
     public function getTableNames()
     {

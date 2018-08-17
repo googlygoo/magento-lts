@@ -167,12 +167,16 @@ abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_Te
      */
     public function dispatch($url = null)
     {
-        // redirector should not exit
+        /** @var Zend_Controller_Action_Helper_Redirector $redirector */
         $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
+
+        // redirector should not exit
         $redirector->setExit(false);
 
-        // json helper should not exit
+        /** @var Zend_Controller_Action_Helper_Json $json */
         $json = Zend_Controller_Action_HelperBroker::getStaticHelper('json');
+
+        // json helper should not exit
         $json->suppressExit = true;
 
         $request    = $this->getRequest();
@@ -181,7 +185,7 @@ abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_Te
         }
         $request->setPathInfo(null);
 
-        $controller = $this->getFrontController();
+        $this->getFrontController();
         $this->frontController
              ->setRequest($request)
              ->setResponse($this->getResponse())
@@ -1061,6 +1065,7 @@ abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_Te
      * Retrieve test case request object
      *
      * @return Zend_Controller_Request_HttpTestCase
+     * @throws Zend_Controller_Request_Exception
      */
     public function getRequest()
     {

@@ -86,7 +86,6 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
 
     /**
      * Constructor; setup constraint state
-     *
      */
     public function __construct()
     {
@@ -107,6 +106,7 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
      *
      * @param  Zend_Controller_Response_Abstract $other String to examine
      * @param  null|string Assertion type
+     *
      * @return bool
      */
     public function evaluate($other, $assertType = null)
@@ -181,9 +181,11 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader34 extends PHPUnit_Framework_Co
      * Report Failure
      *
      * @see    PHPUnit_Framework_Constraint for implementation details
+     *
      * @param  mixed $other
      * @param  string $description Additional message to display
      * @param  bool $not
+     *
      * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function fail($other, $description, $not = false)

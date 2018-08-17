@@ -39,7 +39,9 @@ class Zend_Test_PHPUnit_Db_Operation_Insert implements PHPUnit_Extensions_Databa
 {
     /**
      * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
-     * @param PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet
+     * @param PHPUnit_Extensions_Database_DataSet_IDataSet       $dataSet
+     *
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     public function execute(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
     {

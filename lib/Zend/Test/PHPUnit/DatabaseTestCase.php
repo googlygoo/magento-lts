@@ -82,7 +82,7 @@ abstract class Zend_Test_PHPUnit_DatabaseTestCase extends PHPUnit_Extensions_Dat
     /**
      * Returns the database operation executed in test setup.
      *
-     * @return PHPUnit_Extensions_Database_Operation_DatabaseOperation
+     * @return PHPUnit_Extensions_Database_Operation_Composite
      */
     protected function getSetUpOperation()
     {
@@ -95,7 +95,7 @@ abstract class Zend_Test_PHPUnit_DatabaseTestCase extends PHPUnit_Extensions_Dat
     /**
      * Returns the database operation executed in test cleanup.
      *
-     * @return PHPUnit_Extensions_Database_Operation_DatabaseOperation
+     * @return PHPUnit_Extensions_Database_Operation_Null
      */
     protected function getTearDownOperation()
     {
@@ -137,7 +137,9 @@ abstract class Zend_Test_PHPUnit_DatabaseTestCase extends PHPUnit_Extensions_Dat
      *
      * @param  Zend_Db_Table_Rowset_Abstract $rowset
      * @param  string
+     *
      * @return Zend_Test_PHPUnit_Db_DataSet_DbRowset
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     protected function createDbRowset(Zend_Db_Table_Rowset_Abstract $rowset, $tableName = null)
     {

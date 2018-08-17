@@ -105,17 +105,19 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader37 extends PHPUnit_Framework_Co
     /**
      * Evaluate an object to see if it fits the constraints
      *
-     * @param  object       of Zend_Controller_Response_Abstract to be evaluated
-     * @param  null|string  Assertion type
-     * @param  int|string   HTTP response code to evaluate against | header string (haystack)
-     * @param  string       (optional) match (needle), may be required depending on assertion type
-     * @return bool
      * NOTE:
      * Drastic changes up to PHPUnit 3.5.15 this was:
      *     public function evaluate($other, $assertType = null)
      * In PHPUnit 3.6.0 they changed the interface into this:
      *     public function evaluate($other, $description = '', $returnResult = FALSE)
      * We use the new interface for PHP-strict checking, but emulate the old one
+     *
+     * @param object       of Zend_Controller_Response_Abstract to be evaluated
+     * @param null|string  Assertion type
+     * @param int|string   HTTP response code to evaluate against | header string (haystack)
+     * @param string       (optional) match (needle), may be required depending on assertion type
+     *
+     * @return bool
      */
     public function evaluate($response, $assertType = '', $variable = FALSE)
     {
@@ -188,16 +190,19 @@ class Zend_Test_PHPUnit_Constraint_ResponseHeader37 extends PHPUnit_Framework_Co
      * Report Failure
      *
      * @see    PHPUnit_Framework_Constraint for implementation details
-     * @param  mixed    CSS selector path
-     * @param  string   Failure description
-     * @param  object   Cannot be used, null
-     * @throws PHPUnit_Framework_ExpectationFailedException
+     *
      * NOTE:
      * Drastic changes up to PHPUnit 3.5.15 this was:
      *     public function fail($other, $description, $not = false)
      * In PHPUnit 3.6.0 they changed the interface into this:
      *     protected function fail($other, $description, PHPUnit_Framework_ComparisonFailure $comparisonFailure = NULL)
      * We use the new interface for PHP-strict checking
+     *
+     * @param mixed                                    $other          CSS selector path
+     * @param string                                   $description    Failure description
+     * @param PHPUnit_Framework_ComparisonFailure|null $cannot_be_used Cannot be used, null
+     *
+     * @throws Zend_Test_PHPUnit_Constraint_Exception
      */
     public function fail($other, $description, PHPUnit_Framework_ComparisonFailure $cannot_be_used = NULL)
     {

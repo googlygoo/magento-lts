@@ -64,7 +64,9 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
          * Must be set to one of IT_MODE_DELETE or IT_MODE_KEEP
          * 
          * @todo   Currently, IteratorMode is ignored, as we use the default (keep); should this be implemented?
-         * @param  int $mode 
+         *
+         * @param  int $mode
+         *
          * @throws InvalidArgumentException
          */
         public function setIteratorMode($mode)
@@ -152,7 +154,6 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
 
         /**
          * Iterator: advance pointer to next item in the stack
-         * 
          */
         public function next()
         {
@@ -165,7 +166,8 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
         /**
          * ArrayAccess: does an item exist at the specified offset?
          * 
-         * @param  mixed $index 
+         * @param  mixed $index
+         *
          * @return bool
          */
         public function offsetExists($index)
@@ -175,8 +177,9 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
 
         /**
          * ArrayAccess: get the item at the specified offset
-         * 
-         * @param  mixed $index 
+         *
+         * @param  mixed $index
+         *
          * @return mixed
          * @throws OutOfRangeException
          */
@@ -204,7 +207,8 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
         /**
          * ArrayAccess: unset the item at the specified offset
          * 
-         * @param  mixed $index 
+         * @param  mixed $index
+         *
          * @throws OutOfRangeException
          */
         public function offsetUnset($index)
@@ -402,6 +406,8 @@ class Zend_EventManager_ResponseCollection extends SplStack
      * Check if any of the responses match the given value.
      *
      * @param  mixed $value The value to look for among responses
+     *
+     * @return bool
      */
     public function contains($value)
     {

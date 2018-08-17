@@ -78,7 +78,6 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
 
     /**
      * Close this connection.
-     *
      */
     public function close()
     {
@@ -90,7 +89,9 @@ class Zend_Test_PHPUnit_Db_Connection extends PHPUnit_Extensions_Database_DB_Def
      *
      * @param string $resultName
      * @param string $sql
+     *
      * @return PHPUnit_Extensions_Database_DataSet_ITable
+     * @throws Zend_Test_PHPUnit_Db_Exception
      */
     public function createQueryTable($resultName, $sql)
     {

@@ -92,7 +92,7 @@ abstract class Zend_Server_Reflection_Function_Abstract
 
     /**
      * Prototypes
-     * @var array
+     * @var Zend_Server_Reflection_Prototype[]
      */
     protected $_prototypes = array();
 
@@ -472,7 +472,7 @@ abstract class Zend_Server_Reflection_Function_Abstract
      * Retrieve all prototypes as array of
      * {@link Zend_Server_Reflection_Prototype Zend_Server_Reflection_Prototypes}
      *
-     * @return array
+     * @return Zend_Server_Reflection_Prototype[]
      */
     public function getPrototypes()
     {

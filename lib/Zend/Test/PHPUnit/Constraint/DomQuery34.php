@@ -202,9 +202,11 @@ class Zend_Test_PHPUnit_Constraint_DomQuery34 extends PHPUnit_Framework_Constrai
      * Report Failure
      *
      * @see    PHPUnit_Framework_Constraint for implementation details
+     *
      * @param  mixed $other CSS selector path
      * @param  string $description
      * @param  bool $not
+     *
      * @throws PHPUnit_Framework_ExpectationFailedException
      */
     public function fail($other, $description, $not = false)
