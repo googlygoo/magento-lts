@@ -63,9 +63,9 @@ class Zend_Locale_Math_PhpMath extends Zend_Locale_Math
             $precision = pow(10, -$scale);
         }
 
-        if (empty($op1)) {
-            $op1 = 0;
-        }
+        if (empty($op1)) $op1 = 0;
+        if (empty($op2)) $op2 = 0;
+
         $op1 = self::normalize($op1);
         $op2 = self::normalize($op2);
         $result = $op1 + $op2;
@@ -86,9 +86,9 @@ class Zend_Locale_Math_PhpMath extends Zend_Locale_Math
             $precision = pow(10, -$scale);
         }
 
-        if (empty($op1)) {
-            $op1 = 0;
-        }
+        if (empty($op1)) $op1 = 0;
+        if (empty($op2)) $op2 = 0;
+
         $op1  = self::normalize($op1);
         $op2  = self::normalize($op2);
         $result = $op1 - $op2;
@@ -105,6 +105,8 @@ class Zend_Locale_Math_PhpMath extends Zend_Locale_Math
         if ($scale === null) {
             $scale = Zend_Locale_Math_PhpMath::$defaultScale;
         }
+
+        if (empty($op1)) $op1 = 0;
 
         $op1 = self::normalize($op1);
         $op2 = self::normalize($op2);
@@ -128,9 +130,9 @@ class Zend_Locale_Math_PhpMath extends Zend_Locale_Math
             $scale = Zend_Locale_Math_PhpMath::$defaultScale;
         }
 
-        if (empty($op1)) {
-            $op1 = 0;
-        }
+        if (empty($op1)) $op1 = 0;
+        if (empty($op2)) $op2 = 0;
+
         $op1 = self::normalize($op1);
         $op2 = self::normalize($op2);
         $result = $op1 * $op2;
